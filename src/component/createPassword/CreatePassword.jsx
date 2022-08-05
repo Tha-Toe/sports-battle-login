@@ -32,7 +32,7 @@ const CreatePassword = () => {
   };
 
   const handleContinue = () => {
-    return;
+    navigate("/forgotpassword", { replace: true });
   };
 
   const [disableButton, setDisableButton] = useState(false);

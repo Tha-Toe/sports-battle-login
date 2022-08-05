@@ -5,12 +5,12 @@ import Choose from "./component/choose/Choose";
 import EnterVerificationCode from "./component/enter-verification-code/EnterVerificationCode";
 import EnterYourDetail from "./component/enter-your-detail/EnterYourDetail";
 import LoginFlow from "./component/loginFlow/LoginFlow";
-import SecondSignUpFlow from "./component/second-signupFlow/SecondSignUpFlow";
 import EnterVerificationCodeSignup from "./component/enter-verification-signup/EnterVerificationCodeSignup";
 import ForgotPassword from "./component/forgotPassword/ForgotPassword";
 import NewPassword from "./component/newPassword/NewPassword";
 import CreatePassword from "./component/createPassword/CreatePassword";
 import CreateUserName from "./component/createUserName/CreateUserName";
+import EnterYourName from "./component/enter-your-name/EnterYourName";
 
 function App() {
   return (
@@ -30,7 +30,7 @@ function App() {
           <Route path="/" element={<LoginFlow />} />
           <Route path="/choose" element={<Choose />} />
           <Route path="/enteryourdetail" element={<EnterYourDetail />} />
-          <Route path="/fullName" element={<SecondSignUpFlow />} />
+          <Route path="/enteryourname" element={<EnterYourName />} />
           <Route path="/verification" element={<EnterVerificationCode />} />
           <Route
             path="/signupverification"

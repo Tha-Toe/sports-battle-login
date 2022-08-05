@@ -1,5 +1,5 @@
 import React from "react";
-import "./secondSignUpFlow.css";
+import "./enterYourName.css";
 import Box from "@mui/material/Box";
 import {
   Button,
@@ -18,7 +18,7 @@ import {
   BackButtonComponent,
   ContinueButtonComponent,
 } from "../defaultComponent/DefaultComponent";
-const SecondSignUpFlow = () => {
+const EnterYourName = () => {
   const [firstName, setFirstName] = useState(null);
   const [secondName, setSecondName] = useState(null);
   let navigate = useNavigate();
@@ -216,4 +216,4 @@ const SecondSignUpFlow = () => {
     </div>
   );
 };
-export default SecondSignUpFlow;
+export default EnterYourName;

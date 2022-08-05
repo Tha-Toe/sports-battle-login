@@ -28,7 +28,7 @@ const EnterYourDetail = () => {
   };
 
   const handleContinue = () => {
-    navigate("/signupverification", { replace: true });
+    navigate("/enteryourname", { replace: true });
   };
 
   const [disableButton, setDisableButton] = useState(false);

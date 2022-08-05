@@ -28,7 +28,7 @@ const CreateUserName = () => {
   let navigate = useNavigate();
 
   const handleBack = () => {
-    navigate("/enteryourdetail", { replace: true });
+    navigate("/enteryourname", { replace: true });
   };
 
   const handleContinue = () => {
