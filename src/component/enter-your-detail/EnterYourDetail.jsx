@@ -50,7 +50,7 @@ const EnterYourDetail = () => {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          width: { sm: "60%", xs: "100%" },
+          width: { sm: "60%", xxxs: "100%" },
           position: "relative",
         }}
       >
@@ -61,7 +61,13 @@ const EnterYourDetail = () => {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            width: { md: "408px", xs: "80%" },
+            width: {
+              md: "408px",
+              sm: "390px",
+              xs: "408px",
+              xxs: "300px",
+              xxxs: "250px",
+            },
             mr: { xs: "20px", sm: 0 },
           }}
         >
@@ -70,7 +76,13 @@ const EnterYourDetail = () => {
           </Box>
           <FormControl
             sx={{
-              width: 1,
+              width: {
+                md: "408px",
+                sm: "390px",
+                xs: "408px",
+                xxs: "300px",
+                xxxs: "250px",
+              },
               display: "flex",
               flexDirection: "column",
               alignItems: "flex-start",
@@ -78,13 +90,17 @@ const EnterYourDetail = () => {
             }}
           >
             <Typography
-              sx={{ fontSize: "14px", mb: "15px", fontFamily: "Poppins" }}
+              sx={{
+                fontSize: { xs: "14px", xxxs: "12px" },
+                mb: "15px",
+                fontFamily: "Poppins",
+              }}
             >
               STEP 1 OF 3
             </Typography>
             <Typography
               sx={{
-                fontSize: { sm: "32px", xs: "20px" },
+                fontSize: { sm: "32px", xxxs: "20px" },
                 fontWeight: "700",
                 mb: "4px",
               }}
@@ -92,13 +108,21 @@ const EnterYourDetail = () => {
               Enter Your Details
             </Typography>
             <Typography
-              sx={{ fontSize: "14px", mb: "25px", fontFamily: "Poppins" }}
+              sx={{
+                fontSize: { xs: "14px", xxs: "12px", xxxs: "10px" },
+                mb: "25px",
+                fontFamily: "Poppins",
+              }}
             >
               You'll recieve code for your email verification.
             </Typography>
             <InputComponent placeholder={"Full Name"} setName={setName} />
             <Typography
-              sx={{ fontSize: "14px", mb: "22px", fontFamily: "Poppins" }}
+              sx={{
+                fontSize: { xs: "14px", xxs: "12px", xxxs: "10px" },
+                mb: "22px",
+                fontFamily: "Poppins",
+              }}
             >
               Enter your name as per your passport/ National ID's
             </Typography>
@@ -106,7 +130,13 @@ const EnterYourDetail = () => {
             <Box
               component="div"
               sx={{
-                width: "408px",
+                width: {
+                  md: "408px",
+                  sm: "390px",
+                  xs: "408px",
+                  xxs: "300px",
+                  xxxs: "250px",
+                },
                 display: "flex",
                 justifyContent: "space-between",
                 alignItems: "center",
@@ -126,7 +156,14 @@ const EnterYourDetail = () => {
           component="div"
           sx={{
             position: "absolute",
-            right: { md: "50px", xs: "20px" },
+            right: {
+              lg: "50px",
+              md: "35px",
+              sm: "-10px",
+              xs: "50px",
+              xxs: "15px",
+              xxxs: "15px",
+            },
             height: "242px",
             borderRightColor: "white",
             borderRight: 2,
@@ -139,8 +176,8 @@ const EnterYourDetail = () => {
         >
           <Box
             sx={{
-              width: { md: "30px", xs: "20px" },
-              height: { md: "30px", xs: "20px" },
+              width: { md: "30px", xxxs: "20px" },
+              height: { md: "30px", xxxs: "20px" },
               position: "relative",
               right: "-50%",
               border: 2,
@@ -164,30 +201,58 @@ const EnterYourDetail = () => {
           </Box>
           <Box
             sx={{
-              width: { md: "30px", xs: "20px" },
-              height: { md: "30px", xs: "20px" },
+              width: { md: "30px", xxxs: "20px" },
+              height: { md: "30px", xxxs: "20px" },
               position: "relative",
               right: "-50%",
               border: 2,
               borderRadius: "50%",
+              borderColor: "white",
               background: "black",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
             }}
-          ></Box>
+          >
+            <Box
+              component="div"
+              sx={{
+                width: "10px",
+                height: "10px",
+                borderRadius: "50%",
+                background: "white",
+              }}
+            ></Box>
+          </Box>
           <Box
             sx={{
-              width: { md: "30px", xs: "20px" },
-              height: { md: "30px", xs: "20px" },
+              width: { md: "30px", xxxs: "20px" },
+              height: { md: "30px", xxxs: "20px" },
               position: "relative",
               right: "-50%",
               border: 2,
               borderRadius: "50%",
+              borderColor: "white",
               background: "black",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
             }}
-          ></Box>
+          >
+            <Box
+              component="div"
+              sx={{
+                width: "10px",
+                height: "10px",
+                borderRadius: "50%",
+                background: "white",
+              }}
+            ></Box>
+          </Box>
         </Box>
       </Box>
       <div className="rightImageContainer">
-        <img src="RightPhoneFinal.png" className="second-right-image" />{" "}
+        <img src="RightPhoneFinal.png" className="right-image" />{" "}
         <img src="Vector.png" className="right-vector" />
       </div>
     </div>

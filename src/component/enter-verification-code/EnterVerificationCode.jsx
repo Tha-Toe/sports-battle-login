@@ -50,7 +50,7 @@ const EnterVerificationCode = () => {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          width: { sm: "60%", xs: "100%" },
+          width: { sm: "60%", xxxs: "100%" },
           position: "relative",
         }}
       >
@@ -62,7 +62,7 @@ const EnterVerificationCode = () => {
             justifyContent: "center",
             alignItems: "center",
             width: { md: "50%", xs: "80%" },
-            mr: { xs: "20px", sm: 0 },
+            mr: { xxxs: "20px", sm: 0 },
           }}
         >
           <Box component={"div"} sx={{ width: 1, mb: "75px" }}>
@@ -70,7 +70,13 @@ const EnterVerificationCode = () => {
           </Box>
           <FormControl
             sx={{
-              width: 1,
+              width: {
+                md: "408px",
+                sm: "390px",
+                xs: "408px",
+                xxs: "300px",
+                xxxs: "250px",
+              },
               display: "flex",
               flexDirection: "column",
               alignItems: "flex-start",
@@ -79,7 +85,7 @@ const EnterVerificationCode = () => {
           >
             <Typography
               sx={{
-                fontSize: { sm: "32px", xs: "20px" },
+                fontSize: { sm: "32px", xxxs: "20px" },
                 fontWeight: "700",
                 mb: "4px",
               }}
@@ -87,7 +93,11 @@ const EnterVerificationCode = () => {
               Enter Verification Code
             </Typography>
             <Typography
-              sx={{ fontSize: "14px", mb: "21px", fontFamily: "Poppins" }}
+              sx={{
+                fontSize: { xs: "14px", xxs: "12px", xxxs: "10px" },
+                mb: "21px",
+                fontFamily: "Poppins",
+              }}
             >
               You would receive a verificaton code to your mail, Kindly enter
               the code, If you are unsure about it, Click here to update{" "}
@@ -96,8 +106,15 @@ const EnterVerificationCode = () => {
               component={"div"}
               sx={{
                 mb: "16px",
-                width: "408px",
-                height: "64px",
+                width: {
+                  md: "408px",
+                  sm: "390px",
+                  xs: "408px",
+                  xxs: "300px",
+                  xxxs: "250px",
+                },
+                height: { xs: "64px", xxxs: "50px" },
+
                 background: "#272727",
                 borderRadius: "5px",
                 display: "flex",
@@ -154,7 +171,13 @@ const EnterVerificationCode = () => {
             <Box
               component="div"
               sx={{
-                width: 1,
+                width: {
+                  md: "408px",
+                  sm: "390px",
+                  xs: "408px",
+                  xxs: "300px",
+                  xxxs: "250px",
+                },
                 display: "flex",
                 justifyContent: "space-between",
                 alignItems: "center",
@@ -162,26 +185,11 @@ const EnterVerificationCode = () => {
               }}
             >
               <BackButtonComponent text={"Back"} handleBack={handleBack} />
-              <Button
-                sx={{
-                  width: "240px",
-                  height: "64px",
-                  background: "#4831D4",
-                  color: "white",
-                  fontSize: "16px",
-                  fontWeight: "500",
-                  mb: 3,
-                  "&.MuiButtonBase-root:hover": {
-                    background: "#4831D4",
-                  },
-                  textTransform: "none",
-                  borderRadius: "8px",
-                }}
+              <ContinueButtonComponent
+                text={"Verify Code"}
+                handleContinue={handleContinue}
                 disabled={disableButton}
-                onClick={handleContinue}
-              >
-                Verify Code
-              </Button>
+              />
             </Box>
           </FormControl>
         </Box>

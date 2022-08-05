@@ -48,7 +48,7 @@ const EnterYourName = () => {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          width: { sm: "60%", xs: "100%" },
+          width: { sm: "60%", xxxs: "100%" },
           position: "relative",
         }}
       >
@@ -59,7 +59,7 @@ const EnterYourName = () => {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            width: { md: "50%", xs: "80%" },
+            width: { md: "50%", xxxs: "80%" },
             mr: { xs: "20px", sm: 0 },
           }}
         >
@@ -76,13 +76,17 @@ const EnterYourName = () => {
             }}
           >
             <Typography
-              sx={{ fontSize: "14px", mb: "11px", fontFamily: "Poppins" }}
+              sx={{
+                fontSize: { xs: "14px", xxxs: "12px" },
+                mb: "11px",
+                fontFamily: "Poppins",
+              }}
             >
               STEP 2 OF 4
             </Typography>
             <Typography
               sx={{
-                fontSize: { sm: "32px", xs: "20px" },
+                fontSize: { sm: "32px", xxxs: "20px" },
                 fontWeight: "700",
                 mb: "4px",
               }}
@@ -90,7 +94,11 @@ const EnterYourName = () => {
               Enter Your Name
             </Typography>
             <Typography
-              sx={{ fontSize: "14px", mb: "25px", fontFamily: "Poppins" }}
+              sx={{
+                fontSize: { xs: "14px", xxs: "12px", xxxs: "10px" },
+                mb: "25px",
+                fontFamily: "Poppins",
+              }}
             >
               Use your name as per your drivers license
             </Typography>
@@ -106,7 +114,13 @@ const EnterYourName = () => {
             <Box
               component="div"
               sx={{
-                width: 1,
+                width: {
+                  md: "408px",
+                  sm: "390px",
+                  xs: "408px",
+                  xxs: "300px",
+                  xxxs: "250px",
+                },
                 display: "flex",
                 justifyContent: "space-between",
                 alignItems: "center",
@@ -127,15 +141,22 @@ const EnterYourName = () => {
           component="div"
           sx={{
             position: "absolute",
-            right: { md: "50px", xs: "20px" },
-            height: "60%",
+            right: {
+              lg: "50px",
+              md: "35px",
+              sm: "-10px",
+              xs: "50px",
+              xxs: "15px",
+              xxxs: "15px",
+            },
+            height: "322px",
             borderRightColor: "white",
             borderRight: 2,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "space-between",
-            top: "35%",
+            top: "15%",
           }}
         >
           <Box
@@ -162,8 +183,8 @@ const EnterYourName = () => {
           </Box>
           <Box
             sx={{
-              width: { md: "30px", xs: "20px" },
-              height: { md: "30px", xs: "20px" },
+              width: { md: "30px", xxxs: "20px" },
+              height: { md: "30px", xxxs: "20px" },
               position: "relative",
               right: "-50%",
               border: 2,
@@ -187,30 +208,58 @@ const EnterYourName = () => {
           </Box>
           <Box
             sx={{
-              width: { md: "30px", xs: "20px" },
-              height: { md: "30px", xs: "20px" },
+              width: { md: "30px", xxxs: "20px" },
+              height: { md: "30px", xxxs: "20px" },
               position: "relative",
               right: "-50%",
               border: 2,
               borderRadius: "50%",
+              borderColor: "white",
               background: "black",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
             }}
-          ></Box>
+          >
+            <Box
+              component="div"
+              sx={{
+                width: "10px",
+                height: "10px",
+                borderRadius: "50%",
+                background: "white",
+              }}
+            ></Box>
+          </Box>
           <Box
             sx={{
-              width: { md: "30px", xs: "20px" },
-              height: { md: "30px", xs: "20px" },
+              width: { md: "30px", xxxs: "20px" },
+              height: { md: "30px", xxxs: "20px" },
               position: "relative",
               right: "-50%",
               border: 2,
               borderRadius: "50%",
+              borderColor: "white",
               background: "black",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
             }}
-          ></Box>
+          >
+            <Box
+              component="div"
+              sx={{
+                width: "10px",
+                height: "10px",
+                borderRadius: "50%",
+                background: "white",
+              }}
+            ></Box>
+          </Box>
         </Box>
       </Box>
       <div className="rightImageContainer">
-        <img src="RightPhoneFinal.png" className="second-right-image" />{" "}
+        <img src="RightPhoneFinal.png" className="right-image" />{" "}
         <img src="Vector.png" className="right-vector" />
       </div>
     </div>

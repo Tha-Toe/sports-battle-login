@@ -46,7 +46,7 @@ const ForgotPassword = () => {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          width: { md: "60%", sm: "60%", xs: "100%" },
+          width: { md: "60%", sm: "60%", xxxs: "100%" },
         }}
       >
         <Box
@@ -56,12 +56,18 @@ const ForgotPassword = () => {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            width: { lg: "50%", md: "74%", xs: "80%" },
+            width: { lg: "50%", md: "74%", xxxs: "80%" },
           }}
         >
           <Box
             sx={{
-              width: 1,
+              width: {
+                md: "408px",
+                sm: "390px",
+                xs: "408px",
+                xxs: "300px",
+                xxxs: "250px",
+              },
               display: "flex",
               flexDirection: "column",
               justifyContent: "flex-start",
@@ -74,7 +80,13 @@ const ForgotPassword = () => {
           </Box>
           <FormControl
             sx={{
-              width: 1,
+              width: {
+                md: "408px",
+                sm: "390px",
+                xs: "408px",
+                xxs: "300px",
+                xxxs: "250px",
+              },
               display: "flex",
               flexDirection: "column",
               alignItems: "flex-start",
@@ -83,7 +95,7 @@ const ForgotPassword = () => {
           >
             <Typography
               sx={{
-                fontSize: { md: "32px", sm: "25px", xs: "20px" },
+                fontSize: { md: "32px", sm: "25px", xxxs: "20px" },
                 fontWeight: "700",
                 mb: "15px",
               }}
@@ -91,7 +103,11 @@ const ForgotPassword = () => {
               Forgot Password?
             </Typography>
             <Typography
-              sx={{ fontSize: "14px", mb: "21px", fontFamily: "Poppins" }}
+              sx={{
+                fontSize: { xs: "14px", xxs: "12px", xxxs: "10px" },
+                mb: "21px",
+                fontFamily: "Poppins",
+              }}
             >
               We’ll send a verification code to your mail id if registered
             </Typography>
@@ -112,7 +128,11 @@ const ForgotPassword = () => {
               }}
             >
               <Typography
-                sx={{ color: "white", fontSize: "18px", fontFamily: "Poppins" }}
+                sx={{
+                  color: "white",
+                  fontSize: { xs: "18px", xxxs: "14px" },
+                  fontFamily: "Poppins",
+                }}
               >
                 Not a member yet?
               </Typography>
@@ -120,7 +140,8 @@ const ForgotPassword = () => {
                 <Typography
                   sx={{
                     color: "white",
-                    fontSize: "18px",
+                    fontSize: { xs: "18px", xxxs: "14px" },
+
                     fontWeight: 700,
                     ml: 1,
                     cursor: "pointer",

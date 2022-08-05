@@ -12,51 +12,10 @@
   height: 81px;
   margin-left: -10px;
 }
-.rightImageContainer {
-  width: 40%;
-  height: 100vh;
-  background-color: #202020;
-  position: relative;
-}
-.right-image {
-  width: 262px;
-  height: 540px;
-  object-fit: cover;
-  position: absolute;
-  right: 20%;
-  top: 10%;
-  z-index: 2;
-}
-.right-vector {
-  width: 389px;
-  height: 415px;
-  position: absolute;
-  right: 10%;
-  top: 20%;
-  z-index: 1;
-}
 
-@media (max-width: 800px) {
-  .right-image {
-    width: 200px;
-    height: 300px;
-  }
-
-  .right-screen {
-    width: 130px;
-    height: 280px;
-  }
-  .right-vector {
-    width: 230px;
-    height: 250px;
-  }
-}
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .login-flow-container {
     margin-bottom: 50px;
-  }
-  .rightImageContainer {
-    display: none;
   }
 }
 @media (max-width: 500px) {

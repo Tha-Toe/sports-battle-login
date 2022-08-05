@@ -57,7 +57,7 @@ const CreatePassword = () => {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          width: { sm: "60%", xs: "100%" },
+          width: { sm: "60%", xxxs: "100%" },
           position: "relative",
         }}
       >
@@ -68,8 +68,7 @@ const CreatePassword = () => {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            width: { md: "408px", xs: "80%" },
-            mr: { xs: "20px", sm: 0 },
+            width: { md: "408px", xxxs: "80%" },
           }}
         >
           <Box component={"div"} sx={{ width: 1 }}>
@@ -85,13 +84,17 @@ const CreatePassword = () => {
             }}
           >
             <Typography
-              sx={{ fontSize: "14px", mb: "15px", fontFamily: "Poppins" }}
+              sx={{
+                fontSize: { xs: "14px", xxxs: "12px" },
+                mb: "15px",
+                fontFamily: "Poppins",
+              }}
             >
               STEP 3 OF 3
             </Typography>
             <Typography
               sx={{
-                fontSize: { sm: "32px", xs: "20px" },
+                fontSize: { sm: "32px", xxxs: "20px" },
                 fontWeight: "700",
                 mb: "4px",
               }}
@@ -99,7 +102,11 @@ const CreatePassword = () => {
               Create your password
             </Typography>
             <Typography
-              sx={{ fontSize: "14px", mb: "25px", fontFamily: "Poppins" }}
+              sx={{
+                fontSize: { xs: "14px", xxs: "12px", xxxs: "10px" },
+                mb: "25px",
+                fontFamily: "Poppins",
+              }}
             >
               You'll use this log into your account.
             </Typography>
@@ -118,7 +125,13 @@ const CreatePassword = () => {
             <Box
               component="div"
               sx={{
-                width: "408px",
+                width: {
+                  md: "408px",
+                  sm: "390px",
+                  xs: "408px",
+                  xxs: "300px",
+                  xxxs: "250px",
+                },
                 display: "flex",
                 justifyContent: "space-between",
                 alignItems: "center",
@@ -138,15 +151,22 @@ const CreatePassword = () => {
           component="div"
           sx={{
             position: "absolute",
-            right: { md: "50px", xs: "20px" },
-            height: "50%",
+            right: {
+              lg: "50px",
+              md: "35px",
+              sm: "-10px",
+              xs: "50px",
+              xxs: "15px",
+              xxxs: "15px",
+            },
+            height: "242px",
             borderRightColor: "white",
             borderRight: 2,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "space-between",
-            top: "35%",
+            top: "15%",
           }}
         >
           <Box
@@ -195,8 +215,8 @@ const CreatePassword = () => {
           </Box>
           <Box
             sx={{
-              width: { md: "30px", xs: "20px" },
-              height: { md: "30px", xs: "20px" },
+              width: { md: "30px", xxxs: "20px" },
+              height: { md: "30px", xxxs: "20px" },
               position: "relative",
               right: "-50%",
               border: 2,

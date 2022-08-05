@@ -44,8 +44,9 @@ const LoginFlow = () => {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          width: { md: "60%", sm: "60%", xs: "100%" },
+          width: { md: "60%", sm: "60%", xxxs: "100%" },
         }}
+        x
       >
         <Box
           component="div"
@@ -54,12 +55,18 @@ const LoginFlow = () => {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            width: { lg: "50%", md: "74%", xs: "80%" },
+            width: { lg: "50%", md: "74%", xxxs: "80%" },
           }}
         >
           <Box
             sx={{
-              width: 1,
+              width: {
+                md: "408px",
+                sm: "390px",
+                xs: "408px",
+                xxs: "300px",
+                xxxs: "250px",
+              },
               display: "flex",
               flexDirection: "column",
               justifyContent: "flex-start",
@@ -72,7 +79,13 @@ const LoginFlow = () => {
           </Box>
           <FormControl
             sx={{
-              width: 1,
+              width: {
+                md: "408px",
+                sm: "390px",
+                xs: "408px",
+                xxs: "300px",
+                xxxs: "250px",
+              },
               display: "flex",
               flexDirection: "column",
               alignItems: "flex-start",
@@ -81,7 +94,7 @@ const LoginFlow = () => {
           >
             <Typography
               sx={{
-                fontSize: { md: "32px", sm: "25px", xs: "20px" },
+                fontSize: { md: "32px", sm: "25px", xxxs: "20px" },
                 fontWeight: "700",
                 mb: "15px",
               }}
@@ -90,7 +103,13 @@ const LoginFlow = () => {
             </Typography>
             <Box
               sx={{
-                width: 1,
+                width: {
+                  md: "408px",
+                  sm: "390px",
+                  xs: "408px",
+                  xxs: "300px",
+                  xxxs: "250px",
+                },
                 display: "flex",
                 flexDirection: "row",
                 justifyContent: "space-between",
@@ -101,9 +120,15 @@ const LoginFlow = () => {
                 startIcon={<GoogleIcon />}
                 sx={{
                   color: "white",
-                  width: "196px",
-                  height: "64px",
-                  fontSize: { sm: "14px", xs: "9px" },
+                  width: {
+                    md: "196px",
+                    sm: "190px",
+                    xs: "196px",
+                    xxs: "145px",
+                    xxxs: "120px",
+                  },
+                  height: { xs: "64px", xxxs: "50px" },
+                  fontSize: { xs: "14px", xxs: "10px", xxxs: "8px" },
                   border: 2,
                   borderColor: "#272727",
                   borderRadius: "5px",
@@ -120,9 +145,15 @@ const LoginFlow = () => {
                 startIcon={<AppleIcon />}
                 sx={{
                   color: "white",
-                  width: "196px",
-                  height: "64px",
-                  fontSize: { sm: "14px", xs: "9px" },
+                  width: {
+                    md: "196px",
+                    sm: "190px",
+                    xs: "196px",
+                    xxs: "145px",
+                    xxxs: "120px",
+                  },
+                  height: { xs: "64px", xxxs: "50px" },
+                  fontSize: { xs: "14px", xxs: "10px", xxxs: "8px" },
                   border: 2,
                   borderColor: "#272727",
                   borderRadius: "5px",
@@ -146,10 +177,16 @@ const LoginFlow = () => {
             />
             <Typography
               sx={{
-                width: 1,
+                width: {
+                  md: "408px",
+                  sm: "390px",
+                  xs: "408px",
+                  xxs: "300px",
+                  xxxs: "250px",
+                },
                 display: "flex",
                 justifyContent: "flex-end",
-                fontSize: { sm: "14px", xs: "12px" },
+                fontSize: { xs: "14px", xxxs: "12px" },
                 mb: 1,
                 fontFamily: "Poppins",
               }}
@@ -170,7 +207,11 @@ const LoginFlow = () => {
               }}
             >
               <Typography
-                sx={{ color: "white", fontSize: "18px", fontFamily: "Poppins" }}
+                sx={{
+                  color: "white",
+                  fontSize: { xxs: "18px", xxxs: "14px" },
+                  fontFamily: "Poppins",
+                }}
               >
                 Not a member yet?
               </Typography>
@@ -178,7 +219,7 @@ const LoginFlow = () => {
                 <Typography
                   sx={{
                     color: "white",
-                    fontSize: "18px",
+                    fontSize: { xxs: "18px", xxxs: "14px" },
                     fontWeight: 700,
                     ml: 1,
                     cursor: "pointer",

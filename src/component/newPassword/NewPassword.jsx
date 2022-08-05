@@ -57,7 +57,7 @@ const NewPassword = () => {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          width: { sm: "60%", xs: "100%" },
+          width: { sm: "60%", xxxs: "100%" },
           position: "relative",
         }}
       >
@@ -68,7 +68,13 @@ const NewPassword = () => {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            width: { md: "441px", xs: "80%" },
+            width: {
+              md: "408px",
+              sm: "390px",
+              xs: "408px",
+              xxs: "300px",
+              xxxs: "250px",
+            },
             mr: { xs: "20px", sm: 0 },
           }}
         >
@@ -77,7 +83,13 @@ const NewPassword = () => {
           </Box>
           <FormControl
             sx={{
-              width: 1,
+              width: {
+                md: "408px",
+                sm: "390px",
+                xs: "408px",
+                xxs: "300px",
+                xxxs: "250px",
+              },
               display: "flex",
               flexDirection: "column",
               alignItems: "flex-start",
@@ -86,7 +98,7 @@ const NewPassword = () => {
           >
             <Typography
               sx={{
-                fontSize: { sm: "32px", xs: "20px" },
+                fontSize: { xs: "32px", xxxs: "18px" },
                 fontWeight: "700",
                 mb: "4px",
               }}
@@ -94,7 +106,11 @@ const NewPassword = () => {
               Create your new password
             </Typography>
             <Typography
-              sx={{ fontSize: "14px", mb: "25px", fontFamily: "Poppins" }}
+              sx={{
+                fontSize: { xs: "14px", xxs: "12px", xxxs: "10px" },
+                mb: "25px",
+                fontFamily: "Poppins",
+              }}
             >
               You'll use this log into your account.
             </Typography>
@@ -113,7 +129,13 @@ const NewPassword = () => {
             <Box
               component="div"
               sx={{
-                width: "408px",
+                width: {
+                  md: "408px",
+                  sm: "390px",
+                  xs: "408px",
+                  xxs: "300px",
+                  xxxs: "250px",
+                },
                 display: "flex",
                 justifyContent: "space-between",
                 alignItems: "center",

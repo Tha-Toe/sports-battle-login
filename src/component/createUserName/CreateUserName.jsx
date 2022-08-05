@@ -55,7 +55,7 @@ const CreateUserName = () => {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          width: { sm: "60%", xs: "100%" },
+          width: { sm: "60%", xxxs: "100%" },
           position: "relative",
         }}
       >
@@ -67,7 +67,7 @@ const CreateUserName = () => {
             justifyContent: "center",
             alignItems: "center",
             width: { md: "408px", xs: "80%" },
-            mr: { xs: "20px", sm: 0 },
+            mr: { xxxs: "20px", sm: 0 },
           }}
         >
           <Box component={"div"} sx={{ width: 1 }}>
@@ -83,13 +83,17 @@ const CreateUserName = () => {
             }}
           >
             <Typography
-              sx={{ fontSize: "14px", mb: "15px", fontFamily: "Poppins" }}
+              sx={{
+                fontSize: { xs: "14px", xxxs: "12px" },
+                mb: "15px",
+                fontFamily: "Poppins",
+              }}
             >
               STEP 2 OF 3
             </Typography>
             <Typography
               sx={{
-                fontSize: { sm: "32px", xs: "20px" },
+                fontSize: { sm: "32px", xxxs: "20px" },
                 fontWeight: "700",
                 mb: "4px",
               }}
@@ -97,7 +101,11 @@ const CreateUserName = () => {
               Create your username
             </Typography>
             <Typography
-              sx={{ fontSize: "14px", mb: "25px", fontFamily: "Poppins" }}
+              sx={{
+                fontSize: { xs: "14px", xxs: "12px", xxxs: "10px" },
+                mb: "25px",
+                fontFamily: "Poppins",
+              }}
             >
               Enter your unique user name
             </Typography>
@@ -146,7 +154,13 @@ const CreateUserName = () => {
             <Box
               component="div"
               sx={{
-                width: "408px",
+                width: {
+                  md: "408px",
+                  sm: "390px",
+                  xs: "408px",
+                  xxs: "300px",
+                  xxxs: "250px",
+                },
                 display: "flex",
                 justifyContent: "space-between",
                 alignItems: "center",
@@ -166,15 +180,22 @@ const CreateUserName = () => {
           component="div"
           sx={{
             position: "absolute",
-            right: { md: "50px", xs: "20px" },
-            height: "50%",
+            right: {
+              lg: "50px",
+              md: "35px",
+              sm: "-10px",
+              xs: "50px",
+              xxs: "15px",
+              xxxs: "15px",
+            },
+            height: "262px",
             borderRightColor: "white",
             borderRight: 2,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "space-between",
-            top: "35%",
+            top: "15%",
           }}
         >
           <Box
@@ -199,11 +220,10 @@ const CreateUserName = () => {
               }}
             />
           </Box>
-
           <Box
             sx={{
-              width: { md: "30px", xs: "20px" },
-              height: { md: "30px", xs: "20px" },
+              width: { md: "30px", xxxs: "20px" },
+              height: { md: "30px", xxxs: "20px" },
               position: "relative",
               right: "-50%",
               border: 2,
@@ -227,15 +247,29 @@ const CreateUserName = () => {
           </Box>
           <Box
             sx={{
-              width: { md: "30px", xs: "20px" },
-              height: { md: "30px", xs: "20px" },
+              width: { md: "30px", xxxs: "20px" },
+              height: { md: "30px", xxxs: "20px" },
               position: "relative",
               right: "-50%",
               border: 2,
               borderRadius: "50%",
+              borderColor: "white",
               background: "black",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
             }}
-          ></Box>
+          >
+            <Box
+              component="div"
+              sx={{
+                width: "10px",
+                height: "10px",
+                borderRadius: "50%",
+                background: "white",
+              }}
+            ></Box>
+          </Box>
         </Box>
       </Box>
       <div className="rightImageContainer">

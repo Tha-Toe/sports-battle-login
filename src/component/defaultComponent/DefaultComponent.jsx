@@ -16,7 +16,19 @@ export function ButtonComponent({ name, disabled, handleContinue }) {
         disabled: "rgba(255,255,255, 0.4)",
       },
     },
+    breakpoints: {
+      values: {
+        xxxs: 0,
+        xxs: 350,
+        xs: 500,
+        sm: 700,
+        md: 900,
+        lg: 1100,
+        xl: 1550,
+      },
+    },
   });
+
   return (
     <ThemeProvider theme={theme}>
       <Button
@@ -24,11 +36,17 @@ export function ButtonComponent({ name, disabled, handleContinue }) {
         onClick={handleContinue}
         className="disableButton"
         sx={{
-          width: "408px",
-          height: "64px",
+          width: {
+            md: "408px",
+            sm: "390px",
+            xs: "408px",
+            xxs: "300px",
+            xxxs: "250px",
+          },
+          height: { xs: "64px", xxxs: "50px" },
           background: "#4831D4",
           color: "white",
-          fontSize: { sm: "16px", xs: "12px" },
+          fontSize: { xs: "16px", xxs: "14px" },
           fontWeight: "600",
           mb: 3,
           "&.MuiButtonBase-root:hover": {
@@ -56,6 +74,17 @@ export function ContinueButtonComponent({
         disabled: "rgba(255,255,255, 0.4)",
       },
     },
+    breakpoints: {
+      values: {
+        xxxs: 0,
+        xxs: 380,
+        xs: 500,
+        sm: 700,
+        md: 900,
+        lg: 1100,
+        xl: 1550,
+      },
+    },
   });
   return (
     <ThemeProvider theme={theme}>
@@ -63,11 +92,17 @@ export function ContinueButtonComponent({
         endIcon={rightArrow ? <ArrowForwardIcon /> : checkIcon && <CheckIcon />}
         className="disableButton"
         sx={{
-          width: "240px",
-          height: "64px",
+          width: {
+            md: "240px",
+            sm: "231px",
+            xs: "240px",
+            xxs: "186px",
+            xxxs: "161px",
+          },
+          height: { xs: "64px", xxxs: "50px" },
           background: "#4831D4",
           color: "white",
-          fontSize: "16px",
+          fontSize: { xs: "16px", xxxs: "12px" },
           fontWeight: "700",
           mb: 3,
           "&.MuiButtonBase-root:hover": {
@@ -91,11 +126,17 @@ export function BackButtonComponent({ text, handleBack }) {
     <Button
       startIcon={<ArrowBackIcon />}
       sx={{
-        width: "160px",
-        height: "64px",
+        width: {
+          md: "160px",
+          sm: "151px",
+          xs: "160px",
+          xxs: "106px",
+          xxxs: "81px",
+        },
+        height: { xs: "64px", xxxs: "50px" },
         background: "#525252",
         color: "white",
-        fontSize: "16px",
+        fontSize: { xs: "16px", xxxs: "12px" },
         fontWeight: "700",
         mb: 3,
         "&.MuiButtonBase-root:hover": {
@@ -127,8 +168,14 @@ export function InputComponent({
       variant="outlined"
       disableUnderline
       sx={{
-        width: "408px",
-        height: "64px",
+        width: {
+          md: "408px",
+          sm: "390px",
+          xs: "408px",
+          xxs: "300px",
+          xxxs: "250px",
+        },
+        height: { xs: "64px", xxxs: "50px" },
         border: 0,
         borderColor: "#525252",
         background: "#272727",
@@ -136,7 +183,7 @@ export function InputComponent({
         color: "white",
         boxShadow: 3,
         pl: 2,
-        fontSize: "16px",
+        fontSize: { xs: "16px", xxxs: "14px" },
         mb: "16px",
         "&.MuiButtonBase-root:focus": {
           bgcolor: "black",
@@ -167,7 +214,18 @@ export function PasswordInputComponent({
 }) {
   return (
     <Box
-      sx={{ position: "relative", width: "408px", height: "64px", mb: 2 }}
+      sx={{
+        position: "relative",
+        width: {
+          md: "408px",
+          sm: "390px",
+          xs: "408px",
+          xxs: "300px",
+          xxxs: "250px",
+        },
+        height: { xs: "64px", xxxs: "50px" },
+        mb: 2,
+      }}
       component="div"
     >
       <Input
@@ -186,7 +244,7 @@ export function PasswordInputComponent({
           color: "white",
           boxShadow: 3,
           pl: 2,
-          fontSize: "16px",
+          fontSize: { xs: "16px", xxxs: "14px" },
           focused: "none",
           fontFamily: "Poppins",
         }}
@@ -201,7 +259,7 @@ export function PasswordInputComponent({
           sx={{
             color: "white",
             position: "absolute",
-            top: { sm: "25px", xs: "18px" },
+            top: { sm: "25px", xs: "18px", xxxs: "14px" },
             right: "10px",
             cursor: "pointer",
           }}
@@ -214,9 +272,10 @@ export function PasswordInputComponent({
           sx={{
             color: "white",
             position: "absolute",
-            top: { sm: "25px", xs: "18px" },
+            top: { sm: "25px", xs: "20px", xxxs: "16px" },
             right: "10px",
             cursor: "pointer",
+            fontSize: { xs: "23px", xxxs: "18px" },
           }}
           onClick={() => {
             setShowPass(true);

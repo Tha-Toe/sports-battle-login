@@ -50,7 +50,7 @@ const EnterVerificationCodeSignup = () => {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          width: { sm: "60%", xs: "100%" },
+          width: { sm: "60%", xxxs: "100%" },
           position: "relative",
         }}
       >
@@ -61,8 +61,7 @@ const EnterVerificationCodeSignup = () => {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            width: { md: "50%", xs: "80%" },
-            mr: { xs: "20px", sm: 0 },
+            width: { md: "50%", xxxs: "80%" },
           }}
         >
           <Box component={"div"} sx={{ width: 1, mb: "75px" }}>
@@ -71,7 +70,13 @@ const EnterVerificationCodeSignup = () => {
 
           <FormControl
             sx={{
-              width: 1,
+              width: {
+                md: "408px",
+                sm: "390px",
+                xs: "408px",
+                xxs: "300px",
+                xxxs: "250px",
+              },
               display: "flex",
               flexDirection: "column",
               alignItems: "flex-start",
@@ -79,13 +84,17 @@ const EnterVerificationCodeSignup = () => {
             }}
           >
             <Typography
-              sx={{ fontSize: "14px", mb: "15px", fontFamily: "Poppins" }}
+              sx={{
+                fontSize: { xs: "14px", xxxs: "12px" },
+                mb: "15px",
+                fontFamily: "Poppins",
+              }}
             >
               STEP 1 OF 3
             </Typography>
             <Typography
               sx={{
-                fontSize: { sm: "32px", xs: "20px" },
+                fontSize: { sm: "32px", xxxs: "20px" },
                 fontWeight: "700",
                 mb: "4px",
               }}
@@ -93,7 +102,11 @@ const EnterVerificationCodeSignup = () => {
               Enter Verification Code
             </Typography>
             <Typography
-              sx={{ fontSize: "14px", mb: "21px", fontFamily: "Poppins" }}
+              sx={{
+                fontSize: { xs: "14px", xxs: "12px", xxxs: "10px" },
+                mb: "21px",
+                fontFamily: "Poppins",
+              }}
             >
               You would receive a verificaton code to your mail, Kindly enter
               the code, If you are unsure about it, Click here to update
@@ -102,8 +115,14 @@ const EnterVerificationCodeSignup = () => {
               component={"div"}
               sx={{
                 mb: "16px",
-                width: "408px",
-                height: "64px",
+                width: {
+                  md: "408px",
+                  sm: "390px",
+                  xs: "408px",
+                  xxs: "300px",
+                  xxxs: "250px",
+                },
+                height: { xs: "64px", xxxs: "50px" },
                 background: "#272727",
                 borderRadius: "5px",
                 display: "flex",
@@ -160,7 +179,13 @@ const EnterVerificationCodeSignup = () => {
             <Box
               component="div"
               sx={{
-                width: 1,
+                width: {
+                  md: "408px",
+                  sm: "390px",
+                  xs: "408px",
+                  xxs: "300px",
+                  xxxs: "250px",
+                },
                 display: "flex",
                 justifyContent: "space-between",
                 alignItems: "center",
@@ -181,7 +206,14 @@ const EnterVerificationCodeSignup = () => {
           component="div"
           sx={{
             position: "absolute",
-            right: { md: "50px", xs: "20px" },
+            right: {
+              lg: "50px",
+              md: "35px",
+              sm: "-10px",
+              xs: "50px",
+              xxs: "15px",
+              xxxs: "15px",
+            },
             height: "242px",
             borderRightColor: "white",
             borderRight: 2,
@@ -194,8 +226,8 @@ const EnterVerificationCodeSignup = () => {
         >
           <Box
             sx={{
-              width: { md: "30px", xs: "20px" },
-              height: { md: "30px", xs: "20px" },
+              width: { md: "30px", xxxs: "20px" },
+              height: { md: "30px", xxxs: "20px" },
               position: "relative",
               right: "-50%",
               border: 2,
@@ -219,30 +251,58 @@ const EnterVerificationCodeSignup = () => {
           </Box>
           <Box
             sx={{
-              width: { md: "30px", xs: "20px" },
-              height: { md: "30px", xs: "20px" },
+              width: { md: "30px", xxxs: "20px" },
+              height: { md: "30px", xxxs: "20px" },
               position: "relative",
               right: "-50%",
               border: 2,
               borderRadius: "50%",
+              borderColor: "white",
               background: "black",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
             }}
-          ></Box>
+          >
+            <Box
+              component="div"
+              sx={{
+                width: "10px",
+                height: "10px",
+                borderRadius: "50%",
+                background: "white",
+              }}
+            ></Box>
+          </Box>
           <Box
             sx={{
-              width: { md: "30px", xs: "20px" },
-              height: { md: "30px", xs: "20px" },
+              width: { md: "30px", xxxs: "20px" },
+              height: { md: "30px", xxxs: "20px" },
               position: "relative",
               right: "-50%",
               border: 2,
               borderRadius: "50%",
+              borderColor: "white",
               background: "black",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
             }}
-          ></Box>
+          >
+            <Box
+              component="div"
+              sx={{
+                width: "10px",
+                height: "10px",
+                borderRadius: "50%",
+                background: "white",
+              }}
+            ></Box>
+          </Box>
         </Box>
       </Box>
       <div className="rightImageContainer">
-        <img src="RightPhoneFinal.png" className="second-right-image" />{" "}
+        <img src="RightPhoneFinal.png" className="right-image" />{" "}
         <img src="Vector.png" className="right-vector" />
       </div>
     </div>
