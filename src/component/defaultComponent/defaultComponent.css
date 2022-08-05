@@ -1,0 +1,3 @@
+.disableButton:disabled {
+  background-color: rgba(72, 49, 212, 0.4);
+}

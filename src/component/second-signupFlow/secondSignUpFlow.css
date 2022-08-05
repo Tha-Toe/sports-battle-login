@@ -1,0 +1,47 @@
+.second-signup-flow-container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+.logo {
+  width: 110px;
+  height: 81px;
+  margin-left: -10px;
+}
+.rightImageContainer {
+  width: 40%;
+  height: 100vh;
+  background-color: #202020;
+  position: relative;
+}
+.second-right-image {
+  width: 262px;
+  height: 540px;
+  object-fit: cover;
+  position: absolute;
+  right: 20%;
+  top: 10%;
+  z-index: 2;
+}
+.right-vector {
+  width: 389px;
+  height: 415px;
+  position: absolute;
+  right: 10%;
+  top: 20%;
+  z-index: 1;
+}
+@media (max-width: 600px) {
+  .rightImageContainer {
+    display: none;
+  }
+}
+@media (max-width: 500px) {
+  .second-logo-image {
+    width: 80px;
+  }
+}
