@@ -195,7 +195,7 @@ const EnterVerificationCode = () => {
         </Box>
       </Box>
       <div className="rightImageContainer">
-        <img src="RightPhoneFinal.png" className="second-right-image" />{" "}
+        <img src="RightPhoneFinal.png" className="right-image" />{" "}
         <img src="Vector.png" className="right-vector" />
       </div>
     </div>
