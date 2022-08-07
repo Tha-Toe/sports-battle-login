@@ -1,16 +1,7 @@
 import React from "react";
 import "./loginFlow.css";
 import Box from "@mui/material/Box";
-import {
-  Button,
-  FormControl,
-  Input,
-  InputAdornment,
-  Typography,
-} from "@mui/material";
-import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
-import VisibilityOffOutlinedIcon from "@mui/icons-material/VisibilityOffOutlined";
-import IconButton from "@mui/material/IconButton";
+import { Button, FormControl, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import GoogleIcon from "@mui/icons-material/Google";
 import AppleIcon from "@mui/icons-material/Apple";
