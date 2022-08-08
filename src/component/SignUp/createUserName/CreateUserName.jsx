@@ -60,7 +60,7 @@ const CreateUserName = () => {
             mr: { xxxs: "20px", sm: 0 },
           }}
         >
-          <Box component={"div"} sx={{ width: 1 }}>
+          <Box component={"div"} sx={{ width: 1, mb: "43px" }}>
             <img src="/sportsbattle.png" className="logo" />
           </Box>
           <FormControl
@@ -75,7 +75,7 @@ const CreateUserName = () => {
             <Typography
               sx={{
                 fontSize: { xs: "14px", xxxs: "12px" },
-                mb: "15px",
+                mb: "11px",
                 fontFamily: "Poppins",
               }}
             >

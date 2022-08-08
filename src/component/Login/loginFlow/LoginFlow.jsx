@@ -64,7 +64,7 @@ const LoginFlow = () => {
               alignItems: "flex-start",
             }}
           >
-            <Box component={"div"} sx={{ width: 1 }}>
+            <Box component={"div"} sx={{ width: 1, mb: "43px" }}>
               <img src="/sportsbattle.png" className="logo" />
             </Box>
           </Box>
@@ -87,7 +87,7 @@ const LoginFlow = () => {
               sx={{
                 fontSize: { md: "32px", sm: "25px", xxxs: "20px" },
                 fontWeight: "700",
-                mb: "15px",
+                mb: "11px",
                 fontFamily: "Poppins",
               }}
             >
@@ -219,7 +219,7 @@ const LoginFlow = () => {
                     color: "white",
                     fontSize: { xs: "18px", xxxs: "14px" },
                     fontWeight: 700,
-                    ml: 1,
+                    ml: "5px",
                     cursor: "pointer",
                     fontFamily: "Poppins",
                     textDecoration: "underline",

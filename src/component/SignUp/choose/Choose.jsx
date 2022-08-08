@@ -48,7 +48,7 @@ const Choose = () => {
               alignItems: "flex-start",
             }}
           >
-            <Box component={"div"} sx={{ width: 1 }}>
+            <Box component={"div"} sx={{ width: 1, mb: "43px" }}>
               <img src="/sportsbattle.png" className="logo" />
             </Box>
           </Box>
@@ -71,7 +71,7 @@ const Choose = () => {
               sx={{
                 fontSize: { md: "32px", sm: "25px", xxxs: "20px" },
                 fontWeight: "700",
-                mb: "15px",
+                mb: "11px",
                 fontFamily: "Poppins",
               }}
             >
@@ -202,7 +202,7 @@ const Choose = () => {
                     color: "white",
                     fontSize: { xxs: "16px", xxxs: "14px" },
                     fontWeight: "700",
-                    ml: { xs: 1, xxs: "5px" },
+                    ml: { xs: "5px", xxxs: "5px" },
                     cursor: "pointer",
                     fontFamily: "Poppins",
                     textDecoration: "underline",

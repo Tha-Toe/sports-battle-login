@@ -62,7 +62,7 @@ const CreatePassword = () => {
             width: { md: "408px", xxxs: "80%" },
           }}
         >
-          <Box component={"div"} sx={{ width: 1 }}>
+          <Box component={"div"} sx={{ width: 1, mb: "43px" }}>
             <img src="/sportsbattle.png" className="logo" />
           </Box>
           <FormControl
@@ -77,7 +77,7 @@ const CreatePassword = () => {
             <Typography
               sx={{
                 fontSize: { xs: "14px", xxxs: "12px" },
-                mb: "15px",
+                mb: "11px",
                 fontFamily: "Poppins",
               }}
             >

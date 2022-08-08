@@ -55,7 +55,7 @@ const EnterVerificationCodeSignup = () => {
             width: { md: "50%", xxxs: "80%" },
           }}
         >
-          <Box component={"div"} sx={{ width: 1, mb: "75px" }}>
+          <Box component={"div"} sx={{ width: 1, mb: "43px" }}>
             <img src="/sportsbattle.png" className="logo" />
           </Box>
 
@@ -77,7 +77,7 @@ const EnterVerificationCodeSignup = () => {
             <Typography
               sx={{
                 fontSize: { xs: "14px", xxxs: "12px" },
-                mb: "15px",
+                mb: "11px",
                 fontFamily: "Poppins",
               }}
             >

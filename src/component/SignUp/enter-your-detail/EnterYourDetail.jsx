@@ -63,7 +63,7 @@ const EnterYourDetail = () => {
             mr: { xs: "20px", sm: 0 },
           }}
         >
-          <Box component={"div"} sx={{ width: 1 }}>
+          <Box component={"div"} sx={{ width: 1, mb: "43px" }}>
             <img src="/sportsbattle.png" className="logo" />
           </Box>
           <FormControl
@@ -84,7 +84,7 @@ const EnterYourDetail = () => {
             <Typography
               sx={{
                 fontSize: { xs: "14px", xxxs: "12px" },
-                mb: "15px",
+                mb: "11px",
                 fontFamily: "Poppins",
               }}
             >
@@ -102,7 +102,7 @@ const EnterYourDetail = () => {
             </Typography>
             <Typography
               sx={{
-                fontSize: { xs: "14px", xxs: "12px", xxxs: "10px" },
+                fontSize: { xs: "14px", xxs: "11px", xxxs: "8px" },
                 mb: "25px",
                 fontFamily: "Poppins",
               }}
@@ -112,8 +112,9 @@ const EnterYourDetail = () => {
             <InputComponent placeholder={"Full Name"} setName={setName} />
             <Typography
               sx={{
-                fontSize: { xs: "14px", xxs: "12px", xxxs: "10px" },
+                fontSize: { xs: "14px", xxs: "11px", xxxs: "8px" },
                 mb: "22px",
+                mt: "-8px",
                 fontFamily: "Poppins",
               }}
             >
