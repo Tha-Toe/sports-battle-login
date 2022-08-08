@@ -83,6 +83,7 @@ const CheckMail = () => {
                 fontSize: { sm: "32px", xxxs: "20px" },
                 fontWeight: "700",
                 mb: "4px",
+                fontFamily: "Poppins",
               }}
             >
               Check Mail
@@ -115,11 +116,7 @@ const CheckMail = () => {
               }}
             >
               <BackButtonComponent text={"Back"} handleBack={handleBack} />
-              <ContinueButtonComponent
-                text={"Login Now"}
-                handleContinue={handleContinue}
-                disabled={false}
-              />
+              <ContinueButtonComponent text={"Login Now"} disabled={false} />
             </Box>
           </FormControl>
         </Box>

@@ -88,6 +88,7 @@ const EnterVerificationCodeSignup = () => {
                 fontSize: { sm: "32px", xxxs: "20px" },
                 fontWeight: "700",
                 mb: "4px",
+                fontFamily: "Poppins",
               }}
             >
               Enter Verification Code

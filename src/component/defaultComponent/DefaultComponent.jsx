@@ -47,12 +47,13 @@ export function ButtonComponent({ name, disabled, handleContinue }) {
           background: "#4831D4",
           color: "white",
           fontSize: { xs: "16px", xxs: "14px" },
-          fontWeight: "600",
+          fontWeight: "500",
           mb: 3,
           "&.MuiButtonBase-root:hover": {
             background: "#4831D4",
           },
           textTransform: "none",
+          fontFamily: "Poppins",
         }}
       >
         {name}
@@ -184,13 +185,14 @@ export function InputComponent({
         pl: 2,
         fontSize: { xs: "16px", xxxs: "14px" },
         mb: "16px",
+        fontWeight: 300,
+        fontFamily: "Poppins",
         "&.Mui-focused": {
           bgcolor: "black",
           borderColor: "#EBE6E6",
           border: 2,
           outline: 1,
         },
-        fontFamily: "Poppins",
       }}
       onChange={(e) => {
         setName && setName(e.target.value);
@@ -202,57 +204,7 @@ export function InputComponent({
     />
   );
 }
-export function SecondInputComponent({
-  placeholder,
-  setName,
-  setEmail,
-  setFirstName,
-  setSecondName,
-  setVerifyCode,
-}) {
-  return (
-    <Input
-      placeholder={placeholder}
-      type="text"
-      variant="outlined"
-      disableUnderline
-      color="secondary"
-      focused
-      sx={{
-        width: {
-          md: "408px",
-          sm: "390px",
-          xs: "408px",
-          xxs: "300px",
-          xxxs: "250px",
-        },
-        height: { xs: "64px", xxxs: "50px" },
-        border: 0,
-        background: "#272727",
-        borderRadius: "5px",
-        color: "white",
-        boxShadow: 3,
-        pl: 2,
-        fontSize: { xs: "16px", xxxs: "14px" },
-        mb: "16px",
-        "&.Mui-focused": {
-          bgcolor: "black",
-          borderColor: "#EBE6E6",
-          border: 2,
-          outline: 1,
-        },
-        fontFamily: "Poppins",
-      }}
-      onChange={(e) => {
-        setName && setName(e.target.value);
-        setEmail && setEmail(e.target.value);
-        setFirstName && setFirstName(e.target.value);
-        setSecondName && setSecondName(e.target.value);
-        setVerifyCode && setVerifyCode(e.target.value);
-      }}
-    />
-  );
-}
+
 export function PasswordInputComponent({
   placeholder,
   setShowPass,
@@ -301,8 +253,8 @@ export function PasswordInputComponent({
           },
           pl: 2,
           fontSize: { xs: "16px", xxxs: "14px" },
-          focused: "none",
           fontFamily: "Poppins",
+          fontWeight: 300,
         }}
         onChange={(e) => {
           setPassword && setPassword(e.target.value);

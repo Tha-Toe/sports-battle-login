@@ -12,6 +12,7 @@ import CreateUserName from "./component/SignUp/createUserName/CreateUserName";
 import EnterYourName from "./component/SignUp/enter-your-name/EnterYourName";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CheckMail from "./component/Forgot/checkMail/CheckMail";
+import { Logged } from "./component/Logged/Logged/Logged";
 
 function App() {
   const theme = createTheme({
@@ -55,6 +56,7 @@ function App() {
             <Route path="/newpassword" element={<NewPassword />} />
             <Route path="/createpassword" element={<CreatePassword />} />
             <Route path="/createusername" element={<CreateUserName />} />
+            <Route path="/logged" element={<Logged />} />
           </Routes>
         </BrowserRouter>
       </div>

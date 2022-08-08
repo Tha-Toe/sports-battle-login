@@ -8,7 +8,6 @@ import {
   ContinueButtonComponent,
   InputComponent,
   BackButtonComponent,
-  SecondInputComponent,
 } from "../../defaultComponent/DefaultComponent";
 
 const EnterYourDetail = () => {
@@ -96,6 +95,7 @@ const EnterYourDetail = () => {
                 fontSize: { sm: "32px", xxxs: "20px" },
                 fontWeight: "700",
                 mb: "4px",
+                fontFamily: "Poppins",
               }}
             >
               Enter Your Details
@@ -119,10 +119,7 @@ const EnterYourDetail = () => {
             >
               Enter your name as per your passport/ National ID's
             </Typography>
-            <SecondInputComponent
-              placeholder={"Email Address"}
-              setEmail={setEmail}
-            />
+            <InputComponent placeholder={"Email Address"} setEmail={setEmail} />
             <Box
               component="div"
               sx={{

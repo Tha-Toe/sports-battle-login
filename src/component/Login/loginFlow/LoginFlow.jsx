@@ -88,6 +88,7 @@ const LoginFlow = () => {
                 fontSize: { md: "32px", sm: "25px", xxxs: "20px" },
                 fontWeight: "700",
                 mb: "15px",
+                fontFamily: "Poppins",
               }}
             >
               Login to Your Account
@@ -180,9 +181,15 @@ const LoginFlow = () => {
                 fontSize: { xs: "14px", xxxs: "12px" },
                 mb: 1,
                 fontFamily: "Poppins",
+                fontWieght: 300,
               }}
             >
-              Forgot Password?
+              <Link
+                to="/forgotpassword"
+                style={{ textDecoration: "none", color: "white" }}
+              >
+                Forgot Password?
+              </Link>
             </Typography>
             <ButtonComponent
               name={"Login to Your Account"}

@@ -89,9 +89,10 @@ const NewPassword = () => {
           >
             <Typography
               sx={{
-                fontSize: { xs: "32px", xxxs: "18px" },
+                fontSize: { xs: "28px", xxxs: "18px" },
                 fontWeight: "700",
                 mb: "4px",
+                fontFamily: "Poppins",
               }}
             >
               Create your new password

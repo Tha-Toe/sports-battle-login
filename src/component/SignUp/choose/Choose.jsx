@@ -72,6 +72,7 @@ const Choose = () => {
                 fontSize: { md: "32px", sm: "25px", xxxs: "20px" },
                 fontWeight: "700",
                 mb: "15px",
+                fontFamily: "Poppins",
               }}
             >
               Choose your method

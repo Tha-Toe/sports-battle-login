@@ -86,6 +86,7 @@ const CreateUserName = () => {
                 fontSize: { sm: "32px", xxxs: "20px" },
                 fontWeight: "700",
                 mb: "4px",
+                fontFamily: "Poppins",
               }}
             >
               Create your username
