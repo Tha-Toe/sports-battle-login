@@ -60,7 +60,7 @@ const CheckMail = () => {
             mr: { xxxs: "20px", sm: 0 },
           }}
         >
-          <Box component={"div"} sx={{ width: 1, mb: "75px" }}>
+          <Box component={"div"} sx={{ width: 1, mb: "43px" }}>
             <img src="/sportsbattle.png" className="logo" />
           </Box>
           <FormControl
@@ -91,7 +91,7 @@ const CheckMail = () => {
             <Typography
               sx={{
                 fontSize: { xs: "14px", xxs: "12px", xxxs: "10px" },
-                mb: "21px",
+                mb: "11px",
                 fontFamily: "Poppins",
               }}
             >

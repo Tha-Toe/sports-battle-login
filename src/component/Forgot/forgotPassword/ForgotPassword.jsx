@@ -67,7 +67,7 @@ const ForgotPassword = () => {
               alignItems: "flex-start",
             }}
           >
-            <Box component={"div"} sx={{ width: 1 }}>
+            <Box component={"div"} sx={{ width: 1, mb: "43px" }}>
               <img src="/sportsbattle.png" className="logo" />
             </Box>
           </Box>
@@ -90,7 +90,7 @@ const ForgotPassword = () => {
               sx={{
                 fontSize: { md: "32px", sm: "25px", xxxs: "20px" },
                 fontWeight: "700",
-                mb: "15px",
+                mb: "11px",
                 fontFamily: "Poppins",
               }}
             >
