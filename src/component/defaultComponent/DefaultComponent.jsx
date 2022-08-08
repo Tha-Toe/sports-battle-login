@@ -135,13 +135,13 @@ export function BackButtonComponent({ text, handleBack }) {
           xxxs: "81px",
         },
         height: { xs: "64px", xxxs: "50px" },
-        background: "#525252",
+        background: "#494949",
         color: "white",
         fontSize: { xs: "16px", xxxs: "12px" },
         fontWeight: "700",
         mb: 3,
         "&.MuiButtonBase-root:hover": {
-          bgcolor: "#525252",
+          bgcolor: "#494949",
         },
         textTransform: "none",
         borderRadius: "8px",
@@ -177,8 +177,8 @@ export function InputComponent({
           xxxs: "250px",
         },
         height: { xs: "64px", xxxs: "50px" },
-        border: 0,
-        background: "#272727",
+        border: "1px solid #2c2c2c",
+        background: "#222222",
         borderRadius: "5px",
         color: "white",
         boxShadow: 3,
@@ -189,8 +189,7 @@ export function InputComponent({
         fontFamily: "Poppins",
         "&.Mui-focused": {
           bgcolor: "black",
-          borderColor: "#EBE6E6",
-          border: 2,
+          border: "1px solid #2C2C2C",
           outline: 1,
         },
       }}
@@ -238,17 +237,15 @@ export function PasswordInputComponent({
         sx={{
           width: 1,
           height: 1,
-          border: 0,
           outline: 0,
-          borderColor: "#525252",
-          background: "#272727",
+          border: "1px solid #2c2c2c",
+          background: "#222222",
           borderRadius: "5px",
           color: "white",
           boxShadow: 3,
           "&.Mui-focused": {
-            bgcolor: "black",
-            borderColor: "#EBE6E6",
-            border: 2,
+            background: "black",
+            border: "1px solid #2c2c2c",
             outline: 1,
           },
           pl: 2,
@@ -293,7 +290,56 @@ export function PasswordInputComponent({
     </Box>
   );
 }
-export function SecondPasswordInputComponent({
+export function InputComponentLogin({
+  placeholder,
+  setName,
+  setEmail,
+  setFirstName,
+  setSecondName,
+  setVerifyCode,
+}) {
+  return (
+    <Input
+      placeholder={placeholder}
+      type="text"
+      variant="filled"
+      disableUnderline
+      sx={{
+        width: {
+          md: "408px",
+          sm: "390px",
+          xs: "408px",
+          xxs: "300px",
+          xxxs: "250px",
+        },
+        height: { xs: "64px", xxxs: "50px" },
+        border: "1px solid #2c2c2c",
+        background: "#222222",
+        borderRadius: "5px",
+        color: "white",
+        boxShadow: 3,
+        pl: 2,
+        fontSize: { xs: "16px", xxxs: "14px" },
+        mb: "16px",
+        fontWeight: 300,
+        fontFamily: "Poppins",
+        "&.Mui-focused": {
+          bgcolor: "black",
+          border: "1px solid #EBE6E6",
+          outline: 1,
+        },
+      }}
+      onChange={(e) => {
+        setName && setName(e.target.value);
+        setEmail && setEmail(e.target.value);
+        setFirstName && setFirstName(e.target.value);
+        setSecondName && setSecondName(e.target.value);
+        setVerifyCode && setVerifyCode(e.target.value);
+      }}
+    />
+  );
+}
+export function PasswordInputComponentLogin({
   placeholder,
   setShowPass,
   showPass,
@@ -326,23 +372,21 @@ export function SecondPasswordInputComponent({
         sx={{
           width: 1,
           height: 1,
-          border: 0,
           outline: 0,
-          borderColor: "#525252",
-          background: "#272727",
+          border: "1px solid #2c2c2c",
+          background: "#222222",
           borderRadius: "5px",
           color: "white",
           boxShadow: 3,
           "&.Mui-focused": {
             bgcolor: "black",
-            borderColor: "#EBE6E6",
-            border: 2,
+            border: "1px solid #EBE6E6",
             outline: 1,
           },
           pl: 2,
           fontSize: { xs: "16px", xxxs: "14px" },
-          focused: "none",
           fontFamily: "Poppins",
+          fontWeight: 300,
         }}
         onChange={(e) => {
           setPassword && setPassword(e.target.value);

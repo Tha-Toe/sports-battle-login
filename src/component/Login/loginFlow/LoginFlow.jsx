@@ -9,8 +9,8 @@ import { useState } from "react";
 import { useEffect } from "react";
 import {
   ButtonComponent,
-  InputComponent,
-  PasswordInputComponent,
+  InputComponentLogin,
+  PasswordInputComponentLogin,
 } from "../../defaultComponent/DefaultComponent";
 const LoginFlow = () => {
   const [showPass, setShowPass] = useState(false);
@@ -159,9 +159,9 @@ const LoginFlow = () => {
                 Login with Apple
               </Button>
             </Box>
-            <InputComponent placeholder={"User Name"} setName={setName} />
+            <InputComponentLogin placeholder={"User Name"} setName={setName} />
 
-            <PasswordInputComponent
+            <PasswordInputComponentLogin
               placeholder={"Password"}
               showPass={showPass}
               setPassword={setPassword}

@@ -121,6 +121,7 @@ const EnterVerificationCodeSignup = () => {
                 flexDirection: "row",
                 justifyContent: "space-between",
                 alignItems: "center",
+                position: "relative",
               }}
             >
               <Input
@@ -129,17 +130,16 @@ const EnterVerificationCodeSignup = () => {
                 variant="outlined"
                 disableUnderline
                 sx={{
-                  width: "70%",
+                  width: "100%",
                   height: "100%",
                   border: 0,
                   background: "#272727",
                   color: "white",
                   pl: 2,
                   fontSize: "16px",
-                  "&.MuiButtonBase-root:focus": {
+                  "&.Mui-focused": {
                     bgcolor: "black",
-                    borderColor: "white",
-                    border: 2,
+                    border: "1px solid #2C2C2C",
                     outline: 1,
                   },
                   fontFamily: "Poppins",
@@ -157,14 +157,16 @@ const EnterVerificationCodeSignup = () => {
                     flexDirection: "row",
                     justifyContent: "center",
                     alignItems: "center",
+                    position: "absolute",
+                    right: "10px",
                   }}
                 >
                   <Typography
-                    sx={{ color: "red", fontSize: "14px", mr: "5px" }}
+                    sx={{ color: "#E4313C", fontSize: "14px", mr: "5px" }}
                   >
                     Invalid Code
                   </Typography>
-                  <ClearIcon sx={{ color: "red", fontSize: "25px" }} />
+                  <ClearIcon sx={{ color: "#E4313C", fontSize: "25px" }} />
                 </Box>
               )}
             </Box>
