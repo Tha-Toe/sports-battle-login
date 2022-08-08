@@ -1,22 +1,15 @@
 import React from "react";
 import "./enterYourDetail.css";
 import Box from "@mui/material/Box";
-import {
-  Button,
-  FormControl,
-  Input,
-  InputAdornment,
-  Typography,
-} from "@mui/material";
-import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
-import IconButton from "@mui/material/IconButton";
-import { Link, useNavigate } from "react-router-dom";
+import { FormControl, Typography } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import {
   ContinueButtonComponent,
   InputComponent,
   BackButtonComponent,
-} from "../defaultComponent/DefaultComponent";
+  SecondInputComponent,
+} from "../../defaultComponent/DefaultComponent";
 
 const EnterYourDetail = () => {
   const [email, setEmail] = useState(null);
@@ -28,7 +21,7 @@ const EnterYourDetail = () => {
   };
 
   const handleContinue = () => {
-    navigate("/enteryourname", { replace: true });
+    navigate("/signupverification", { replace: true });
   };
 
   const [disableButton, setDisableButton] = useState(false);
@@ -126,7 +119,10 @@ const EnterYourDetail = () => {
             >
               Enter your name as per your passport/ National ID's
             </Typography>
-            <InputComponent placeholder={"Email Address"} setEmail={setEmail} />
+            <SecondInputComponent
+              placeholder={"Email Address"}
+              setEmail={setEmail}
+            />
             <Box
               component="div"
               sx={{

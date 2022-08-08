@@ -1,17 +1,17 @@
 import { Box, Button, Container } from "@mui/material";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
-import Choose from "./component/choose/Choose";
-import EnterVerificationCode from "./component/enter-verification-code/EnterVerificationCode";
-import EnterYourDetail from "./component/enter-your-detail/EnterYourDetail";
-import LoginFlow from "./component/loginFlow/LoginFlow";
-import EnterVerificationCodeSignup from "./component/enter-verification-signup/EnterVerificationCodeSignup";
-import ForgotPassword from "./component/forgotPassword/ForgotPassword";
-import NewPassword from "./component/newPassword/NewPassword";
-import CreatePassword from "./component/createPassword/CreatePassword";
-import CreateUserName from "./component/createUserName/CreateUserName";
-import EnterYourName from "./component/enter-your-name/EnterYourName";
+import Choose from "./component/SignUp/choose/Choose";
+import EnterYourDetail from "./component/SignUp/enter-your-detail/EnterYourDetail";
+import LoginFlow from "./component/Login/loginFlow/LoginFlow";
+import EnterVerificationCodeSignup from "./component/SignUp/enter-verification-signup/EnterVerificationCodeSignup";
+import ForgotPassword from "./component/Forgot/forgotPassword/ForgotPassword";
+import NewPassword from "./component/Forgot/newPassword/NewPassword";
+import CreatePassword from "./component/SignUp/createPassword/CreatePassword";
+import CreateUserName from "./component/SignUp/createUserName/CreateUserName";
+import EnterYourName from "./component/SignUp/enter-your-name/EnterYourName";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
+import CheckMail from "./component/Forgot/checkMail/CheckMail";
 
 function App() {
   const theme = createTheme({
@@ -46,7 +46,7 @@ function App() {
             <Route path="/choose" element={<Choose />} />
             <Route path="/enteryourdetail" element={<EnterYourDetail />} />
             <Route path="/enteryourname" element={<EnterYourName />} />
-            <Route path="/verification" element={<EnterVerificationCode />} />
+            <Route path="/checkmail" element={<CheckMail />} />
             <Route
               path="/signupverification"
               element={<EnterVerificationCodeSignup />}

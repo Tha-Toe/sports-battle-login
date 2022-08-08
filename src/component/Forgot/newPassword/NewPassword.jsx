@@ -1,24 +1,15 @@
 import React from "react";
 import "./newPassword.css";
 import Box from "@mui/material/Box";
-import {
-  Button,
-  FormControl,
-  Input,
-  InputAdornment,
-  Typography,
-} from "@mui/material";
-import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
-import IconButton from "@mui/material/IconButton";
-import { Link, useNavigate } from "react-router-dom";
+import { FormControl, Typography } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import {
   ContinueButtonComponent,
   InputComponent,
   BackButtonComponent,
   PasswordInputComponent,
-} from "../defaultComponent/DefaultComponent";
-import CheckIcon from "@mui/icons-material/Check";
+} from "../../defaultComponent/DefaultComponent";
 
 const NewPassword = () => {
   const [enterPassword, setEnterPassword] = useState(null);
@@ -28,7 +19,7 @@ const NewPassword = () => {
   let navigate = useNavigate();
 
   const handleBack = () => {
-    navigate("/verification", { replace: true });
+    navigate("/checkmail", { replace: true });
   };
 
   const handleContinue = () => {
@@ -152,9 +143,8 @@ const NewPassword = () => {
           </FormControl>
         </Box>
       </Box>
-      <div className="rightImageContainer">
-        <img src="RightPhoneFinal.png" className="right-image" />{" "}
-        <img src="Vector.png" className="right-vector" />
+      <div className="rightImageContainer-sp">
+        <img src="Security-pana-1.png" className="right-image-sp" />
       </div>
     </div>
   );

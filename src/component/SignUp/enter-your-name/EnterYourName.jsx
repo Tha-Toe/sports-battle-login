@@ -1,46 +1,36 @@
 import React from "react";
-import "./enterVerificationCodeSignup.css";
+import "./enterYourName.css";
 import Box from "@mui/material/Box";
-import {
-  Button,
-  FormControl,
-  Input,
-  InputAdornment,
-  Typography,
-} from "@mui/material";
-import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
-import IconButton from "@mui/material/IconButton";
+import { FormControl, Typography } from "@mui/material";
 import CheckIcon from "@mui/icons-material/Check";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import {
   InputComponent,
   BackButtonComponent,
   ContinueButtonComponent,
-} from "../defaultComponent/DefaultComponent";
-import ClearIcon from "@mui/icons-material/Clear";
-const EnterVerificationCodeSignup = () => {
-  const [verifyCode, setVerifyCode] = useState(null);
+} from "../../defaultComponent/DefaultComponent";
+const EnterYourName = () => {
+  const [firstName, setFirstName] = useState(null);
+  const [secondName, setSecondName] = useState(null);
   let navigate = useNavigate();
   const handleBack = () => {
-    navigate("/enteryourdetail", { replace: true });
+    navigate("/signupverification", { replace: true });
   };
 
   const handleContinue = () => {
-    navigate("/fullName", { replace: true });
+    navigate("/createusername", { replace: true });
   };
 
   const [disableButton, setDisableButton] = useState(false);
 
   useEffect(() => {
-    if (verifyCode) {
+    if (firstName && secondName) {
       setDisableButton(false);
     } else {
       setDisableButton(true);
     }
-  }, [verifyCode]);
-
-  const [invalidCode, setInvalidCode] = useState(false);
+  }, [firstName, secondName]);
   return (
     <div className="second-signup-flow-container">
       <Box
@@ -62,21 +52,15 @@ const EnterVerificationCodeSignup = () => {
             justifyContent: "center",
             alignItems: "center",
             width: { md: "50%", xxxs: "80%" },
+            mr: { xs: "20px", sm: 0 },
           }}
         >
-          <Box component={"div"} sx={{ width: 1, mb: "75px" }}>
+          <Box component={"div"} sx={{ width: 1 }}>
             <img src="/sportsbattle.png" className="logo" />
           </Box>
-
           <FormControl
             sx={{
-              width: {
-                md: "408px",
-                sm: "390px",
-                xs: "408px",
-                xxs: "300px",
-                xxxs: "250px",
-              },
+              width: 1,
               display: "flex",
               flexDirection: "column",
               alignItems: "flex-start",
@@ -86,11 +70,11 @@ const EnterVerificationCodeSignup = () => {
             <Typography
               sx={{
                 fontSize: { xs: "14px", xxxs: "12px" },
-                mb: "15px",
+                mb: "11px",
                 fontFamily: "Poppins",
               }}
             >
-              STEP 1 OF 3
+              STEP 2 OF 4
             </Typography>
             <Typography
               sx={{
@@ -99,83 +83,26 @@ const EnterVerificationCodeSignup = () => {
                 mb: "4px",
               }}
             >
-              Enter Verification Code
+              Enter Your Name
             </Typography>
             <Typography
               sx={{
                 fontSize: { xs: "14px", xxs: "12px", xxxs: "10px" },
-                mb: "21px",
+                mb: "25px",
                 fontFamily: "Poppins",
               }}
             >
-              You would receive a verificaton code to your mail, Kindly enter
-              the code, If you are unsure about it, Click here to update
+              Use your name as per your drivers license
             </Typography>
-            <Box
-              component={"div"}
-              sx={{
-                mb: "16px",
-                width: {
-                  md: "408px",
-                  sm: "390px",
-                  xs: "408px",
-                  xxs: "300px",
-                  xxxs: "250px",
-                },
-                height: { xs: "64px", xxxs: "50px" },
-                background: "#272727",
-                borderRadius: "5px",
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "space-between",
-                alignItems: "center",
-              }}
-            >
-              <Input
-                placeholder="Verification code"
-                type="text"
-                variant="outlined"
-                disableUnderline
-                sx={{
-                  width: "70%",
-                  height: "100%",
-                  border: 0,
-                  background: "#272727",
-                  color: "white",
-                  pl: 2,
-                  fontSize: "16px",
-                  "&.MuiButtonBase-root:focus": {
-                    bgcolor: "black",
-                    borderColor: "white",
-                    border: 2,
-                    outline: 1,
-                  },
-                  fontFamily: "Poppins",
-                  borderRadius: "5px",
-                }}
-                onChange={(e) => {
-                  setVerifyCode && setVerifyCode(e.target.value);
-                }}
-              />
-              {invalidCode && (
-                <Box
-                  component={"div"}
-                  sx={{
-                    display: "flex",
-                    flexDirection: "row",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
-                  <Typography
-                    sx={{ color: "red", fontSize: "14px", mr: "5px" }}
-                  >
-                    Invalid Code
-                  </Typography>
-                  <ClearIcon sx={{ color: "red", fontSize: "25px" }} />
-                </Box>
-              )}
-            </Box>
+
+            <InputComponent
+              placeholder={"First Name"}
+              setFirstName={setFirstName}
+            />
+            <InputComponent
+              placeholder={"Second Name"}
+              setSecondName={setSecondName}
+            />
             <Box
               component="div"
               sx={{
@@ -189,15 +116,15 @@ const EnterVerificationCodeSignup = () => {
                 display: "flex",
                 justifyContent: "space-between",
                 alignItems: "center",
-                mt: "5px",
+                mt: "7px",
               }}
             >
               <BackButtonComponent text={"Back"} handleBack={handleBack} />
               <ContinueButtonComponent
-                text={disableButton ? "Continue" : "Verify"}
+                text={"Continue"}
                 handleContinue={handleContinue}
-                rightArrow={true}
                 disabled={disableButton}
+                rightArrow={true}
               />
             </Box>
           </FormControl>
@@ -214,16 +141,38 @@ const EnterVerificationCodeSignup = () => {
               xxs: "15px",
               xxxs: "15px",
             },
-            height: "242px",
+            height: "322px",
             borderRightColor: "white",
             borderRight: 2,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "space-between",
-            top: "35%",
+            top: "15%",
           }}
         >
+          <Box
+            sx={{
+              width: { md: "30px", xs: "20px" },
+              height: { md: "30px", xs: "20px" },
+              position: "relative",
+              right: "-50%",
+              border: 2,
+              borderRadius: "50%",
+              borderColor: "#4831D4",
+              background: "#4831D4",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <CheckIcon
+              sx={{
+                fontSize: { md: "20px", sm: "20px" },
+                color: "white",
+              }}
+            />
+          </Box>
           <Box
             sx={{
               width: { md: "30px", xxxs: "20px" },
@@ -308,4 +257,4 @@ const EnterVerificationCodeSignup = () => {
     </div>
   );
 };
-export default EnterVerificationCodeSignup;
+export default EnterYourName;

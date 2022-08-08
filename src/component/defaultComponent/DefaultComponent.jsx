@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Input, Box } from "@mui/material";
+import { Button, Input, Box, TextField } from "@mui/material";
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 import VisibilityOffOutlinedIcon from "@mui/icons-material/VisibilityOffOutlined";
 
@@ -165,7 +165,7 @@ export function InputComponent({
     <Input
       placeholder={placeholder}
       type="text"
-      variant="outlined"
+      variant="filled"
       disableUnderline
       sx={{
         width: {
@@ -177,7 +177,6 @@ export function InputComponent({
         },
         height: { xs: "64px", xxxs: "50px" },
         border: 0,
-        borderColor: "#525252",
         background: "#272727",
         borderRadius: "5px",
         color: "white",
@@ -185,9 +184,9 @@ export function InputComponent({
         pl: 2,
         fontSize: { xs: "16px", xxxs: "14px" },
         mb: "16px",
-        "&.MuiButtonBase-root:focus": {
+        "&.Mui-focused": {
           bgcolor: "black",
-          borderColor: "white",
+          borderColor: "#EBE6E6",
           border: 2,
           outline: 1,
         },
@@ -203,7 +202,57 @@ export function InputComponent({
     />
   );
 }
-
+export function SecondInputComponent({
+  placeholder,
+  setName,
+  setEmail,
+  setFirstName,
+  setSecondName,
+  setVerifyCode,
+}) {
+  return (
+    <Input
+      placeholder={placeholder}
+      type="text"
+      variant="outlined"
+      disableUnderline
+      color="secondary"
+      focused
+      sx={{
+        width: {
+          md: "408px",
+          sm: "390px",
+          xs: "408px",
+          xxs: "300px",
+          xxxs: "250px",
+        },
+        height: { xs: "64px", xxxs: "50px" },
+        border: 0,
+        background: "#272727",
+        borderRadius: "5px",
+        color: "white",
+        boxShadow: 3,
+        pl: 2,
+        fontSize: { xs: "16px", xxxs: "14px" },
+        mb: "16px",
+        "&.Mui-focused": {
+          bgcolor: "black",
+          borderColor: "#EBE6E6",
+          border: 2,
+          outline: 1,
+        },
+        fontFamily: "Poppins",
+      }}
+      onChange={(e) => {
+        setName && setName(e.target.value);
+        setEmail && setEmail(e.target.value);
+        setFirstName && setFirstName(e.target.value);
+        setSecondName && setSecondName(e.target.value);
+        setVerifyCode && setVerifyCode(e.target.value);
+      }}
+    />
+  );
+}
 export function PasswordInputComponent({
   placeholder,
   setShowPass,
@@ -223,6 +272,7 @@ export function PasswordInputComponent({
           xxs: "300px",
           xxxs: "250px",
         },
+
         height: { xs: "64px", xxxs: "50px" },
         mb: 2,
       }}
@@ -243,6 +293,100 @@ export function PasswordInputComponent({
           borderRadius: "5px",
           color: "white",
           boxShadow: 3,
+          "&.Mui-focused": {
+            bgcolor: "black",
+            borderColor: "#EBE6E6",
+            border: 2,
+            outline: 1,
+          },
+          pl: 2,
+          fontSize: { xs: "16px", xxxs: "14px" },
+          focused: "none",
+          fontFamily: "Poppins",
+        }}
+        onChange={(e) => {
+          setPassword && setPassword(e.target.value);
+          setReEnterPassword && setReEnterPassword(e.target.value);
+          setEnterPassword && setEnterPassword(e.target.value);
+        }}
+      />
+      {showPass ? (
+        <VisibilityOutlinedIcon
+          sx={{
+            color: "white",
+            position: "absolute",
+            top: { sm: "25px", xs: "18px", xxxs: "14px" },
+            right: "10px",
+            cursor: "pointer",
+          }}
+          onClick={() => {
+            setShowPass(false);
+          }}
+        />
+      ) : (
+        <VisibilityOffOutlinedIcon
+          sx={{
+            color: "white",
+            position: "absolute",
+            top: { sm: "25px", xs: "20px", xxxs: "16px" },
+            right: "10px",
+            cursor: "pointer",
+            fontSize: { xs: "23px", xxxs: "18px" },
+          }}
+          onClick={() => {
+            setShowPass(true);
+          }}
+        />
+      )}
+    </Box>
+  );
+}
+export function SecondPasswordInputComponent({
+  placeholder,
+  setShowPass,
+  showPass,
+  setPassword,
+  setEnterPassword,
+  setReEnterPassword,
+}) {
+  return (
+    <Box
+      sx={{
+        position: "relative",
+        width: {
+          md: "408px",
+          sm: "390px",
+          xs: "408px",
+          xxs: "300px",
+          xxxs: "250px",
+        },
+
+        height: { xs: "64px", xxxs: "50px" },
+        mb: 2,
+      }}
+      component="div"
+    >
+      <Input
+        placeholder={placeholder}
+        type={showPass ? "text" : "password"}
+        variant="outlined"
+        disableUnderline
+        sx={{
+          width: 1,
+          height: 1,
+          border: 0,
+          outline: 0,
+          borderColor: "#525252",
+          background: "#272727",
+          borderRadius: "5px",
+          color: "white",
+          boxShadow: 3,
+          "&.Mui-focused": {
+            bgcolor: "black",
+            borderColor: "#EBE6E6",
+            border: 2,
+            outline: 1,
+          },
           pl: 2,
           fontSize: { xs: "16px", xxxs: "14px" },
           focused: "none",

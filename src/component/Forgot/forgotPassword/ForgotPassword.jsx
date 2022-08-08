@@ -1,26 +1,16 @@
 import React from "react";
 import "./forgotPassword.css";
 import Box from "@mui/material/Box";
-import {
-  Button,
-  FormControl,
-  Input,
-  InputAdornment,
-  Typography,
-} from "@mui/material";
-import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
-import VisibilityOffOutlinedIcon from "@mui/icons-material/VisibilityOffOutlined";
-import IconButton from "@mui/material/IconButton";
+import { FormControl, Typography } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
-import GoogleIcon from "@mui/icons-material/Google";
-import AppleIcon from "@mui/icons-material/Apple";
 import { useState, useRef } from "react";
 import { useEffect } from "react";
 import {
   ButtonComponent,
   InputComponent,
-  PasswordInputComponent,
-} from "../defaultComponent/DefaultComponent";
+} from "../../defaultComponent/DefaultComponent";
+import ClearIcon from "@mui/icons-material/Clear";
+
 const ForgotPassword = () => {
   const [email, setEmail] = useState(null);
   const [disableButton, setDisableButton] = useState(false);
@@ -28,15 +18,18 @@ const ForgotPassword = () => {
   useEffect(() => {
     if (email) {
       setDisableButton(false);
+      setMatchAccount(false);
     } else {
       setDisableButton(true);
+      setMatchAccount(true);
     }
   }, [email]);
   const navigate = useNavigate();
   const handleContinue = () => {
-    navigate("/verification", { replace: true });
+    navigate("/checkmail", { replace: true });
   };
 
+  const [matchAccount, setMatchAccount] = useState(true);
   return (
     <div className="login-flow-container">
       <Box
@@ -112,9 +105,36 @@ const ForgotPassword = () => {
               We’ll send a verification code to your mail id if registered
             </Typography>
             <InputComponent placeholder={"Email Address"} setEmail={setEmail} />
-
+            {!matchAccount && (
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "flex-start",
+                  alignItems: "center",
+                  mb: "20px",
+                }}
+              >
+                <ClearIcon
+                  sx={{
+                    color: "rgba(228, 49, 60, 1)",
+                    fontSize: { xs: "28px", xxs: "25px", xxxs: "20px" },
+                  }}
+                />
+                <Typography
+                  sx={{
+                    color: "rgba(228, 49, 60, 1)",
+                    fontSize: { xs: "14px", xxs: "10px", xxxs: "8px" },
+                    ml: { xs: "10px", xxs: "5px" },
+                    fontFamily: "Poppins",
+                    fontWeight: 700,
+                  }}
+                >
+                  The given email is not assocaited with any account
+                </Typography>
+              </Box>
+            )}
             <ButtonComponent
-              name={"Send Code"}
+              name={"Submit"}
               disabled={disableButton}
               handleContinue={handleContinue}
             />
@@ -156,9 +176,9 @@ const ForgotPassword = () => {
           </FormControl>
         </Box>
       </Box>
-      <div className="rightImageContainer">
-        <img src="RightPhoneFinal.png" className="right-image" />{" "}
-        <img src="Vector.png" className="right-vector" />
+
+      <div className="rightImageContainer-rpp">
+        <img src="Reset-password-pana-1.png" className="right-image-rpp" />
       </div>
     </div>
   );

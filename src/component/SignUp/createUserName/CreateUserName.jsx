@@ -1,53 +1,41 @@
 import React from "react";
-import "./createPassword.css";
+import "./createUserName.css";
 import Box from "@mui/material/Box";
-import {
-  Button,
-  FormControl,
-  Input,
-  InputAdornment,
-  Typography,
-} from "@mui/material";
-import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
-import IconButton from "@mui/material/IconButton";
-import { Link, useNavigate } from "react-router-dom";
+import { FormControl, Typography } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import {
   ContinueButtonComponent,
   InputComponent,
   BackButtonComponent,
-  PasswordInputComponent,
-} from "../defaultComponent/DefaultComponent";
+} from "../../defaultComponent/DefaultComponent";
 import CheckIcon from "@mui/icons-material/Check";
+import ClearIcon from "@mui/icons-material/Clear";
 
-const CreatePassword = () => {
-  const [enterPassword, setEnterPassword] = useState(null);
-  const [reEnterPassword, setReEnterPassword] = useState(null);
-  const [showPass, setShowPass] = useState(false);
+const CreateUserName = () => {
+  const [name, setName] = useState(null);
 
   let navigate = useNavigate();
 
   const handleBack = () => {
-    navigate("/choose", { replace: true });
+    navigate("/signupverification", { replace: true });
   };
 
   const handleContinue = () => {
-    navigate("/forgotpassword", { replace: true });
+    navigate("/createpassword", { replace: true });
   };
 
   const [disableButton, setDisableButton] = useState(false);
 
   useEffect(() => {
-    if (enterPassword && reEnterPassword) {
-      if (enterPassword === reEnterPassword) {
-        setDisableButton(false);
-      } else {
-        setDisableButton(true);
-      }
+    if (name) {
+      setDisableButton(false);
     } else {
       setDisableButton(true);
     }
-  }, [enterPassword, reEnterPassword]);
+  }, [name]);
+
+  const [validCode, setValidCode] = useState(true);
   return (
     <div className="first-signup-flow-container">
       <Box
@@ -68,7 +56,8 @@ const CreatePassword = () => {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            width: { md: "408px", xxxs: "80%" },
+            width: { md: "408px", xs: "80%" },
+            mr: { xxxs: "20px", sm: 0 },
           }}
         >
           <Box component={"div"} sx={{ width: 1 }}>
@@ -90,7 +79,7 @@ const CreatePassword = () => {
                 fontFamily: "Poppins",
               }}
             >
-              STEP 3 OF 3
+              STEP 2 OF 3
             </Typography>
             <Typography
               sx={{
@@ -99,7 +88,7 @@ const CreatePassword = () => {
                 mb: "4px",
               }}
             >
-              Create your password
+              Create your username
             </Typography>
             <Typography
               sx={{
@@ -108,20 +97,50 @@ const CreatePassword = () => {
                 fontFamily: "Poppins",
               }}
             >
-              You'll use this log into your account.
+              Enter your unique user name
             </Typography>
-            <PasswordInputComponent
-              placeholder={"Enter your new password"}
-              showPass={showPass}
-              setEnterPassword={setEnterPassword}
-              setShowPass={setShowPass}
-            />
-            <PasswordInputComponent
-              placeholder={"Re-enter your new password"}
-              showPass={showPass}
-              setReEnterPassword={setReEnterPassword}
-              setShowPass={setShowPass}
-            />
+            <InputComponent placeholder={"User Name"} setName={setName} />
+            <Box
+              component={"div"}
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "center",
+                alignItems: "center",
+                mb: "34px",
+              }}
+            >
+              {name && (
+                <>
+                  {validCode ? (
+                    <CheckIcon sx={{ color: "green", fontSize: "25px" }} />
+                  ) : (
+                    <ClearIcon sx={{ color: "red", fontSize: "25px" }} />
+                  )}
+                  <Typography
+                    sx={
+                      validCode
+                        ? {
+                            color: "green",
+                            fontSize: "14px",
+                            ml: "16px",
+                            fontFamily: "Poppins",
+                            fontWeight: 700,
+                          }
+                        : {
+                            color: "red",
+                            fontSize: "14px",
+                            ml: "16px",
+                            fontFamily: "Poppins",
+                            fontWeight: 700,
+                          }
+                    }
+                  >
+                    {validCode ? "User name available" : "Invalid code"}
+                  </Typography>
+                </>
+              )}
+            </Box>
             <Box
               component="div"
               sx={{
@@ -139,10 +158,10 @@ const CreatePassword = () => {
             >
               <BackButtonComponent text={"Back"} handleBack={handleBack} />
               <ContinueButtonComponent
-                text={"Complete Sign Up"}
+                text={"Continue"}
                 handleContinue={handleContinue}
                 disabled={disableButton}
-                checkIcon={true}
+                rightArrow={true}
               />
             </Box>
           </FormControl>
@@ -159,7 +178,7 @@ const CreatePassword = () => {
               xxs: "15px",
               xxxs: "15px",
             },
-            height: "242px",
+            height: "262px",
             borderRightColor: "white",
             borderRight: 2,
             display: "flex",
@@ -169,28 +188,6 @@ const CreatePassword = () => {
             top: "15%",
           }}
         >
-          <Box
-            sx={{
-              width: { md: "30px", xs: "20px" },
-              height: { md: "30px", xs: "20px" },
-              position: "relative",
-              right: "-50%",
-              border: 2,
-              borderRadius: "50%",
-              borderColor: "#4831D4",
-              background: "#4831D4",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <CheckIcon
-              sx={{
-                fontSize: { md: "20px", sm: "20px" },
-                color: "white",
-              }}
-            />
-          </Box>
           <Box
             sx={{
               width: { md: "30px", xs: "20px" },
@@ -238,6 +235,31 @@ const CreatePassword = () => {
               }}
             ></Box>
           </Box>
+          <Box
+            sx={{
+              width: { md: "30px", xxxs: "20px" },
+              height: { md: "30px", xxxs: "20px" },
+              position: "relative",
+              right: "-50%",
+              border: 2,
+              borderRadius: "50%",
+              borderColor: "white",
+              background: "black",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <Box
+              component="div"
+              sx={{
+                width: "10px",
+                height: "10px",
+                borderRadius: "50%",
+                background: "white",
+              }}
+            ></Box>
+          </Box>
         </Box>
       </Box>
       <div className="rightImageContainer">
@@ -247,4 +269,4 @@ const CreatePassword = () => {
     </div>
   );
 };
-export default CreatePassword;
+export default CreateUserName;

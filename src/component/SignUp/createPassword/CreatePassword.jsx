@@ -1,46 +1,46 @@
 import React from "react";
-import "./enterYourName.css";
+import "./createPassword.css";
 import Box from "@mui/material/Box";
-import {
-  Button,
-  FormControl,
-  Input,
-  InputAdornment,
-  Typography,
-} from "@mui/material";
-import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
-import IconButton from "@mui/material/IconButton";
-import CheckIcon from "@mui/icons-material/Check";
-import { Link, useNavigate } from "react-router-dom";
+import { FormControl, Typography } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import {
-  InputComponent,
-  BackButtonComponent,
   ContinueButtonComponent,
-} from "../defaultComponent/DefaultComponent";
-const EnterYourName = () => {
-  const [firstName, setFirstName] = useState(null);
-  const [secondName, setSecondName] = useState(null);
+  BackButtonComponent,
+  PasswordInputComponent,
+} from "../../defaultComponent/DefaultComponent";
+import CheckIcon from "@mui/icons-material/Check";
+
+const CreatePassword = () => {
+  const [enterPassword, setEnterPassword] = useState(null);
+  const [reEnterPassword, setReEnterPassword] = useState(null);
+  const [showPass, setShowPass] = useState(false);
+
   let navigate = useNavigate();
+
   const handleBack = () => {
-    navigate("/signupverification", { replace: true });
+    navigate("/createusername", { replace: true });
   };
 
   const handleContinue = () => {
-    navigate("/createusername", { replace: true });
+    navigate("/forgotpassword", { replace: true });
   };
 
   const [disableButton, setDisableButton] = useState(false);
 
   useEffect(() => {
-    if (firstName && secondName) {
-      setDisableButton(false);
+    if (enterPassword && reEnterPassword) {
+      if (enterPassword === reEnterPassword) {
+        setDisableButton(false);
+      } else {
+        setDisableButton(true);
+      }
     } else {
       setDisableButton(true);
     }
-  }, [firstName, secondName]);
+  }, [enterPassword, reEnterPassword]);
   return (
-    <div className="second-signup-flow-container">
+    <div className="first-signup-flow-container">
       <Box
         component="div"
         sx={{
@@ -59,8 +59,7 @@ const EnterYourName = () => {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            width: { md: "50%", xxxs: "80%" },
-            mr: { xs: "20px", sm: 0 },
+            width: { md: "408px", xxxs: "80%" },
           }}
         >
           <Box component={"div"} sx={{ width: 1 }}>
@@ -78,11 +77,11 @@ const EnterYourName = () => {
             <Typography
               sx={{
                 fontSize: { xs: "14px", xxxs: "12px" },
-                mb: "11px",
+                mb: "15px",
                 fontFamily: "Poppins",
               }}
             >
-              STEP 2 OF 4
+              STEP 3 OF 3
             </Typography>
             <Typography
               sx={{
@@ -91,7 +90,7 @@ const EnterYourName = () => {
                 mb: "4px",
               }}
             >
-              Enter Your Name
+              Create your password
             </Typography>
             <Typography
               sx={{
@@ -100,16 +99,19 @@ const EnterYourName = () => {
                 fontFamily: "Poppins",
               }}
             >
-              Use your name as per your drivers license
+              You'll use this log into your account.
             </Typography>
-
-            <InputComponent
-              placeholder={"First Name"}
-              setFirstName={setFirstName}
+            <PasswordInputComponent
+              placeholder={"Enter your new password"}
+              showPass={showPass}
+              setEnterPassword={setEnterPassword}
+              setShowPass={setShowPass}
             />
-            <InputComponent
-              placeholder={"Second Name"}
-              setSecondName={setSecondName}
+            <PasswordInputComponent
+              placeholder={"Re-enter your new password"}
+              showPass={showPass}
+              setReEnterPassword={setReEnterPassword}
+              setShowPass={setShowPass}
             />
             <Box
               component="div"
@@ -124,15 +126,14 @@ const EnterYourName = () => {
                 display: "flex",
                 justifyContent: "space-between",
                 alignItems: "center",
-                mt: "7px",
               }}
             >
               <BackButtonComponent text={"Back"} handleBack={handleBack} />
               <ContinueButtonComponent
-                text={"Continue"}
+                text={"Complete Sign Up"}
                 handleContinue={handleContinue}
                 disabled={disableButton}
-                rightArrow={true}
+                checkIcon={true}
               />
             </Box>
           </FormControl>
@@ -149,7 +150,7 @@ const EnterYourName = () => {
               xxs: "15px",
               xxxs: "15px",
             },
-            height: "322px",
+            height: "242px",
             borderRightColor: "white",
             borderRight: 2,
             display: "flex",
@@ -159,6 +160,28 @@ const EnterYourName = () => {
             top: "15%",
           }}
         >
+          <Box
+            sx={{
+              width: { md: "30px", xs: "20px" },
+              height: { md: "30px", xs: "20px" },
+              position: "relative",
+              right: "-50%",
+              border: 2,
+              borderRadius: "50%",
+              borderColor: "#4831D4",
+              background: "#4831D4",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <CheckIcon
+              sx={{
+                fontSize: { md: "20px", sm: "20px" },
+                color: "white",
+              }}
+            />
+          </Box>
           <Box
             sx={{
               width: { md: "30px", xs: "20px" },
@@ -206,56 +229,6 @@ const EnterYourName = () => {
               }}
             ></Box>
           </Box>
-          <Box
-            sx={{
-              width: { md: "30px", xxxs: "20px" },
-              height: { md: "30px", xxxs: "20px" },
-              position: "relative",
-              right: "-50%",
-              border: 2,
-              borderRadius: "50%",
-              borderColor: "white",
-              background: "black",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <Box
-              component="div"
-              sx={{
-                width: "10px",
-                height: "10px",
-                borderRadius: "50%",
-                background: "white",
-              }}
-            ></Box>
-          </Box>
-          <Box
-            sx={{
-              width: { md: "30px", xxxs: "20px" },
-              height: { md: "30px", xxxs: "20px" },
-              position: "relative",
-              right: "-50%",
-              border: 2,
-              borderRadius: "50%",
-              borderColor: "white",
-              background: "black",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <Box
-              component="div"
-              sx={{
-                width: "10px",
-                height: "10px",
-                borderRadius: "50%",
-                background: "white",
-              }}
-            ></Box>
-          </Box>
         </Box>
       </Box>
       <div className="rightImageContainer">
@@ -265,4 +238,4 @@ const EnterYourName = () => {
     </div>
   );
 };
-export default EnterYourName;
+export default CreatePassword;

@@ -1,53 +1,39 @@
 import React from "react";
-import "./createUserName.css";
+import "./enterVerificationCodeSignup.css";
 import Box from "@mui/material/Box";
-import {
-  Button,
-  FormControl,
-  Input,
-  InputAdornment,
-  Typography,
-} from "@mui/material";
-import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
-import IconButton from "@mui/material/IconButton";
-import { Link, useNavigate } from "react-router-dom";
+import { FormControl, Input, Typography } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import {
-  ContinueButtonComponent,
   InputComponent,
   BackButtonComponent,
-  PasswordInputComponent,
-} from "../defaultComponent/DefaultComponent";
-import CheckIcon from "@mui/icons-material/Check";
+  ContinueButtonComponent,
+} from "../../defaultComponent/DefaultComponent";
 import ClearIcon from "@mui/icons-material/Clear";
-
-const CreateUserName = () => {
-  const [name, setName] = useState(null);
-  const [showPass, setShowPass] = useState(false);
-
+const EnterVerificationCodeSignup = () => {
+  const [verifyCode, setVerifyCode] = useState(null);
   let navigate = useNavigate();
-
   const handleBack = () => {
-    navigate("/enteryourname", { replace: true });
+    navigate("/enteryourdetail", { replace: true });
   };
 
   const handleContinue = () => {
-    navigate("/createpassword", { replace: true });
+    navigate("/createusername", { replace: true });
   };
 
   const [disableButton, setDisableButton] = useState(false);
 
   useEffect(() => {
-    if (name) {
+    if (verifyCode) {
       setDisableButton(false);
     } else {
       setDisableButton(true);
     }
-  }, [name]);
+  }, [verifyCode]);
 
-  const [validCode, setValidCode] = useState(true);
+  const [invalidCode, setInvalidCode] = useState(false);
   return (
-    <div className="first-signup-flow-container">
+    <div className="second-signup-flow-container">
       <Box
         component="div"
         sx={{
@@ -66,16 +52,22 @@ const CreateUserName = () => {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            width: { md: "408px", xs: "80%" },
-            mr: { xxxs: "20px", sm: 0 },
+            width: { md: "50%", xxxs: "80%" },
           }}
         >
-          <Box component={"div"} sx={{ width: 1 }}>
+          <Box component={"div"} sx={{ width: 1, mb: "75px" }}>
             <img src="/sportsbattle.png" className="logo" />
           </Box>
+
           <FormControl
             sx={{
-              width: 1,
+              width: {
+                md: "408px",
+                sm: "390px",
+                xs: "408px",
+                xxs: "300px",
+                xxxs: "250px",
+              },
               display: "flex",
               flexDirection: "column",
               alignItems: "flex-start",
@@ -89,7 +81,7 @@ const CreateUserName = () => {
                 fontFamily: "Poppins",
               }}
             >
-              STEP 2 OF 3
+              STEP 1 OF 3
             </Typography>
             <Typography
               sx={{
@@ -98,57 +90,81 @@ const CreateUserName = () => {
                 mb: "4px",
               }}
             >
-              Create your username
+              Enter Verification Code
             </Typography>
             <Typography
               sx={{
                 fontSize: { xs: "14px", xxs: "12px", xxxs: "10px" },
-                mb: "25px",
+                mb: "21px",
                 fontFamily: "Poppins",
               }}
             >
-              Enter your unique user name
+              You would receive a verificaton code to your mail, Kindly enter
+              the code, If you are unsure about it, Click here to update
             </Typography>
-            <InputComponent placeholder={"User Name"} setName={setName} />
             <Box
               component={"div"}
               sx={{
+                mb: "16px",
+                width: {
+                  md: "408px",
+                  sm: "390px",
+                  xs: "408px",
+                  xxs: "300px",
+                  xxxs: "250px",
+                },
+                height: { xs: "64px", xxxs: "50px" },
+                background: "#272727",
+                borderRadius: "5px",
                 display: "flex",
                 flexDirection: "row",
-                justifyContent: "center",
+                justifyContent: "space-between",
                 alignItems: "center",
-                mb: "34px",
               }}
             >
-              {name && (
-                <>
-                  {validCode ? (
-                    <CheckIcon sx={{ color: "green", fontSize: "25px" }} />
-                  ) : (
-                    <ClearIcon sx={{ color: "red", fontSize: "25px" }} />
-                  )}
+              <Input
+                placeholder="Verification code"
+                type="text"
+                variant="outlined"
+                disableUnderline
+                sx={{
+                  width: "70%",
+                  height: "100%",
+                  border: 0,
+                  background: "#272727",
+                  color: "white",
+                  pl: 2,
+                  fontSize: "16px",
+                  "&.MuiButtonBase-root:focus": {
+                    bgcolor: "black",
+                    borderColor: "white",
+                    border: 2,
+                    outline: 1,
+                  },
+                  fontFamily: "Poppins",
+                  borderRadius: "5px",
+                }}
+                onChange={(e) => {
+                  setVerifyCode && setVerifyCode(e.target.value);
+                }}
+              />
+              {invalidCode && (
+                <Box
+                  component={"div"}
+                  sx={{
+                    display: "flex",
+                    flexDirection: "row",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
                   <Typography
-                    sx={
-                      validCode
-                        ? {
-                            color: "green",
-                            fontSize: "14px",
-                            ml: "16px",
-                            fontFamily: "Poppins",
-                            fontWeight: 700,
-                          }
-                        : {
-                            color: "red",
-                            fontSize: "14px",
-                            ml: "16px",
-                            fontFamily: "Poppins",
-                            fontWeight: 700,
-                          }
-                    }
+                    sx={{ color: "red", fontSize: "14px", mr: "5px" }}
                   >
-                    {validCode ? "User name available" : "Invalid code"}
+                    Invalid Code
                   </Typography>
-                </>
+                  <ClearIcon sx={{ color: "red", fontSize: "25px" }} />
+                </Box>
               )}
             </Box>
             <Box
@@ -164,14 +180,15 @@ const CreateUserName = () => {
                 display: "flex",
                 justifyContent: "space-between",
                 alignItems: "center",
+                mt: "5px",
               }}
             >
               <BackButtonComponent text={"Back"} handleBack={handleBack} />
               <ContinueButtonComponent
-                text={"Continue"}
+                text={disableButton ? "Continue" : "Verify"}
                 handleContinue={handleContinue}
-                disabled={disableButton}
                 rightArrow={true}
+                disabled={disableButton}
               />
             </Box>
           </FormControl>
@@ -188,38 +205,16 @@ const CreateUserName = () => {
               xxs: "15px",
               xxxs: "15px",
             },
-            height: "262px",
+            height: "242px",
             borderRightColor: "white",
             borderRight: 2,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "space-between",
-            top: "15%",
+            top: "35%",
           }}
         >
-          <Box
-            sx={{
-              width: { md: "30px", xs: "20px" },
-              height: { md: "30px", xs: "20px" },
-              position: "relative",
-              right: "-50%",
-              border: 2,
-              borderRadius: "50%",
-              borderColor: "#4831D4",
-              background: "#4831D4",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <CheckIcon
-              sx={{
-                fontSize: { md: "20px", sm: "20px" },
-                color: "white",
-              }}
-            />
-          </Box>
           <Box
             sx={{
               width: { md: "30px", xxxs: "20px" },
@@ -270,6 +265,31 @@ const CreateUserName = () => {
               }}
             ></Box>
           </Box>
+          <Box
+            sx={{
+              width: { md: "30px", xxxs: "20px" },
+              height: { md: "30px", xxxs: "20px" },
+              position: "relative",
+              right: "-50%",
+              border: 2,
+              borderRadius: "50%",
+              borderColor: "white",
+              background: "black",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <Box
+              component="div"
+              sx={{
+                width: "10px",
+                height: "10px",
+                borderRadius: "50%",
+                background: "white",
+              }}
+            ></Box>
+          </Box>
         </Box>
       </Box>
       <div className="rightImageContainer">
@@ -279,4 +299,4 @@ const CreateUserName = () => {
     </div>
   );
 };
-export default CreateUserName;
+export default EnterVerificationCodeSignup;

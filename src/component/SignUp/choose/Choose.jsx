@@ -1,31 +1,16 @@
 import React from "react";
-import "./loginFlow.css";
+import "./choose.css";
 import Box from "@mui/material/Box";
 import { Button, FormControl, Typography } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import GoogleIcon from "@mui/icons-material/Google";
 import AppleIcon from "@mui/icons-material/Apple";
-import { useState, useRef } from "react";
-import { useEffect } from "react";
-import {
-  ButtonComponent,
-  InputComponent,
-  PasswordInputComponent,
-} from "../defaultComponent/DefaultComponent";
-const LoginFlow = () => {
-  const [showPass, setShowPass] = useState(false);
-  const [name, setName] = useState(null);
-  const [password, setPassword] = useState(null);
-  const [disableButton, setDisableButton] = useState(false);
+const Choose = () => {
+  let navigate = useNavigate();
 
-  useEffect(() => {
-    if (name && password) {
-      setDisableButton(false);
-    } else {
-      setDisableButton(true);
-    }
-  }, [name, password]);
-
+  const handleGoSignUp = () => {
+    navigate("/enteryourdetail", { replace: true });
+  };
   return (
     <div className="login-flow-container">
       <Box
@@ -37,7 +22,6 @@ const LoginFlow = () => {
           alignItems: "center",
           width: { md: "60%", sm: "60%", xxxs: "100%" },
         }}
-        x
       >
         <Box
           component="div"
@@ -90,7 +74,7 @@ const LoginFlow = () => {
                 mb: "15px",
               }}
             >
-              Login to Your Account
+              Choose your method
             </Typography>
             <Box
               sx={{
@@ -104,7 +88,7 @@ const LoginFlow = () => {
                 display: "flex",
                 flexDirection: "row",
                 justifyContent: "space-between",
-                mb: "7px",
+                mb: "13px",
               }}
             >
               <Button
@@ -158,15 +142,37 @@ const LoginFlow = () => {
                 Login with Apple
               </Button>
             </Box>
-            <InputComponent placeholder={"User Name"} setName={setName} />
 
-            <PasswordInputComponent
-              placeholder={"Password"}
-              showPass={showPass}
-              setPassword={setPassword}
-              setShowPass={setShowPass}
-            />
-            <Typography
+            <Button
+              startIcon={<AppleIcon />}
+              sx={{
+                color: "white",
+                width: {
+                  md: "408px",
+                  sm: "390px",
+                  xs: "408px",
+                  xxs: "300px",
+                  xxxs: "250px",
+                },
+                height: "64px",
+                fontSize: { xs: "16px", xxxs: "14px" },
+                mb: 3,
+                border: 2,
+                borderColor: "#272727",
+                borderRadius: "5px",
+                "&.MuiButtonBase-root:hover": {
+                  borderColor: "white",
+                },
+                textTransform: "none",
+                fontFamily: "Poppins",
+                fontWeight: "500",
+              }}
+              onClick={handleGoSignUp}
+            >
+              Sign up with email
+            </Button>
+            <Box
+              component="div"
               sx={{
                 width: {
                   md: "408px",
@@ -176,23 +182,6 @@ const LoginFlow = () => {
                   xxxs: "250px",
                 },
                 display: "flex",
-                justifyContent: "flex-end",
-                fontSize: { xs: "14px", xxxs: "12px" },
-                mb: 1,
-                fontFamily: "Poppins",
-              }}
-            >
-              Forgot Password?
-            </Typography>
-            <ButtonComponent
-              name={"Login to Your Account"}
-              disabled={disableButton}
-            />
-            <Box
-              component="div"
-              sx={{
-                width: 1,
-                display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
               }}
@@ -200,25 +189,25 @@ const LoginFlow = () => {
               <Typography
                 sx={{
                   color: "white",
-                  fontSize: { xxs: "18px", xxxs: "14px" },
+                  fontSize: { xxs: "16px", xxxs: "14px" },
                   fontFamily: "Poppins",
                 }}
               >
-                Not a member yet?
+                Already a member yet?
               </Typography>
-              <Link to="/choose">
+              <Link to="/">
                 <Typography
                   sx={{
                     color: "white",
-                    fontSize: { xxs: "18px", xxxs: "14px" },
-                    fontWeight: 700,
-                    ml: 1,
+                    fontSize: { xxs: "16px", xxxs: "14px" },
+                    fontWeight: "700",
+                    ml: { xs: 1, xxs: "5px" },
                     cursor: "pointer",
                     fontFamily: "Poppins",
                     textDecoration: "underline",
                   }}
                 >
-                  Register Now
+                  Login Now
                 </Typography>
               </Link>
             </Box>
@@ -232,4 +221,4 @@ const LoginFlow = () => {
     </div>
   );
 };
-export default LoginFlow;
+export default Choose;
