@@ -206,17 +206,7 @@ const EnterYourDetail = () => {
               justifyContent: "center",
               alignItems: "center",
             }}
-          >
-            <Box
-              component="div"
-              sx={{
-                width: "10px",
-                height: "10px",
-                borderRadius: "50%",
-                background: "white",
-              }}
-            ></Box>
-          </Box>
+          ></Box>
           <Box
             sx={{
               width: { md: "30px", xxxs: "20px" },
