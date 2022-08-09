@@ -1,10 +1,252 @@
-import { Box, Button, Input, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Card,
+  CardContent,
+  CardMedia,
+  Grid,
+  Input,
+  Typography,
+} from "@mui/material";
 import React, { useState, useRef, useEffect } from "react";
 import "./props.css";
 import SearchIcon from "@mui/icons-material/Search";
 import InputAdornment from "@mui/material/InputAdornment";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { motion } from "framer-motion";
+
+const GridItemComponent = ({ e }) => {
+  return (
+    <Grid item xxxs={4}>
+      <Card
+        sx={{
+          background: "#242424",
+          borderRadius: "10px",
+          width: "100%",
+          pb: 0,
+        }}
+      >
+        <CardContent
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "center",
+            mb: "0px",
+            pb: "8px",
+            pt: "16px",
+            px: 0,
+          }}
+        >
+          <img
+            src={e.src}
+            style={{
+              border: "1px solid #494949",
+              borderRadius: "50%",
+              marginRight: "8px",
+              height: "62px",
+              width: "62px",
+            }}
+          />
+          <Box>
+            <Typography
+              sx={{
+                color: "white",
+                fontSize: "16px",
+                fontWeight: "600",
+                fontFamily: "poppins",
+                mb: "2px",
+              }}
+            >
+              {e.name}
+            </Typography>
+            <Typography
+              sx={{
+                color: "white",
+                fontSize: "12px",
+                fontWeight: "500",
+                fontFamily: "poppins",
+              }}
+            >
+              {e.code}
+            </Typography>
+          </Box>
+        </CardContent>
+        <CardContent
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            width: "85%",
+            mx: "auto",
+            pb: "8px",
+            pt: "8px",
+          }}
+        >
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "space-between",
+              width: "100%",
+              margin: "0 auto",
+              pb: "7px",
+              borderBottom: "1px solid #494949",
+            }}
+          >
+            <Typography
+              sx={{
+                fontSize: "12px",
+                fontWeight: 400,
+                color: "#a3a3a3",
+                fontFamily: "poppins",
+                width: "30%",
+              }}
+            >
+              vs {e.vs}
+            </Typography>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "flex-end",
+                width: "70%",
+              }}
+            >
+              <img src="/clock.png" />
+              <Typography
+                sx={{
+                  fontSize: "12px",
+                  fontWeight: 600,
+                  color: "white",
+                  fontFamily: "poppins",
+                  ml: "7px",
+                }}
+              >
+                {e.time}
+              </Typography>
+            </Box>
+          </Box>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              borderBottom: "1px solid #494949",
+              width: "100%",
+              mb: "12px",
+            }}
+          >
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "space-between",
+                width: "100%",
+                margin: "0 auto",
+                pt: "8px",
+                pb: "2px",
+              }}
+            >
+              <Typography
+                sx={{
+                  fontSize: "12px",
+                  fontWeight: 600,
+                  color: "white",
+                  fontFamily: "poppins",
+                }}
+              >
+                Last 5
+              </Typography>
+
+              <Typography
+                sx={{
+                  fontSize: "12px",
+                  fontWeight: 400,
+                  color: "#459F48",
+                  fontFamily: "poppins",
+                }}
+              >
+                {e.last}
+              </Typography>
+            </Box>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "space-between",
+                width: "100%",
+                margin: "0 auto",
+                pb: "8px",
+              }}
+            >
+              <Typography
+                sx={{
+                  fontSize: "12px",
+                  fontWeight: 600,
+                  color: "white",
+                  fontFamily: "poppins",
+                }}
+              >
+                AVG
+              </Typography>
+
+              <Typography
+                sx={{
+                  fontSize: "12px",
+                  fontWeight: 400,
+                  color: "#459F48",
+                  fontFamily: "poppins",
+                }}
+              >
+                {e.avg}
+              </Typography>
+            </Box>
+          </Box>
+          <Box
+            sx={{
+              width: "100%",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              background: "#111111",
+              borderRadius: "4px",
+            }}
+          >
+            <Typography
+              sx={{
+                color: "white",
+                fontFamily: "poppins",
+                fontSize: "10px",
+                fontWeight: 400,
+                mt: "5px",
+                mb: "4px",
+              }}
+            >
+              Batting.Runs + RBIs
+            </Typography>
+            <Typography
+              sx={{
+                color: "white",
+                fontFamily: "poppins",
+                fontSize: "22px",
+                fontWeight: 600,
+                mb: "4px",
+              }}
+            >
+              {e.batting}
+            </Typography>
+          </Box>
+        </CardContent>
+      </Card>
+    </Grid>
+  );
+};
 
 export default function Props() {
   const [propsNav, setPropsNav] = useState([
@@ -64,6 +306,69 @@ export default function Props() {
     setMatchesWidth(matchesTotal);
   }, []);
 
+  //card
+  const [cardInfo, setCardInfo] = useState([
+    {
+      name: "Justin Steele",
+      src: "/cardProfile.png",
+      code: "CHP-P",
+      vs: "MIA",
+      time: "12h:11m",
+      last: "1,0,1,0,0",
+      avg: "0.40",
+      batting: "0.5",
+    },
+    {
+      name: "Justin Steele",
+      src: "/cardProfile.png",
+      code: "CHP-P",
+      vs: "MIA",
+      time: "12h:11m",
+      last: "1,0,1,0,0",
+      avg: "0.40",
+      batting: "0.5",
+    },
+    {
+      name: "Justin Steele",
+      src: "/cardProfile.png",
+      code: "CHP-P",
+      vs: "MIA",
+      time: "12h:11m",
+      last: "1,0,1,0,0",
+      avg: "0.40",
+      batting: "0.5",
+    },
+    {
+      name: "Justin Steele",
+      src: "/cardProfile.png",
+      code: "CHP-P",
+      vs: "MIA",
+      time: "12h:11m",
+      last: "1,0,1,0,0",
+      avg: "0.40",
+      batting: "0.5",
+    },
+    {
+      name: "Justin Steele",
+      src: "/cardProfile.png",
+      code: "CHP-P",
+      vs: "MIA",
+      time: "12h:11m",
+      last: "1,0,1,0,0",
+      avg: "0.40",
+      batting: "0.5",
+    },
+    {
+      name: "Justin Steele",
+      src: "/cardProfile.png",
+      code: "CHP-P",
+      vs: "MIA",
+      time: "12h:11m",
+      last: "1,0,1,0,0",
+      avg: "0.40",
+      batting: "0.5",
+    },
+  ]);
   return (
     <main className="props-container">
       <Box
@@ -288,6 +593,7 @@ export default function Props() {
             width: "100%",
             height: "48px",
             position: "relative",
+            mb: "20px",
           }}
         >
           <Typography
@@ -356,6 +662,22 @@ export default function Props() {
               />
             </Box>
           </Box>
+        </Box>
+        <Box id="grid-container" component="div" sx={{ width: "100%" }}>
+          <Grid
+            container
+            xxxs={14}
+            sx={{
+              width: "75%",
+              display: "flex",
+              justifyContent: "space-between",
+            }}
+            spacing={"6px"}
+          >
+            {cardInfo.map((e) => (
+              <GridItemComponent e={e} />
+            ))}
+          </Grid>
         </Box>
       </Box>
     </main>
