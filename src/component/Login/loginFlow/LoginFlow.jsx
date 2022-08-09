@@ -2,7 +2,7 @@ import React from "react";
 import "./loginFlow.css";
 import Box from "@mui/material/Box";
 import { Button, FormControl, Typography } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import GoogleIcon from "@mui/icons-material/Google";
 import AppleIcon from "@mui/icons-material/Apple";
 import { useState } from "react";
@@ -25,7 +25,10 @@ const LoginFlow = () => {
       setDisableButton(true);
     }
   }, [name, password]);
-
+  let navigate = useNavigate();
+  const handleContinue = () => {
+    navigate("/logged", { replace: true });
+  };
   return (
     <div className="login-flow-container">
       <Box
@@ -194,6 +197,7 @@ const LoginFlow = () => {
             <ButtonComponent
               name={"Login to Your Account"}
               disabled={disableButton}
+              handleContinue={handleContinue}
             />
             <Box
               component="div"

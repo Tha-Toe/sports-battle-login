@@ -1,6 +1,22 @@
+.logged-container {
+  height: 100vh;
+  width: 100%;
+  margin: 0 auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: "center";
+  display: flex;
+}
 .logoLogged {
   height: 44px;
   width: 58px;
   position: absolute;
   left: 20px;
+}
+.discord-logo {
+  margin-bottom: 18px;
+}
+.exit-image {
+  width: 48px;
+  height: 48px;
 }

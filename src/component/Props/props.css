@@ -1,0 +1,65 @@
+.props-container {
+  max-width: 100%;
+  min-height: 100vh;
+}
+.statsContainer,
+.matchesContainer {
+  overflow: scroll;
+  margin: auto;
+}
+.statsContainer::-webkit-scrollbar {
+  display: none;
+}
+.matchesContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.statsContainer {
+  max-width: 90%;
+  height: 30px;
+}
+.matchesContainer {
+  max-width: 85%;
+  height: 48px;
+}
+
+.statsChild,
+.matchesChild {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.statsChild::-webkit-scrollbar {
+  display: none;
+}
+.matchesChild::-webkit-scrollbar {
+  display: none;
+}
+.statsButton,
+.matchesButton {
+  font-size: 12px;
+  font-family: "poppins";
+  font-weight: 400;
+  margin-right: 8px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+}
+.statsButton {
+  height: 30px;
+  min-width: 150px;
+}
+.matchesButton {
+  height: 48px;
+  min-width: 100px;
+  background-color: #4831d4;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding-left: 17px;
+}
+.matchesName {
+}
+.matchesTime {
+}
