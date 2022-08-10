@@ -11,6 +11,8 @@ import { useNavigate } from "react-router-dom";
 import Props from "../../Props/Props";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import MenuIcon from "@mui/icons-material/Menu";
+import ClearIcon from "@mui/icons-material/Clear";
+
 export function Logged() {
   let navigate = useNavigate();
   const handleLogout = () => {
@@ -203,8 +205,8 @@ export function Logged() {
       <Box
         component="div"
         sx={{
-          position: "relative",
-          height: "90%",
+          position: { sm: "relative", xxxs: "absolute" },
+          height: { sm: "90%", xxxs: "100%" },
           width: "100%",
         }}
       >
@@ -244,8 +246,8 @@ export function Logged() {
                 height: "30px",
                 background: "black",
                 color: "white",
-                left: `${openSideNav ? "110px" : "5px"}`,
-                top: "5px",
+                left: `${openSideNav ? "115px" : "5px"}`,
+                top: "10px",
                 display: { sm: "none", xxxs: "block" },
                 borderRadius: "0 4px 4px 0",
                 zIndex: 4,

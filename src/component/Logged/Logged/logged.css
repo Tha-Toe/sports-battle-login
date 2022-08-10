@@ -29,6 +29,8 @@
   .logoLogged {
     position: static;
     margin-right: 0px;
+    margin-top: 10px;
+    margin-bottom: 5px;
   }
 }
 @media (max-width: 500px) {
