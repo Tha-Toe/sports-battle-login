@@ -6,6 +6,8 @@
   align-items: center;
   justify-content: "center";
   display: flex;
+  z-index: 4;
+  position: "relative";
 }
 .logoLogged {
   height: 44px;
@@ -19,4 +21,14 @@
 .exit-image {
   width: 48px;
   height: 48px;
+}
+@media (max-width: 700px) {
+  .logoLogged {
+    left: 10px;
+  }
+}
+@media (max-width: 500px) {
+  .logoLogged {
+    position: static;
+  }
 }

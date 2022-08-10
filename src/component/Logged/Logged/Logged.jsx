@@ -10,6 +10,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Props from "../../Props/Props";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import MenuIcon from "@mui/icons-material/Menu";
 export function Logged() {
   let navigate = useNavigate();
   const handleLogout = () => {
@@ -47,11 +48,18 @@ export function Logged() {
       active: false,
     },
   ]);
+
+  const [openSideNav, setOpenSideNav] = useState(false);
+
   return (
     <main className="logged-container">
       <Box
         component="div"
-        sx={{ position: "relative", width: "100%", height: "10%" }}
+        sx={{
+          position: "relative",
+          width: "100%",
+          height: "10%",
+        }}
       >
         <AppBar
           component="nav"
@@ -59,15 +67,31 @@ export function Logged() {
             borderBottom: "1px solid gray",
             position: "relative",
             boxShadow: "none",
+            zIndex: 4,
+            background: "black",
           }}
         >
-          <Toolbar sx={{ background: "black" }}>
+          <Toolbar
+            sx={{
+              background: "black",
+              display: { xxxs: "flex" },
+              flexDirection: "column",
+              alignItems: "flex-start",
+              justifyContent: "center",
+            }}
+          >
             <img src="/sportsbattle.png" className="logoLogged" />
             <Box
               sx={{
                 display: { xs: "none", sm: "block" },
-                width: "836px",
-                margin: "auto",
+                width: {
+                  lg: "836px",
+                  md: "700px",
+                  sm: "500px",
+                  xs: "450px",
+                  xxxs: "320px",
+                },
+                margin: "0 auto",
                 display: "flex",
                 justifyContent: "flex-end",
                 alignItems: "center",
@@ -80,10 +104,10 @@ export function Logged() {
                   borderRadius: "4px",
                   textTransform: "none",
                   fontFamily: "Poppins",
-                  fontSize: "10px",
+                  fontSize: { sm: "10px", xs: "8px", xxxs: "6px" },
                   fontWeight: 700,
-                  padding: "8px 12px",
-                  mr: "12px",
+                  padding: { xs: "8px 12px", xxxs: "4px 6px" },
+                  mr: { xs: "12px", xxxs: "2px" },
                   "&.MuiButtonBase-root:hover": {
                     background: "#fff",
                   },
@@ -98,10 +122,10 @@ export function Logged() {
                   borderRadius: "4px",
                   textTransform: "none",
                   fontFamily: "Poppins",
-                  fontSize: "10px",
+                  fontSize: { sm: "10px", xs: "8px", xxxs: "6px" },
                   fontWeight: 700,
-                  padding: "8px 12px",
-                  mr: "12px",
+                  padding: { xs: "8px 12px", xxxs: "4px 6px" },
+                  mr: { xs: "12px", xxxs: "2px" },
                   "&.MuiButtonBase-root:hover": {
                     background: "rgba(36, 36, 35, 1)",
                   },
@@ -116,10 +140,10 @@ export function Logged() {
                   borderRadius: "4px",
                   textTransform: "none",
                   fontFamily: "Poppins",
-                  fontSize: "10px",
+                  fontSize: { sm: "10px", xs: "8px", xxxs: "6px" },
                   fontWeight: 700,
-                  padding: "8px 12px",
-                  mr: "12px",
+                  padding: { xs: "8px 12px", xxxs: "4px 6px" },
+                  mr: { xs: "12px", xxxs: "2px" },
                   "&.MuiButtonBase-root:hover": {
                     background: "rgba(36, 36, 35, 1)",
                   },
@@ -134,10 +158,10 @@ export function Logged() {
                   borderRadius: "4px",
                   textTransform: "none",
                   fontFamily: "Poppins",
-                  fontSize: "10px",
+                  fontSize: { sm: "10px", xs: "8px", xxxs: "6px" },
                   fontWeight: 700,
-                  padding: "8px 20px",
-                  mr: "12px",
+                  padding: { xs: "8px 12px", xxxs: "4px 6px" },
+                  mr: { xs: "12px", xxxs: "2px" },
                   "&.MuiButtonBase-root:hover": {
                     background: "#4831D4",
                   },
@@ -180,12 +204,13 @@ export function Logged() {
           sx={{
             boxShadow: "none",
             outline: "none",
-            width: "80px",
+            width: { lg: "80px", md: "50px", sm: "30px", xxxs: "80px" },
             position: "absolute",
             background: "transparent",
-            left: 0,
+            left: { sm: 0, xxxs: `${openSideNav ? 0 : "-110px"}` },
             top: 0,
             height: "100%",
+            zIndex: 3,
           }}
         >
           <Toolbar
@@ -194,12 +219,28 @@ export function Logged() {
               flexDirection: "column",
               justifyContent: "space-between",
               alignItems: "center",
-              width: "90px",
+              width: { lg: "80px", md: "50px", sm: "30px", xxxs: "80px" },
               borderRight: "1px solid gray",
               borderBottom: "1px solid gray",
               height: "100%",
+              background: "black",
+              position: "relative",
             }}
           >
+            <MenuIcon
+              sx={{
+                position: "absolute",
+                width: "30px",
+                height: "30px",
+                background: "white",
+                color: "black",
+                right: "-30px",
+                top: "20px",
+                display: { sm: "none", xxxs: "block" },
+                borderRadius: "0 4px 4px 0",
+              }}
+              onClick={() => setOpenSideNav(!openSideNav)}
+            />
             <Box
               sx={{
                 display: "flex",
@@ -224,7 +265,12 @@ export function Logged() {
                     src={e.active ? e.activeSrc : e.unactiveSrc}
                     style={{ height: "27px", width: "27px" }}
                   />
-                  <Typography sx={{ fontFamily: "poppins", fontSize: "10px" }}>
+                  <Typography
+                    sx={{
+                      fontFamily: "poppins",
+                      fontSize: { md: "10px", xxxs: "8px" },
+                    }}
+                  >
                     {e.name}
                   </Typography>
                 </Box>

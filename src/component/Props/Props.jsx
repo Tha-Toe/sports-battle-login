@@ -14,241 +14,33 @@ import SearchIcon from "@mui/icons-material/Search";
 import InputAdornment from "@mui/material/InputAdornment";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { motion } from "framer-motion";
-
-const GridItemComponent = ({ e }) => {
-  return (
-    <Grid item xxxs={4}>
-      <Card
-        sx={{
-          background: "#242424",
-          borderRadius: "10px",
-          width: "100%",
-          pb: 0,
-        }}
-      >
-        <CardContent
-          sx={{
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "center",
-            mb: "0px",
-            pb: "8px",
-            pt: "16px",
-            px: 0,
-          }}
-        >
-          <img
-            src={e.src}
-            style={{
-              border: "1px solid #494949",
-              borderRadius: "50%",
-              marginRight: "8px",
-              height: "62px",
-              width: "62px",
-            }}
-          />
-          <Box>
-            <Typography
-              sx={{
-                color: "white",
-                fontSize: "16px",
-                fontWeight: "600",
-                fontFamily: "poppins",
-                mb: "2px",
-              }}
-            >
-              {e.name}
-            </Typography>
-            <Typography
-              sx={{
-                color: "white",
-                fontSize: "12px",
-                fontWeight: "500",
-                fontFamily: "poppins",
-              }}
-            >
-              {e.code}
-            </Typography>
-          </Box>
-        </CardContent>
-        <CardContent
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            width: "85%",
-            mx: "auto",
-            pb: "8px",
-            pt: "8px",
-          }}
-        >
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-              justifyContent: "space-between",
-              width: "100%",
-              margin: "0 auto",
-              pb: "7px",
-              borderBottom: "1px solid #494949",
-            }}
-          >
-            <Typography
-              sx={{
-                fontSize: "12px",
-                fontWeight: 400,
-                color: "#a3a3a3",
-                fontFamily: "poppins",
-                width: "30%",
-              }}
-            >
-              vs {e.vs}
-            </Typography>
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-                justifyContent: "flex-end",
-                width: "70%",
-              }}
-            >
-              <img src="/clock.png" />
-              <Typography
-                sx={{
-                  fontSize: "12px",
-                  fontWeight: 600,
-                  color: "white",
-                  fontFamily: "poppins",
-                  ml: "7px",
-                }}
-              >
-                {e.time}
-              </Typography>
-            </Box>
-          </Box>
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              borderBottom: "1px solid #494949",
-              width: "100%",
-              mb: "12px",
-            }}
-          >
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-                justifyContent: "space-between",
-                width: "100%",
-                margin: "0 auto",
-                pt: "8px",
-                pb: "2px",
-              }}
-            >
-              <Typography
-                sx={{
-                  fontSize: "12px",
-                  fontWeight: 600,
-                  color: "white",
-                  fontFamily: "poppins",
-                }}
-              >
-                Last 5
-              </Typography>
-
-              <Typography
-                sx={{
-                  fontSize: "12px",
-                  fontWeight: 400,
-                  color: "#459F48",
-                  fontFamily: "poppins",
-                }}
-              >
-                {e.last}
-              </Typography>
-            </Box>
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-                justifyContent: "space-between",
-                width: "100%",
-                margin: "0 auto",
-                pb: "8px",
-              }}
-            >
-              <Typography
-                sx={{
-                  fontSize: "12px",
-                  fontWeight: 600,
-                  color: "white",
-                  fontFamily: "poppins",
-                }}
-              >
-                AVG
-              </Typography>
-
-              <Typography
-                sx={{
-                  fontSize: "12px",
-                  fontWeight: 400,
-                  color: "#459F48",
-                  fontFamily: "poppins",
-                }}
-              >
-                {e.avg}
-              </Typography>
-            </Box>
-          </Box>
-          <Box
-            sx={{
-              width: "100%",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-              background: "#111111",
-              borderRadius: "4px",
-            }}
-          >
-            <Typography
-              sx={{
-                color: "white",
-                fontFamily: "poppins",
-                fontSize: "10px",
-                fontWeight: 400,
-                mt: "5px",
-                mb: "4px",
-              }}
-            >
-              Batting.Runs + RBIs
-            </Typography>
-            <Typography
-              sx={{
-                color: "white",
-                fontFamily: "poppins",
-                fontSize: "22px",
-                fontWeight: 600,
-                mb: "4px",
-              }}
-            >
-              {e.batting}
-            </Typography>
-          </Box>
-        </CardContent>
-      </Card>
-    </Grid>
-  );
-};
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import { AndresCard } from "./AndresCard";
+import Times from "./TImes";
+import Amount from "./Amount";
+import ChooseType from "./ChooseType";
+import Balance from "./Balance";
+import SubmitProjection from "./SubmitProjection";
+import GridItemComponent from "./GridItemComponent";
+import HowTo from "./HowTo";
+import Rule from "./Rule";
+import BaseBallPoint from "./BaseBallPoint";
 
 export default function Props() {
+  const [openHowTo, setOpenHowTo] = useState(false);
+  const [openRule, setOpenRule] = useState(false);
+  const [openBaseBallPoint, setOpenBaseBallPoint] = useState(false);
+
+  const howToOpen = () => {
+    setOpenHowTo(true);
+  };
+  const rulesOpen = () => {
+    setOpenRule(true);
+  };
+
+  const baseBallPointOpen = () => {
+    setOpenBaseBallPoint(true);
+  };
   const [propsNav, setPropsNav] = useState([
     { name: "MLB", active: true, src: "/mlb.png" },
     { name: "PGA", active: false, src: "/pga.png" },
@@ -267,11 +59,12 @@ export default function Props() {
   ]);
 
   const [propsGuide, setPropsGuide] = useState([
-    { name: "How to", src: "/howto.png" },
-    { name: "Rules", src: "/rules.png" },
-    { name: "FPS", src: "/fps.png" },
+    { name: "How to", src: "/howto.png", func: howToOpen },
+    { name: "Rules", src: "/rules.png", func: rulesOpen },
+    { name: "FPS", src: "/fps.png", func: baseBallPointOpen },
     { name: "Refresh", src: "/refresh.png" },
   ]);
+
   const [stats, setStats] = useState([
     { name: "Bat.Runs + RBIs", bg: "#4831D4", color: "white" },
     { name: "Fantasy Score (77)", bg: " #459F48", color: "black" },
@@ -309,71 +102,133 @@ export default function Props() {
   //card
   const [cardInfo, setCardInfo] = useState([
     {
-      name: "Justin Steele",
-      src: "/cardProfile.png",
-      code: "CHP-P",
-      vs: "MIA",
-      time: "12h:11m",
-      last: "1,0,1,0,0",
-      avg: "0.40",
-      batting: "0.5",
+      name: "Frank Schwindel",
+      cubs: "Chicago Cubs - Batter",
+      vs: "vs Miami Marlins",
+      time: "09:08",
+      last: "0,0,1,0,0",
+      avg: "0.20",
+      bat: "0.5",
     },
     {
-      name: "Justin Steele",
-      src: "/cardProfile.png",
-      code: "CHP-P",
-      vs: "MIA",
-      time: "12h:11m",
-      last: "1,0,1,0,0",
-      avg: "0.40",
-      batting: "0.5",
+      name: "Frank Schwindel",
+      cubs: "Chicago Cubs - Batter",
+      vs: "vs Miami Marlins",
+      time: "09:08",
+      last: "0,0,1,0,0",
+      avg: "0.20",
+      bat: "0.5",
     },
     {
-      name: "Justin Steele",
-      src: "/cardProfile.png",
-      code: "CHP-P",
-      vs: "MIA",
-      time: "12h:11m",
-      last: "1,0,1,0,0",
-      avg: "0.40",
-      batting: "0.5",
+      name: "Frank Schwindel",
+      cubs: "Chicago Cubs - Batter",
+      vs: "vs Miami Marlins",
+      time: "09:08",
+      last: "0,0,1,0,0",
+      avg: "0.20",
+      bat: "0.5",
     },
     {
-      name: "Justin Steele",
-      src: "/cardProfile.png",
-      code: "CHP-P",
-      vs: "MIA",
-      time: "12h:11m",
-      last: "1,0,1,0,0",
-      avg: "0.40",
-      batting: "0.5",
+      name: "Frank Schwindel",
+      cubs: "Chicago Cubs - Batter",
+      vs: "vs Miami Marlins",
+      time: "09:08",
+      last: "0,0,1,0,0",
+      avg: "0.20",
+      bat: "0.5",
     },
     {
-      name: "Justin Steele",
-      src: "/cardProfile.png",
-      code: "CHP-P",
-      vs: "MIA",
-      time: "12h:11m",
-      last: "1,0,1,0,0",
-      avg: "0.40",
-      batting: "0.5",
+      name: "Frank Schwindel",
+      cubs: "Chicago Cubs - Batter",
+      vs: "vs Miami Marlins",
+      time: "09:08",
+      last: "0,0,1,0,0",
+      avg: "0.20",
+      bat: "0.5",
     },
     {
-      name: "Justin Steele",
-      src: "/cardProfile.png",
-      code: "CHP-P",
-      vs: "MIA",
-      time: "12h:11m",
-      last: "1,0,1,0,0",
-      avg: "0.40",
-      batting: "0.5",
+      name: "Frank Schwindel",
+      cubs: "Chicago Cubs - Batter",
+      vs: "vs Miami Marlins",
+      time: "09:08",
+      last: "0,0,1,0,0",
+      avg: "0.20",
+      bat: "0.5",
+    },
+    {
+      name: "Frank Schwindel",
+      cubs: "Chicago Cubs - Batter",
+      vs: "vs Miami Marlins",
+      time: "09:08",
+      last: "0,0,1,0,0",
+      avg: "0.20",
+      bat: "0.5",
+    },
+    {
+      name: "Frank Schwindel",
+      cubs: "Chicago Cubs - Batter",
+      vs: "vs Miami Marlins",
+      time: "09:08",
+      last: "0,0,1,0,0",
+      avg: "0.20",
+      bat: "0.5",
+    },
+    {
+      name: "Frank Schwindel",
+      cubs: "Chicago Cubs - Batter",
+      vs: "vs Miami Marlins",
+      time: "09:08",
+      last: "0,0,1,0,0",
+      avg: "0.20",
+      bat: "0.5",
+    },
+    {
+      name: "Frank Schwindel",
+      cubs: "Chicago Cubs - Batter",
+      vs: "vs Miami Marlins",
+      time: "09:08",
+      last: "0,0,1,0,0",
+      avg: "0.20",
+      bat: "0.5",
+    },
+    {
+      name: "Frank Schwindel",
+      cubs: "Chicago Cubs - Batter",
+      vs: "vs Miami Marlins",
+      time: "09:08",
+      last: "0,0,1,0,0",
+      avg: "0.20",
+      bat: "0.5",
+    },
+    {
+      name: "Frank Schwindel",
+      cubs: "Chicago Cubs - Batter",
+      vs: "vs Miami Marlins",
+      time: "09:08",
+      last: "0,0,1,0,0",
+      avg: "0.20",
+      bat: "0.5",
     },
   ]);
+
+  const [selectCardId, setSelectCardId] = useState([]);
+  const addCardIndex = (index) => {
+    console.log("here");
+    setSelectCardId((prev) => [...prev, index]);
+    console.log(selectCardId);
+  };
+
   return (
     <main className="props-container">
       <Box
         sx={{
-          width: "836px",
+          width: {
+            lg: "836px",
+            md: "700px",
+            sm: "500px",
+            xs: "450px",
+            xxxs: "320px",
+          },
           height: "100vh",
           margin: "auto",
         }}
@@ -387,6 +242,10 @@ export default function Props() {
             flexDirection: "row",
             alignItems: "center",
             justifyContent: "space-between",
+            overflow: "scroll",
+            "&::-webkit-scrollbar": {
+              display: "none",
+            },
           }}
         >
           {propsNav.map((e) => (
@@ -396,6 +255,7 @@ export default function Props() {
                 flexDirection: "column",
                 alignItems: "center",
                 justifyContent: "center",
+                mr: { xxxs: "15px", md: "" },
               }}
             >
               <Box
@@ -409,6 +269,7 @@ export default function Props() {
                   flexDirection: "column",
                   alignItems: "center",
                   justifyContent: "center",
+                  background: `${e.active ? "#4831D4" : "black"}`,
                 }}
               >
                 <img
@@ -462,12 +323,18 @@ export default function Props() {
                   flexDirection: "rows",
                   alignItems: "center",
                   justifyContent: "center",
+                  cursor: "pointer",
+                  flexWrap: "wrap",
                 }}
+                onClick={e.func}
               >
-                <img src={e.src} style={{ marginRight: "3px" }} />
+                <img
+                  src={e.src}
+                  style={{ marginRight: "3px", height: "20px" }}
+                />
                 <Typography
                   sx={{
-                    fontSize: "14px",
+                    fontSize: { md: "14px", sm: "10px", xxxs: "8px" },
                     fontFamily: "poppins",
                     fontWeight: 500,
                   }}
@@ -494,7 +361,7 @@ export default function Props() {
             sx={{
               background: "#161616",
               border: "1px solid #2c2c2c",
-              width: "324px",
+              width: { md: "324px", sm: "250px", xxxs: "220px" },
               color: "white",
               fontSize: "12px",
               fontWeight: 400,
@@ -520,10 +387,10 @@ export default function Props() {
         >
           <Typography
             sx={{
-              fontSize: "16",
+              fontSize: { sm: "16px", xxxs: "12px" },
               fontWeight: "400",
               fontFamily: "poppins",
-              width: "10%",
+              width: { md: "10%", sm: "50%", xxxs: "50%" },
             }}
           >
             9 Stats
@@ -561,6 +428,8 @@ export default function Props() {
                 width: "80px",
                 background:
                   "linear-gradient(to right, transparent, rgba(0,0,0,0.6))",
+                position: "absolute",
+                right: 0,
               }}
             ></Box>
             <Box
@@ -571,7 +440,9 @@ export default function Props() {
                 alignItems: "center",
                 height: "30px",
                 width: "30px",
-                borderRadius: "4px",
+                borderRadius: "50%",
+                position: "absolute",
+                right: 0,
               }}
             >
               <ArrowForwardIosIcon
@@ -598,10 +469,10 @@ export default function Props() {
         >
           <Typography
             sx={{
-              fontSize: "16",
+              fontSize: { sm: "16px", xxxs: "12px" },
               fontWeight: "400",
               fontFamily: "poppins",
-              width: "15%",
+              width: { md: "10%", xxxs: "50%" },
             }}
           >
             5 Matches
@@ -649,7 +520,7 @@ export default function Props() {
                 alignItems: "center",
                 height: "30px",
                 width: "30px",
-                borderRadius: "4px",
+                borderRadius: "50%",
                 position: "absolute",
                 right: 0,
               }}
@@ -663,23 +534,51 @@ export default function Props() {
             </Box>
           </Box>
         </Box>
-        <Box id="grid-container" component="div" sx={{ width: "100%" }}>
-          <Grid
-            container
-            xxxs={14}
+        <Box
+          id="grid-container"
+          component="div"
+          sx={{
+            width: "100%",
+            display: "flex",
+            flexDirection: { xs: "row", xxxs: "column" },
+            justifyContent: "center",
+            alignItems: { xs: "flex-start", xxxs: "center" },
+          }}
+        >
+          <Box
             sx={{
-              width: "75%",
-              display: "flex",
-              justifyContent: "space-between",
+              width: { md: "70%", xs: "50%", xxxs: "100%" },
+              height: "auto",
+              ml: { xs: 0, xxxs: "10px" },
             }}
-            spacing={"6px"}
           >
-            {cardInfo.map((e) => (
-              <GridItemComponent e={e} />
-            ))}
-          </Grid>
+            <Grid
+              container
+              sx={{
+                width: "100%",
+              }}
+              spacing={"6px"}
+            >
+              {cardInfo.map((e, index) => (
+                <GridItemComponent
+                  e={e}
+                  key={index}
+                  index={index}
+                  selectCardId={selectCardId}
+                  setSelectCardId={setSelectCardId}
+                  addCardIndex={addCardIndex}
+                />
+              ))}
+            </Grid>
+          </Box>
+          <SubmitProjection selectCardId={selectCardId} />
         </Box>
       </Box>
+      {openHowTo && <HowTo setOpenHowTo={setOpenHowTo} />}
+      {openRule && <Rule setOpenRule={setOpenRule} />}
+      {openBaseBallPoint && (
+        <BaseBallPoint setOpenBaseBallPoint={setOpenBaseBallPoint} />
+      )}
     </main>
   );
 }
