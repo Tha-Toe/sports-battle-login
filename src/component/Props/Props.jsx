@@ -361,7 +361,7 @@ export default function Props() {
             sx={{
               background: "#161616",
               border: "1px solid #2c2c2c",
-              width: { md: "324px", sm: "250px", xxxs: "220px" },
+              width: { md: "324px", sm: "250px", xs: "220px", xxxs: "200px" },
               color: "white",
               fontSize: "12px",
               fontWeight: 400,
@@ -390,7 +390,7 @@ export default function Props() {
               fontSize: { sm: "16px", xxxs: "12px" },
               fontWeight: "400",
               fontFamily: "poppins",
-              width: { md: "10%", sm: "50%", xxxs: "50%" },
+              width: { md: "10%", sm: "50%", xxxs: "70%" },
             }}
           >
             9 Stats
@@ -472,7 +472,7 @@ export default function Props() {
               fontSize: { sm: "16px", xxxs: "12px" },
               fontWeight: "400",
               fontFamily: "poppins",
-              width: { md: "10%", xxxs: "50%" },
+              width: { md: "10%", xs: "50%", xxxs: "70%" },
             }}
           >
             5 Matches

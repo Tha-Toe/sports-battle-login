@@ -29,7 +29,7 @@ export default function HowTo({ setOpenHowTo }) {
       sx={{
         height: "100vh",
         width: "100vw",
-        background: "rgba(0,0,0,0.6)",
+        background: "rgba(0,0,0,0.9)",
         position: "fixed",
         top: 0,
         left: 0,
@@ -41,7 +41,13 @@ export default function HowTo({ setOpenHowTo }) {
     >
       <Box
         sx={{
-          width: "672px",
+          width: {
+            md: "672px",
+            sm: "500px",
+            xs: "400px",
+            xxs: "350px",
+            xxxs: "280px",
+          },
           height: "385px",
           background: "#2C2C2C",
           display: "flex",
@@ -53,7 +59,7 @@ export default function HowTo({ setOpenHowTo }) {
         <Typography
           sx={{
             color: "#4831D4",
-            fontSize: "24px",
+            fontSize: { md: "24px", sm: "20px", xxxs: "18px" },
             fontWeight: 700,
             fontFamily: "poppins",
             width: "90%",

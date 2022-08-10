@@ -89,12 +89,14 @@ export function Logged() {
                   md: "700px",
                   sm: "500px",
                   xs: "450px",
-                  xxxs: "320px",
+                  xxs: "320px",
+                  xxxs: "280px",
                 },
                 margin: "0 auto",
                 display: "flex",
                 justifyContent: "flex-end",
                 alignItems: "center",
+                mb: { xs: 0, xxxs: "10px" },
               }}
             >
               <Button
@@ -106,7 +108,9 @@ export function Logged() {
                   fontFamily: "Poppins",
                   fontSize: { sm: "10px", xs: "8px", xxxs: "6px" },
                   fontWeight: 700,
-                  padding: { xs: "8px 12px", xxxs: "4px 6px" },
+                  padding: { xs: "8px 12px", xxs: "4px 6px" },
+                  maxWidth: { xxs: "auto", xxxs: "21%" },
+                  minWidth: { xxs: "auto", xxxs: "21%" },
                   mr: { xs: "12px", xxxs: "2px" },
                   "&.MuiButtonBase-root:hover": {
                     background: "#fff",
@@ -124,6 +128,8 @@ export function Logged() {
                   fontFamily: "Poppins",
                   fontSize: { sm: "10px", xs: "8px", xxxs: "6px" },
                   fontWeight: 700,
+                  maxWidth: { xxs: "auto", xxxs: "20%" },
+                  minWidth: { xxs: "auto", xxxs: "20%" },
                   padding: { xs: "8px 12px", xxxs: "4px 6px" },
                   mr: { xs: "12px", xxxs: "2px" },
                   "&.MuiButtonBase-root:hover": {
@@ -142,6 +148,8 @@ export function Logged() {
                   fontFamily: "Poppins",
                   fontSize: { sm: "10px", xs: "8px", xxxs: "6px" },
                   fontWeight: 700,
+                  maxWidth: { xxs: "auto", xxxs: "20%" },
+                  minWidth: { xxs: "auto", xxxs: "20%" },
                   padding: { xs: "8px 12px", xxxs: "4px 6px" },
                   mr: { xs: "12px", xxxs: "2px" },
                   "&.MuiButtonBase-root:hover": {
@@ -161,6 +169,8 @@ export function Logged() {
                   fontSize: { sm: "10px", xs: "8px", xxxs: "6px" },
                   fontWeight: 700,
                   padding: { xs: "8px 12px", xxxs: "4px 6px" },
+                  maxWidth: { xxs: "auto", xxxs: "20%" },
+                  minWidth: { xxs: "auto", xxxs: "20%" },
                   mr: { xs: "12px", xxxs: "2px" },
                   "&.MuiButtonBase-root:hover": {
                     background: "#4831D4",
