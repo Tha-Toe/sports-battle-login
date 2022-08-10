@@ -24,11 +24,16 @@
 }
 @media (max-width: 700px) {
   .logoLogged {
-    left: 10px;
+    left: 35px;
+  }
+  .logoLogged {
+    position: static;
+    margin-right: 0px;
   }
 }
 @media (max-width: 500px) {
   .logoLogged {
     position: static;
+    margin-left: 15px;
   }
 }

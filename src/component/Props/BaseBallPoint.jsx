@@ -43,7 +43,7 @@ export default function BaseBallPoint({ setOpenBaseBallPoint }) {
       sx={{
         height: "100vh",
         width: "100vw",
-        background: "rgba(0,0,0,0.6)",
+        background: "rgba(0,0,0,0.9)",
         position: "fixed",
         top: 0,
         left: 0,
@@ -55,7 +55,13 @@ export default function BaseBallPoint({ setOpenBaseBallPoint }) {
     >
       <Box
         sx={{
-          width: "501px",
+          width: {
+            md: "501px",
+            sm: "400px",
+            xs: "400px",
+            xxs: "280px",
+            xxxs: "280px",
+          },
           height: "512px",
           background: "#000000",
           display: "flex",
@@ -89,7 +95,7 @@ export default function BaseBallPoint({ setOpenBaseBallPoint }) {
             <Typography
               sx={{
                 color: "white",
-                fontSize: "20px",
+                fontSize: { sm: "20px", xxxs: "16px" },
                 fontWeight: 700,
                 fontFamily: "poppins",
                 borderBottom: "3px solid white",
@@ -100,7 +106,7 @@ export default function BaseBallPoint({ setOpenBaseBallPoint }) {
             <Typography
               sx={{
                 color: "white",
-                fontSize: "20px",
+                fontSize: { sm: "20px", xxxs: "16px" },
                 fontWeight: 700,
                 fontFamily: "poppins",
               }}

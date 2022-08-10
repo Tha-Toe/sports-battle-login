@@ -227,7 +227,7 @@ export default function Props() {
             md: "700px",
             sm: "500px",
             xs: "450px",
-            xxxs: "320px",
+            xxxs: "95%",
           },
           height: "100vh",
           margin: "auto",
@@ -260,8 +260,8 @@ export default function Props() {
             >
               <Box
                 sx={{
-                  height: "34px",
-                  width: "34px",
+                  height: { xs: "34px", xxxs: "30px" },
+                  width: { xs: "34px", xxxs: "30px" },
                   border: "2px solid white",
                   borderRadius: "50%",
                   mt: "13px",
@@ -272,13 +272,7 @@ export default function Props() {
                   background: `${e.active ? "#4831D4" : "black"}`,
                 }}
               >
-                <img
-                  src={e.src}
-                  style={{
-                    height: "24px",
-                    width: "24px",
-                  }}
-                />
+                <img className="propsNavImg" src={e.src} />
               </Box>
               <Typography
                 sx={{
@@ -361,7 +355,13 @@ export default function Props() {
             sx={{
               background: "#161616",
               border: "1px solid #2c2c2c",
-              width: { md: "324px", sm: "250px", xs: "220px", xxxs: "200px" },
+              width: {
+                md: "324px",
+                sm: "250px",
+                xs: "200px",
+                xxs: "180px",
+                xxxs: "160px",
+              },
               color: "white",
               fontSize: "12px",
               fontWeight: 400,

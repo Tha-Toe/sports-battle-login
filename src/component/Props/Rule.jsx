@@ -29,7 +29,7 @@ export default function Rule({ setOpenRule }) {
       sx={{
         height: "100vh",
         width: "100vw",
-        background: "rgba(0,0,0,0.6)",
+        background: "rgba(0,0,0,0.9)",
         position: "fixed",
         top: 0,
         left: 0,
@@ -41,7 +41,13 @@ export default function Rule({ setOpenRule }) {
     >
       <Box
         sx={{
-          width: "672px",
+          width: {
+            md: "672px",
+            sm: "500px",
+            xs: "400px",
+            xxs: "350px",
+            xxxs: "280px",
+          },
           height: "461px",
           background: "#2C2C2C",
           display: "flex",
@@ -53,7 +59,7 @@ export default function Rule({ setOpenRule }) {
         <Typography
           sx={{
             color: "#4831D4",
-            fontSize: "24px",
+            fontSize: { md: "24px", sm: "20px", xxxs: "18px" },
             fontWeight: 700,
             fontFamily: "poppins",
             width: "90%",
@@ -71,12 +77,16 @@ export default function Rule({ setOpenRule }) {
           }}
         >
           <CheckCircleIcon
-            sx={{ color: "#52C03C", fontSize: "35px", mr: "12px" }}
+            sx={{
+              color: "#52C03C",
+              fontSize: { xs: "35px", xxxs: "30px" },
+              mr: "12px",
+            }}
           />
           <Typography
             sx={{
               color: "white",
-              fontSize: "16px",
+              fontSize: { xs: "16px", xxxs: "12px" },
               fontWeight: 400,
               fontFamily: "poppins",
             }}
@@ -96,12 +106,16 @@ export default function Rule({ setOpenRule }) {
           }}
         >
           <CheckCircleIcon
-            sx={{ color: "#52C03C", fontSize: "35px", mr: "12px" }}
+            sx={{
+              color: "#52C03C",
+              fontSize: { xs: "35px", xxxs: "30px" },
+              mr: "12px",
+            }}
           />
           <Typography
             sx={{
               color: "white",
-              fontSize: "16px",
+              fontSize: { xs: "16px", xxxs: "12px" },
               fontWeight: 400,
               fontFamily: "poppins",
             }}
@@ -122,12 +136,16 @@ export default function Rule({ setOpenRule }) {
           }}
         >
           <CheckCircleIcon
-            sx={{ color: "#52C03C", fontSize: "35px", mr: "12px" }}
+            sx={{
+              color: "#52C03C",
+              fontSize: { xs: "35px", xxxs: "30px" },
+              mr: "12px",
+            }}
           />
           <Typography
             sx={{
               color: "white",
-              fontSize: "16px",
+              fontSize: { xs: "16px", xxxs: "12px" },
               fontWeight: 400,
               fontFamily: "poppins",
             }}
@@ -145,7 +163,7 @@ export default function Rule({ setOpenRule }) {
             background: "#4831D4",
             width: "90%",
             margin: "0 auto",
-            py: "20px",
+            py: { xs: "20px", xxxs: "10px" },
             mb: "10px",
             "&.MuiButtonBase-root:hover": {
               background: "#4831D4",

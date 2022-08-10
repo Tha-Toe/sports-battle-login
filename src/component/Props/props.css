@@ -63,6 +63,11 @@
 }
 .matchesTime {
 }
+.propsNavImg {
+  width: 24px;
+  height: 24px;
+}
+
 @media (max-width: 1100px) {
   .statsButton {
     height: 30px;
@@ -91,5 +96,9 @@
     padding-left: 15px;
     min-width: 53px;
     padding: 0px 5px;
+  }
+  .propsNavImg {
+    width: 20px;
+    height: 20px;
   }
 }

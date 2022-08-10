@@ -63,6 +63,7 @@ export default function HowTo({ setOpenHowTo }) {
             fontWeight: 700,
             fontFamily: "poppins",
             width: "90%",
+            mt: "20px",
           }}
         >
           Over-Under Basics
@@ -77,12 +78,16 @@ export default function HowTo({ setOpenHowTo }) {
           }}
         >
           <CheckCircleIcon
-            sx={{ color: "#52C03C", fontSize: "35px", mr: "12px" }}
+            sx={{
+              color: "#52C03C",
+              fontSize: { xs: "35px", xxxs: "30px" },
+              mr: "12px",
+            }}
           />
           <Typography
             sx={{
               color: "white",
-              fontSize: "16px",
+              fontSize: { xs: "16px", xxxs: "12px" },
               fontWeight: 400,
               fontFamily: "poppins",
             }}
@@ -100,12 +105,16 @@ export default function HowTo({ setOpenHowTo }) {
           }}
         >
           <CheckCircleIcon
-            sx={{ color: "#52C03C", fontSize: "35px", mr: "12px" }}
+            sx={{
+              color: "#52C03C",
+              fontSize: { xs: "35px", xxxs: "30px" },
+              mr: "12px",
+            }}
           />
           <Typography
             sx={{
               color: "white",
-              fontSize: "16px",
+              fontSize: { xs: "16px", xxxs: "12px" },
               fontWeight: 400,
               fontFamily: "poppins",
             }}
@@ -125,12 +134,16 @@ export default function HowTo({ setOpenHowTo }) {
           }}
         >
           <CheckCircleIcon
-            sx={{ color: "#52C03C", fontSize: "35px", mr: "12px" }}
+            sx={{
+              color: "#52C03C",
+              fontSize: { xs: "35px", xxxs: "30px" },
+              mr: "12px",
+            }}
           />
           <Typography
             sx={{
               color: "white",
-              fontSize: "16px",
+              fontSize: { xs: "16px", xxxs: "12px" },
               fontWeight: 400,
               fontFamily: "poppins",
             }}
@@ -148,7 +161,7 @@ export default function HowTo({ setOpenHowTo }) {
             background: "#4831D4",
             width: "90%",
             margin: "0 auto",
-            py: "20px",
+            py: { xs: "20px", xxxs: "10px" },
             mb: "10px",
             "&.MuiButtonBase-root:hover": {
               background: "#4831D4",
