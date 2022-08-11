@@ -205,8 +205,8 @@ export function Logged() {
       <Box
         component="div"
         sx={{
-          position: { sm: "relative", xxxs: "absolute" },
-          height: { sm: "90%", xxxs: "100%" },
+          position: { sm: "relative", xxxs: "relative" },
+          height: { sm: "90%", xxxs: "90%" },
           width: "100%",
         }}
       >
