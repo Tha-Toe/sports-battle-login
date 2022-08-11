@@ -7,22 +7,30 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import "./logged.css";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Props from "../../Props/Props";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import MenuIcon from "@mui/icons-material/Menu";
 import ClearIcon from "@mui/icons-material/Clear";
 import AddCash from "../../AddCash/AddCash";
+import NewAddCashVerify from "../../AddCash/NewAddCashVerify";
+import NewAddCashForm from "../../AddCash/NewAddCashForm";
+import Address from "../../AddCash/Address";
 
 export function Logged() {
   let navigate = useNavigate();
+  let location = useLocation();
+
   const handleLogout = () => {
     navigate("/", { replace: true });
   };
 
   const propsOpen = () => {
-    setOpenTag("props");
+    navigate("/logged", { replace: true });
     setOpenSideNav(false);
+  };
+  const goDepositNewUser = () => {
+    navigate("/logged?deposit=new&page=verify", { replace: true });
   };
   const [sideBar, setSideBar] = useState([
     {
@@ -60,6 +68,7 @@ export function Logged() {
 
   const [openSideNav, setOpenSideNav] = useState(false);
   const [openTag, setOpenTag] = useState("props");
+  const [address, setAddress] = useState(null);
   return (
     <main className="logged-container">
       <Box
@@ -185,7 +194,10 @@ export function Logged() {
                     background: "#4831D4",
                   },
                 }}
-                onClick={() => setOpenTag("addCash")}
+                onClick={() => {
+                  setOpenTag("addCash");
+                  goDepositNewUser();
+                }}
               >
                 Deposit
               </Button>
@@ -395,8 +407,17 @@ export function Logged() {
             },
           }}
         >
-          {openTag === "props" && <Props></Props>}
-          {openTag === "addCash" && <AddCash />}
+          {!location.search && <Props></Props>}
+          {location.search === "?deposit=old-user" && <AddCash />}
+          {location.search === "?deposit=new&page=verify" && (
+            <NewAddCashVerify />
+          )}
+          {location.search === "?deposit=new&page=form" && (
+            <NewAddCashForm address={address} />
+          )}
+          {location.search === "?deposit=new&page=address" && (
+            <Address setAddress={setAddress} />
+          )}
         </Box>
       </Box>
     </main>
