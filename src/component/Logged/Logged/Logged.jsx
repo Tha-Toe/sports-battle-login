@@ -87,6 +87,8 @@ export function Logged() {
             boxShadow: "none",
             zIndex: { sm: 4, xxxs: 3 },
             background: "black",
+            mt: "10px",
+            pb: { sm: 0, xxxs: "5px" },
           }}
         >
           <Toolbar
@@ -111,9 +113,10 @@ export function Logged() {
                 },
                 margin: "0 auto",
                 display: "flex",
-                justifyContent: { xs: "flex-end", xxxs: "center" },
+                justifyContent: { sm: "flex-end", xxxs: "center" },
                 alignItems: "center",
                 mb: { xs: 0, xxxs: "10px" },
+                mt: { sm: 0, xxxs: "10px" },
               }}
             >
               <Button
@@ -123,11 +126,16 @@ export function Logged() {
                   borderRadius: "4px",
                   textTransform: "none",
                   fontFamily: "Poppins",
-                  fontSize: { sm: "10px", xs: "10px", xxs: "8px", xxxs: "6px" },
+                  fontSize: {
+                    sm: "10px",
+                    xs: "10px",
+                    xxs: "8px",
+                    xxxs: "8px",
+                  },
                   fontWeight: 700,
-                  padding: { xs: "8px 12px", xxs: "4px 6px" },
-                  maxWidth: { xs: "auto", xxs: "22%", xxxs: "21%" },
-                  minWidth: { xs: "25%", xxs: "22%", xxxs: "21%" },
+                  padding: { xs: "8px 12px", xxxs: "6px 6px" },
+                  maxWidth: { sm: "auto", xxs: "22%", xxxs: "25%" },
+                  minWidth: { sm: "auto", xxs: "22%", xxxs: "25%" },
                   mr: { sm: "12px", xs: "8px", xxxs: "2px" },
                   "&.MuiButtonBase-root:hover": {
                     background: "#fff",
@@ -143,11 +151,16 @@ export function Logged() {
                   borderRadius: "4px",
                   textTransform: "none",
                   fontFamily: "Poppins",
-                  fontSize: { sm: "10px", xs: "10px", xxs: "8px", xxxs: "6px" },
+                  fontSize: {
+                    sm: "10px",
+                    xs: "10px",
+                    xxs: "8px",
+                    xxxs: "8px",
+                  },
                   fontWeight: 700,
-                  maxWidth: { xs: "auto", xxs: "20%", xxxs: "21%" },
-                  minWidth: { xs: "auto", xxs: "20%", xxxs: "21%" },
-                  padding: { xs: "8px 12px", xxxs: "4px 6px" },
+                  maxWidth: { sm: "auto", xxs: "22%", xxxs: "25%" },
+                  minWidth: { sm: "auto", xxs: "22%", xxxs: "25%" },
+                  padding: { xs: "8px 12px", xxxs: "6px 6px" },
                   mr: { sm: "12px", xs: "8px", xxxs: "2px" },
                   "&.MuiButtonBase-root:hover": {
                     background: "rgba(36, 36, 35, 1)",
@@ -163,11 +176,16 @@ export function Logged() {
                   borderRadius: "4px",
                   textTransform: "none",
                   fontFamily: "Poppins",
-                  fontSize: { sm: "10px", xs: "10px", xxs: "8px", xxxs: "6px" },
+                  fontSize: {
+                    sm: "10px",
+                    xs: "10px",
+                    xxs: "8px",
+                    xxxs: "8px",
+                  },
                   fontWeight: 700,
-                  maxWidth: { xs: "auto", xxs: "19%", xxxs: "21%" },
-                  minWidth: { xs: "auto", xxs: "19%", xxxs: "21%" },
-                  padding: { xs: "8px 12px", xxxs: "4px 6px" },
+                  maxWidth: { sm: "auto", xxs: "22%", xxxs: "25%" },
+                  minWidth: { sm: "auto", xxs: "22%", xxxs: "25%" },
+                  padding: { xs: "8px 12px", xxxs: "6px 6px" },
                   mr: { sm: "12px", xs: "8px", xxxs: "2px" },
                   "&.MuiButtonBase-root:hover": {
                     background: "rgba(36, 36, 35, 1)",
@@ -184,11 +202,16 @@ export function Logged() {
                   borderRadius: "4px",
                   textTransform: "none",
                   fontFamily: "Poppins",
-                  fontSize: { sm: "10px", xs: "10px", xxs: "8px", xxxs: "6px" },
+                  fontSize: {
+                    sm: "10px",
+                    xs: "10px",
+                    xxs: "8px",
+                    xxxs: "8px",
+                  },
                   fontWeight: 700,
-                  padding: { xs: "8px 12px", xxxs: "4px 6px" },
-                  maxWidth: { xs: "auto", xxs: "19%", xxxs: "21%" },
-                  minWidth: { xs: "auto", xxs: "19%", xxxs: "21%" },
+                  padding: { xs: "8px 12px", xxxs: "6px 6px" },
+                  maxWidth: { sm: "auto", xxs: "22%", xxxs: "25%" },
+                  minWidth: { sm: "auto", xxs: "22%", xxxs: "25%" },
                   mr: { sm: "12px", xs: "8px", xxxs: "2px" },
                   "&.MuiButtonBase-root:hover": {
                     background: "#4831D4",
@@ -209,12 +232,12 @@ export function Logged() {
                   flexDirection: "row",
                   justifyContent: "center",
                   alignItems: "center",
+                  position: { sm: "static", xxxs: "absolute" },
+                  top: 0,
+                  right: "10px",
                 }}
               >
-                <img
-                  src="/profile.png"
-                  style={{ width: "31px", height: "31px" }}
-                />
+                <img src="/profile.png" className="profileImage" />
                 <KeyboardArrowDownIcon
                   sx={{ color: "#494949", fontSize: "25px" }}
                 />
@@ -226,10 +249,10 @@ export function Logged() {
       <Box
         component="div"
         sx={{
-          position: { sm: "relative", xxxs: "relative" },
+          position: "relative",
           height: { sm: "90%", xxxs: "90%" },
           width: "100%",
-          mt: { xs: 0, xxxs: "20px" },
+          mt: { sm: 0, xxxs: "30px" },
         }}
       >
         <AppBar
