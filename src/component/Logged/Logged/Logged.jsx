@@ -208,6 +208,7 @@ export function Logged() {
           position: { sm: "relative", xxxs: "relative" },
           height: { sm: "90%", xxxs: "90%" },
           width: "100%",
+          mt: { xs: 0, xxxs: "20px" },
         }}
       >
         <AppBar
@@ -216,7 +217,7 @@ export function Logged() {
             boxShadow: "none",
             outline: "none",
             width: { lg: "80px", md: "50px", sm: "30px", xxxs: "80px" },
-            position: "absolute",
+            position: { sm: "absolute", xxxs: "fixed" },
             background: "transparent",
             left: { sm: 0, xxxs: `${openSideNav ? 0 : "-114px"}` },
             top: 0,
