@@ -40,6 +40,12 @@ const SubmitProjection = ({ selectCardId }) => {
       }}
     >
       <Typography
+        id="submitProjection"
+        sx={{
+          display: { xs: "none", xxxs: "block" },
+        }}
+      ></Typography>
+      <Typography
         sx={{
           fontFamily: "poppins",
           fontSize: "14px",

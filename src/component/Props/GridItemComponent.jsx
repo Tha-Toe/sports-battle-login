@@ -152,49 +152,53 @@ const GridItemComponent = ({
             mr: "8px",
           }}
         >
-          <Button
-            sx={{
-              width: { sm: "48px", xxxs: "24px" },
-              height: "20px",
-              color: "white",
-              fontSize: { sm: "9px", xs: "7px", xxxs: "9px" },
-              fontWeight: 400,
-              fontFamily: "poppins",
-              border: `${over ? "none" : "1px solid white"}`,
-              borderRadius: "3px",
-              mb: "8px",
-              background: `${over ? "#4831D4" : "transparent"}`,
-              "&.MuiButtonBase-root:hover": {
+          <a href="#submitProjection">
+            <Button
+              sx={{
+                width: { sm: "48px", xxxs: "24px" },
+                height: "20px",
+                color: "white",
+                fontSize: { sm: "9px", xs: "7px", xxxs: "9px" },
+                fontWeight: 400,
+                fontFamily: "poppins",
+                border: `${over ? "none" : "1px solid white"}`,
+                borderRadius: "3px",
+                mb: "8px",
                 background: `${over ? "#4831D4" : "transparent"}`,
-              },
-            }}
-            onClick={() => {
-              addCard("over");
-            }}
-          >
-            Over
-          </Button>
-          <Button
-            sx={{
-              width: { sm: "48px", xxxs: "24px" },
-              color: "white",
-              height: "20px",
-              fontSize: { sm: "9px", xs: "7px", xxxs: "9px" },
-              fontWeight: 400,
-              fontFamily: "poppins",
-              border: `${under ? "none" : "1px solid white"}`,
-              borderRadius: "3px",
-              background: `${under ? "#4831D4" : "transparent"}`,
-              "&.MuiButtonBase-root:hover": {
+                "&.MuiButtonBase-root:hover": {
+                  background: `${over ? "#4831D4" : "transparent"}`,
+                },
+              }}
+              onClick={() => {
+                addCard("over");
+              }}
+            >
+              Over
+            </Button>
+          </a>
+          <a href="#submitProjection">
+            <Button
+              sx={{
+                width: { sm: "48px", xxxs: "24px" },
+                color: "white",
+                height: "20px",
+                fontSize: { sm: "9px", xs: "7px", xxxs: "9px" },
+                fontWeight: 400,
+                fontFamily: "poppins",
+                border: `${under ? "none" : "1px solid white"}`,
+                borderRadius: "3px",
                 background: `${under ? "#4831D4" : "transparent"}`,
-              },
-            }}
-            onClick={() => {
-              addCard("under");
-            }}
-          >
-            Under
-          </Button>
+                "&.MuiButtonBase-root:hover": {
+                  background: `${under ? "#4831D4" : "transparent"}`,
+                },
+              }}
+              onClick={() => {
+                addCard("under");
+              }}
+            >
+              Under
+            </Button>
+          </a>
         </Box>
       </Card>
     </Grid>
