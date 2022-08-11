@@ -122,7 +122,7 @@ export default function AddCash() {
               Enter Amount
             </Typography>
             <Input
-              type="text"
+              type="number"
               placeholder="100"
               variant="outlined"
               sx={{

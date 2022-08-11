@@ -227,7 +227,7 @@ export default function Props() {
             md: "700px",
             sm: "500px",
             xs: "450px",
-            xxxs: "95%",
+            xxxs: "90%",
           },
           height: "100vh",
           margin: "auto",

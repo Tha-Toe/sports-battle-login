@@ -22,6 +22,7 @@ export function Logged() {
 
   const propsOpen = () => {
     setOpenTag("props");
+    setOpenSideNav(false);
   };
   const [sideBar, setSideBar] = useState([
     {
@@ -164,7 +165,6 @@ export function Logged() {
                   },
                   cursor: "pointer",
                 }}
-                onClick={() => setOpenTag("addCash")}
               >
                 Cash: $0.00
               </Button>
@@ -185,6 +185,7 @@ export function Logged() {
                     background: "#4831D4",
                   },
                 }}
+                onClick={() => setOpenTag("addCash")}
               >
                 Deposit
               </Button>
