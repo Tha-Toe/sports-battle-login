@@ -12,11 +12,16 @@ import Props from "../../Props/Props";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import MenuIcon from "@mui/icons-material/Menu";
 import ClearIcon from "@mui/icons-material/Clear";
+import AddCash from "../../AddCash/AddCash";
 
 export function Logged() {
   let navigate = useNavigate();
   const handleLogout = () => {
     navigate("/", { replace: true });
+  };
+
+  const propsOpen = () => {
+    setOpenTag("props");
   };
   const [sideBar, setSideBar] = useState([
     {
@@ -24,6 +29,7 @@ export function Logged() {
       activeSrc: "/props-active.png",
       unactiveSrc: "/props-unactive.png",
       active: true,
+      func: propsOpen,
     },
     {
       name: "My Props",
@@ -52,7 +58,7 @@ export function Logged() {
   ]);
 
   const [openSideNav, setOpenSideNav] = useState(false);
-
+  const [openTag, setOpenTag] = useState("props");
   return (
     <main className="logged-container">
       <Box
@@ -156,7 +162,9 @@ export function Logged() {
                   "&.MuiButtonBase-root:hover": {
                     background: "rgba(36, 36, 35, 1)",
                   },
+                  cursor: "pointer",
                 }}
+                onClick={() => setOpenTag("addCash")}
               >
                 Cash: $0.00
               </Button>
@@ -274,7 +282,9 @@ export function Logged() {
                     alignItems: "center",
                     justifyContent: "center",
                     height: "20%",
+                    cursor: "pointer",
                   }}
+                  onClick={e.func}
                 >
                   <img
                     src={e.active ? e.activeSrc : e.unactiveSrc}
@@ -384,7 +394,8 @@ export function Logged() {
             },
           }}
         >
-          <Props></Props>
+          {openTag === "props" && <Props></Props>}
+          {openTag === "addCash" && <AddCash />}
         </Box>
       </Box>
     </main>
