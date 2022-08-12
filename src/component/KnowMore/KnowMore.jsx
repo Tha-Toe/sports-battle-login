@@ -76,7 +76,7 @@ export default function KnowMore() {
             "&::-webkit-scrollbar": {
               display: "none",
             },
-            mb: "15px",
+            mb: "30px",
           }}
         >
           {overUnderNav.map((e) => (
