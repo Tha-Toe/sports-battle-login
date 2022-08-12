@@ -19,7 +19,10 @@ import OverUnderPointSystem from "./OverUnderPointSystem";
 import FAQ from "./FAQ";
 import OperatingState from "./OperatingState";
 
-export default function KnowMore() {
+export default function KnowMore({ setOpenInviteFriend }) {
+  const openShareFriend = () => {
+    setOpenInviteFriend(true);
+  };
   const [general, setGeneral] = useState([
     { name: "Over-Under Points System", src: "/howto.png" },
     { name: "Frequently Asked Questions", src: "/fps.png" },
@@ -28,6 +31,7 @@ export default function KnowMore() {
       name: "Share your love of Fantasy Sports",
       src: "/fps.png",
       extra: "You and your friend will both receive bonus cash",
+      func: openShareFriend,
     },
   ]);
   const [legal, setLegal] = useState([
@@ -178,6 +182,7 @@ export default function KnowMore() {
               }}
               onClick={() => {
                 setOpenTag(e.name);
+                e.func();
               }}
             >
               <img src={e.src} className="know-icon" />

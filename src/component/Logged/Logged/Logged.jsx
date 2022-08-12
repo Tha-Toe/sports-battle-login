@@ -67,9 +67,9 @@ export function Logged() {
       activeName: "my-props",
     },
     {
-      name: "My Games",
-      activeSrc: "/my-game-active.png",
-      unactiveSrc: "/my-game-unactive.png",
+      name: "My Account",
+      activeSrc: "/myAccount.png",
+      unactiveSrc: "/myAccount.png",
       activeName: "my-games",
     },
     {
@@ -91,7 +91,7 @@ export function Logged() {
   const [openTag, setOpenTag] = useState("props");
   const [address, setAddress] = useState(null);
 
-  const [openReferTag, setOpenReferTag] = useState(true);
+  const [openInviteFriend, setOpenInviteFriend] = useState(false);
   const [referNote, setReferNote] = useState([
     { note: "Refer a friend and give them your referral code" },
     {
@@ -101,6 +101,10 @@ export function Logged() {
       note: "We will give you both bonus cash that can be used 100% for over-unde & player -battle to win real money, when your friend enters your referral code in REFERRAL BONUS screen in Lobby",
     },
   ]);
+  // onClick={() => {
+  //   goRefralBonusCashRadeem();
+  //   setOpenInviteFriend(false);
+  // }}
   return (
     <main className="logged-container">
       <Box
@@ -172,6 +176,10 @@ export function Logged() {
                   "&.MuiButtonBase-root:hover": {
                     background: "#fff",
                   },
+                  cursor: "pointer",
+                }}
+                onClick={() => {
+                  setOpenInviteFriend(true);
                 }}
               >
                 Invite Friends
@@ -464,7 +472,9 @@ export function Logged() {
           }}
         >
           {!location.search && openTag === "props" && <Props></Props>}
-          {!location.search && openTag === "know-more" && <KnowMore />}
+          {!location.search && openTag === "know-more" && (
+            <KnowMore setOpenInviteFriend={setOpenInviteFriend} />
+          )}
           {location.search === "?deposit=old-user" && <AddCash />}
           {location.search === "?deposit=new&page=verify" && (
             <NewAddCashVerify />
@@ -486,7 +496,7 @@ export function Logged() {
           )}
         </Box>
       </Box>
-      {openReferTag && (
+      {openInviteFriend && (
         <div className="bonus-offer-container">
           <Box
             sx={{
@@ -515,7 +525,7 @@ export function Logged() {
                   mt: "14px",
                   cursor: "pointer",
                 }}
-                onClick={() => setOpenReferTag(false)}
+                onClick={() => setOpenInviteFriend(false)}
               />
             </Box>
             <img src="/refer1.png" className="refer1" />
@@ -600,10 +610,6 @@ export function Logged() {
                     background: "#F5A922",
                   },
                   cursor: "pointer",
-                }}
-                onClick={() => {
-                  goRefralBonusCashRadeem();
-                  setOpenReferTag(false);
                 }}
               >
                 Share SportsBattle
