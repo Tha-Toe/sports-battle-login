@@ -20,6 +20,7 @@ import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import RefralBonusCashRandoom from "../../Refral/RefralBonusCashRandoom";
 import VerifyPhoneNumberCode from "../../Refral/VerifyPhoneNumberCode";
 import RefralBonusCashCode from "../../Refral/RefralBonusCashCode";
+import KnowMore from "../../KnowMore/KnowMore";
 
 export function Logged() {
   let navigate = useNavigate();
@@ -32,6 +33,12 @@ export function Logged() {
   const propsOpen = () => {
     navigate("/logged", { replace: true });
     setOpenSideNav(false);
+    setOpenTag("props");
+  };
+  const knowMoreOpen = () => {
+    navigate("/logged", { replace: true });
+    setOpenSideNav(false);
+    setOpenTag("know-more");
   };
   const goDepositNewUser = () => {
     navigate("/logged?deposit=new&page=verify", { replace: true });
@@ -76,6 +83,7 @@ export function Logged() {
       activeSrc: "/nomore-active.png",
       unactiveSrc: "/nomore-unactive.png",
       activeName: "know-more",
+      func: knowMoreOpen,
     },
   ]);
 
@@ -347,15 +355,14 @@ export function Logged() {
                   onClick={e.func}
                 >
                   <img
-                    src={
-                      activeTag === e.activeName ? e.activeSrc : e.unactiveSrc
-                    }
+                    src={openTag === e.activeName ? e.activeSrc : e.unactiveSrc}
                   />
                   <Typography
                     sx={{
                       fontFamily: "poppins",
                       fontSize: { md: "10px", xxxs: "8px" },
                       textAlign: "center",
+                      mt: "5px",
                     }}
                   >
                     {e.name}
@@ -456,7 +463,8 @@ export function Logged() {
             },
           }}
         >
-          {!location.search && <Props></Props>}
+          {!location.search && openTag === "props" && <Props></Props>}
+          {!location.search && openTag === "know-more" && <KnowMore />}
           {location.search === "?deposit=old-user" && <AddCash />}
           {location.search === "?deposit=new&page=verify" && (
             <NewAddCashVerify />
