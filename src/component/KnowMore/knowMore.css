@@ -5,4 +5,8 @@
   .know-icon {
     display: none;
   }
+  .overUnderNavImage {
+    width: 20px;
+    height: 20px;
+  }
 }

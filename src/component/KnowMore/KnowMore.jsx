@@ -22,8 +22,6 @@ import OperatingState from "./OperatingState";
 export default function KnowMore() {
   const [general, setGeneral] = useState([
     { name: "Over-Under Points System", src: "/howto.png" },
-    { name: "Player Battle Points System", src: "/rules.png" },
-    { name: "Contest Points System", src: "/fps.png" },
     { name: "Frequently Asked Questions", src: "/fps.png" },
     { name: "Sports Battle Operating States", src: "/fps.png" },
     {
@@ -39,8 +37,89 @@ export default function KnowMore() {
   ]);
 
   const [openTag, setOpenTag] = useState("Over-Under Points System");
+
+  const [overUnderNav, setOverUnderNav] = useState([
+    { name: "MLB", active: true, src: "/mlb.png" },
+    { name: "PGA", active: false, src: "/pga.png" },
+    { name: "GOLF", active: false, src: "/golf.png" },
+    { name: "NFL", active: false, src: "/nfl.png" },
+    { name: "WNBA", active: false, src: "/wnba.png" },
+    { name: "Cricket", active: false, src: "/cricket.png" },
+    { name: "CSGO", active: false, src: "/csgo.png" },
+    { name: "MMA", active: false, src: "/mma.png" },
+    { name: "F1", active: false, src: "/f1.png" },
+    { name: "CFL", active: false, src: "/cfl.png" },
+    { name: "DOTA2", active: false, src: "/dota2.png" },
+    { name: "VAL", active: false, src: "/val.png" },
+    { name: "Soccer", active: false, src: "/soccer.png" },
+    { name: "NBA", active: false, src: "/nba.png" },
+  ]);
   return (
     <Box sx={{ minHeight: "100vh", width: "100%", mt: "10px" }}>
+      {openTag === "Over-Under Points System" && (
+        <Box
+          component="div"
+          sx={{
+            width: {
+              lg: "836px",
+              md: "700px",
+              sm: "550px",
+              xs: "90%",
+              xxxs: "95%",
+            },
+            margin: "0 auto",
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "space-between",
+            overflow: "scroll",
+            "&::-webkit-scrollbar": {
+              display: "none",
+            },
+            mb: "15px",
+          }}
+        >
+          {overUnderNav.map((e) => (
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                mr: { xxxs: "15px", md: "" },
+              }}
+            >
+              <Box
+                sx={{
+                  height: { xs: "34px", xxxs: "30px" },
+                  width: { xs: "34px", xxxs: "30px" },
+                  border: "2px solid white",
+                  borderRadius: "50%",
+                  mt: "13px",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  background: `${e.active ? "#4831D4" : "black"}`,
+                }}
+              >
+                <img className="overUnderNavImage" src={e.src} />
+              </Box>
+              <Typography
+                sx={{
+                  fontSize: "12px",
+                  fontWeight: 400,
+                  fontFamily: "poppins",
+                  mt: "5px",
+                }}
+              >
+                {" "}
+                {e.name}
+              </Typography>
+            </Box>
+          ))}
+        </Box>
+      )}
       <Box
         sx={{
           width: {
@@ -182,40 +261,6 @@ export default function KnowMore() {
               </Box>
             </Box>
           ))}
-          <Typography
-            sx={{
-              fontSize: { lg: "16px", xs: "14px", xxxs: "12px" },
-              fontWeight: 700,
-              fontFamily: "poppins",
-              width: "100%",
-              color: "white",
-              mb: "12px",
-              mt: "24px",
-              ml: { xs: 0, xxxs: "5px" },
-            }}
-          >
-            APP VERSION
-          </Typography>
-          <Box
-            sx={{
-              width: "100%",
-              height: "2px",
-              background: "#D9D9D9",
-              mb: "12px",
-            }}
-          ></Box>
-          <Typography
-            sx={{
-              fontSize: { lg: "14px", xs: "12px", xxxs: "10px" },
-              fontWeight: 500,
-              fontFamily: "poppins",
-              width: "100%",
-              color: "white",
-              mb: "12px",
-            }}
-          >
-            Version 1.59
-          </Typography>
         </Box>
         <Box sx={{ width: { xs: "65%", xxxs: "75%" } }}>
           {openTag === "Over-Under Points System" && <OverUnderPointSystem />}
