@@ -50,7 +50,7 @@ export default function FAQ() {
       <Typography
         sx={{
           width: "90%",
-          color: "white",
+          color: "secondary.main",
           fontSize: { lg: "16px", xs: "14px", xxxs: "12px" },
           fontWeight: 600,
           fontFamily: "poppins",
@@ -90,7 +90,7 @@ export default function FAQ() {
               fontSize: { lg: "14px", xs: "12px", xxxs: "10px" },
               fontWeight: 700,
               fontFamily: "poppins",
-              color: "white",
+              color: "secondary.main",
               width: "100%",
               mb: "14px",
             }}
@@ -102,7 +102,7 @@ export default function FAQ() {
               fontSize: { lg: "14px", xs: "12px", xxxs: "10px" },
               fontWeight: 500,
               fontFamily: "poppins",
-              color: "white",
+              color: "secondary.main",
               width: "100%",
               mb: "10px",
             }}

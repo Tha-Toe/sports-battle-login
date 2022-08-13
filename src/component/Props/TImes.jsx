@@ -10,7 +10,7 @@ export default function Times() {
           fontFamily: "poppins",
           fontSize: "8px",
           fontWeight: 400,
-          color: "white",
+          color: "secondary.main",
           mb: "7px",
         }}
       >
@@ -28,7 +28,7 @@ export default function Times() {
         <Box
           sx={{
             padding: "5px 8px",
-            background: "#2E2D2D",
+            bgcolor: "#2E2D2D",
             borderRadius: "4px",
             fontFamily: "poppins",
             fontWeight: 500,
@@ -54,7 +54,7 @@ export default function Times() {
         <Box
           sx={{
             padding: "5px 8px",
-            background: "#2E2D2D",
+            bgcolor: "#2E2D2D",
             borderRadius: "4px",
             fontFamily: "poppins",
             fontWeight: 500,
@@ -67,7 +67,7 @@ export default function Times() {
         <Box
           sx={{
             padding: "5px 8px",
-            background: "#2E2D2D",
+            bgcolor: "#2E2D2D",
             borderRadius: "4px",
             fontFamily: "poppins",
             fontWeight: 500,
@@ -80,7 +80,7 @@ export default function Times() {
         <Box
           sx={{
             padding: "5px 8px",
-            background: "#2E2D2D",
+            bgcolor: "#2E2D2D",
             borderRadius: "4px",
             fontFamily: "poppins",
             fontWeight: 500,

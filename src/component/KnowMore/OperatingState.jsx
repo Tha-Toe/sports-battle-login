@@ -53,7 +53,7 @@ export default function OperatingState() {
           fontSize: { lg: "16px", xs: "14px", xxxs: "12px" },
           fontWeight: 600,
           fontFamily: "poppins",
-          color: "white",
+          color: "secondary.main",
           width: "90%",
           mt: "10px",
         }}
@@ -65,7 +65,7 @@ export default function OperatingState() {
           fontSize: { lg: "12px", xs: "10px", xxxs: "8px" },
           fontWeight: 400,
           fontFamily: "poppins",
-          color: "white",
+          color: "secondary.main",
           width: "90%",
           mt: "9px",
         }}
@@ -105,7 +105,7 @@ export default function OperatingState() {
               fontSize: { lg: "14px", xs: "12px", xxxs: "10px" },
               fontWeight: 500,
               fontFamily: "poppins",
-              color: "white",
+              color: "secondary.main",
             }}
           >
             {e.name}

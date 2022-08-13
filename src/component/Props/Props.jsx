@@ -26,7 +26,7 @@ import HowTo from "./HowTo";
 import Rule from "./Rule";
 import BaseBallPoint from "./BaseBallPoint";
 
-export default function Props() {
+export default function Props({ mode }) {
   const [openHowTo, setOpenHowTo] = useState(false);
   const [openRule, setOpenRule] = useState(false);
   const [openBaseBallPoint, setOpenBaseBallPoint] = useState(false);
@@ -59,10 +59,25 @@ export default function Props() {
   ]);
 
   const [propsGuide, setPropsGuide] = useState([
-    { name: "How to", src: "/howto.png", func: howToOpen },
-    { name: "Rules", src: "/rules.png", func: rulesOpen },
-    { name: "FPS", src: "/fps.png", func: baseBallPointOpen },
-    { name: "Refresh", src: "/refresh.png" },
+    {
+      name: "How to",
+      src: "/howto.png",
+      darkSrc: "/howto-dark.png",
+      func: howToOpen,
+    },
+    {
+      name: "Rules",
+      src: "/rules.png",
+      darkSrc: "/rules-dark.png",
+      func: rulesOpen,
+    },
+    {
+      name: "FPS",
+      src: "/fps.png",
+      darkSrc: "/fps-dark.png",
+      func: baseBallPointOpen,
+    },
+    { name: "Refresh", src: "/refresh.png", darkSrc: "/refresh-dark.png" },
   ]);
 
   const [stats, setStats] = useState([
@@ -269,7 +284,7 @@ export default function Props() {
                   flexDirection: "column",
                   alignItems: "center",
                   justifyContent: "center",
-                  background: `${e.active ? "#4831D4" : "black"}`,
+                  bgcolor: `${e.active ? "#4831D4" : "black"}`,
                 }}
               >
                 <img className="propsNavImg" src={e.src} />
@@ -280,6 +295,7 @@ export default function Props() {
                   fontWeight: 400,
                   fontFamily: "poppins",
                   mt: "5px",
+                  color: "secondary.main",
                 }}
               >
                 {" "}
@@ -322,15 +338,30 @@ export default function Props() {
                 }}
                 onClick={e.func}
               >
-                <img
-                  src={e.src}
-                  style={{ marginRight: "3px", height: "20px" }}
-                />
+                {mode === "dark" ? (
+                  <img
+                    src={e.src}
+                    style={{
+                      marginRight: "3px",
+                      height: "20px",
+                    }}
+                  />
+                ) : (
+                  <img
+                    src={e.darkSrc}
+                    style={{
+                      marginRight: "3px",
+                      height: "20px",
+                    }}
+                  />
+                )}
+
                 <Typography
                   sx={{
                     fontSize: { md: "14px", sm: "10px", xxxs: "8px" },
                     fontFamily: "poppins",
                     fontWeight: 500,
+                    color: "secondary.main",
                   }}
                 >
                   {e.name}
@@ -353,8 +384,8 @@ export default function Props() {
             placeholder="Search"
             disableUnderline
             sx={{
-              background: "#161616",
-              border: "1px solid #2c2c2c",
+              bgcolor: "primary.light",
+              border: `${mode === "dark" ? "1px solid #2c2c2c" : "none"}`,
               width: {
                 md: "324px",
                 sm: "250px",
@@ -391,6 +422,7 @@ export default function Props() {
               fontWeight: "400",
               fontFamily: "poppins",
               width: { md: "10%", sm: "50%", xxxs: "70%" },
+              color: "secondary.main",
             }}
           >
             9 Stats
@@ -434,7 +466,7 @@ export default function Props() {
             ></Box>
             <Box
               sx={{
-                background: "white",
+                bgcolor: "white",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
@@ -472,7 +504,8 @@ export default function Props() {
               fontSize: { sm: "16px", xxxs: "12px" },
               fontWeight: "400",
               fontFamily: "poppins",
-              width: { md: "10%", xs: "50%", xxxs: "70%" },
+              width: { md: "13%", xs: "50%", xxxs: "70%" },
+              color: "secondary.main",
             }}
           >
             5 Matches
@@ -567,11 +600,12 @@ export default function Props() {
                   selectCardId={selectCardId}
                   setSelectCardId={setSelectCardId}
                   addCardIndex={addCardIndex}
+                  mode={mode}
                 />
               ))}
             </Grid>
           </Box>
-          <SubmitProjection selectCardId={selectCardId} />
+          <SubmitProjection selectCardId={selectCardId} mode={mode} />
         </Box>
       </Box>
       {openHowTo && <HowTo setOpenHowTo={setOpenHowTo} />}

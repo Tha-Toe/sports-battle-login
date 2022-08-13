@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 
@@ -6,7 +6,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import "./logged.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Props from "../../Props/Props";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
@@ -21,8 +21,7 @@ import RefralBonusCashRandoom from "../../Refral/RefralBonusCashRandoom";
 import VerifyPhoneNumberCode from "../../Refral/VerifyPhoneNumberCode";
 import RefralBonusCashCode from "../../Refral/RefralBonusCashCode";
 import KnowMore from "../../KnowMore/KnowMore";
-
-export function Logged() {
+export function Logged({ mode, setMode }) {
   let navigate = useNavigate();
   let location = useLocation();
 
@@ -105,6 +104,17 @@ export function Logged() {
   //   goRefralBonusCashRadeem();
   //   setOpenInviteFriend(false);
   // }}
+
+  const switchMode = () => {
+    if (mode === "dark") {
+      setMode("light");
+    } else {
+      setMode("dark");
+    }
+  };
+  useEffect(() => {
+    console.log(mode);
+  }, [mode]);
   return (
     <main className="logged-container">
       <Box
@@ -122,19 +132,18 @@ export function Logged() {
             position: "relative",
             boxShadow: "none",
             zIndex: { sm: 4, xxxs: 3 },
-            background: "black",
             mt: "10px",
             pb: { sm: 0, xxxs: "5px" },
           }}
         >
           <Toolbar
             sx={{
-              background: "black",
               display: { xxxs: "flex" },
               flexDirection: "column",
               alignItems: "flex-end",
               justifyContent: "center",
             }}
+            bgcolor="primary.main"
           >
             <img src="/sportsbattle.png" className="logoLogged" />
             <Box
@@ -157,8 +166,6 @@ export function Logged() {
             >
               <Button
                 sx={{
-                  color: "#000",
-                  background: "#fff",
                   borderRadius: "4px",
                   textTransform: "none",
                   fontFamily: "Poppins",
@@ -174,9 +181,10 @@ export function Logged() {
                   minWidth: { sm: "auto", xxs: "22%", xxxs: "25%" },
                   mr: { sm: "12px", xs: "8px", xxxs: "2px" },
                   "&.MuiButtonBase-root:hover": {
-                    background: "#fff",
+                    bgcolor: "secondary.main",
                   },
                   cursor: "pointer",
+                  bgcolor: "secondary.main",
                 }}
                 onClick={() => {
                   setOpenInviteFriend(true);
@@ -187,7 +195,7 @@ export function Logged() {
               <Button
                 sx={{
                   color: "#fff",
-                  background: "rgba(36, 36, 35, 1)",
+                  bgcolor: "primary.light",
                   borderRadius: "4px",
                   textTransform: "none",
                   fontFamily: "Poppins",
@@ -212,7 +220,7 @@ export function Logged() {
               <Button
                 sx={{
                   color: "#fff",
-                  background: "rgba(36, 36, 35, 1)",
+                  bgcolor: "primary.light",
                   borderRadius: "4px",
                   textTransform: "none",
                   fontFamily: "Poppins",
@@ -302,7 +310,6 @@ export function Logged() {
             outline: "none",
             width: { lg: "80px", md: "50px", sm: "30px", xxxs: "80px" },
             position: { sm: "absolute", xxxs: "fixed" },
-            background: "transparent",
             left: { sm: 0, xxxs: `${openSideNav ? 0 : "-114px"}` },
             top: 0,
             height: "100%",
@@ -320,7 +327,6 @@ export function Logged() {
               borderRight: "1px solid gray",
               borderBottom: "1px solid gray",
               height: "100%",
-              background: "black",
               position: "relative",
             }}
           >
@@ -329,8 +335,8 @@ export function Logged() {
                 position: "fixed",
                 width: "30px",
                 height: "30px",
-                background: "black",
-                color: "white",
+                bgcolor: "primary.main",
+                color: "secondary.main",
                 left: `${openSideNav ? "115px" : "5px"}`,
                 top: "10px",
                 display: { sm: "none", xxxs: "block" },
@@ -387,7 +393,9 @@ export function Logged() {
                 alignItems: "center",
                 borderBottom: "1px solid #494949",
                 height: "13%",
+                cursor: "pointer",
               }}
+              onClick={switchMode}
             >
               <Typography
                 sx={{
@@ -402,11 +410,13 @@ export function Logged() {
                 sx={{
                   width: "34px",
                   height: "16px",
-                  background: "white",
+                  bgcolor: "primary.light",
                   borderRadius: "10px",
                   display: "flex",
                   flexDirection: "row",
-                  justifyContent: "flex-start",
+                  justifyContent: `${
+                    mode === "dark" ? "flex-start" : "flex-end"
+                  }`,
                   alignItems: "center",
                   padding: "2px",
                 }}
@@ -416,7 +426,7 @@ export function Logged() {
                   sx={{
                     width: "18px",
                     height: "18px",
-                    background: "#494949",
+                    bgcolor: "secondary.main",
                     borderRadius: "50%",
                   }}
                 ></Box>
@@ -442,8 +452,18 @@ export function Logged() {
               >
                 Join our Social
               </Typography>
-              <img src="/discord.png" className="discord-logo" />
-              <img src="/twitter.png" className="twitter-logo" />
+              <img
+                src="/discord.png"
+                className={`${"discord-logo"} ${
+                  mode !== "dark" && "lightMode"
+                }`}
+              />
+              <img
+                src="/twitter.png"
+                className={`${"twitter-logo"} ${
+                  mode !== "dark" && "lightMode"
+                }`}
+              />
             </Box>
             <Box
               component="div"
@@ -471,16 +491,18 @@ export function Logged() {
             },
           }}
         >
-          {!location.search && openTag === "props" && <Props></Props>}
-          {!location.search && openTag === "know-more" && (
-            <KnowMore setOpenInviteFriend={setOpenInviteFriend} />
+          {!location.search && openTag === "props" && (
+            <Props mode={mode}></Props>
           )}
-          {location.search === "?deposit=old-user" && <AddCash />}
+          {!location.search && openTag === "know-more" && (
+            <KnowMore setOpenInviteFriend={setOpenInviteFriend} mode={mode} />
+          )}
+          {location.search === "?deposit=old-user" && <AddCash mode={mode} />}
           {location.search === "?deposit=new&page=verify" && (
-            <NewAddCashVerify />
+            <NewAddCashVerify mode={mode} />
           )}
           {location.search === "?deposit=new&page=form" && (
-            <NewAddCashForm address={address} />
+            <NewAddCashForm address={address} mode={mode} />
           )}
           {location.search === "?deposit=new&page=address" && (
             <Address setAddress={setAddress} />
@@ -553,12 +575,11 @@ export function Logged() {
             </Typography>
             <Box
               sx={{
-                background: "black",
+                bgcolor: "primary.main",
                 border: "1px solid #F5A922",
                 borderRadius: "4px",
                 display: "flex",
                 flexDirection: "column",
-                width: "445px",
                 width: {
                   sm: "445px",
                   xs: "345px",
@@ -576,7 +597,7 @@ export function Logged() {
                   fontWeight: 600,
                   fontFamily: "poppins",
                   mt: "24px",
-                  color: "white",
+                  color: "secondary.main",
                 }}
               >
                 SHARE YOUR REFERRAL CODE{" "}
@@ -588,14 +609,14 @@ export function Logged() {
                   fontFamily: "poppins",
                   mt: "12px",
                   mb: "12px",
-                  color: "white",
+                  color: "secondary.main",
                 }}
               >
                 IUUASV18
               </Typography>
               <Button
                 sx={{
-                  color: "black",
+                  color: "primary.main",
                   background: "#F5A922",
                   fontSize: { sm: "15px", xxxs: "13px" },
                   fontWeight: 700,

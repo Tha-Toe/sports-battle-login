@@ -46,13 +46,18 @@ export default function Address({ setAddress }) {
           }}
           onClick={goDepositForm}
         >
-          <ArrowBackIosIcon sx={{ fontSize: { sm: "23px", xxxs: "18px" } }} />
+          <ArrowBackIosIcon
+            sx={{
+              fontSize: { sm: "23px", xxxs: "18px" },
+              color: "secondary.main",
+            }}
+          />
           <Typography
             sx={{
               fontSize: { sm: "16px", xxs: "14px", xxxs: "12px" },
               fontWeight: 600,
               fontFamily: "poppins",
-              color: "white",
+              color: "secondary.main",
             }}
           >
             Back to Age Verification{" "}
@@ -68,8 +73,8 @@ export default function Address({ setAddress }) {
             cursor: "pointer",
           }}
         >
-          <RestartAltIcon />
-          <AddIcon />
+          <RestartAltIcon sx={{ color: "secondary.main" }} />
+          <AddIcon sx={{ color: "secondary.main" }} />
         </Box>
       </Box>
       <Box
@@ -78,7 +83,7 @@ export default function Address({ setAddress }) {
           flexDirection: "row",
           alignItems: "center",
           justifyContent: "flex-start",
-          background: "black",
+          background: "primary.main",
           width: "100%",
           mb: "20px",
           cursor: "pointer",
@@ -91,7 +96,9 @@ export default function Address({ setAddress }) {
           goDepositForm();
         }}
       >
-        <LocationOnIcon sx={{ fontSize: "25px", mr: "15px" }} />
+        <LocationOnIcon
+          sx={{ fontSize: "25px", mr: "15px", color: "secondary.main" }}
+        />
         <Box
           sx={{
             display: "flex",
@@ -108,7 +115,7 @@ export default function Address({ setAddress }) {
               fontSize: "14px",
               fontWeight: 400,
               fontFamily: "poppins",
-              color: "white",
+              color: "secondary.main",
               width: "100%",
             }}
           >

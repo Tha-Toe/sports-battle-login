@@ -8,7 +8,7 @@ import ChooseType from "./ChooseType";
 import Balance from "./Balance";
 import InputAdornment from "@mui/material/InputAdornment";
 
-const SubmitProjection = ({ selectCardId }) => {
+const SubmitProjection = ({ selectCardId, mode }) => {
   const [startSelect, setStartSelect] = useState(false);
   const [moreThanOneCard, setMoreThanOneCard] = useState(false);
   const [selectAmount, setSelectAmount] = useState(null);
@@ -52,7 +52,7 @@ const SubmitProjection = ({ selectCardId }) => {
           fontFamily: "poppins",
           fontSize: "14px",
           fontWeight: 600,
-          color: "white",
+          color: "secondary.main",
           mt: "13px",
           mb: "9px",
           width: "90%",
@@ -95,7 +95,7 @@ const SubmitProjection = ({ selectCardId }) => {
                   >
                     <Typography
                       sx={{
-                        color: "white",
+                        color: "secondary.main",
                         width: "100%",
                         fontSize: "8px",
                         fontWeight: "500",
@@ -111,7 +111,7 @@ const SubmitProjection = ({ selectCardId }) => {
                         fontSize: "8px",
                         fontWeight: 400,
                         fontFamily: "poppins",
-                        color: "white",
+                        color: "secondary.main",
                         borderBottom: "1px solid #4831D4",
                         py: "8px",
                       }}
@@ -163,6 +163,7 @@ const SubmitProjection = ({ selectCardId }) => {
                     fontWeight: 400,
                     fontFamily: "poppins",
                     mr: "3px",
+                    color: "secondary.main",
                   }}
                 >
                   Your Entries
@@ -209,7 +210,7 @@ const SubmitProjection = ({ selectCardId }) => {
             fontFamily: "poppins",
             fontSize: "12px",
             fontWeight: 400,
-            color: "white",
+            color: "secondary.main",
             mx: "auto",
             mt: "60px",
             mb: "9px",

@@ -18,7 +18,7 @@ export default function () {
             fontSize: "10px",
             fontWeight: 600,
             fontFamily: "poppins",
-            color: "white",
+            color: "secondary.main",
           }}
         >
           To Win Amount:
@@ -39,7 +39,7 @@ export default function () {
           fontSize: "8px",
           fontWeight: 500,
           fontFamily: "poppins",
-          color: "white",
+          color: "secondary.main",
         }}
       >
         Your Wallet Balance
@@ -58,7 +58,7 @@ export default function () {
             fontSize: "8px",
             fontWeight: 400,
             fontFamily: "poppins",
-            color: "white",
+            color: "secondary.main",
           }}
         >
           Un-used
@@ -68,7 +68,7 @@ export default function () {
             fontSize: "8px",
             fontWeight: 600,
             fontFamily: "poppins",
-            color: "white",
+            color: "secondary.main",
           }}
         >
           $0
@@ -88,7 +88,7 @@ export default function () {
             fontSize: "8px",
             fontWeight: 400,
             fontFamily: "poppins",
-            color: "white",
+            color: "secondary.main",
           }}
         >
           Withdrawable
@@ -98,7 +98,7 @@ export default function () {
             fontSize: "8px",
             fontWeight: 600,
             fontFamily: "poppins",
-            color: "white",
+            color: "secondary.main",
           }}
         >
           $0
@@ -118,7 +118,7 @@ export default function () {
             fontSize: "8px",
             fontWeight: 400,
             fontFamily: "poppins",
-            color: "white",
+            color: "secondary.main",
           }}
         >
           Bonus
@@ -128,7 +128,7 @@ export default function () {
             fontSize: "8px",
             fontWeight: 600,
             fontFamily: "poppins",
-            color: "white",
+            color: "secondary.main",
           }}
         >
           $0

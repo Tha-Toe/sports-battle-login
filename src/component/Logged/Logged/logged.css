@@ -14,9 +14,16 @@
   width: 58px;
   position: absolute;
   left: 20px;
+  border-radius: 5px;
 }
 .discord-logo {
   margin-bottom: 18px;
+  padding: 6px;
+  border-radius: 3px;
+}
+.twitter-logo {
+  padding: 6px;
+  border-radius: 3px;
 }
 .exit-image {
   width: 48px;
@@ -46,6 +53,11 @@
   width: 82px;
   margin-top: 20px;
 }
+
+.lightMode {
+  background: #696969;
+}
+
 @media (max-width: 700px) {
   .logoLogged {
     left: 35px;

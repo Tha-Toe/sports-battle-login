@@ -63,7 +63,7 @@ export default function BaseBallPoint({ setOpenBaseBallPoint }) {
             xxxs: "280px",
           },
           height: "512px",
-          background: "#000000",
+          bgcolor: "primary.main",
           display: "flex",
           flexDirection: "column",
           justifyContent: "flex-start",
@@ -94,7 +94,7 @@ export default function BaseBallPoint({ setOpenBaseBallPoint }) {
           >
             <Typography
               sx={{
-                color: "white",
+                color: "secondary.main",
                 fontSize: { sm: "20px", xxxs: "16px" },
                 fontWeight: 700,
                 fontFamily: "poppins",
@@ -105,7 +105,7 @@ export default function BaseBallPoint({ setOpenBaseBallPoint }) {
             </Typography>{" "}
             <Typography
               sx={{
-                color: "white",
+                color: "secondary.main",
                 fontSize: { sm: "20px", xxxs: "16px" },
                 fontWeight: 700,
                 fontFamily: "poppins",
@@ -115,7 +115,11 @@ export default function BaseBallPoint({ setOpenBaseBallPoint }) {
             </Typography>{" "}
           </Typography>
           <ClearIcon
-            sx={{ fontSize: "35px", color: "white", cursor: "pointer" }}
+            sx={{
+              fontSize: "35px",
+              color: "secondary.main",
+              cursor: "pointer",
+            }}
             onClick={() => {
               setOpenBaseBallPoint(false);
             }}
@@ -181,7 +185,7 @@ export default function BaseBallPoint({ setOpenBaseBallPoint }) {
             >
               <Typography
                 sx={{
-                  color: "white",
+                  color: "secondary.main",
                   fontSize: "14px",
                   fontWeight: 600,
                   fontFamily: "poppins",

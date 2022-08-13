@@ -11,7 +11,7 @@ export default function ({ setPickPlayType, pickPlayType }) {
           fontSize: "8px",
           fontFamily: "poppins",
           fontWeight: 600,
-          color: "white",
+          color: "secondary.main",
           mb: "2px",
         }}
       >

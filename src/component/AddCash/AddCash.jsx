@@ -64,7 +64,7 @@ export default function AddCash() {
             fontSize: "16px",
             fontWeight: 600,
             fontFamily: "poppins",
-            color: "white",
+            color: "secondary.main",
             mt: "14px",
           }}
         >
@@ -75,7 +75,7 @@ export default function AddCash() {
             fontSize: "14px",
             fontWeight: 300,
             fontFamily: "poppins",
-            color: "white",
+            color: "secondary.main",
             mt: "16px",
           }}
         >
@@ -87,7 +87,9 @@ export default function AddCash() {
               sx={{
                 minWidth: { xs: "64px", xxxs: "50px" },
                 height: "40px",
-                background: `${amount === e.amount ? "#439F48" : "black"}`,
+                background: `${
+                  amount === e.amount ? "#439F48" : "secondary.main"
+                }`,
                 border: "1px solid #439F48",
                 borderRadius: "4px",
                 fontSize: { xs: "16px", xxxs: "14px" },
@@ -115,7 +117,7 @@ export default function AddCash() {
                 fontSize: "14px",
                 fontWeight: 600,
                 fontFamily: "poppins",
-                color: "white",
+                color: "secondary.main",
                 mb: "7px",
               }}
             >
@@ -126,7 +128,7 @@ export default function AddCash() {
               placeholder="100"
               variant="outlined"
               sx={{
-                color: "white",
+                color: "secondary.main",
                 borderBottom: "1px solid #439F48",
                 width: "100%",
                 py: "7px",
@@ -175,7 +177,7 @@ export default function AddCash() {
             fontSize: "14px",
             fontWeight: 300,
             fontFamily: "poppins",
-            color: "white",
+            color: "secondary.main",
             mt: "16px",
           }}
         >
@@ -188,7 +190,7 @@ export default function AddCash() {
             fontSize: "14px",
             fontWeight: 500,
             fontFamily: "poppins",
-            background: "black",
+            background: "primary.main",
             borderRadius: "8px",
             border: "1px solid #439F48",
             mt: "16px",
@@ -242,7 +244,7 @@ export default function AddCash() {
           />
           <Typography
             sx={{
-              color: "white",
+              color: "secondary.main",
               fontSize: { xs: "14px", xxxs: "14px" },
               fontWeight: 600,
               fontFamily: "poppins",
@@ -260,7 +262,7 @@ export default function AddCash() {
             fontSize: "16px",
             fontWeight: 600,
             fontFamily: "poppins",
-            color: "white",
+            color: "secondary.main",
             mb: "14px",
           }}
         >
@@ -271,7 +273,7 @@ export default function AddCash() {
             fontSize: "16px",
             fontWeight: 500,
             fontFamily: "poppins",
-            color: "white",
+            color: "secondary.main",
             mb: "10px",
           }}
         >
@@ -282,7 +284,7 @@ export default function AddCash() {
             fontSize: "14px",
             fontWeight: 400,
             fontFamily: "poppins",
-            color: "white",
+            color: "secondary.main",
             mb: "10px",
           }}
         >
@@ -299,7 +301,7 @@ export default function AddCash() {
             fontSize: "16px",
             fontWeight: 500,
             fontFamily: "poppins",
-            color: "white",
+            color: "secondary.main",
             mb: "10px",
           }}
         >
@@ -310,7 +312,7 @@ export default function AddCash() {
             fontSize: "14px",
             fontWeight: 400,
             fontFamily: "poppins",
-            color: "white",
+            color: "secondary.main",
             mb: "10px",
           }}
         >
@@ -327,7 +329,7 @@ export default function AddCash() {
             fontSize: "16px",
             fontWeight: 500,
             fontFamily: "poppins",
-            color: "white",
+            color: "secondary.main",
             mb: "10px",
           }}
         >
@@ -338,7 +340,7 @@ export default function AddCash() {
             fontSize: "14px",
             fontWeight: 400,
             fontFamily: "poppins",
-            color: "white",
+            color: "secondary.main",
             mb: "10px",
           }}
         >

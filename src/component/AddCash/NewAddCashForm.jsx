@@ -52,7 +52,7 @@ export default function NewAddCashFrom({ address }) {
             fontSize: { sm: "16px", xxxs: "14px" },
             fontWeight: 600,
             fontFamily: "poppins",
-            color: "white",
+            color: "secondary.main",
           }}
         >
           Age Verification
@@ -80,7 +80,7 @@ export default function NewAddCashFrom({ address }) {
               fontSize: { sm: "14px", xxxs: "12px" },
               fontWeight: 600,
               fontFamily: "poppins",
-              color: "white",
+              color: "secondary.main",
               mb: "12px",
             }}
           >
@@ -91,7 +91,7 @@ export default function NewAddCashFrom({ address }) {
             placeholder="Legal First Name"
             variant="outlined"
             sx={{
-              color: "white",
+              color: "secondary.main",
               borderBottom: "1px solid #494949",
               width: "100%",
               py: "7px",
@@ -111,7 +111,7 @@ export default function NewAddCashFrom({ address }) {
               fontSize: { sm: "14px", xxxs: "12px" },
               fontWeight: 600,
               fontFamily: "poppins",
-              color: "white",
+              color: "secondary.main",
               mb: "12px",
             }}
           >
@@ -122,7 +122,7 @@ export default function NewAddCashFrom({ address }) {
             placeholder="Legal First Name"
             variant="outlined"
             sx={{
-              color: "white",
+              color: "secondary.main",
               borderBottom: "1px solid #494949",
               width: "100%",
               py: "7px",
@@ -143,7 +143,7 @@ export default function NewAddCashFrom({ address }) {
             fontSize: { sm: "14px", xxxs: "12px" },
             fontWeight: 600,
             fontFamily: "poppins",
-            color: "white",
+            color: "secondary.main",
             mb: "12px",
           }}
         >
@@ -153,7 +153,7 @@ export default function NewAddCashFrom({ address }) {
           type="date"
           variant="outlined"
           sx={{
-            color: "white",
+            color: "secondary.main",
             borderBottom: "1px solid #494949",
             width: "100%",
             py: "7px",
@@ -171,7 +171,7 @@ export default function NewAddCashFrom({ address }) {
           flexDirection: "row",
           alignItems: "center",
           justifyContent: "space-between",
-          background: "#161616",
+          bgcolor: "primary.light",
           width: "100%",
           mb: "20px",
           cursor: "pointer",
@@ -222,7 +222,7 @@ export default function NewAddCashFrom({ address }) {
           fontSize: { sm: "14px", xxxs: "12px" },
           fontWeight: 400,
           fontFamily: "poppins",
-          color: "white",
+          color: "secondary.main",
           width: "100%",
         }}
       >
@@ -267,6 +267,7 @@ export default function NewAddCashFrom({ address }) {
           color: "#439F48",
           padding: { sm: "10px 51px", xxxs: "5px 27px" },
           mt: "32px",
+          bgcolor: "primary.main",
         }}
       >
         Support Chat

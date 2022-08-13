@@ -9,7 +9,7 @@ export default function ({ setSelectAmount, selectAmount }) {
           fontFamily: "poppins",
           fontSize: "8px",
           fontWeight: 400,
-          color: "white",
+          color: "secondary.main",
           mb: "7px",
         }}
       >

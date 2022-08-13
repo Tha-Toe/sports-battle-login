@@ -13,9 +13,42 @@ import EnterYourName from "./component/SignUp/enter-your-name/EnterYourName";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CheckMail from "./component/Forgot/checkMail/CheckMail";
 import { Logged } from "./component/Logged/Logged/Logged";
+import { useContext, useState } from "react";
 
 function App() {
-  const theme = createTheme({
+  const [mode, setMode] = useState("dark");
+  const darkTheme = createTheme({
+    palette: {
+      primary: {
+        main: "#000000", //black
+        light: "#242423", //rgba(36, 36, 35, 1)
+      },
+      secondary: {
+        main: "#ffffff", //white
+      },
+    },
+    breakpoints: {
+      values: {
+        xxxs: 0,
+        xxs: 350,
+        xs: 500,
+        sm: 700,
+        md: 900,
+        lg: 1100,
+        xl: 1550,
+      },
+    },
+  });
+  const lightTheme = createTheme({
+    palette: {
+      primary: {
+        main: "#ffffff",
+        light: "#696969",
+      },
+      secondary: {
+        main: "#000000",
+      },
+    },
     breakpoints: {
       values: {
         xxxs: 0,
@@ -29,7 +62,7 @@ function App() {
     },
   });
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={mode === "dark" ? darkTheme : lightTheme}>
       <div
         style={{
           width: "100vw",
@@ -39,6 +72,7 @@ function App() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
+          background: `${mode === "dark" ? "black" : "white"}`,
         }}
       >
         <BrowserRouter>
@@ -56,7 +90,10 @@ function App() {
             <Route path="/newpassword" element={<NewPassword />} />
             <Route path="/createpassword" element={<CreatePassword />} />
             <Route path="/createusername" element={<CreateUserName />} />
-            <Route path="/logged" element={<Logged />} />
+            <Route
+              path="/logged"
+              element={<Logged mode={mode} setMode={setMode} />}
+            />
           </Routes>
         </BrowserRouter>
       </div>

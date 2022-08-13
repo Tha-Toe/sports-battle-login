@@ -19,25 +19,38 @@ import OverUnderPointSystem from "./OverUnderPointSystem";
 import FAQ from "./FAQ";
 import OperatingState from "./OperatingState";
 
-export default function KnowMore({ setOpenInviteFriend }) {
+export default function KnowMore({ setOpenInviteFriend, mode }) {
   const openShareFriend = () => {
     setOpenInviteFriend(true);
   };
   const [general, setGeneral] = useState([
-    { name: "Over-Under Points System", src: "/howto.png" },
-    { name: "Frequently Asked Questions", src: "/fps.png" },
-    { name: "Sports Battle Operating States", src: "/fps.png" },
+    {
+      name: "Over-Under Points System",
+      src: "/howto.png",
+      darkSrc: "/howto-dark.png",
+    },
+    {
+      name: "Frequently Asked Questions",
+      src: "/fps.png",
+      darkSrc: "/rules-dark.png",
+    },
+    {
+      name: "Sports Battle Operating States",
+      src: "/fps.png",
+      darkSrc: "/fps-dark.png",
+    },
     {
       name: "Share your love of Fantasy Sports",
       src: "/fps.png",
+      darkSrc: "/fps-dark.png",
       extra: "You and your friend will both receive bonus cash",
       func: openShareFriend,
     },
   ]);
   const [legal, setLegal] = useState([
-    { name: "Terms of Service", src: "/howto.png" },
-    { name: "Privacy Policy", src: "/rules.png" },
-    { name: "Responsible Play", src: "/fps.png" },
+    { name: "Terms of Service", src: "/howto.png", darkSrc: "/howto-dark.png" },
+    { name: "Privacy Policy", src: "/rules.png", darkSrc: "/rules-dark.png" },
+    { name: "Responsible Play", src: "/fps.png", darkSrc: "/fps-dark.png" },
   ]);
 
   const [openTag, setOpenTag] = useState("Over-Under Points System");
@@ -153,7 +166,7 @@ export default function KnowMore({ setOpenInviteFriend }) {
               fontWeight: 700,
               fontFamily: "poppins",
               width: "100%",
-              color: "white",
+              color: "secondary.main",
               mb: "12px",
               ml: { xs: 0, xxxs: "5px" },
             }}
@@ -185,13 +198,20 @@ export default function KnowMore({ setOpenInviteFriend }) {
                 e.func();
               }}
             >
-              <img src={e.src} className="know-icon" />
+              {mode === "dark" ? (
+                <img src={e.src} className="know-icon" />
+              ) : (
+                <img src={e.darkSrc} className="know-icon" />
+              )}
               <Box sx={{ width: "100%", ml: { sm: "8px", xxxs: "2px" } }}>
                 <Typography
                   sx={{
                     fontSize: { lg: "14px", xs: "12px", xxxs: "10px" },
                     fontWeight: 700,
-                    color: `${openTag === e.name ? "#4831D4" : "white"}`,
+                    color: `${
+                      openTag === e.name ? "#4831D4" : "secondary.main"
+                    }`,
+                    fontFamily: "poppins",
                   }}
                 >
                   {e.name}
@@ -201,6 +221,8 @@ export default function KnowMore({ setOpenInviteFriend }) {
                     sx={{
                       fontSize: { lg: "12px", xs: "10px", xxxs: "8px" },
                       fontWeight: 400,
+                      color: "secondary.main",
+                      fontFamily: "poppins",
                     }}
                   >
                     {e.extra}
@@ -215,7 +237,7 @@ export default function KnowMore({ setOpenInviteFriend }) {
               fontWeight: 700,
               fontFamily: "poppins",
               width: "100%",
-              color: "white",
+              color: "secondary.main",
               mb: "12px",
               mt: "24px",
               ml: { xs: 0, xxxs: "5px" },
@@ -243,12 +265,18 @@ export default function KnowMore({ setOpenInviteFriend }) {
                 borderBottom: { xs: "none", xxxs: "1px solid #494949" },
               }}
             >
-              <img src={e.src} className="know-icon" />
+              {mode === "dark" ? (
+                <img src={e.src} className="know-icon" />
+              ) : (
+                <img src={e.darkSrc} className="know-icon" />
+              )}
               <Box sx={{ width: "100%", ml: { sm: "8px", xxxs: "2px" } }}>
                 <Typography
                   sx={{
                     fontSize: { lg: "14px", xs: "12px", xxxs: "10px" },
                     fontWeight: 700,
+                    fontFamily: "poppins",
+                    color: "secondary.main",
                   }}
                 >
                   {e.name}
@@ -258,6 +286,8 @@ export default function KnowMore({ setOpenInviteFriend }) {
                     sx={{
                       fontSize: { lg: "12px", xs: "10px", xxxs: "8px" },
                       fontWeight: 400,
+                      fontFamily: "poppins",
+                      color: "secondary.main",
                     }}
                   >
                     {e.extra}

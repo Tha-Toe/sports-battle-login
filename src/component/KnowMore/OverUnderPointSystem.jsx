@@ -97,7 +97,7 @@ export default function OverUnderPointSystem() {
         {header.map((e) => (
           <Button
             sx={{
-              color: `${openTag === e.name ? "#4831D4" : "white"}`,
+              color: `${openTag === e.name ? "#4831D4" : "secondary.main"}`,
               borderBottom: `${
                 openTag === e.name ? "3px solid #4831D4" : "none"
               }`,
@@ -107,6 +107,7 @@ export default function OverUnderPointSystem() {
               fontWeight: 600,
               fontFamily: "poppins",
               py: "10px",
+              borderRadius: 0,
             }}
           >
             {e.name}
@@ -191,7 +192,7 @@ export default function OverUnderPointSystem() {
                   fontSize: { lg: "14px", xs: "12px", xxxs: "10px" },
                   fontWeight: 500,
                   fontFamily: "poppins",
-                  color: "white",
+                  color: "secondary.main",
                 }}
               >
                 {e.name}
@@ -201,7 +202,7 @@ export default function OverUnderPointSystem() {
                   fontSize: { lg: "14px", xs: "12px", xxxs: "10px" },
                   fontWeight: 500,
                   fontFamily: "poppins",
-                  color: "white",
+                  color: "secondary.main",
                 }}
               >
                 {e.applicable}

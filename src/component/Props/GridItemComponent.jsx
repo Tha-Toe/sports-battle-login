@@ -8,6 +8,7 @@ const GridItemComponent = ({
   selectCardId,
   index,
   addCardIndex,
+  mode,
 }) => {
   const [alreadyPicked, setAlreadyPicked] = useState(false);
   const [over, setOver] = useState(false);
@@ -36,7 +37,7 @@ const GridItemComponent = ({
           alignItems: "center",
           width: "100%",
           height: "100%",
-          background: "black",
+          bgcolor: "primary.main",
           border: "1px solid #494949",
           borderRadius: "2px",
         }}
@@ -52,7 +53,7 @@ const GridItemComponent = ({
         >
           <Typography
             sx={{
-              color: "white",
+              color: "secondary.main",
               fontSize: { sm: "10px", xs: "7px", xxxs: "10px" },
               fontWeight: 600,
               fontFamily: "poppins",
@@ -62,7 +63,7 @@ const GridItemComponent = ({
           </Typography>
           <Typography
             sx={{
-              color: "white",
+              color: "secondary.main",
               fontSize: "6px",
               fontWeight: 400,
               fontFamily: "poppins",
@@ -73,7 +74,7 @@ const GridItemComponent = ({
           <Box sx={{ display: "flex" }}>
             <Typography
               sx={{
-                color: "white",
+                color: "secondary.main",
                 fontSize: "6px",
                 fontWeight: 400,
                 fontFamily: "poppins",
@@ -83,7 +84,7 @@ const GridItemComponent = ({
             </Typography>
             <Typography
               sx={{
-                color: "white",
+                color: "secondary.main",
                 fontSize: "6px",
                 fontWeight: 400,
                 fontFamily: "poppins",
@@ -95,7 +96,7 @@ const GridItemComponent = ({
           </Box>
           <Typography
             sx={{
-              color: "white",
+              color: "secondary.main",
               fontSize: "6px",
               fontWeight: 400,
               fontFamily: "poppins",
@@ -105,7 +106,7 @@ const GridItemComponent = ({
           </Typography>
           <Typography
             sx={{
-              color: "white",
+              color: "secondary.main",
               fontSize: "6px",
               fontWeight: 400,
               fontFamily: "poppins",
@@ -124,7 +125,7 @@ const GridItemComponent = ({
         >
           <Typography
             sx={{
-              color: "white",
+              color: "secondary.main",
               fontSize: { sm: "8px", xs: "6px", xxxs: "8px" },
               fontWeight: 500,
               fontFamily: "poppins",
@@ -134,7 +135,7 @@ const GridItemComponent = ({
           </Typography>
           <Typography
             sx={{
-              color: "white",
+              color: "secondary.main",
               fontSize: "22px",
               fontWeight: 600,
               fontFamily: "poppins",
@@ -157,11 +158,12 @@ const GridItemComponent = ({
               sx={{
                 width: { sm: "48px", xxxs: "24px" },
                 height: "20px",
-                color: "white",
+                color: "secondary.main",
                 fontSize: { sm: "9px", xs: "7px", xxxs: "9px" },
                 fontWeight: 400,
                 fontFamily: "poppins",
                 border: `${over ? "none" : "1px solid white"}`,
+                borderColor: `${mode === "dark" ? "white" : "black"}`,
                 borderRadius: "3px",
                 mb: "8px",
                 background: `${over ? "#4831D4" : "transparent"}`,
@@ -180,12 +182,13 @@ const GridItemComponent = ({
             <Button
               sx={{
                 width: { sm: "48px", xxxs: "24px" },
-                color: "white",
+                color: "secondary.main",
                 height: "20px",
                 fontSize: { sm: "9px", xs: "7px", xxxs: "9px" },
                 fontWeight: 400,
                 fontFamily: "poppins",
                 border: `${under ? "none" : "1px solid white"}`,
+                borderColor: `${mode === "dark" ? "white" : "black"}`,
                 borderRadius: "3px",
                 background: `${under ? "#4831D4" : "transparent"}`,
                 "&.MuiButtonBase-root:hover": {
