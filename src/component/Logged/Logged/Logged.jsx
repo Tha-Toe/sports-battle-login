@@ -328,6 +328,7 @@ export function Logged({ mode, setMode }) {
               borderBottom: "1px solid gray",
               height: "100%",
               position: "relative",
+              bgcolor: "primary.main",
             }}
           >
             <MenuIcon
