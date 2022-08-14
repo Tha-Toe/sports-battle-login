@@ -128,6 +128,7 @@ export default function KnowMore({ setOpenInviteFriend, mode }) {
                   fontWeight: 400,
                   fontFamily: "poppins",
                   mt: "5px",
+                  color: "secondary.main",
                 }}
               >
                 {" "}

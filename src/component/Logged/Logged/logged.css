@@ -30,7 +30,7 @@
   height: 48px;
 }
 
-.profileImage {
+.accountImage {
   height: 31px;
   width: 31px;
 }
@@ -76,7 +76,7 @@
   }
 }
 @media (max-width: 500px) {
-  .profileImage {
+  .accountImage {
     height: 25px;
     width: 25px;
   }

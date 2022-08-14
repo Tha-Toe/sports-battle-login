@@ -10,6 +10,7 @@ import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Props from "../../Props/Props";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import MenuIcon from "@mui/icons-material/Menu";
 import ClearIcon from "@mui/icons-material/Clear";
 import AddCash from "../../AddCash/AddCash";
@@ -23,6 +24,8 @@ import RefralBonusCashCode from "../../Refral/RefralBonusCashCode";
 import KnowMore from "../../KnowMore/KnowMore";
 import BonusOffer from "../../BonusOffer/BonusOffer";
 import MyProfile from "../../MyProfile/MyProfile";
+import SettingsIcon from "@mui/icons-material/Settings";
+import EmailPrefrence from "../../EmailPrefrence/EmailPrefrence";
 export function Logged({ mode, setMode }) {
   let navigate = useNavigate();
   let location = useLocation();
@@ -55,6 +58,11 @@ export function Logged({ mode, setMode }) {
   const goVerifyPhoneNumberCode = () => {
     navigate("/logged?deposit=verify-phone-number-code", { replace: true });
   };
+  const goEmailPrefrencePage = () => {
+    setOpenDropDown(false);
+    navigate("/logged?setting=email-prefrence", { replace: true });
+  };
+
   const [activeTag, setActiveTag] = useState("props");
   const [number, setNumber] = useState(null);
 
@@ -115,6 +123,8 @@ export function Logged({ mode, setMode }) {
   useEffect(() => {
     console.log(mode);
   }, [mode]);
+
+  const [openDropDown, setOpenDropDown] = useState(false);
   return (
     <main className="logged-container">
       <Box
@@ -280,15 +290,71 @@ export function Logged({ mode, setMode }) {
                   flexDirection: "row",
                   justifyContent: "center",
                   alignItems: "center",
-                  position: { sm: "static", xxxs: "absolute" },
+                  position: { sm: "relative", xxxs: "absolute" },
                   top: 0,
+                  left: { sm: "1px", xxxs: "auto" },
                   right: "10px",
                 }}
               >
-                <img src="/profile.png" className="profileImage" />
-                <KeyboardArrowDownIcon
-                  sx={{ color: "#494949", fontSize: "25px" }}
-                />
+                <img src="/profile.png" className="accountImage" />
+                {openDropDown ? (
+                  <KeyboardArrowUpIcon
+                    sx={{
+                      color: "#494949",
+                      fontSize: "25px",
+                      cursor: "pointer",
+                    }}
+                    onClick={() => setOpenDropDown(!openDropDown)}
+                  />
+                ) : (
+                  <KeyboardArrowDownIcon
+                    sx={{
+                      color: "#494949",
+                      fontSize: "25px",
+                      cursor: "pointer",
+                    }}
+                    onClick={() => setOpenDropDown(!openDropDown)}
+                  />
+                )}
+                {openDropDown && (
+                  <Box
+                    sx={{
+                      position: "absolute",
+                      top: "110%",
+                      right: 0,
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        bgcolor: "primary.light",
+                        display: "flex",
+                        flexDirection: "row",
+                        alignItems: "center",
+                        borderBottom: "1px solid white",
+                        width: "100%",
+                        py: "10px",
+                        pl: "10px",
+                        cursor: "pointer",
+                      }}
+                      onClick={goEmailPrefrencePage}
+                    >
+                      <SettingsIcon sx={{ color: "white", mr: "5px" }} />
+                      <Typography
+                        sx={{
+                          fontSize: "10px",
+                          fontWeight: 400,
+                          fontFamily: "poppins",
+                          color: "white",
+                        }}
+                      >
+                        Setting
+                      </Typography>
+                    </Box>
+                  </Box>
+                )}
               </Box>
             </Box>
           </Toolbar>
@@ -520,6 +586,7 @@ export function Logged({ mode, setMode }) {
           {location.search === "?deposit=refral-bonus-cash-code" && (
             <RefralBonusCashCode />
           )}
+          {location.search === "?setting=email-prefrence" && <EmailPrefrence />}
         </Box>
       </Box>
       {openInviteFriend && (

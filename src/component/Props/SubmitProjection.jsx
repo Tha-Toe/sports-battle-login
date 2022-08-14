@@ -65,121 +65,119 @@ const SubmitProjection = ({ selectCardId, mode }) => {
       </Typography>
       {startSelect ? (
         <>
-          {moreThanOneCard && (
-            <Box
-              id="top-submit"
-              sx={{
-                width: "90%",
-                display: "flex",
-                flexDirection: "column",
-                margin: "0 auto",
-              }}
-            >
-              <Times />
-              <Box sx={{ borderBottom: "1px solid #2c2c2c" }}>
-                <Amount
-                  setSelectAmount={setSelectAmount}
-                  selectAmount={selectAmount}
-                />
-                {selectAmount === "other" && (
-                  <Box
+          <Box
+            id="top-submit"
+            sx={{
+              width: "90%",
+              display: "flex",
+              flexDirection: "column",
+              margin: "0 auto",
+            }}
+          >
+            <Times />
+            <Box sx={{ borderBottom: "1px solid #2c2c2c" }}>
+              <Amount
+                setSelectAmount={setSelectAmount}
+                selectAmount={selectAmount}
+              />
+              {selectAmount === "other" && (
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    width: "100%",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    mt: "4px",
+                    mb: "12px",
+                  }}
+                >
+                  <Typography
                     sx={{
-                      display: "flex",
-                      flexDirection: "column",
+                      color: "secondary.main",
                       width: "100%",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      mt: "4px",
-                      mb: "12px",
+                      fontSize: "8px",
+                      fontWeight: "500",
+                      fontFamily: "poppins",
                     }}
                   >
-                    <Typography
-                      sx={{
-                        color: "secondary.main",
-                        width: "100%",
-                        fontSize: "8px",
-                        fontWeight: "500",
-                        fontFamily: "poppins",
-                      }}
-                    >
-                      Enter Amount
-                    </Typography>
-                    <Input
-                      placeholder="Enter dollar amount"
-                      sx={{
-                        width: "100%",
-                        fontSize: "8px",
-                        fontWeight: 400,
-                        fontFamily: "poppins",
-                        color: "secondary.main",
-                        borderBottom: "1px solid #4831D4",
-                        py: "8px",
-                      }}
-                      endAdornment={
-                        <InputAdornment position="end">
-                          {inputAmount && (
-                            <Typography
-                              sx={{
-                                color: "#E4313C",
-                                fontSize: "8px",
-                                fontWeight: "500",
-                                fontFamily: "poppins",
-                              }}
-                            >
-                              Limit is $50{" "}
-                            </Typography>
-                          )}
-                        </InputAdornment>
-                      }
-                      onChange={(e) => setInputAmount(e.target.value)}
-                    />
-                  </Box>
-                )}
-                {selectAmount && (
-                  <Box sx={{ width: "100%", margin: "0 auto" }}>
-                    <ChooseType
-                      setPickPlayType={setPickPlayType}
-                      pickPlayType={pickPlayType}
-                    />
-                    {pickPlayType && <Balance />}
-                  </Box>
-                )}
-              </Box>
+                    Enter Amount
+                  </Typography>
+                  <Input
+                    placeholder="Enter dollar amount"
+                    sx={{
+                      width: "100%",
+                      fontSize: "8px",
+                      fontWeight: 400,
+                      fontFamily: "poppins",
+                      color: "secondary.main",
+                      borderBottom: "1px solid #4831D4",
+                      py: "8px",
+                    }}
+                    endAdornment={
+                      <InputAdornment position="end">
+                        {inputAmount && (
+                          <Typography
+                            sx={{
+                              color: "#E4313C",
+                              fontSize: "8px",
+                              fontWeight: "500",
+                              fontFamily: "poppins",
+                            }}
+                          >
+                            Limit is $50{" "}
+                          </Typography>
+                        )}
+                      </InputAdornment>
+                    }
+                    onChange={(e) => setInputAmount(e.target.value)}
+                  />
+                </Box>
+              )}
+              {selectAmount && (
+                <Box sx={{ width: "100%", margin: "0 auto" }}>
+                  <ChooseType
+                    setPickPlayType={setPickPlayType}
+                    pickPlayType={pickPlayType}
+                  />
+                  {pickPlayType && <Balance />}
+                </Box>
+              )}
             </Box>
-          )}
+          </Box>
+
           <Box sx={{ mt: "14px" }}>
-            {moreThanOneCard && (
-              <Box
+            <Box
+              sx={{
+                display: "flex",
+                width: "95%",
+                margin: "0 auto",
+                mb: "9px",
+              }}
+            >
+              <Typography
                 sx={{
-                  display: "flex",
-                  width: "95%",
-                  margin: "0 auto",
-                  mb: "9px",
+                  fontSize: "8px",
+                  fontWeight: 400,
+                  fontFamily: "poppins",
+                  mr: "3px",
+                  color: "secondary.main",
                 }}
               >
-                <Typography
-                  sx={{
-                    fontSize: "8px",
-                    fontWeight: 400,
-                    fontFamily: "poppins",
-                    mr: "3px",
-                    color: "secondary.main",
-                  }}
-                >
-                  Your Entries
-                </Typography>
-                <Typography
-                  sx={{
-                    fontSize: "8px",
-                    fontWeight: 400,
-                    fontFamily: "poppins",
-                    color: "#2072C4",
-                  }}
-                >
-                  Change
-                </Typography>
-              </Box>
-            )}
+                Your Entries
+              </Typography>
+              <Typography
+                sx={{
+                  fontSize: "8px",
+                  fontWeight: 400,
+                  fontFamily: "poppins",
+                  color: "#2072C4",
+                }}
+              >
+                Change
+              </Typography>
+            </Box>
+
             {selectCardId.map(() => (
               <AndresCard />
             ))}
