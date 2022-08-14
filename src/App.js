@@ -66,7 +66,7 @@ function App() {
       <div
         style={{
           width: "100vw",
-          minHeight: "100vh",
+          height: "100vh",
           color: "white",
           display: "flex",
           flexDirection: "column",
