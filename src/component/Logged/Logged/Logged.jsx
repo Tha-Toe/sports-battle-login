@@ -366,7 +366,6 @@ export function Logged({ mode, setMode }) {
           position: "relative",
           height: { sm: "90%", xxxs: "90%" },
           width: "100%",
-          mt: { sm: 0, xxxs: "30px" },
         }}
       >
         <AppBar
@@ -377,7 +376,6 @@ export function Logged({ mode, setMode }) {
             width: { lg: "80px", md: "50px", sm: "30px", xxxs: "80px" },
             position: { sm: "absolute", xxxs: "fixed" },
             left: { sm: 0, xxxs: `${openSideNav ? 0 : "-114px"}` },
-            top: 0,
             height: "100%",
             zIndex: 3,
             transition: "all .5s ease-in",
