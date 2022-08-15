@@ -447,7 +447,7 @@ export function Logged({ mode, setMode }) {
                       fontFamily: "poppins",
                       fontSize: { md: "10px", xxxs: "8px" },
                       textAlign: "center",
-                      mt: "5px",
+                      mt: "3px",
                     }}
                   >
                     {e.name}

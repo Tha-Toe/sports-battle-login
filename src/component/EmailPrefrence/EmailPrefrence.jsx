@@ -25,23 +25,23 @@ export default function EmailPrefrence() {
     { name: "When I withdraw cash ", open: true },
     { name: "When I win game plays", open: true },
   ]);
-
   const [propsNav, setPropsNav] = useState([
-    { name: "MLB", active: true, src: "/mlb.png" },
-    { name: "PGA", active: false, src: "/pga.png" },
-    { name: "GOLF", active: false, src: "/golf.png" },
-    { name: "NFL", active: false, src: "/nfl.png" },
-    { name: "WNBA", active: false, src: "/wnba.png" },
-    { name: "Cricket", active: false, src: "/cricket.png" },
-    { name: "CSGO", active: false, src: "/csgo.png" },
-    { name: "MMA", active: false, src: "/mma.png" },
-    { name: "F1", active: false, src: "/f1.png" },
-    { name: "CFL", active: false, src: "/cfl.png" },
-    { name: "DOTA2", active: false, src: "/dota2.png" },
-    { name: "VAL", active: false, src: "/val.png" },
-    { name: "Soccer", active: false, src: "/soccer.png" },
-    { name: "NBA", active: false, src: "/nba.png" },
+    { name: "MLB", src: "/mlb.png", color: "#00ffff" },
+    { name: "PGA", src: "/pga.png", color: "#E4313C" },
+    { name: "GOLF", src: "/golf.png", color: "#459F48" },
+    { name: "NFL", src: "/nfl.png", color: "#459F48" },
+    { name: "WNBA", src: "/wnba.png", color: "#459F48" },
+    { name: "Cricket", src: "/cricket.png", color: "#0000ff" },
+    { name: "CSGO", src: "/csgo.png", color: "#F5A922" },
+    { name: "MMA", src: "/mma.png", color: "#E431F4" },
+    { name: "F1", src: "/f1.png", color: "#F5A922" },
+    { name: "CFL", src: "/cfl.png", color: "#F5A922" },
+    { name: "DOTA2", src: "/dota2.png", color: "#00ffff" },
+    { name: "VAL", src: "/val.png", color: "#F5A922" },
+    { name: "Soccer", src: "/soccer.png", color: "#D04643" },
+    { name: "NBA", src: "/nba.png", color: "#00ffff" },
   ]);
+  const [selectSports, setSelectSports] = useState("MLB");
 
   const onOffFunction = (index) => {
     let emailSettingStoreToChange = emailSettingStore;
@@ -222,8 +222,10 @@ export default function EmailPrefrence() {
                 flexDirection: "column",
                 alignItems: "center",
                 justifyContent: "center",
-                bgcolor: `${e.active ? "#4831D4" : "black"}`,
+                bgcolor: `${e.name === selectSports ? e.color : "black"}`,
+                cursor: "pointer",
               }}
+              onClick={() => setSelectSports(e.name)}
             >
               <img className="propsNavImg" src={e.src} />
             </Box>

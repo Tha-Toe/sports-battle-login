@@ -244,7 +244,10 @@ export default function Detail({
                       cursor: "pointer",
                     }}
                   >
-                    <img src={e.game.playType.src} />
+                    <img
+                      src={e.game.playType.src}
+                      style={{ height: "20px", width: "20px" }}
+                    />
                     <Typography
                       sx={{
                         fontSize: { xs: "12px", xxs: "8px", xxxs: "6px" },

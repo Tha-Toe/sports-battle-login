@@ -191,7 +191,12 @@ export default function MyPropsCardContainer({
               >
                 <img
                   src={e.sportType.src}
-                  style={{ background: "black", borderRadius: "50%" }}
+                  style={{
+                    background: "black",
+                    borderRadius: "50%",
+                    height: "20px",
+                    width: "20px",
+                  }}
                 />
                 <Typography
                   sx={{
