@@ -45,7 +45,7 @@ export default function Detail({
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        mt: "10px",
+        mt: { xs: "10px", xxxs: "20px" },
       }}
       component="div"
     >

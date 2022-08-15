@@ -261,6 +261,7 @@ export default function Props({ mode }) {
             "&::-webkit-scrollbar": {
               display: "none",
             },
+            mt: { sm: 0, xxxs: "20px" },
           }}
         >
           {propsNav.map((e) => (

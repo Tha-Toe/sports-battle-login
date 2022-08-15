@@ -94,6 +94,7 @@ export default function KnowMore({ setOpenInviteFriend, mode }) {
               display: "none",
             },
             mb: "30px",
+            mt: { sm: 0, xxxs: "20px" },
           }}
         >
           {overUnderNav.map((e) => (

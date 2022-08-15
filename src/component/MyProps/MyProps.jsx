@@ -324,7 +324,7 @@ export default function MyProps({ mode }) {
         <Box sx={{ width: "100%", mt: "9px" }}>
           <Box
             sx={{
-              width: { xs: "232px", xxxs: "170px" },
+              width: { xs: "232px", xxs: "170px", xxxs: "130px" },
               height: "2px",
               bgcolor: "secondary.dark",
             }}
