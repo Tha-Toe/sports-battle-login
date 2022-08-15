@@ -26,20 +26,20 @@ export default function EmailPrefrence() {
     { name: "When I win game plays", open: true },
   ]);
   const [propsNav, setPropsNav] = useState([
-    { name: "MLB", src: "/mlb.png", color: "#00ffff" },
-    { name: "PGA", src: "/pga.png", color: "#E4313C" },
-    { name: "GOLF", src: "/golf.png", color: "#459F48" },
-    { name: "NFL", src: "/nfl.png", color: "#459F48" },
-    { name: "WNBA", src: "/wnba.png", color: "#459F48" },
-    { name: "Cricket", src: "/cricket.png", color: "#0000ff" },
-    { name: "CSGO", src: "/csgo.png", color: "#F5A922" },
-    { name: "MMA", src: "/mma.png", color: "#E431F4" },
-    { name: "F1", src: "/f1.png", color: "#F5A922" },
+    { name: "MLB", src: "/mlb.png", color: "blue" },
+    { name: "PGA", src: "/pga.png", color: "blue" },
+    { name: "GOLF", src: "/golf.png", color: "#E431F4" },
+    { name: "NFL", src: "/nfl.png", color: "#F5A922" },
+    { name: "WNBA", src: "/wnba.png", color: "#F5A922" },
+    { name: "Cricket", src: "/cricket.png", color: "#D04643" },
+    { name: "CSGO", src: "/csgo.png", color: "#00ffff" },
+    { name: "MMA", src: "/mma.png", color: "orange" },
+    { name: "F1", src: "/f1.png", color: "red" },
     { name: "CFL", src: "/cfl.png", color: "#F5A922" },
     { name: "DOTA2", src: "/dota2.png", color: "#00ffff" },
-    { name: "VAL", src: "/val.png", color: "#F5A922" },
-    { name: "Soccer", src: "/soccer.png", color: "#D04643" },
-    { name: "NBA", src: "/nba.png", color: "#00ffff" },
+    { name: "VAL", src: "/val.png", color: "blue" },
+    { name: "Soccer", src: "/soccer.png", color: "#52C03C" },
+    { name: "NBA", src: "/nba.png", color: "#F5A922" },
   ]);
   const [selectSports, setSelectSports] = useState("MLB");
 
