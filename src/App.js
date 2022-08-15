@@ -25,6 +25,7 @@ function App() {
       },
       secondary: {
         main: "#ffffff", //white
+        dark: "#FAFAFA",
       },
     },
     breakpoints: {
@@ -47,6 +48,7 @@ function App() {
       },
       secondary: {
         main: "#000000",
+        dark: "#696969",
       },
     },
     breakpoints: {

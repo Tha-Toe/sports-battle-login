@@ -26,6 +26,7 @@ import BonusOffer from "../../BonusOffer/BonusOffer";
 import MyProfile from "../../MyProfile/MyProfile";
 import SettingsIcon from "@mui/icons-material/Settings";
 import EmailPrefrence from "../../EmailPrefrence/EmailPrefrence";
+import MyProps from "../../MyProps/MyProps";
 export function Logged({ mode, setMode }) {
   let navigate = useNavigate();
   let location = useLocation();
@@ -62,7 +63,11 @@ export function Logged({ mode, setMode }) {
     setOpenDropDown(false);
     navigate("/logged?setting=email-prefrence", { replace: true });
   };
-
+  const myPropsOpen = () => {
+    navigate("/logged", { replace: true });
+    setOpenSideNav(false);
+    setOpenTag("my-props");
+  };
   const [activeTag, setActiveTag] = useState("props");
   const [number, setNumber] = useState(null);
 
@@ -79,6 +84,7 @@ export function Logged({ mode, setMode }) {
       activeSrc: "/my-props-active.png",
       unactiveSrc: "/my-prop-unactive.png",
       activeName: "my-props",
+      func: myPropsOpen,
     },
     {
       name: "My Account",
@@ -558,6 +564,9 @@ export function Logged({ mode, setMode }) {
         >
           {!location.search && openTag === "props" && (
             <Props mode={mode}></Props>
+          )}
+          {!location.search && openTag === "my-props" && (
+            <MyProps mode={mode} />
           )}
           {!location.search && openTag === "my-profile" && (
             <MyProfile mode={mode} />
