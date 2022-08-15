@@ -1,0 +1,263 @@
+import {
+  Box,
+  Button,
+  Card,
+  CardContent,
+  CardMedia,
+  Grid,
+  Input,
+  Typography,
+} from "@mui/material";
+import React, { useState, useRef, useEffect } from "react";
+import SearchIcon from "@mui/icons-material/Search";
+import InputAdornment from "@mui/material/InputAdornment";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import { motion } from "framer-motion";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import Detail from "../MyProps/Detail";
+
+export default function TransactionHistory() {
+  const [history, setHistory] = useState([
+    {
+      name: "Prop join",
+      code: "Conf #3 :: 34534,",
+      time: " 08/06/2022, 11:28",
+      amount: "$10.0",
+    },
+    {
+      name: "Prop join",
+      code: "Conf #3 :: 34534,",
+      time: " 08/06/2022, 11:28",
+      amount: "$5.0",
+    },
+    {
+      name: "Prop join",
+      code: "Conf #3 :: 34534,",
+      time: " 08/06/2022, 11:28",
+      amount: "$10.0",
+    },
+    {
+      name: "Prop join",
+      code: "Conf #3 :: 34534,",
+      time: " 08/06/2022, 11:28",
+      amount: "$5.0",
+    },
+    {
+      name: "Prop join",
+      code: "Conf #3 :: 34534,",
+      time: " 08/06/2022, 11:28",
+      amount: "$10.0",
+    },
+    {
+      name: "Prop join",
+      code: "Conf #3 :: 34534,",
+      time: " 08/06/2022, 11:28",
+      amount: "$5.0",
+    },
+    {
+      name: "Prop join",
+      code: "Conf #3 :: 34534,",
+      time: " 08/06/2022, 11:28",
+      amount: "$10.0",
+    },
+    {
+      name: "Prop join",
+      code: "Conf #3 :: 34534,",
+      time: " 08/06/2022, 11:28",
+      amount: "$5.0",
+    },
+    {
+      name: "Prop join",
+      code: "Conf #3 :: 34534,",
+      time: " 08/06/2022, 11:28",
+      amount: "$10.0",
+    },
+    {
+      name: "Prop join",
+      code: "Conf #3 :: 34534,",
+      time: " 08/06/2022, 11:28",
+      amount: "$5.0",
+    },
+  ]);
+
+  const [openHistoryDetail, setOpenHistoryDetail] = useState(false);
+  const [historyDetailData, setHistoryDetailData] = useState([
+    {
+      player: { name: "Issac Paredes", forward: "LIV - Forward " },
+      game: {
+        playType: { type: "soccer", src: "/soccer.png" },
+        vs: " CHI vs KC",
+      },
+      status: "lost",
+      goal: { amount: "43.5", name: "Longest Field Goal" },
+      actual: "0",
+    },
+    {
+      player: { name: "Mohamed Salah", forward: "TB - Batter" },
+      game: {
+        playType: { type: "soccer", src: "/soccer.png" },
+        vs: " TB vs BAL",
+      },
+      status: "won",
+      goal: { amount: "0.5", name: "Bat.Runs + RBIs" },
+      actual: "3",
+      color: "#459F48",
+    },
+    {
+      player: { name: "Isiah Pacheco", forward: "KC - RB" },
+      game: {
+        playType: { type: "soccer", src: "/soccer.png" },
+        vs: " LIV vs CRY",
+      },
+      status: "lost",
+      goal: { amount: "30.5 ", name: "Goal" },
+      actual: "11",
+      actualBar: "50%",
+    },
+  ]);
+  const [referCode] = useState(true);
+  if (openHistoryDetail) {
+    return (
+      <Detail
+        setOpenDetail={setOpenHistoryDetail}
+        detailData={historyDetailData}
+        referCode={referCode}
+      />
+    );
+  } else {
+    return (
+      <Box
+        sx={{
+          width: {
+            lg: "836px",
+            md: "700px",
+            sm: "500px",
+            xs: "450px",
+            xxxs: "90%",
+          },
+          height: "100vh",
+          margin: "auto",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          mt: { sm: "10px", xxxs: "20px" },
+        }}
+        component="div"
+      >
+        <Typography
+          sx={{
+            fontSize: { xs: "16px", xxs: "14px", xxxs: "12px" },
+            fontWeight: 700,
+            fontFamily: "poppins",
+            color: "secondary.main",
+            mt: "23px",
+            width: "100%",
+          }}
+        >
+          Transaction History{" "}
+        </Typography>
+        <Box sx={{ width: "100%", mt: "9px", mb: "20px" }}>
+          <Box
+            sx={{
+              width: { xs: "232px", xxs: "170px", xxxs: "130px" },
+              height: "2px",
+              bgcolor: "secondary.dark",
+            }}
+          ></Box>
+        </Box>
+        <Grid container sx={{ width: "100%" }}>
+          {history.map((e) => (
+            <Grid item md={6} xxxs={12} sx={{ mb: "12px" }}>
+              <Card
+                sx={{
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  width: "95%",
+                  borderRadius: "4px",
+                  border: "1px solid #494949",
+                  bgcolor: "primary.main",
+                }}
+              >
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "flex-start",
+                    ml: "10px",
+                  }}
+                >
+                  <Typography
+                    sx={{
+                      fontSize: { xs: "14px", xxs: "12px", xxxs: "10px" },
+                      fontWeight: 400,
+                      fontFamily: "poppins",
+                      color: "secondary.main",
+                      mt: "9px",
+                    }}
+                  >
+                    {e.name}
+                  </Typography>
+                  <Typography
+                    sx={{
+                      fontSize: { xs: "12px", xxs: "10px", xxxs: "8px" },
+                      fontWeight: 500,
+                      fontFamily: "poppins",
+                      color: "secondary.main",
+                      mt: "5px",
+                    }}
+                  >
+                    {e.code}
+                  </Typography>
+                  <Typography
+                    sx={{
+                      fontSize: { xs: "12px", xxs: "10px", xxxs: "8px" },
+                      fontWeight: 500,
+                      fontFamily: "poppins",
+                      color: "secondary.main",
+                      mb: "14px",
+                    }}
+                  >
+                    {e.time}
+                  </Typography>
+                </Box>
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems: "center",
+                    ml: "10px",
+                    cursor: "pointer",
+                  }}
+                  onClick={() => setOpenHistoryDetail(true)}
+                >
+                  <Typography
+                    sx={{
+                      fontSize: { xs: "16px", xxs: "14px", xxxs: "12px" },
+                      fontWeight: 600,
+                      fontFamily: "poppins",
+                      color: "#FFCED6",
+                    }}
+                  >
+                    {e.amount}
+                  </Typography>
+                  <ArrowForwardIosIcon
+                    sx={{
+                      color: "#494949",
+                      mr: { sm: "13px", xxs: "7px", xxxs: "4px" },
+
+                      ml: "16px",
+                      ml: { sm: "16px", xxs: "7px", xxxs: "4px" },
+                      fontSize: { xs: "20px", xxs: "18px", xxxs: "16px" },
+                    }}
+                  />
+                </Box>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
+    );
+  }
+}

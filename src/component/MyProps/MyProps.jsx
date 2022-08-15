@@ -259,9 +259,10 @@ export default function MyProps({ mode }) {
         playType: { type: "soccer", src: "/soccer.png" },
         vs: " LIV vs CRY",
       },
-      status: "lose",
+      status: "lost",
       goal: { amount: "0.5", name: "Goal" },
       actual: "0",
+      actualBar: "50%",
     },
   ]);
   const [openDetail, setOpenDetail] = useState(null);

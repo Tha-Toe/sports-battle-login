@@ -27,6 +27,7 @@ import MyProfile from "../../MyProfile/MyProfile";
 import SettingsIcon from "@mui/icons-material/Settings";
 import EmailPrefrence from "../../EmailPrefrence/EmailPrefrence";
 import MyProps from "../../MyProps/MyProps";
+import TransactionHistory from "../../TransactionHistory/TransactionHistory";
 export function Logged({ mode, setMode }) {
   let navigate = useNavigate();
   let location = useLocation();
@@ -49,6 +50,11 @@ export function Logged({ mode, setMode }) {
     navigate("/logged", { replace: true });
     setOpenSideNav(false);
     setOpenTag("my-profile");
+  };
+  const transactionHistoryOpen = () => {
+    navigate("/logged", { replace: true });
+    setOpenSideNav(false);
+    setOpenTag("transaction-history");
   };
   const goDepositNewUser = () => {
     navigate("/logged?deposit=new&page=verify", { replace: true });
@@ -94,10 +100,11 @@ export function Logged({ mode, setMode }) {
       func: myProfileOpen,
     },
     {
-      name: "Transition History",
+      name: "Transaction History",
       activeSrc: "/transcation-active.png",
       unactiveSrc: "/transcation-unactive.png",
-      activeName: "transition-history",
+      activeName: "transaction-history",
+      func: transactionHistoryOpen,
     },
     {
       name: "Know More",
@@ -570,6 +577,9 @@ export function Logged({ mode, setMode }) {
           )}
           {!location.search && openTag === "my-profile" && (
             <MyProfile mode={mode} />
+          )}
+          {!location.search && openTag === "transaction-history" && (
+            <TransactionHistory mode={mode} />
           )}
           {!location.search && openTag === "know-more" && (
             <KnowMore setOpenInviteFriend={setOpenInviteFriend} mode={mode} />

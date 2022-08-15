@@ -15,11 +15,13 @@ import { Grid, Card } from "@mui/material";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import PayoutScenarious from "./PayoutScenarious";
+import FileCopyIcon from "@mui/icons-material/FileCopy";
 export default function Detail({
   mode,
   setOpenDetail,
   detailData,
   openDetail,
+  referCode,
 }) {
   const [tabelHead, setTabelHead] = useState([
     "Game",
@@ -343,7 +345,7 @@ export default function Detail({
                       mt: "12px",
                     }}
                   >
-                    {e.status === "lose" && (
+                    {e.actualBar === "50%" && (
                       <Typography
                         sx={{
                           width: "50%",
@@ -469,6 +471,65 @@ export default function Detail({
       <Box sx={{ width: "95%", mt: "12px" }}>
         <img src="/defence-play-my-props.png" />
       </Box>
+      {referCode && (
+        <>
+          <Typography
+            sx={{
+              fontSize: { xs: "16px", xxs: "12px", xxxs: "10px" },
+              mt: "15px",
+              fontWeight: 400,
+              fontFamily: "poppins",
+              color: "#BBDEFA",
+              width: "95%",
+            }}
+          >
+            Refer a Friend & Get $25
+          </Typography>
+          <Typography
+            sx={{
+              fontSize: { xs: "14px", xxs: "10px", xxxs: "8px" },
+              mt: "11px",
+              fontWeight: 400,
+              fontFamily: "poppins",
+              color: "#459F48",
+              width: "95%",
+            }}
+          >
+            Your Referral Code
+          </Typography>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              width: "95%",
+              mt: "10px",
+            }}
+          >
+            <Typography
+              sx={{
+                fontSize: { xs: "24px", xxs: "20px", xxxs: "18px" },
+                fontWeight: 600,
+                fontFamily: "poppins",
+                color: "secondary.main",
+              }}
+            >
+              IUUASV18
+            </Typography>
+            <FileCopyIcon
+              sx={{
+                padding: "5px",
+                background: "#494949",
+                borderRadius: "50%",
+                color: "white",
+                ml: "8px",
+                cursor: "pointer",
+                fontSize: "17px",
+              }}
+            />
+          </Box>
+        </>
+      )}
       {openPayoutScenarious && (
         <PayoutScenarious setOpenPayoutScenarious={setOpenPayoutScenarious} />
       )}
