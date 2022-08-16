@@ -28,7 +28,12 @@ const GridItemComponent = ({
   };
 
   return (
-    <Grid item xxxs={12} md={6} sx={{ padding: 0, height: "78px" }}>
+    <Grid
+      item
+      xxxs={12}
+      md={6}
+      sx={{ padding: 0, height: { xs: "78px", xxxs: "100px" } }}
+    >
       <Card
         sx={{
           display: "flex",
@@ -54,7 +59,7 @@ const GridItemComponent = ({
           <Typography
             sx={{
               color: "secondary.main",
-              fontSize: { sm: "10px", xs: "7px", xxxs: "10px" },
+              fontSize: { lg: "12px", md: "10px", xs: "8px", xxxs: "10px" },
               fontWeight: 600,
               fontFamily: "poppins",
             }}
@@ -64,7 +69,14 @@ const GridItemComponent = ({
           <Typography
             sx={{
               color: "secondary.main",
-              fontSize: "6px",
+              fontSize: "8px",
+              fontSize: {
+                lg: "8px",
+                md: "8px",
+                xs: "6px",
+                xxs: "8px",
+                xxxs: "10px",
+              },
               fontWeight: 400,
               fontFamily: "poppins",
             }}
@@ -75,7 +87,12 @@ const GridItemComponent = ({
             <Typography
               sx={{
                 color: "secondary.main",
-                fontSize: "6px",
+                fontSize: {
+                  lg: "8px",
+                  md: "8px",
+                  xs: "6px",
+                  xxxs: "10px",
+                },
                 fontWeight: 400,
                 fontFamily: "poppins",
               }}
@@ -85,7 +102,12 @@ const GridItemComponent = ({
             <Typography
               sx={{
                 color: "secondary.main",
-                fontSize: "6px",
+                fontSize: {
+                  lg: "8px",
+                  md: "8px",
+                  xs: "6px",
+                  xxxs: "10px",
+                },
                 fontWeight: 400,
                 fontFamily: "poppins",
                 ml: "2px",
@@ -97,7 +119,12 @@ const GridItemComponent = ({
           <Typography
             sx={{
               color: "secondary.main",
-              fontSize: "6px",
+              fontSize: {
+                lg: "8px",
+                md: "8px",
+                xs: "6px",
+                xxxs: "10px",
+              },
               fontWeight: 400,
               fontFamily: "poppins",
             }}
@@ -107,7 +134,12 @@ const GridItemComponent = ({
           <Typography
             sx={{
               color: "secondary.main",
-              fontSize: "6px",
+              fontSize: {
+                lg: "8px",
+                md: "8px",
+                xs: "6px",
+                xxxs: "10px",
+              },
               fontWeight: 400,
               fontFamily: "poppins",
             }}
@@ -126,7 +158,12 @@ const GridItemComponent = ({
           <Typography
             sx={{
               color: "secondary.main",
-              fontSize: { sm: "8px", xs: "6px", xxxs: "8px" },
+              fontSize: {
+                lg: "10px",
+                md: "7px",
+                sm: "8px",
+                xxxs: "8px",
+              },
               fontWeight: 500,
               fontFamily: "poppins",
             }}
