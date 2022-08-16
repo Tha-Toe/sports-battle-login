@@ -28,6 +28,7 @@ import SettingsIcon from "@mui/icons-material/Settings";
 import EmailPrefrence from "../../EmailPrefrence/EmailPrefrence";
 import MyProps from "../../MyProps/MyProps";
 import TransactionHistory from "../../TransactionHistory/TransactionHistory";
+import Clear from "@mui/icons-material/Clear";
 export function Logged({ mode, setMode }) {
   let navigate = useNavigate();
   let location = useLocation();
@@ -329,27 +330,50 @@ export function Logged({ mode, setMode }) {
                     onClick={() => setOpenDropDown(!openDropDown)}
                   />
                 )}
+
                 {openDropDown && (
                   <Box
                     sx={{
-                      position: "absolute",
-                      top: "110%",
-                      right: 0,
+                      position: "fixed",
+                      top: 0,
+                      left: 0,
+                      width: "100vw",
+                      height: "100vh",
+                      background: "rgba(0,0,0,0.9)",
                       display: "flex",
                       flexDirection: "column",
                       alignItems: "center",
+                      justifyContent: "center",
                     }}
                   >
+                    {" "}
                     <Box
                       sx={{
-                        bgcolor: "primary.light",
+                        width: { sm: "500px", xxxs: "80%" },
+                        padding: "10px",
                         display: "flex",
                         flexDirection: "row",
                         alignItems: "center",
-                        borderBottom: "1px solid white",
-                        width: "100%",
-                        py: "10px",
-                        pl: "10px",
+                        justifyContent: "flex-end",
+                        cursor: "pointer",
+                      }}
+                    >
+                      <Clear
+                        sx={{ color: "white" }}
+                        onClick={() => setOpenDropDown(false)}
+                      />
+                    </Box>
+                    <Box
+                      sx={{
+                        width: { sm: "500px", xxxs: "80%" },
+                        padding: "10px",
+                        display: "flex",
+                        flexDirection: "row",
+                        alignItems: "center",
+                        justifyContent: "flex-start",
+                        border: "1px solid white",
+                        borderRadius: "4px",
+                        background: "black",
                         cursor: "pointer",
                       }}
                       onClick={goEmailPrefrencePage}
@@ -357,7 +381,7 @@ export function Logged({ mode, setMode }) {
                       <SettingsIcon sx={{ color: "white", mr: "5px" }} />
                       <Typography
                         sx={{
-                          fontSize: "10px",
+                          fontSize: { xs: "15px", xxxs: "12px" },
                           fontWeight: 400,
                           fontFamily: "poppins",
                           color: "white",
