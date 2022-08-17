@@ -108,11 +108,37 @@ export function Logged({ mode, setMode }) {
       func: transactionHistoryOpen,
     },
     {
+      name: "Enter Referral Code",
+      activeSrc: "/transcation-active.png",
+      unactiveSrc: "/transcation-unactive.png",
+      activeName: "enter-referral-code",
+    },
+  ]);
+  const [sideBarOther, setSideBarOther] = useState([
+    {
       name: "Know More",
       activeSrc: "/nomore-active.png",
       unactiveSrc: "/nomore-unactive.png",
       activeName: "know-more",
       func: knowMoreOpen,
+    },
+    {
+      name: "Email Preferences",
+      activeSrc: "/email-prefrence-active.png",
+      unactiveSrc: "/email-prefrence-unactive.png",
+      activeName: "email-prefrence",
+    },
+    {
+      name: "Scores",
+      activeSrc: "/scores-active.png",
+      unactiveSrc: "/scores-unactive.png",
+      activeName: "scores",
+    },
+    {
+      name: "Support Chat",
+      activeSrc: "/nomore-active.png",
+      unactiveSrc: "/nomore-unactive.png",
+      activeName: "support-chat",
     },
   ]);
 
@@ -410,12 +436,13 @@ export function Logged({ mode, setMode }) {
           sx={{
             boxShadow: "none",
             outline: "none",
-            width: { lg: "80px", md: "50px", sm: "30px", xxxs: "80px" },
             position: { sm: "absolute", xxxs: "fixed" },
-            left: { sm: 0, xxxs: `${openSideNav ? 0 : "-114px"}` },
+            width: { lg: "105px", md: "50px", sm: "30px", xxxs: "80px" },
+            left: { sm: 0, xxxs: `${openSideNav ? 0 : "-195px"}` },
             height: "100%",
             zIndex: 3,
             transition: "all .5s ease-in",
+            padding: 0,
           }}
         >
           <Toolbar
@@ -424,12 +451,13 @@ export function Logged({ mode, setMode }) {
               flexDirection: "column",
               justifyContent: "space-between",
               alignItems: "center",
-              width: { lg: "80px", md: "50px", sm: "30px", xxxs: "80px" },
+              width: { lg: "105px", md: "50px", sm: "30px", xxxs: "185px" },
               borderRight: "1px solid gray",
               borderBottom: "1px solid gray",
               height: "100%",
               position: "relative",
               bgcolor: "primary.main",
+              padding: 0,
             }}
           >
             <MenuIcon
@@ -439,7 +467,7 @@ export function Logged({ mode, setMode }) {
                 height: "30px",
                 bgcolor: "primary.main",
                 color: "secondary.main",
-                left: `${openSideNav ? "115px" : "5px"}`,
+                left: `${openSideNav ? "195px" : "5px"}`,
                 top: "10px",
                 display: { sm: "none", xxxs: "block" },
                 borderRadius: "0 4px 4px 0",
@@ -453,20 +481,25 @@ export function Logged({ mode, setMode }) {
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "space-between",
-                alignItems: "center",
-                height: "53%",
-                borderBottom: "1px solid #494949",
+                alignItems: "flex-start",
+                height: "39%",
+                width: { lg: "145px", md: "90px", sm: "70px", xxxs: "145px" },
               }}
             >
               {sideBar.map((e) => (
                 <Box
                   sx={{
                     display: "flex",
-                    flexDirection: "column",
+                    flexDirection: { lg: "row", sm: "column", xxxs: "row" },
                     alignItems: "center",
-                    justifyContent: "center",
+                    justifyContent: {
+                      lg: "flex-start",
+                      sm: "space-between",
+                      xxxs: "flex-start",
+                    },
                     height: "20%",
                     cursor: "pointer",
+                    width: "100%",
                   }}
                   onClick={e.func}
                 >
@@ -479,6 +512,61 @@ export function Logged({ mode, setMode }) {
                       fontSize: { md: "10px", xxxs: "8px" },
                       textAlign: "center",
                       mt: "3px",
+                      ml: { lg: "8px", sm: "0px", xxxs: "8px" },
+                    }}
+                  >
+                    {e.name}
+                  </Typography>
+                </Box>
+              ))}
+            </Box>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+                alignItems: "flex-start",
+                height: "33%",
+                width: { lg: "145px", md: "90px", sm: "70px", xxxs: "145px" },
+              }}
+            >
+              <Typography
+                sx={{
+                  fontSize: "10px",
+                  fontWeight: 700,
+                  fontFamily: "poppins",
+                  color: "#2582E3",
+                }}
+              >
+                Other
+              </Typography>
+              {sideBarOther.map((e) => (
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: { lg: "row", sm: "column", xxxs: "row" },
+                    alignItems: "center",
+                    justifyContent: {
+                      lg: "flex-start",
+                      sm: "center",
+                      xxxs: "flex-start",
+                    },
+                    height: "20%",
+                    cursor: "pointer",
+                    width: "100%",
+                  }}
+                  onClick={e.func}
+                >
+                  <img
+                    src={openTag === e.activeName ? e.activeSrc : e.unactiveSrc}
+                  />
+                  <Typography
+                    sx={{
+                      fontFamily: "poppins",
+                      fontSize: { md: "10px", xxxs: "8px" },
+                      textAlign: "center",
+                      mt: "3px",
+                      ml: { lg: "8px", sm: "0px", xxxs: "8px" },
                     }}
                   >
                     {e.name}
@@ -490,20 +578,21 @@ export function Logged({ mode, setMode }) {
               component="div"
               sx={{
                 display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
+                flexDirection: "row",
+                justifyContent: "space-between",
                 alignItems: "center",
-                borderBottom: "1px solid #494949",
-                height: "13%",
+                height: "7%",
                 cursor: "pointer",
+                width: { lg: "145px", md: "90px", sm: "70px", xxxs: "145px" },
               }}
               onClick={switchMode}
             >
               <Typography
                 sx={{
-                  fontFamily: "poppins",
                   fontSize: "10px",
-                  mb: "12px",
+                  fontWeight: 700,
+                  fontFamily: "poppins",
+                  color: "#2582E3",
                 }}
               >
                 Switch Theme
@@ -541,45 +630,83 @@ export function Logged({ mode, setMode }) {
                 flexDirection: "column",
                 justifyContent: "center",
                 alignItems: "center",
-                borderBottom: "1px solid #494949",
-                height: "20%",
+                height: "21%",
+                width: { lg: "145px", md: "90px", sm: "70px", xxxs: "145px" },
               }}
             >
               <Typography
                 sx={{
-                  fontFamily: "poppins",
                   fontSize: "10px",
-                  mb: "12px",
+                  fontWeight: 700,
+                  fontFamily: "poppins",
+                  color: "#2582E3",
+                  width: "100%",
+                  mb: "5px",
                 }}
               >
-                Join our Social
+                Our Socials
               </Typography>
-              <img
-                src="/discord.png"
-                className={`${"discord-logo"} ${
-                  mode !== "dark" && "lightMode"
-                }`}
-              />
-              <img
-                src="/twitter.png"
-                className={`${"twitter-logo"} ${
-                  mode !== "dark" && "lightMode"
-                }`}
-              />
-            </Box>
-            <Box
-              component="div"
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-                alignItems: "center",
-                borderBottom: "1px solid #494949",
-                height: "15%",
-              }}
-              onClick={handleLogout}
-            >
-              <img src="/exit.png" className="exit-image" />
+              <Box
+                sx={{
+                  width: "100%",
+                  display: "flex",
+                  flexDirection: { lg: "row", sm: "column", xxxs: "row" },
+                  alignItems: "center",
+                  justifyContent: {
+                    lg: "flex-start",
+                    sm: "center",
+                    xxxs: "flex-start",
+                  },
+                }}
+              >
+                <img
+                  src="/discord.png"
+                  className={`${"discord-logo"} ${
+                    mode !== "dark" && "lightMode"
+                  }`}
+                />
+                <Typography
+                  sx={{
+                    fontFamily: "poppins",
+                    fontSize: "10px",
+                    ml: { lg: "10px", sm: "0px", xxxs: "10px" },
+                    textAlign: "center",
+                  }}
+                >
+                  Join our Discord
+                </Typography>
+              </Box>
+              <Box
+                sx={{
+                  width: "100%",
+                  display: "flex",
+                  flexDirection: { lg: "row", sm: "column", xxxs: "row" },
+                  alignItems: "center",
+                  justifyContent: {
+                    lg: "flex-start",
+                    sm: "center",
+                    xxxs: "flex-start",
+                  },
+                  mt: "10px",
+                }}
+              >
+                <img
+                  src="/twitter.png"
+                  className={`${"twitter-logo"} ${
+                    mode !== "dark" && "lightMode"
+                  }`}
+                />
+                <Typography
+                  sx={{
+                    fontFamily: "poppins",
+                    fontSize: "10px",
+                    ml: { lg: "10px", sm: "0px", xxxs: "10px" },
+                    textAlign: "center",
+                  }}
+                >
+                  Follow Twitter{" "}
+                </Typography>
+              </Box>
             </Box>
           </Toolbar>
         </AppBar>
