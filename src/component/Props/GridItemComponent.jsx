@@ -116,21 +116,38 @@ const GridItemComponent = ({
               {e.time}
             </Typography>
           </Box>
-          <Typography
-            sx={{
-              color: "secondary.main",
-              fontSize: {
-                lg: "8px",
-                md: "8px",
-                xs: "6px",
-                xxxs: "10px",
-              },
-              fontWeight: 400,
-              fontFamily: "poppins",
-            }}
-          >
-            Last 5 {e.last}
-          </Typography>
+          <Box sx={{ display: "flex" }}>
+            <Typography
+              sx={{
+                color: "secondary.main",
+                fontSize: {
+                  lg: "8px",
+                  md: "8px",
+                  xs: "6px",
+                  xxxs: "10px",
+                },
+                fontWeight: 400,
+                fontFamily: "poppins",
+              }}
+            >
+              Last 5
+            </Typography>
+            <Typography
+              sx={{
+                color: "#3A6DBE",
+                fontSize: {
+                  lg: "8px",
+                  md: "8px",
+                  xs: "6px",
+                  xxxs: "10px",
+                },
+                fontWeight: 400,
+                fontFamily: "poppins",
+              }}
+            >
+              {e.last}
+            </Typography>
+          </Box>
           <Typography
             sx={{
               color: "secondary.main",

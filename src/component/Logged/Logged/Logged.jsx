@@ -47,6 +47,11 @@ export function Logged({ mode, setMode }) {
     setOpenSideNav(false);
     setOpenTag("know-more");
   };
+  const emailPrefrenceOpen = () => {
+    navigate("/logged", { replace: true });
+    setOpenSideNav(false);
+    setOpenTag("email-prefrence");
+  };
   const myProfileOpen = () => {
     navigate("/logged", { replace: true });
     setOpenSideNav(false);
@@ -68,7 +73,9 @@ export function Logged({ mode, setMode }) {
   };
   const goEmailPrefrencePage = () => {
     setOpenDropDown(false);
-    navigate("/logged?setting=email-prefrence", { replace: true });
+    navigate("/logged", { replace: true });
+    setOpenSideNav(false);
+    setOpenTag("email-prefrence");
   };
   const myPropsOpen = () => {
     navigate("/logged", { replace: true });
@@ -127,6 +134,7 @@ export function Logged({ mode, setMode }) {
       activeSrc: "/email-prefrence-active.png",
       unactiveSrc: "/email-prefrence-unactive.png",
       activeName: "email-prefrence",
+      func: emailPrefrenceOpen,
     },
     {
       name: "Scores",
@@ -727,7 +735,7 @@ export function Logged({ mode, setMode }) {
             <MyProps mode={mode} />
           )}
           {!location.search && openTag === "my-profile" && (
-            <MyProfile mode={mode} />
+            <MyProfile mode={mode} myProfileOpen={myProfileOpen} />
           )}
           {!location.search && openTag === "transaction-history" && (
             <TransactionHistory mode={mode} />
@@ -735,6 +743,10 @@ export function Logged({ mode, setMode }) {
           {!location.search && openTag === "know-more" && (
             <KnowMore setOpenInviteFriend={setOpenInviteFriend} mode={mode} />
           )}
+          {!location.search && openTag === "email-prefrence" && (
+            <EmailPrefrence />
+          )}
+
           {location.search === "?deposit=old-user" && <AddCash mode={mode} />}
           {location.search === "?deposit=new&page=verify" && (
             <NewAddCashVerify mode={mode} />
@@ -754,7 +766,6 @@ export function Logged({ mode, setMode }) {
           {location.search === "?deposit=refral-bonus-cash-code" && (
             <RefralBonusCashCode />
           )}
-          {location.search === "?setting=email-prefrence" && <EmailPrefrence />}
         </Box>
       </Box>
       {openInviteFriend && (
