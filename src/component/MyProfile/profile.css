@@ -51,6 +51,16 @@
     transform: scale(1);
   }
 }
+.giftIcon {
+  height: 44px;
+  width: 40px;
+  margin-top: 32px;
+}
+.referalHistoryDataICon {
+  width: 32px;
+  height: 32px;
+  margin-left: 13px;
+}
 @media (max-width: 500px) {
   .profileImage {
     height: 35px;
@@ -71,5 +81,15 @@
     width: 20px;
     height: 20px;
     margin-right: 10px;
+  }
+  .referalHistoryDataICon {
+    width: 22px;
+    height: 22px;
+    margin-left: 10px;
+  }
+  .giftIcon {
+    height: 34px;
+    width: 30px;
+    margin-top: 32px;
   }
 }

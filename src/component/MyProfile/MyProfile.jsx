@@ -16,6 +16,8 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import WidthDrawCash from "./WidthDrawCash";
 import ChooseAWithDraw from "./ChooseAWithDraw";
 import StandardECheck from "./StandardECheck";
+import MyWithDraw from "./MyWithDraw";
+import ReferalHistory from "./ReferalHistory";
 
 export default function MyProfile({ mode, myProfileOpen }) {
   const [wallet, setWallet] = useState([
@@ -47,6 +49,9 @@ export default function MyProfile({ mode, myProfileOpen }) {
   const openWidthDrawCash = () => {
     setOpenTag("WidthDrawCash");
   };
+  const openMyWithDraw = () => {
+    setOpenTag("myWithDraw");
+  };
   const [info, setInfo] = useState([
     { name: "Deposit", note: "Credit Card (Visa, Master, Discover)" },
     {
@@ -54,7 +59,11 @@ export default function MyProfile({ mode, myProfileOpen }) {
       note: "Credit Card (Visa, Master, Discover)",
       func: openWidthDrawCash,
     },
-    { name: "My Withdrawals", note: "Credit Card (Visa, Master, Discover)" },
+    {
+      name: "My Withdrawals",
+      note: "Credit Card (Visa, Master, Discover)",
+      func: openMyWithDraw,
+    },
     { name: "Transaction History", note: "" },
   ]);
   const [history, setHistory] = useState([
@@ -77,6 +86,7 @@ export default function MyProfile({ mode, myProfileOpen }) {
   ]);
   const [openTag, setOpenTag] = useState("profile");
   const [alreadyChooseWidthDraw, setAlreadyChooseWidthDraw] = useState(null);
+  const [openReferalHistory, setOpenReferalHistory] = useState(false);
 
   if (openTag === "WidthDrawCash") {
     return (
@@ -94,6 +104,8 @@ export default function MyProfile({ mode, myProfileOpen }) {
         setAlreadyChooseWidthDraw={setAlreadyChooseWidthDraw}
       />
     );
+  } else if (openTag === "myWithDraw") {
+    return <MyWithDraw />;
   } else {
     return (
       <Box
@@ -711,7 +723,9 @@ export default function MyProfile({ mode, myProfileOpen }) {
               display: "flex",
               flexDirection: "row",
               alignItems: "center",
+              cursor: "pointer",
             }}
+            onClick={() => setOpenReferalHistory(true)}
           >
             <img src="/group.png" className="groupImage" />
             <Typography
@@ -764,7 +778,7 @@ export default function MyProfile({ mode, myProfileOpen }) {
                 ml: { xs: "37px", xxxs: "10px" },
               }}
             >
-              Referral History
+              Redeem Referral Code{" "}
             </Typography>
           </Box>
           <ArrowForwardIosIcon
@@ -775,6 +789,9 @@ export default function MyProfile({ mode, myProfileOpen }) {
             }}
           />
         </Box>
+        {openReferalHistory && (
+          <ReferalHistory setOpenReferalHistory={setOpenReferalHistory} />
+        )}
       </Box>
     );
   }
