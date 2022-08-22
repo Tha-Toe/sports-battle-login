@@ -65,6 +65,8 @@ export function Logged({ mode, setMode }) {
   };
   const goDepositNewUser = () => {
     navigate("/logged?deposit=new&page=verify", { replace: true });
+  };
+  const goAddCashBonus = () => {
     navigate("/logged?deposit=old-user", { replace: true });
   };
   const goRefralBonusCashRadeem = () => {
@@ -298,6 +300,7 @@ export function Logged({ mode, setMode }) {
                   },
                   cursor: "pointer",
                 }}
+                onClick={goAddCashBonus}
               >
                 Cash: $0.00
               </Button>
