@@ -65,6 +65,7 @@ export function Logged({ mode, setMode }) {
   };
   const goDepositNewUser = () => {
     navigate("/logged?deposit=new&page=verify", { replace: true });
+    navigate("/logged?deposit=old-user", { replace: true });
   };
   const goRefralBonusCashRadeem = () => {
     navigate("/logged", { replace: true });
@@ -351,7 +352,6 @@ export function Logged({ mode, setMode }) {
                       fontSize: "25px",
                       cursor: "pointer",
                     }}
-                    onClick={() => setOpenDropDown(!openDropDown)}
                   />
                 ) : (
                   <KeyboardArrowDownIcon
@@ -360,7 +360,6 @@ export function Logged({ mode, setMode }) {
                       fontSize: "25px",
                       cursor: "pointer",
                     }}
-                    onClick={() => setOpenDropDown(!openDropDown)}
                   />
                 )}
 
