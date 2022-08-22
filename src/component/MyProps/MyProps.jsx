@@ -337,8 +337,8 @@ export default function MyProps({ mode }) {
             flexDirection: "row",
             alignItems: "center",
             width: "100%",
-            justifyContent: "space-between",
-            mt: "19px",
+            justifyContent: "flex-start",
+            mt: "11px",
           }}
         >
           {myPropsAppBar.map((e) => (

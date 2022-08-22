@@ -19,10 +19,7 @@ import OverUnderPointSystem from "./OverUnderPointSystem";
 import FAQ from "./FAQ";
 import OperatingState from "./OperatingState";
 
-export default function KnowMore({ setOpenInviteFriend, mode }) {
-  const openShareFriend = () => {
-    setOpenInviteFriend(true);
-  };
+export default function KnowMore({ mode }) {
   const [general, setGeneral] = useState([
     {
       name: "Over-Under Points System",
@@ -38,13 +35,6 @@ export default function KnowMore({ setOpenInviteFriend, mode }) {
       name: "Sports Battle Operating States",
       src: "/fps.png",
       darkSrc: "/fps-dark.png",
-    },
-    {
-      name: "Share your love of Fantasy Sports",
-      src: "/fps.png",
-      darkSrc: "/fps-dark.png",
-      extra: "You and your friend will both receive bonus cash",
-      func: openShareFriend,
     },
   ]);
   const [legal, setLegal] = useState([

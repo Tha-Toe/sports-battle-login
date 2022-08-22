@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import "./refralBonus.css";
 import ClearIcon from "@mui/icons-material/Clear";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
 export default function RefralBonusCashCode({ number, setNumber }) {
   let navigate = useNavigate();
@@ -43,6 +44,13 @@ export default function RefralBonusCashCode({ number, setNumber }) {
   });
   const goVerifyPhoneNumberCode = () => {
     navigate("/logged?deposit=verify-phone-number-code", { replace: true });
+  };
+  const [success, setSuccess] = useState(false);
+  const handleClick = () => {
+    setTimeout(() => {
+      setSuccess(true);
+      setClicked(false);
+    }, 2000);
   };
   return (
     <Box
@@ -130,7 +138,7 @@ export default function RefralBonusCashCode({ number, setNumber }) {
         Referral codes are case sensitive
       </Typography>
       <Input
-        type="number"
+        type="text"
         variant="outlined"
         placeholder="Enter Referral Code"
         sx={{
@@ -169,27 +177,63 @@ export default function RefralBonusCashCode({ number, setNumber }) {
           </Typography>
         </Box>
       )}
-      <ThemeProvider theme={theme}>
-        <Button
+      {success ? (
+        <Box
           sx={{
-            background: "#4831D4",
-            fontSize: { md: "14px", sm: "12px", xxxs: "10px" },
-            fontWeight: 400,
-            fontFamily: "poppins",
-            padding: { xs: "17px 119px 9px 123px", xxxs: "10px 70px" },
-            color: "white",
-            "&.MuiButtonBase-root:hover": {
-              background: "#4831D4",
-            },
-            mt: "24px",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            mt: "32px",
           }}
-          disabled={disableVerify}
-          className="disableButton"
-          onClick={() => setClicked(true)}
         >
-          Apply Code{" "}
-        </Button>
-      </ThemeProvider>
+          <CheckCircleIcon
+            sx={{
+              color: "#52C03C",
+              fontSize: { sm: "50px", xs: "40px", xxxs: "35px" },
+            }}
+          />
+          <Typography
+            sx={{
+              fontSize: { md: "14px", sm: "12px", xxxs: "10px" },
+              fontWeight: 600,
+              fontFamily: "poppins",
+              color: "secondary.main",
+              width: "70%",
+              mt: "16px",
+              textAlign: "center",
+            }}
+          >
+            You have successfully used the referral code from JOHN DOE. Bonus
+            cash of $25 is added. Please check/refresh your account screen and
+            transaction history.{" "}
+          </Typography>
+        </Box>
+      ) : (
+        <ThemeProvider theme={theme}>
+          <Button
+            sx={{
+              background: "#4831D4",
+              fontSize: { md: "14px", sm: "12px", xxxs: "10px" },
+              fontWeight: 400,
+              fontFamily: "poppins",
+              padding: { xs: "17px 119px 9px 123px", xxxs: "10px 70px" },
+              color: "white",
+              "&.MuiButtonBase-root:hover": {
+                background: "#4831D4",
+              },
+              mt: "24px",
+            }}
+            disabled={disableVerify}
+            className="disableButton"
+            onClick={() => {
+              setClicked(true);
+              handleClick();
+            }}
+          >
+            Apply Code{" "}
+          </Button>
+        </ThemeProvider>
+      )}
       <Box
         sx={{
           display: "flex",
@@ -221,23 +265,6 @@ export default function RefralBonusCashCode({ number, setNumber }) {
           terms, privacy policy & payment terms{" "}
         </Typography>
       </Box>
-      {clicked && (
-        <Button
-          sx={{
-            background: "black",
-            border: "1px solid #439F48",
-            color: "#439F48",
-            fontSize: { md: "14px", sm: "12px", xxxs: "10px" },
-            fontWeight: 500,
-            fontFamily: "poppins",
-            width: "220px",
-            py: "10px",
-            mt: "23px",
-          }}
-        >
-          Support Chat
-        </Button>
-      )}
     </Box>
   );
 }

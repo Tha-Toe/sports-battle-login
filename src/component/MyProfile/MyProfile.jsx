@@ -53,18 +53,28 @@ export default function MyProfile({ mode, myProfileOpen }) {
     setOpenTag("myWithDraw");
   };
   const [info, setInfo] = useState([
-    { name: "Deposit", note: "Credit Card (Visa, Master, Discover)" },
+    {
+      name: "Deposit",
+      note: "Credit Card (Visa, Master, Discover)",
+      icon: "/upload1.png",
+    },
     {
       name: "Withdraw Cash",
       note: "Credit Card (Visa, Master, Discover)",
       func: openWidthDrawCash,
+      icon: "/deposit1.png",
     },
     {
       name: "My Withdrawals",
       note: "Credit Card (Visa, Master, Discover)",
       func: openMyWithDraw,
+      icon: "/withdrawal1.png",
     },
-    { name: "Transaction History", note: "" },
+    {
+      name: "Transaction History",
+      note: "",
+      icon: "/transcationHistoryActive.png",
+    },
   ]);
   const [history, setHistory] = useState([
     {
@@ -196,7 +206,7 @@ export default function MyProfile({ mode, myProfileOpen }) {
               },
             }}
           >
-            Deposit
+            Add Cash
           </Button>
         </Box>
         <Box
@@ -434,34 +444,44 @@ export default function MyProfile({ mode, myProfileOpen }) {
             <Box
               sx={{
                 display: "flex",
-                flexDirection: "column",
-                alignItems: "flex-start",
+                flexDirection: "row",
+                alignItems: "center",
                 ml: "10px",
               }}
             >
-              <Typography
+              <img src={e.icon} className="depositIcon" />
+              <Box
                 sx={{
-                  fontSize: { sm: "14px", xs: "12px", xxxs: "10px" },
-                  fontWeight: 400,
-                  fontFamily: "poppins",
-                  color: "secondary.main",
-                  mt: "12px",
-                  mb: "4px",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "flex-start",
+                  ml: "24px",
                 }}
               >
-                {e.name}
-              </Typography>
-              <Typography
-                sx={{
-                  fontSize: { sm: "10px", xs: "8px", xxxs: "6px" },
-                  fontWeight: 400,
-                  fontFamily: "poppins",
-                  color: "secondary.main",
-                  mb: "9px",
-                }}
-              >
-                {e.note}
-              </Typography>
+                <Typography
+                  sx={{
+                    fontSize: { sm: "14px", xs: "12px", xxxs: "10px" },
+                    fontWeight: 400,
+                    fontFamily: "poppins",
+                    color: "secondary.main",
+                    mt: "12px",
+                    mb: "4px",
+                  }}
+                >
+                  {e.name}
+                </Typography>
+                <Typography
+                  sx={{
+                    fontSize: { sm: "10px", xs: "8px", xxxs: "6px" },
+                    fontWeight: 400,
+                    fontFamily: "poppins",
+                    color: "secondary.main",
+                    mb: "9px",
+                  }}
+                >
+                  {e.note}
+                </Typography>
+              </Box>
             </Box>
             <ArrowForwardIosIcon
               sx={{

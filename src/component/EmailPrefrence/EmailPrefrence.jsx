@@ -25,22 +25,7 @@ export default function EmailPrefrence() {
     { name: "When I withdraw cash ", open: true },
     { name: "When I win game plays", open: true },
   ]);
-  const [propsNav, setPropsNav] = useState([
-    { name: "MLB", src: "/mlb.png", color: "blue" },
-    { name: "PGA", src: "/pga.png", color: "blue" },
-    { name: "GOLF", src: "/golf.png", color: "#E431F4" },
-    { name: "NFL", src: "/nfl.png", color: "#F5A922" },
-    { name: "WNBA", src: "/wnba.png", color: "#F5A922" },
-    { name: "Cricket", src: "/cricket.png", color: "#D04643" },
-    { name: "CSGO", src: "/csgo.png", color: "#00ffff" },
-    { name: "MMA", src: "/mma.png", color: "orange" },
-    { name: "F1", src: "/f1.png", color: "red" },
-    { name: "CFL", src: "/cfl.png", color: "#F5A922" },
-    { name: "DOTA2", src: "/dota2.png", color: "#00ffff" },
-    { name: "VAL", src: "/val.png", color: "blue" },
-    { name: "Soccer", src: "/soccer.png", color: "#52C03C" },
-    { name: "NBA", src: "/nba.png", color: "#F5A922" },
-  ]);
+
   const [selectSports, setSelectSports] = useState("MLB");
 
   const onOffFunction = (index) => {
@@ -161,31 +146,7 @@ export default function EmailPrefrence() {
           </Box>
         </Box>
       ))}
-      <Typography
-        sx={{
-          fontSize: { xs: "14px", xxxs: "12px" },
-          fontWeight: 600,
-          fontFamily: "poppins",
-          color: "#2072C4",
-          width: "100%",
-          mt: "12px",
-        }}
-      >
-        Sport Preferences{" "}
-      </Typography>
-      <Typography
-        sx={{
-          fontSize: { xs: "12px", xxxs: "10px" },
-          fontWeight: 400,
-          fontFamily: "poppins",
-          color: "secondary.main",
-          width: "100%",
-          mt: "6px",
-          mb: "17px",
-        }}
-      >
-        Select the sport you want to see first{" "}
-      </Typography>
+
       <Box
         component="div"
         sx={{
@@ -200,50 +161,7 @@ export default function EmailPrefrence() {
           },
           mb: "57px",
         }}
-      >
-        {propsNav.map((e) => (
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-              mr: { xxxs: "15px", md: "" },
-            }}
-          >
-            <Box
-              sx={{
-                height: { xs: "34px", xxxs: "30px" },
-                width: { xs: "34px", xxxs: "30px" },
-                border: "2px solid white",
-                borderRadius: "50%",
-                mt: "13px",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
-                bgcolor: `${e.name === selectSports ? e.color : "black"}`,
-                cursor: "pointer",
-              }}
-              onClick={() => setSelectSports(e.name)}
-            >
-              <img className="propsNavImg" src={e.src} />
-            </Box>
-            <Typography
-              sx={{
-                fontSize: { xs: "12px", xxxs: "10px" },
-                fontWeight: 400,
-                fontFamily: "poppins",
-                mt: "5px",
-                color: "secondary.main",
-              }}
-            >
-              {" "}
-              {e.name}
-            </Typography>
-          </Box>
-        ))}
-      </Box>
+      ></Box>
       <Button
         sx={{
           fontSize: { xs: "14px", xxxs: "12px" },
