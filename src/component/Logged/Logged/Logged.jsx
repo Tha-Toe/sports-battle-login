@@ -67,7 +67,10 @@ export function Logged({ mode, setMode }) {
     navigate("/logged?deposit=new&page=verify", { replace: true });
   };
   const goRefralBonusCashRadeem = () => {
+    navigate("/logged", { replace: true });
+    setOpenTag("enter-referral-code");
     navigate("/logged?deposit=go-refral-bonus-cash-randoom", { replace: true });
+    setOpenSideNav(false);
   };
   const goVerifyPhoneNumberCode = () => {
     navigate("/logged?deposit=verify-phone-number-code", { replace: true });
