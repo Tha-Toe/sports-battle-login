@@ -23,60 +23,70 @@ export default function TransactionHistory() {
       code: "Conf #3 :: 34534,",
       time: " 08/06/2022, 11:28",
       amount: "$10.0",
+      won: true,
     },
     {
       name: "Prop join",
       code: "Conf #3 :: 34534,",
       time: " 08/06/2022, 11:28",
       amount: "$5.0",
+      won: true,
     },
     {
       name: "Prop join",
       code: "Conf #3 :: 34534,",
       time: " 08/06/2022, 11:28",
       amount: "$10.0",
+      won: false,
     },
     {
       name: "Prop join",
       code: "Conf #3 :: 34534,",
       time: " 08/06/2022, 11:28",
       amount: "$5.0",
+      won: true,
     },
     {
       name: "Prop join",
       code: "Conf #3 :: 34534,",
       time: " 08/06/2022, 11:28",
       amount: "$10.0",
+      won: false,
     },
     {
       name: "Prop join",
       code: "Conf #3 :: 34534,",
       time: " 08/06/2022, 11:28",
       amount: "$5.0",
+      won: true,
     },
     {
       name: "Prop join",
       code: "Conf #3 :: 34534,",
       time: " 08/06/2022, 11:28",
       amount: "$10.0",
+      won: true,
     },
     {
       name: "Prop join",
       code: "Conf #3 :: 34534,",
       time: " 08/06/2022, 11:28",
       amount: "$5.0",
+      won: false,
     },
     {
       name: "Prop join",
       code: "Conf #3 :: 34534,",
       time: " 08/06/2022, 11:28",
       amount: "$10.0",
+      won: false,
     },
     {
       name: "Prop join",
       code: "Conf #3 :: 34534,",
       time: " 08/06/2022, 11:28",
       amount: "$5.0",
+      won: false,
     },
   ]);
 
@@ -116,68 +126,76 @@ export default function TransactionHistory() {
     },
   ]);
   const [referCode] = useState(true);
-  if (openHistoryDetail) {
-    return (
-      <Detail
-        setOpenDetail={setOpenHistoryDetail}
-        detailData={historyDetailData}
-        referCode={referCode}
-      />
-    );
-  } else {
-    return (
+  const [clicked, setClicked] = useState(null);
+
+  return (
+    <Box
+      sx={{
+        width: {
+          lg: "836px",
+          md: "700px",
+          sm: "500px",
+          xs: "450px",
+          xxxs: "90%",
+        },
+        height: "100vh",
+        margin: "auto",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        mt: { sm: "10px", xxxs: "20px" },
+      }}
+      component="div"
+    >
+      <Typography
+        sx={{
+          fontSize: { xs: "16px", xxs: "14px", xxxs: "12px" },
+          fontWeight: 700,
+          fontFamily: "poppins",
+          color: "secondary.main",
+          mt: "23px",
+          width: "100%",
+        }}
+      >
+        Transaction History{" "}
+      </Typography>
+      <Box sx={{ width: "100%", mt: "9px", mb: "20px" }}>
+        <Box
+          sx={{
+            width: { xs: "232px", xxs: "170px", xxxs: "130px" },
+            height: "2px",
+            bgcolor: "secondary.dark",
+          }}
+        ></Box>
+      </Box>
       <Box
         sx={{
-          width: {
-            lg: "836px",
-            md: "700px",
-            sm: "500px",
-            xs: "450px",
-            xxxs: "90%",
-          },
-          height: "100vh",
-          margin: "auto",
           display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          mt: { sm: "10px", xxxs: "20px" },
+          flexDirection: { md: "row", xxxs: "column" },
+          wdith: "100%",
         }}
-        component="div"
       >
-        <Typography
-          sx={{
-            fontSize: { xs: "16px", xxs: "14px", xxxs: "12px" },
-            fontWeight: 700,
-            fontFamily: "poppins",
-            color: "secondary.main",
-            mt: "23px",
-            width: "100%",
-          }}
-        >
-          Transaction History{" "}
-        </Typography>
-        <Box sx={{ width: "100%", mt: "9px", mb: "20px" }}>
-          <Box
-            sx={{
-              width: { xs: "232px", xxs: "170px", xxxs: "130px" },
-              height: "2px",
-              bgcolor: "secondary.dark",
-            }}
-          ></Box>
-        </Box>
-        <Grid container sx={{ width: "100%" }}>
-          {history.map((e) => (
-            <Grid item md={6} xxxs={12} sx={{ mb: "12px" }}>
+        <Grid container sx={{ width: { md: "50%", xxxs: "100%" } }}>
+          {history.map((e, index) => (
+            <Grid item md={12} key={index} xxxs={12} sx={{ mb: "12px" }}>
               <Card
                 sx={{
                   display: "flex",
                   flexDirection: "row",
                   alignItems: "center",
                   justifyContent: "space-between",
-                  width: "95%",
+                  width: { md: "95%", xxxs: "100%" },
                   borderRadius: "4px",
-                  border: "1px solid #494949",
+                  border: `${
+                    clicked === index
+                      ? "1px solid #4831D4"
+                      : "1px solid #494949"
+                  }`,
                   bgcolor: "primary.main",
+                }}
+                onClick={() => {
+                  setClicked(index);
+                  setOpenHistoryDetail(true);
                 }}
               >
                 <Box
@@ -230,14 +248,13 @@ export default function TransactionHistory() {
                     ml: "10px",
                     cursor: "pointer",
                   }}
-                  onClick={() => setOpenHistoryDetail(true)}
                 >
                   <Typography
                     sx={{
                       fontSize: { xs: "16px", xxs: "14px", xxxs: "12px" },
                       fontWeight: 600,
                       fontFamily: "poppins",
-                      color: "#FFCED6",
+                      color: `${e.won ? "#C2DEC7" : "#FFCED6"}`,
                     }}
                   >
                     {e.amount}
@@ -257,7 +274,18 @@ export default function TransactionHistory() {
             </Grid>
           ))}
         </Grid>
+        {openHistoryDetail ? (
+          <Detail
+            setOpenDetail={setOpenHistoryDetail}
+            detailData={historyDetailData}
+            referCode={referCode}
+            clicked={clicked}
+            mainDetail={history}
+          />
+        ) : (
+          <Detail />
+        )}
       </Box>
-    );
-  }
+    </Box>
+  );
 }
