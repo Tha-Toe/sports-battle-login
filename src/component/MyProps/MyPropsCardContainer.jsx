@@ -12,14 +12,11 @@ import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import MenuIcon from "@mui/icons-material/Menu";
 import ClearIcon from "@mui/icons-material/Clear";
 import { Grid, Card } from "@mui/material";
+import Detail from "./Detail";
 
-export default function MyPropsCardContainer({
-  mode,
-  setOpenDetail,
-  mainDetail,
-  openTag,
-}) {
-  const handelOpenDetail = () => {
+export default function MyPropsCardContainer({ mode, mainDetail, openTag }) {
+  const handelOpenDetail = (index) => {
+    setClicked(index);
     if (openTag === "Upcomming") {
       setOpenDetail("Upcomming");
     } else if (openTag === "Live") {
@@ -28,20 +25,133 @@ export default function MyPropsCardContainer({
       setOpenDetail("Completed");
     }
   };
+  const [upCommingDetailData, setUpComminngDetailData] = useState([
+    {
+      player: { name: "Mohamed Salah", forward: "LIV - Forward " },
+      game: {
+        playType: { type: "soccer", src: "/soccer.png" },
+        vs: " LIV vs CRY",
+      },
+      status: "Not Started",
+      goal: { amount: "0.5", name: "Goal" },
+      actual: "0",
+    },
+    {
+      player: { name: "Sadio Mane", forward: "LIV - Forward " },
+      game: {
+        playType: { type: "soccer", src: "/soccer.png" },
+        vs: " LIV vs CRY",
+      },
+      status: "Not Started",
+      goal: { amount: "0.5", name: "Goal" },
+      actual: "0",
+    },
+    {
+      player: { name: "Gabriel Jesus", forward: "LIV - Forward " },
+      game: {
+        playType: { type: "soccer", src: "/soccer.png" },
+        vs: " LIV vs CRY",
+      },
+      status: "Not Started",
+      goal: { amount: "0.5", name: "Goal" },
+      actual: "0",
+    },
+  ]);
+  const [LiveDetailData, setLiveDetailData] = useState([
+    {
+      player: { name: "Mohamed Salah", forward: "LIV - Forward " },
+      game: {
+        playType: { type: "soccer", src: "/soccer.png" },
+        vs: " LIV vs CRY",
+      },
+      status: "Not Started",
+      goal: { amount: "0.5", name: "Goal" },
+      actual: "0",
+    },
+    {
+      player: { name: "Sadio Mane", forward: "LIV - Forward " },
+      game: {
+        playType: { type: "soccer", src: "/soccer.png" },
+        vs: " LIV vs CRY",
+      },
+      status: "In-reivew",
+      goal: { amount: "0.5", name: "Goal" },
+      actual: "1",
+      color: "#459F48",
+      bar: "full",
+    },
+    {
+      player: { name: "Gabriel Jesus", forward: "LIV - Forward " },
+      game: {
+        playType: { type: "soccer", src: "/soccer.png" },
+        vs: " LIV vs CRY",
+      },
+      status: "Not Started",
+      goal: { amount: "0.5", name: "Goal" },
+      actual: "0",
+      bar: "half",
+    },
+  ]);
+  const [CompletedDetailData, setCompletedDetailData] = useState([
+    {
+      player: { name: "Mohamed Salah", forward: "LIV - Forward " },
+      game: {
+        playType: { type: "soccer", src: "/soccer.png" },
+        vs: " LIV vs CRY",
+      },
+      status: "won",
+      goal: { amount: "0.5", name: "Goal" },
+      actual: "0",
+    },
+    {
+      player: { name: "Sadio Mane", forward: "LIV - Forward " },
+      game: {
+        playType: { type: "soccer", src: "/soccer.png" },
+        vs: " LIV vs CRY",
+      },
+      status: "won",
+      goal: { amount: "0.5", name: "Goal" },
+      actual: "1",
+      color: "#459F48",
+      bar: "full",
+    },
+    {
+      player: { name: "Gabriel Jesus", forward: "LIV - Forward " },
+      game: {
+        playType: { type: "soccer", src: "/soccer.png" },
+        vs: " LIV vs CRY",
+      },
+      status: "lost",
+      goal: { amount: "0.5", name: "Goal" },
+      actual: "0",
+      actualBar: "50%",
+      bar: "half",
+    },
+  ]);
+  const [openDetail, setOpenDetail] = useState(null);
+  const [clicked, setClicked] = useState(null);
   return (
-    <Box sx={{ width: "100%" }}>
+    <Box
+      sx={{
+        width: "100%",
+        display: "flex",
+        flexDirection: { md: "row", xxxs: "column" },
+        alignItems: "flex-start",
+      }}
+    >
       <Grid
         container
         sx={{
-          width: "100%",
+          width: { md: "50%", xxxs: "100%" },
           border: "1px solid #494949",
         }}
       >
-        {mainDetail.map((e) => (
+        {mainDetail.map((e, index) => (
           <Grid
+            key={index}
             item
             xxxs={12}
-            md={6}
+            md={12}
             sx={{
               padding: 0,
               display: "flex",
@@ -60,11 +170,14 @@ export default function MyPropsCardContainer({
                 width: "95%",
                 bgcolor: "primary.main",
                 borderRadius: "4px",
-                border: "1px solid #494949",
+                border: `${
+                  clicked === index ? "1px solid #4831D4" : "1px solid #494949"
+                }`,
+
                 cursor: "pointer",
                 position: "relative",
               }}
-              onClick={() => handelOpenDetail()}
+              onClick={() => handelOpenDetail(index)}
             >
               {e.condition && (
                 <Typography
@@ -138,33 +251,17 @@ export default function MyPropsCardContainer({
                     {e.date}
                   </Typography>
                 </Box>
-                {e.win ? (
-                  <Button
-                    sx={{
-                      fontSize: { xs: "14px", xxs: "12px", xxxs: "10px" },
-                      fontWeight: 600,
-                      fontFamily: "poppins",
-                      color: `${e.win === "win" ? "#52C03C" : "#E4313C"}`,
-                      bgcolor: `${e.win === "win" ? "#CFE5CD" : "#F3A5AA"}`,
-                      padding: { xs: "8px 9.5px", xxxs: "5px 7px" },
-                    }}
-                  >
-                    {e.amount}
-                  </Button>
-                ) : (
-                  <Button
-                    sx={{
-                      fontSize: { xs: "14px", xxs: "12px", xxxs: "10px" },
-                      fontWeight: 600,
-                      fontFamily: "poppins",
-                      color: "#4831D4",
-                      bgcolor: "#BCDEF9",
-                      padding: { xs: "8px 9.5px", xxxs: "5px 7px" },
-                    }}
-                  >
-                    {e.amount}
-                  </Button>
-                )}
+                <Button
+                  sx={{
+                    fontSize: { xs: "14px", xxs: "12px", xxxs: "10px" },
+                    fontWeight: 600,
+                    fontFamily: "poppins",
+                    color: "#4831D4",
+                    padding: { xs: "8px 9.5px", xxxs: "5px 7px" },
+                  }}
+                >
+                  {e.amount}
+                </Button>
               </Box>
               <Box
                 sx={{
@@ -214,6 +311,34 @@ export default function MyPropsCardContainer({
           </Grid>
         ))}
       </Grid>
+      {!openDetail && <Detail />}
+      {openDetail === "Upcomming" && (
+        <Detail
+          setOpenDetail={setOpenDetail}
+          detailData={upCommingDetailData}
+          openDetail={openDetail}
+          mainDetail={mainDetail}
+          clicked={clicked}
+        />
+      )}
+      {openDetail === "Live" && (
+        <Detail
+          setOpenDetail={setOpenDetail}
+          detailData={LiveDetailData}
+          openDetail={openDetail}
+          mainDetail={mainDetail}
+          clicked={clicked}
+        />
+      )}
+      {openDetail === "Completed" && (
+        <Detail
+          setOpenDetail={setOpenDetail}
+          detailData={CompletedDetailData}
+          openDetail={openDetail}
+          mainDetail={mainDetail}
+          clicked={clicked}
+        />
+      )}
     </Box>
   );
 }

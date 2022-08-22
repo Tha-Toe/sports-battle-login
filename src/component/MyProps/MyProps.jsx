@@ -12,7 +12,6 @@ import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import MenuIcon from "@mui/icons-material/Menu";
 import ClearIcon from "@mui/icons-material/Clear";
 import MyPropsCardContainer from "./MyPropsCardContainer";
-import Detail from "./Detail";
 
 export default function MyProps({ mode }) {
   const [openTag, setOpenTag] = useState("Upcomming");
@@ -40,6 +39,7 @@ export default function MyProps({ mode }) {
       amount: "-$5.0",
       sportType: { type: "soccer", src: "/soccer.png" },
       start: ["/Notstarted.png", "/Notstarted.png", "/Notstarted.png"],
+      won: false,
     },
     {
       header: "3 pick to win $11.25",
@@ -49,6 +49,7 @@ export default function MyProps({ mode }) {
       amount: "-$5.0",
       sportType: { type: "soccer", src: "/soccer.png" },
       start: ["/Notstarted.png", "/Notstarted.png", "/Notstarted.png"],
+      won: false,
     },
     {
       header: "3 pick to win $11.25",
@@ -58,6 +59,7 @@ export default function MyProps({ mode }) {
       amount: "-$5.0",
       sportType: { type: "soccer", src: "/soccer.png" },
       start: ["/Notstarted.png", "/Notstarted.png", "/Notstarted.png"],
+      won: false,
     },
     {
       header: "3 pick to win $11.25",
@@ -67,6 +69,7 @@ export default function MyProps({ mode }) {
       amount: "-$5.0",
       sportType: { type: "soccer", src: "/soccer.png" },
       start: ["/Notstarted.png", "/Notstarted.png", "/Notstarted.png"],
+      won: false,
     },
   ]);
   const [liveDetail, setliveDetail] = useState([
@@ -79,6 +82,7 @@ export default function MyProps({ mode }) {
       amount: "-$5.0",
       sportType: { type: "soccer", src: "/soccer.png" },
       start: ["/Notstarted.png", "/BetFail.png", "/BetSuccess.png"],
+      won: true,
     },
     {
       header: "3 pick to win $25",
@@ -90,6 +94,7 @@ export default function MyProps({ mode }) {
       amount: "-$5.0",
       sportType: { type: "soccer", src: "/soccer.png" },
       start: ["/Notstarted.png", "/Notstarted.png", "/Notstarted.png"],
+      won: true,
     },
     {
       header: "5 pick to win $50",
@@ -107,6 +112,7 @@ export default function MyProps({ mode }) {
         "/Notstarted.png",
         "/Notstarted.png",
       ],
+      won: true,
     },
     {
       header: "3 pick to win $25",
@@ -118,6 +124,7 @@ export default function MyProps({ mode }) {
       amount: "-$5.0",
       sportType: { type: "soccer", src: "/soccer.png" },
       start: ["/Notstarted.png", "/Notstarted.png", "/Notstarted.png"],
+      won: true,
     },
   ]);
   const [completedDetail, setCompletedDetail] = useState([
@@ -131,6 +138,7 @@ export default function MyProps({ mode }) {
       amount: "+$15.0",
       sportType: { type: "soccer", src: "/soccer.png" },
       start: ["/BetSuccess.png", "/BetSuccess.png", "/BetFail.png"],
+      won: true,
     },
     {
       header: "3 pick to win $25",
@@ -142,6 +150,7 @@ export default function MyProps({ mode }) {
       amount: "-$5.0",
       sportType: { type: "soccer", src: "/soccer.png" },
       start: ["/BetFail.png", "/BetFail.png", "/BetFail.png"],
+      won: true,
     },
     {
       header: "3 pick to win $11.25",
@@ -153,6 +162,7 @@ export default function MyProps({ mode }) {
       amount: "+$15.0",
       sportType: { type: "soccer", src: "/soccer.png" },
       start: ["/BetSuccess.png", "/BetSuccess.png", "/BetFail.png"],
+      won: true,
     },
     {
       header: "3 pick to win $25",
@@ -164,231 +174,104 @@ export default function MyProps({ mode }) {
       amount: "-$5.0",
       sportType: { type: "soccer", src: "/soccer.png" },
       start: ["/BetFail.png", "/BetFail.png", "/BetFail.png"],
+      won: true,
     },
   ]);
-  const [upCommingDetailData, setUpComminngDetailData] = useState([
-    {
-      player: { name: "Mohamed Salah", forward: "LIV - Forward " },
-      game: {
-        playType: { type: "soccer", src: "/soccer.png" },
-        vs: " LIV vs CRY",
-      },
-      status: "Not Started",
-      goal: { amount: "0.5", name: "Goal" },
-      actual: "0",
-    },
-    {
-      player: { name: "Sadio Mane", forward: "LIV - Forward " },
-      game: {
-        playType: { type: "soccer", src: "/soccer.png" },
-        vs: " LIV vs CRY",
-      },
-      status: "Not Started",
-      goal: { amount: "0.5", name: "Goal" },
-      actual: "0",
-    },
-    {
-      player: { name: "Gabriel Jesus", forward: "LIV - Forward " },
-      game: {
-        playType: { type: "soccer", src: "/soccer.png" },
-        vs: " LIV vs CRY",
-      },
-      status: "Not Started",
-      goal: { amount: "0.5", name: "Goal" },
-      actual: "0",
-    },
-  ]);
-  const [LiveDetailData, setLiveDetailData] = useState([
-    {
-      player: { name: "Mohamed Salah", forward: "LIV - Forward " },
-      game: {
-        playType: { type: "soccer", src: "/soccer.png" },
-        vs: " LIV vs CRY",
-      },
-      status: "Not Started",
-      goal: { amount: "0.5", name: "Goal" },
-      actual: "0",
-    },
-    {
-      player: { name: "Sadio Mane", forward: "LIV - Forward " },
-      game: {
-        playType: { type: "soccer", src: "/soccer.png" },
-        vs: " LIV vs CRY",
-      },
-      status: "In-reivew",
-      goal: { amount: "0.5", name: "Goal" },
-      actual: "1",
-      color: "#459F48",
-    },
-    {
-      player: { name: "Gabriel Jesus", forward: "LIV - Forward " },
-      game: {
-        playType: { type: "soccer", src: "/soccer.png" },
-        vs: " LIV vs CRY",
-      },
-      status: "Not Started",
-      goal: { amount: "0.5", name: "Goal" },
-      actual: "0",
-    },
-  ]);
-  const [CompletedDetailData, setCompletedDetailData] = useState([
-    {
-      player: { name: "Mohamed Salah", forward: "LIV - Forward " },
-      game: {
-        playType: { type: "soccer", src: "/soccer.png" },
-        vs: " LIV vs CRY",
-      },
-      status: "won",
-      goal: { amount: "0.5", name: "Goal" },
-      actual: "0",
-    },
-    {
-      player: { name: "Sadio Mane", forward: "LIV - Forward " },
-      game: {
-        playType: { type: "soccer", src: "/soccer.png" },
-        vs: " LIV vs CRY",
-      },
-      status: "won",
-      goal: { amount: "0.5", name: "Goal" },
-      actual: "1",
-      color: "#459F48",
-    },
-    {
-      player: { name: "Gabriel Jesus", forward: "LIV - Forward " },
-      game: {
-        playType: { type: "soccer", src: "/soccer.png" },
-        vs: " LIV vs CRY",
-      },
-      status: "lost",
-      goal: { amount: "0.5", name: "Goal" },
-      actual: "0",
-      actualBar: "50%",
-    },
-  ]);
-  const [openDetail, setOpenDetail] = useState(null);
-  if (openDetail === "Upcomming") {
-    return (
-      <Detail
-        setOpenDetail={setOpenDetail}
-        detailData={upCommingDetailData}
-        openDetail={openDetail}
-      />
-    );
-  } else if (openDetail === "Live") {
-    return (
-      <Detail
-        setOpenDetail={setOpenDetail}
-        detailData={LiveDetailData}
-        openDetail={openDetail}
-      />
-    );
-  } else if (openDetail === "Completed") {
-    return (
-      <Detail
-        setOpenDetail={setOpenDetail}
-        detailData={CompletedDetailData}
-        openDetail={openDetail}
-      />
-    );
-  } else {
-    return (
-      <Box
+
+  return (
+    <Box
+      sx={{
+        width: {
+          lg: "836px",
+          md: "700px",
+          sm: "500px",
+          xs: "450px",
+          xxxs: "90%",
+        },
+        height: "100vh",
+        margin: "auto",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "flex-start",
+        mt: "10px",
+      }}
+      component="div"
+    >
+      <Typography
         sx={{
-          width: {
-            lg: "836px",
-            md: "700px",
-            sm: "500px",
-            xs: "450px",
-            xxxs: "90%",
-          },
-          height: "100vh",
-          margin: "auto",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          mt: "10px",
+          fontSize: { xs: "16px", xxs: "14px", xxxs: "12px" },
+          fontWeight: 700,
+          fontFamily: "poppins",
+          color: "secondary.main",
+          mt: "23px",
+          width: "100%",
         }}
-        component="div"
       >
-        <Typography
-          sx={{
-            fontSize: { xs: "16px", xxs: "14px", xxxs: "12px" },
-            fontWeight: 700,
-            fontFamily: "poppins",
-            color: "secondary.main",
-            mt: "23px",
-            width: "100%",
-          }}
-        >
-          My Props
-        </Typography>
-        <Box sx={{ width: "100%", mt: "9px" }}>
-          <Box
-            sx={{
-              width: { xs: "232px", xxs: "170px", xxxs: "130px" },
-              height: "2px",
-              bgcolor: "secondary.dark",
-            }}
-          ></Box>
-        </Box>
+        My Props
+      </Typography>
+      <Box sx={{ width: "100%", mt: "9px" }}>
         <Box
           sx={{
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-            width: "100%",
-            justifyContent: "flex-start",
-            mt: "11px",
+            width: { xs: "232px", xxs: "170px", xxxs: "130px" },
+            height: "2px",
+            bgcolor: "secondary.dark",
           }}
-        >
-          {myPropsAppBar.map((e) => (
-            <Typography
-              sx={{
-                fontSize: { xs: "14px", xxs: "12px", xxxs: "10px" },
-                fontWeight: 600,
-                fontFamily: "poppins",
-                color: `${e.name === openTag ? "#4831D4" : "secondary.main"}`,
-                width: "33%",
-                textAlign: "center",
-                pb: "10px",
-                borderBottom: `${
-                  e.name === openTag
-                    ? "4px solid #4831D4"
-                    : "4px solid transparent"
-                }`,
-                cursor: "pointer",
-              }}
-              onClick={e.func}
-            >
-              {e.name}
-            </Typography>
-          ))}
-        </Box>
-        {openTag === "Upcomming" && (
-          <MyPropsCardContainer
-            mode={mode}
-            setOpenDetail={setOpenDetail}
-            mainDetail={upCommingDetail}
-            openTag={openTag}
-          />
-        )}
-        {openTag === "Live" && (
-          <MyPropsCardContainer
-            mode={mode}
-            setOpenDetail={setOpenDetail}
-            mainDetail={liveDetail}
-            openTag={openTag}
-          />
-        )}
-        {openTag === "Completed" && (
-          <MyPropsCardContainer
-            mode={mode}
-            setOpenDetail={setOpenDetail}
-            mainDetail={completedDetail}
-            openTag={openTag}
-          />
-        )}
+        ></Box>
       </Box>
-    );
-  }
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+          width: "100%",
+          justifyContent: "flex-start",
+          mt: "11px",
+          mb: "12px",
+        }}
+      >
+        {myPropsAppBar.map((e) => (
+          <Button
+            sx={{
+              fontSize: { xs: "12px", xxs: "10px", xxxs: "10px" },
+              fontWeight: 600,
+              fontFamily: "poppins",
+              color: `${e.name === openTag ? "black" : "white"}`,
+              bgcolor: `${e.name === openTag ? "#439F48" : "#4831D4"}`,
+              textAlign: "center",
+              padding: "6px 17px",
+              "&.MuiButtonBase-root:hover": {
+                bgcolor: `${e.name === openTag ? "#439F48" : "#4831D4"}`,
+              },
+              cursor: "pointer",
+              mr: "8px",
+            }}
+            onClick={e.func}
+          >
+            {e.name}
+          </Button>
+        ))}
+      </Box>
+      {openTag === "Upcomming" && (
+        <MyPropsCardContainer
+          mode={mode}
+          mainDetail={upCommingDetail}
+          openTag={openTag}
+        />
+      )}
+      {openTag === "Live" && (
+        <MyPropsCardContainer
+          mode={mode}
+          mainDetail={liveDetail}
+          openTag={openTag}
+        />
+      )}
+      {openTag === "Completed" && (
+        <MyPropsCardContainer
+          mode={mode}
+          mainDetail={completedDetail}
+          openTag={openTag}
+        />
+      )}
+    </Box>
+  );
 }
