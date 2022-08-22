@@ -8,7 +8,13 @@ import ChooseType from "./ChooseType";
 import Balance from "./Balance";
 import InputAdornment from "@mui/material/InputAdornment";
 
-const SubmitProjection = ({ selectCardId, mode }) => {
+const SubmitProjection = ({
+  selectCardId,
+  mode,
+  removeCardIndex,
+  setSuccessSubmit,
+  setErrorSubmit,
+}) => {
   const [startSelect, setStartSelect] = useState(false);
   const [moreThanOneCard, setMoreThanOneCard] = useState(false);
   const [selectAmount, setSelectAmount] = useState(null);
@@ -178,8 +184,8 @@ const SubmitProjection = ({ selectCardId, mode }) => {
               </Typography>
             </Box>
 
-            {selectCardId.map(() => (
-              <AndresCard />
+            {selectCardId.map((e) => (
+              <AndresCard removeCardIndex={removeCardIndex} e={e} />
             ))}
           </Box>
           {pickPlayType && (
@@ -197,6 +203,7 @@ const SubmitProjection = ({ selectCardId, mode }) => {
                   background: "#4831D4",
                 },
               }}
+              onClick={() => setSuccessSubmit(true)}
             >
               Submit
             </Button>

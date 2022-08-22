@@ -1,7 +1,8 @@
 import { Box, Button, Typography } from "@mui/material";
 import React, { useState, useRef, useEffect } from "react";
 import "./props.css";
-export function AndresCard() {
+import RemoveIcon from "@mui/icons-material/Remove";
+export function AndresCard({ removeCardIndex, e }) {
   return (
     <Box
       id="Andress-container"
@@ -17,18 +18,39 @@ export function AndresCard() {
       }}
     >
       <Box>
-        <Typography
+        <Box
           sx={{
-            fontSize: "10px",
-            fontWeight: 600,
-            fontFamily: "poppins",
+            width: "100%",
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
             mt: "7px",
-            ml: "6px",
             mb: "7px",
           }}
         >
-          Andres Gimenez
-        </Typography>
+          <Typography
+            sx={{
+              fontSize: "10px",
+              fontWeight: 600,
+              fontFamily: "poppins",
+              ml: "10px",
+            }}
+          >
+            Andres Gimenez
+          </Typography>
+          <RemoveIcon
+            sx={{
+              color: "#EA1E63",
+              fontSize: "20px",
+              borderRadius: "50%",
+              border: "2px solid #EA1E63",
+              mr: "10px",
+              cursor: "pointer",
+            }}
+            onClick={() => removeCardIndex(e)}
+          />
+        </Box>
         <Box
           sx={{
             display: "flex",

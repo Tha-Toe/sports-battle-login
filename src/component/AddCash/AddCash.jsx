@@ -16,6 +16,7 @@ import InputAdornment from "@mui/material/InputAdornment";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { motion } from "framer-motion";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import SelectDepositOption from "./SelectDepositOption";
 
 export default function AddCash() {
   const [amountList, setAmountList] = useState([
@@ -27,6 +28,7 @@ export default function AddCash() {
   ]);
   const [amount, setAmount] = useState("$30");
   const [showLimit, setShowLimit] = useState(false);
+  const [openSelectDepositOption, setOpenSelectDepositOption] = useState(false);
   return (
     <Box
       sx={{
@@ -168,6 +170,7 @@ export default function AddCash() {
               background: "#439F48",
             },
           }}
+          onClick={() => setOpenSelectDepositOption(true)}
         >
           Continue
         </Button>
@@ -350,6 +353,11 @@ export default function AddCash() {
           name{" "}
         </Typography>
       </Box>
+      {openSelectDepositOption && (
+        <SelectDepositOption
+          setOpenSelectDepositOption={setOpenSelectDepositOption}
+        />
+      )}
     </Box>
   );
 }

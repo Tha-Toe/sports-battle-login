@@ -12,13 +12,16 @@ export default function Address({ setAddress }) {
   const goDepositForm = () => {
     navigate("/logged?deposit=new&page=form", { replace: true });
   };
+  const goAddAddressPage = () => {
+    navigate("/logged?deposit=new&page=add-address", { replace: true });
+  };
   return (
     <Box
       sx={{
         width: { lg: "800px", md: "700px", sm: "500px", xxxs: "80%" },
         display: "flex",
         flexDirection: "column",
-        alignItems: "center",
+        alignItems: "flex-start",
         justifyContent: "center",
         margin: "0 auto",
       }}
@@ -60,7 +63,7 @@ export default function Address({ setAddress }) {
               color: "secondary.main",
             }}
           >
-            Back to Age Verification{" "}
+            Age Verification Setup{" "}
           </Typography>
         </Box>
         <Box
@@ -71,10 +74,22 @@ export default function Address({ setAddress }) {
             justifyContent: "flex-start",
             mt: "13px",
             cursor: "pointer",
+            border: "1px solid #494949",
+            padding: "6px 24px",
+            borderRadius: "4px",
           }}
         >
-          <RestartAltIcon sx={{ color: "secondary.main" }} />
-          <AddIcon sx={{ color: "secondary.main" }} />
+          <Typography
+            sx={{
+              color: "secondary.main",
+              fontSize: "14px",
+              fontWeight: 400,
+              fontFamily: "poppins",
+            }}
+          >
+            Refresh
+          </Typography>
+          <RestartAltIcon sx={{ color: "secondary.main", ml: "4px" }} />
         </Box>
       </Box>
       <Box
@@ -122,6 +137,33 @@ export default function Address({ setAddress }) {
             27834 Gateway Blvd B308 Farmington hills, Michigan, 48334
           </Typography>
         </Box>
+      </Box>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "flex-start",
+          mt: "24px",
+          cursor: "pointer",
+          padding: { sm: "14px 71px", xxs: "12px 40px", xxxs: "12px 30px" },
+          borderRadius: "4px",
+          background: "#4831D4",
+        }}
+        onClick={goAddAddressPage}
+      >
+        <AddIcon sx={{ color: "white" }} />
+        <Typography
+          sx={{
+            color: "white",
+            fontSize: "14px",
+            fontWeight: 400,
+            fontFamily: "poppins",
+            ml: "4px",
+          }}
+        >
+          Add Address
+        </Typography>
       </Box>
     </Box>
   );

@@ -25,6 +25,9 @@ import GridItemComponent from "./GridItemComponent";
 import HowTo from "./HowTo";
 import Rule from "./Rule";
 import BaseBallPoint from "./BaseBallPoint";
+import SuccessSubmit from "./SuccessSubmit";
+import ErrorSubmit from "./ErrorSubmit";
+import NotEnoughBalance from "./NotEnoughBalance";
 
 export default function Props({ mode }) {
   const [openHowTo, setOpenHowTo] = useState(false);
@@ -229,11 +232,18 @@ export default function Props({ mode }) {
 
   const [selectCardId, setSelectCardId] = useState([]);
   const addCardIndex = (index) => {
-    console.log("here");
     setSelectCardId((prev) => [...prev, index]);
-    console.log(selectCardId);
+  };
+  const removeCardIndex = (index) => {
+    let filterArray = selectCardId.filter((e) => {
+      return e !== index;
+    });
+    setSelectCardId(filterArray);
   };
 
+  const [successSubmit, setSuccessSubmit] = useState(false);
+  const [errorSubmit, setErrorSubmit] = useState(false);
+  const [notEnoughBalance, setNotEnoughBalance] = useState(false);
   return (
     <main className="props-container">
       <Box
@@ -609,13 +619,35 @@ export default function Props({ mode }) {
               ))}
             </Grid>
           </Box>
-          <SubmitProjection selectCardId={selectCardId} mode={mode} />
+          <SubmitProjection
+            selectCardId={selectCardId}
+            mode={mode}
+            setSelectCardId={setSelectCardId}
+            removeCardIndex={removeCardIndex}
+            setSuccessSubmit={setSuccessSubmit}
+            setErrorSubmit={setErrorSubmit}
+          />
         </Box>
       </Box>
       {openHowTo && <HowTo setOpenHowTo={setOpenHowTo} />}
       {openRule && <Rule setOpenRule={setOpenRule} />}
       {openBaseBallPoint && (
         <BaseBallPoint setOpenBaseBallPoint={setOpenBaseBallPoint} />
+      )}
+      {successSubmit && (
+        <SuccessSubmit
+          setSuccessSubmit={setSuccessSubmit}
+          setErrorSubmit={setErrorSubmit}
+        />
+      )}
+      {errorSubmit && (
+        <ErrorSubmit
+          setErrorSubmit={setErrorSubmit}
+          setNotEnoughBalance={setNotEnoughBalance}
+        />
+      )}
+      {notEnoughBalance && (
+        <NotEnoughBalance setNotEnoughBalance={setNotEnoughBalance} />
       )}
     </main>
   );

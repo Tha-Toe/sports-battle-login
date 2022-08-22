@@ -133,7 +133,7 @@ export default function BonusOffer({ setOpenInviteFriend }) {
               cursor: "pointer",
             }}
           >
-            Share SportsBattle
+            COPY CODE{" "}
           </Button>
         </Box>
         <Box

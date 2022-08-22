@@ -29,6 +29,7 @@ import EmailPrefrence from "../../EmailPrefrence/EmailPrefrence";
 import MyProps from "../../MyProps/MyProps";
 import TransactionHistory from "../../TransactionHistory/TransactionHistory";
 import Clear from "@mui/icons-material/Clear";
+import AddAddress from "../../AddCash/AddAddress";
 export function Logged({ mode, setMode }) {
   let navigate = useNavigate();
   let location = useLocation();
@@ -109,16 +110,17 @@ export function Logged({ mode, setMode }) {
     },
     {
       name: "Transaction History",
-      activeSrc: "/transcation-active.png",
-      unactiveSrc: "/transcation-unactive.png",
+      activeSrc: "/transcationHistoryActive.png",
+      unactiveSrc: "/transcationHistory.png",
       activeName: "transaction-history",
       func: transactionHistoryOpen,
     },
     {
       name: "Enter Referral Code",
-      activeSrc: "/transcation-active.png",
-      unactiveSrc: "/transcation-unactive.png",
+      activeSrc: "/referalCodeActive.png",
+      unactiveSrc: "/referalCode.png",
       activeName: "enter-referral-code",
+      func: goRefralBonusCashRadeem,
     },
   ]);
   const [sideBarOther, setSideBarOther] = useState([
@@ -135,12 +137,6 @@ export function Logged({ mode, setMode }) {
       unactiveSrc: "/email-prefrence-unactive.png",
       activeName: "email-prefrence",
       func: emailPrefrenceOpen,
-    },
-    {
-      name: "Scores",
-      activeSrc: "/scores-active.png",
-      unactiveSrc: "/scores-unactive.png",
-      activeName: "scores",
     },
     {
       name: "Support Chat",
@@ -457,11 +453,10 @@ export function Logged({ mode, setMode }) {
             sx={{
               display: "flex",
               flexDirection: "column",
-              justifyContent: "space-between",
+              justifyContent: "flex-start",
               alignItems: "center",
               width: { lg: "105px", md: "50px", sm: "30px", xxxs: "185px" },
               borderRight: "1px solid gray",
-              borderBottom: "1px solid gray",
               height: "100%",
               position: "relative",
               bgcolor: "primary.main",
@@ -513,6 +508,7 @@ export function Logged({ mode, setMode }) {
                 >
                   <img
                     src={openTag === e.activeName ? e.activeSrc : e.unactiveSrc}
+                    className="side-bar-icon"
                   />
                   <Typography
                     sx={{
@@ -534,7 +530,7 @@ export function Logged({ mode, setMode }) {
                 flexDirection: "column",
                 justifyContent: "space-between",
                 alignItems: "flex-start",
-                height: "33%",
+                height: "22%",
                 width: { lg: "145px", md: "90px", sm: "70px", xxxs: "145px" },
               }}
             >
@@ -756,6 +752,9 @@ export function Logged({ mode, setMode }) {
           )}
           {location.search === "?deposit=new&page=address" && (
             <Address setAddress={setAddress} />
+          )}
+          {location.search === "?deposit=new&page=add-address" && (
+            <AddAddress setAddress={setAddress} />
           )}
           {location.search === "?deposit=go-refral-bonus-cash-randoom" && (
             <RefralBonusCashRandoom setNumber={setNumber} number={number} />

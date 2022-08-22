@@ -10,6 +10,16 @@ const GridItemComponent = ({
   addCardIndex,
   mode,
 }) => {
+  useEffect(() => {
+    let conditionArray = selectCardId.filter((each) => {
+      return each === index;
+    });
+    if (conditionArray.length === 0) {
+      setOver(false);
+      setUnder(false);
+      setAlreadyPicked(false);
+    }
+  }, [selectCardId]);
   const [alreadyPicked, setAlreadyPicked] = useState(false);
   const [over, setOver] = useState(false);
   const [under, setUnder] = useState(false);

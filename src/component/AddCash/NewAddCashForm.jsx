@@ -6,6 +6,9 @@ import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import HomeIcon from "@mui/icons-material/Home";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import "./newAddCashForm.css";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import FailVerify from "./FailVerify";
+
 export default function NewAddCashFrom({ address }) {
   let navigate = useNavigate();
   const goDepositVerify = () => {
@@ -20,9 +23,16 @@ export default function NewAddCashFrom({ address }) {
     }, 2000);
   };
 
+  const goSuccess = () => {
+    setTimeout(() => {
+      setSuccessOpen(true);
+    }, 2000);
+  };
   const [firstName, setFirstName] = useState(null);
   const [lastName, setLastName] = useState(null);
   const [startAnimation, setStartAnimation] = useState(false);
+  const [successOpen, setSuccessOpen] = useState(false);
+  const [failOpen, setFailOpen] = useState(false);
   return (
     <Box
       sx={{
@@ -220,13 +230,14 @@ export default function NewAddCashFrom({ address }) {
       <Typography
         sx={{
           fontSize: { sm: "14px", xxxs: "12px" },
-          fontWeight: 400,
+          fontWeight: 600,
           fontFamily: "poppins",
-          color: "secondary.main",
+          color: "#E4313C",
           width: "100%",
         }}
       >
-        Your date of birth is not stored
+        Please enter your details as per your license or any form of legal
+        document{" "}
       </Typography>
       {address && firstName && lastName && (
         <Button
@@ -244,7 +255,7 @@ export default function NewAddCashFrom({ address }) {
           }}
           onClick={() => {
             setStartAnimation(true);
-            goAddCashPage();
+            goSuccess();
           }}
         >
           {startAnimation ? (
@@ -272,6 +283,74 @@ export default function NewAddCashFrom({ address }) {
       >
         Support Chat
       </Button>
+      {successOpen && (
+        <Box
+          sx={{
+            width: "100vw",
+            height: "100vh",
+            position: "fixed",
+            top: 0,
+            left: 0,
+            background: "rgba(0,0,0,0.9)",
+            zIndex: "20",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Box
+            sx={{
+              width: { sm: "444px", xxxs: "90%" },
+              background: "#2A2A2A",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <CheckCircleIcon
+              sx={{
+                color: "#52C03C",
+                fontSize: { xs: "40px", xxxs: "30px" },
+                mt: "32px",
+              }}
+            />
+            <Typography
+              sx={{
+                color: "white",
+                fontSize: { sm: "14px", xxs: "12px", xxxs: "10px" },
+                fontWeight: 700,
+                fontFamily: "poppins",
+                mt: "16px",
+              }}
+            >
+              Verification Succesfull
+            </Typography>
+            <Button
+              sx={{
+                background: "#4831D4",
+                fontSize: { sm: "14px", xxs: "12px", xxxs: "10px" },
+                fontWeight: 500,
+                fontFamily: "poppins",
+                padding: { xs: "12px 89px", xxxs: "10px 70px" },
+                color: "white",
+                "&.MuiButtonBase-root:hover": {
+                  background: "#4831D4",
+                },
+                mt: "24px",
+                mb: "32px",
+                textTransform: "none",
+              }}
+              onClick={() => {
+                goAddCashPage();
+              }}
+            >
+              Add Cash
+            </Button>
+          </Box>
+        </Box>
+      )}
+      {failOpen && <FailVerify />}
     </Box>
   );
 }
