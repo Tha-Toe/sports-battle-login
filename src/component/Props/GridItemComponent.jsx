@@ -12,29 +12,33 @@ const GridItemComponent = ({
 }) => {
   useEffect(() => {
     let conditionArray = selectCardId.filter((each) => {
-      return each === index;
+      return each.index === index;
     });
+    if (conditionArray.length > 0) {
+      setType(conditionArray[0].type);
+    }
     if (conditionArray.length === 0) {
-      setOver(false);
-      setUnder(false);
+      setType(null);
       setAlreadyPicked(false);
     }
   }, [selectCardId]);
   const [alreadyPicked, setAlreadyPicked] = useState(false);
-  const [over, setOver] = useState(false);
-  const [under, setUnder] = useState(false);
+  const [type, setType] = useState(null);
   const addCard = (type) => {
     if (!alreadyPicked) {
-      addCardIndex(index);
+      let data = { index: index, type: type };
+      addCardIndex(data);
+    } else {
+      let selectCardIdClone = selectCardId.map((each) => {
+        if (each.index === index) {
+          return { index: each.index, type: type };
+        } else {
+          return each;
+        }
+      });
+      setSelectCardId(selectCardIdClone);
     }
     setAlreadyPicked(true);
-    if (type === "over") {
-      setOver(true);
-      setUnder(false);
-    } else {
-      setUnder(true);
-      setOver(false);
-    }
   };
 
   return (
@@ -226,16 +230,17 @@ const GridItemComponent = ({
                 fontSize: { sm: "9px", xs: "7px", xxxs: "9px" },
                 fontWeight: 400,
                 fontFamily: "poppins",
-                border: `${over ? "none" : "1px solid white"}`,
+                border: `${type === "over" ? "none" : "1px solid white"}`,
                 borderColor: `${mode === "dark" ? "white" : "black"}`,
                 borderRadius: "3px",
                 mb: "8px",
-                background: `${over ? "#4831D4" : "transparent"}`,
+                background: `${type === "over" ? "#4831D4" : "transparent"}`,
                 "&.MuiButtonBase-root:hover": {
-                  background: `${over ? "#4831D4" : "transparent"}`,
+                  background: `${type === "over" ? "#4831D4" : "transparent"}`,
                 },
               }}
               onClick={() => {
+                setType("over");
                 addCard("over");
               }}
             >
@@ -251,15 +256,16 @@ const GridItemComponent = ({
                 fontSize: { sm: "9px", xs: "7px", xxxs: "9px" },
                 fontWeight: 400,
                 fontFamily: "poppins",
-                border: `${under ? "none" : "1px solid white"}`,
+                border: `${type === "under" ? "none" : "1px solid white"}`,
                 borderColor: `${mode === "dark" ? "white" : "black"}`,
                 borderRadius: "3px",
-                background: `${under ? "#4831D4" : "transparent"}`,
+                background: `${type === "under" ? "#4831D4" : "transparent"}`,
                 "&.MuiButtonBase-root:hover": {
-                  background: `${under ? "#4831D4" : "transparent"}`,
+                  background: `${type === "under" ? "#4831D4" : "transparent"}`,
                 },
               }}
               onClick={() => {
+                setType("under");
                 addCard("under");
               }}
             >

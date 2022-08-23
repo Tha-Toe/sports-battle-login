@@ -2,7 +2,7 @@ import { Box, Typography } from "@mui/material";
 import React, { useState, useRef, useEffect } from "react";
 import "./props.css";
 
-export default function Times() {
+export default function Times({ selectCardId }) {
   return (
     <Box sx={{ borderBottom: "1px solid #2c2c2c", mb: "16px" }}>
       <Typography
@@ -14,7 +14,7 @@ export default function Times() {
           mb: "7px",
         }}
       >
-        Props Cart : : 2 Player
+        Props Cart : : {selectCardId.length} Player
       </Typography>
       <Box
         sx={{

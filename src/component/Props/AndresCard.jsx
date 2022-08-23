@@ -2,7 +2,22 @@ import { Box, Button, Typography } from "@mui/material";
 import React, { useState, useRef, useEffect } from "react";
 import "./props.css";
 import RemoveIcon from "@mui/icons-material/Remove";
-export function AndresCard({ removeCardIndex, e }) {
+export function AndresCard({
+  removeCardIndex,
+  e,
+  selectCardId,
+  setSelectCardId,
+}) {
+  const handleChangeOverUnder = (type) => {
+    let selectCardIdClone = selectCardId.map((each) => {
+      if (each.index === e.index) {
+        return { index: each.index, type: type };
+      } else {
+        return each;
+      }
+    });
+    setSelectCardId(selectCardIdClone);
+  };
   return (
     <Box
       id="Andress-container"
@@ -189,7 +204,7 @@ export function AndresCard({ removeCardIndex, e }) {
                 ml: "6px",
               }}
             >
-              5.0
+              0.5
             </Typography>
           </Box>
         </Box>
@@ -203,7 +218,7 @@ export function AndresCard({ removeCardIndex, e }) {
         >
           <Button
             sx={{
-              background: "#4831D4",
+              background: `${e.type === "over" ? "#4831D4" : "transparent"}`,
               width: "50%",
               py: "6px",
               color: "white",
@@ -213,15 +228,16 @@ export function AndresCard({ removeCardIndex, e }) {
               border: "1px solid #2C2C2C",
               borderRadius: "5px 0px 0px 5px",
               "&.MuiButtonBase-root:hover": {
-                background: "#4831D4",
+                background: `${e.type === "over" ? "#4831D4" : "transparent"}`,
               },
             }}
+            onClick={() => handleChangeOverUnder("over")}
           >
             OVER
           </Button>
           <Button
             sx={{
-              background: "transparent",
+              background: `${e.type === "under" ? "#4831D4" : "transparent"}`,
               width: "50%",
               py: "6px",
               color: "white",
@@ -231,9 +247,10 @@ export function AndresCard({ removeCardIndex, e }) {
               border: "1px solid #2C2C2C",
               borderRadius: "0px 5px 5px 0px",
               "&.MuiButtonBase-root:hover": {
-                background: "transparent",
+                background: `${e.type === "under" ? "#4831D4" : "transparent"}`,
               },
             }}
+            onClick={() => handleChangeOverUnder("under")}
           >
             UNDER
           </Button>

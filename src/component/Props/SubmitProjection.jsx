@@ -10,6 +10,7 @@ import InputAdornment from "@mui/material/InputAdornment";
 
 const SubmitProjection = ({
   selectCardId,
+  setSelectCardId,
   mode,
   removeCardIndex,
   setSuccessSubmit,
@@ -80,7 +81,7 @@ const SubmitProjection = ({
               margin: "0 auto",
             }}
           >
-            {moreThanOneCard && <Times />}
+            {moreThanOneCard && <Times selectCardId={selectCardId} />}
             <Box sx={{ borderBottom: "1px solid #2c2c2c" }}>
               <Amount
                 setSelectAmount={setSelectAmount}
@@ -184,8 +185,14 @@ const SubmitProjection = ({
               </Typography>
             </Box>
 
-            {selectCardId.map((e) => (
-              <AndresCard removeCardIndex={removeCardIndex} e={e} />
+            {selectCardId.map((e, index) => (
+              <AndresCard
+                removeCardIndex={removeCardIndex}
+                key={index}
+                e={e}
+                selectCardId={selectCardId}
+                setSelectCardId={setSelectCardId}
+              />
             ))}
           </Box>
           {pickPlayType && (
