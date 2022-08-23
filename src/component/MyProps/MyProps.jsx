@@ -82,7 +82,6 @@ export default function MyProps({ mode }) {
       amount: "-$5.0",
       sportType: { type: "soccer", src: "/soccer.png" },
       start: ["/Notstarted.png", "/BetFail.png", "/BetSuccess.png"],
-      won: true,
     },
     {
       header: "3 pick to win $25",
@@ -94,7 +93,6 @@ export default function MyProps({ mode }) {
       amount: "-$5.0",
       sportType: { type: "soccer", src: "/soccer.png" },
       start: ["/Notstarted.png", "/Notstarted.png", "/Notstarted.png"],
-      won: true,
     },
     {
       header: "5 pick to win $50",
@@ -112,7 +110,6 @@ export default function MyProps({ mode }) {
         "/Notstarted.png",
         "/Notstarted.png",
       ],
-      won: true,
     },
     {
       header: "3 pick to win $25",
@@ -124,7 +121,6 @@ export default function MyProps({ mode }) {
       amount: "-$5.0",
       sportType: { type: "soccer", src: "/soccer.png" },
       start: ["/Notstarted.png", "/Notstarted.png", "/Notstarted.png"],
-      won: true,
     },
   ]);
   const [completedDetail, setCompletedDetail] = useState([
@@ -182,7 +178,7 @@ export default function MyProps({ mode }) {
     <Box
       sx={{
         width: {
-          xl: "80%",
+          xl: "1000px",
           lg: "836px",
           md: "700px",
           sm: "500px",

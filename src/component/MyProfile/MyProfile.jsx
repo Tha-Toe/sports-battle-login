@@ -29,6 +29,9 @@ export default function MyProfile({
   myProfileOpen,
   goRefralBonusCashRadeem,
   transactionHistoryOpen,
+  newUser,
+  goDepositNewUser,
+  goAddCashBonus,
 }) {
   const [wallet, setWallet] = useState([
     {
@@ -62,11 +65,20 @@ export default function MyProfile({
   const openMyWithDraw = () => {
     setOpenTag("myWithDraw");
   };
+
+  const goDeposit = () => {
+    if (newUser) {
+      goDepositNewUser();
+    } else {
+      goAddCashBonus();
+    }
+  };
   const [info, setInfo] = useState([
     {
       name: "Deposit",
       note: "Credit Card (Visa, Master, Discover)",
       icon: "/upload1.png",
+      func: goDeposit,
     },
     {
       name: "Withdraw Cash",
@@ -173,7 +185,7 @@ export default function MyProfile({
       <Box
         sx={{
           width: {
-            xl: "80%",
+            xl: "1000px",
 
             lg: "836px",
             md: "700px",

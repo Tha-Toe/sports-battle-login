@@ -46,7 +46,7 @@ const GridItemComponent = ({
       item
       xxxs={12}
       md={6}
-      sx={{ padding: 0, height: { xs: "78px", xxxs: "100px" } }}
+      sx={{ padding: 0, height: { xs: "100px", xxxs: "100px" } }}
     >
       <Card
         sx={{
@@ -65,9 +65,10 @@ const GridItemComponent = ({
           sx={{
             display: "flex",
             flexDirection: "column",
-            justifyContent: "center",
+            justifyContent: "space-between",
             alignItems: "flex-start",
             ml: "8px",
+            height: "80%",
           }}
         >
           <Typography
@@ -135,13 +136,14 @@ const GridItemComponent = ({
               sx={{
                 color: "secondary.main",
                 fontSize: {
-                  lg: "8px",
-                  md: "8px",
-                  xs: "6px",
+                  lg: "10px",
+                  md: "10px",
+                  xs: "8px",
                   xxxs: "10px",
                 },
                 fontWeight: 400,
                 fontFamily: "poppins",
+                mr: "5px",
               }}
             >
               Last 5
@@ -150,9 +152,9 @@ const GridItemComponent = ({
               sx={{
                 color: "#3A6DBE",
                 fontSize: {
-                  lg: "8px",
-                  md: "8px",
-                  xs: "6px",
+                  lg: "10px",
+                  md: "10px",
+                  xs: "8px",
                   xxxs: "10px",
                 },
                 fontWeight: 400,
@@ -166,9 +168,9 @@ const GridItemComponent = ({
             sx={{
               color: "secondary.main",
               fontSize: {
-                lg: "8px",
-                md: "8px",
-                xs: "6px",
+                lg: "10px",
+                md: "10px",
+                xs: "8px",
                 xxxs: "10px",
               },
               fontWeight: 400,

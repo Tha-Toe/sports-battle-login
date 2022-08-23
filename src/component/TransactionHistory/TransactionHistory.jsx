@@ -24,6 +24,7 @@ export default function TransactionHistory() {
       time: " 08/06/2022, 11:28",
       amount: "$10.0",
       won: true,
+      src: "/attack-play-my-props.png",
     },
     {
       name: "Prop join",
@@ -31,6 +32,7 @@ export default function TransactionHistory() {
       time: " 08/06/2022, 11:28",
       amount: "$5.0",
       won: true,
+      src: "/defence-play-my-props.png",
     },
     {
       name: "Prop join",
@@ -38,6 +40,7 @@ export default function TransactionHistory() {
       time: " 08/06/2022, 11:28",
       amount: "$10.0",
       won: false,
+      src: "/attack-play-my-props.png",
     },
     {
       name: "Prop join",
@@ -45,6 +48,7 @@ export default function TransactionHistory() {
       time: " 08/06/2022, 11:28",
       amount: "$5.0",
       won: true,
+      src: "/defence-play-my-props.png",
     },
     {
       name: "Prop join",
@@ -52,6 +56,7 @@ export default function TransactionHistory() {
       time: " 08/06/2022, 11:28",
       amount: "$10.0",
       won: false,
+      src: "/attack-play-my-props.png",
     },
     {
       name: "Prop join",
@@ -59,6 +64,7 @@ export default function TransactionHistory() {
       time: " 08/06/2022, 11:28",
       amount: "$5.0",
       won: true,
+      src: "/defence-play-my-props.png",
     },
     {
       name: "Prop join",
@@ -66,6 +72,7 @@ export default function TransactionHistory() {
       time: " 08/06/2022, 11:28",
       amount: "$10.0",
       won: true,
+      src: "/attack-play-my-props.png",
     },
     {
       name: "Prop join",
@@ -73,6 +80,7 @@ export default function TransactionHistory() {
       time: " 08/06/2022, 11:28",
       amount: "$5.0",
       won: false,
+      src: "/attack-play-my-props.png",
     },
     {
       name: "Prop join",
@@ -80,6 +88,7 @@ export default function TransactionHistory() {
       time: " 08/06/2022, 11:28",
       amount: "$10.0",
       won: false,
+      src: "/defence-play-my-props.png",
     },
     {
       name: "Prop join",
@@ -87,6 +96,7 @@ export default function TransactionHistory() {
       time: " 08/06/2022, 11:28",
       amount: "$5.0",
       won: false,
+      src: "/attack-play-my-props.png",
     },
   ]);
 

@@ -64,7 +64,11 @@ export function Logged({ mode, setMode }) {
     setOpenTag("transaction-history");
   };
   const goDepositNewUser = () => {
-    navigate("/logged?deposit=new&page=verify", { replace: true });
+    if (newUser) {
+      navigate("/logged?deposit=new&page=verify", { replace: true });
+    } else {
+      navigate("/logged?deposit=old-user", { replace: true });
+    }
   };
   const goAddCashBonus = () => {
     navigate("/logged?deposit=old-user", { replace: true });
@@ -90,7 +94,7 @@ export function Logged({ mode, setMode }) {
   };
   const [activeTag, setActiveTag] = useState("props");
   const [number, setNumber] = useState(null);
-
+  const [newUser, setNewUser] = useState(true);
   const [sideBar, setSideBar] = useState([
     {
       name: "Props",
@@ -500,12 +504,13 @@ export function Logged({ mode, setMode }) {
                     alignItems: "center",
                     justifyContent: {
                       lg: "flex-start",
-                      sm: "space-between",
+                      sm: "center",
                       xxxs: "flex-start",
                     },
                     height: "20%",
                     cursor: "pointer",
                     width: "100%",
+                    ml: { lg: "5px", sm: "0px", xxxs: "5px" },
                   }}
                   onClick={e.func}
                 >
@@ -543,6 +548,7 @@ export function Logged({ mode, setMode }) {
                   fontWeight: 700,
                   fontFamily: "poppins",
                   color: "#2582E3",
+                  ml: "10px",
                 }}
               >
                 Other
@@ -561,6 +567,7 @@ export function Logged({ mode, setMode }) {
                     height: "20%",
                     cursor: "pointer",
                     width: "100%",
+                    ml: { lg: "10px", sm: "0px", xxxs: "10px" },
                   }}
                   onClick={e.func}
                 >
@@ -586,7 +593,7 @@ export function Logged({ mode, setMode }) {
               sx={{
                 display: "flex",
                 flexDirection: { lg: "row", sm: "column", xxxs: "row" },
-                justifyContent: "space-between",
+                justifyContent: "space-around",
                 alignItems: "center",
                 height: "7%",
                 cursor: "pointer",
@@ -649,6 +656,7 @@ export function Logged({ mode, setMode }) {
                   color: "#2582E3",
                   width: "100%",
                   mb: "5px",
+                  ml: "10px",
                 }}
               >
                 Our Socials
@@ -664,6 +672,7 @@ export function Logged({ mode, setMode }) {
                     sm: "center",
                     xxxs: "flex-start",
                   },
+                  ml: { lg: "10px", sm: "0px", xxxs: "10px" },
                 }}
               >
                 <img
@@ -695,6 +704,7 @@ export function Logged({ mode, setMode }) {
                     xxxs: "flex-start",
                   },
                   mt: "10px",
+                  ml: { lg: "10px", sm: "0px", xxxs: "10px" },
                 }}
               >
                 <img
@@ -739,6 +749,9 @@ export function Logged({ mode, setMode }) {
               myProfileOpen={myProfileOpen}
               goRefralBonusCashRadeem={goRefralBonusCashRadeem}
               transactionHistoryOpen={transactionHistoryOpen}
+              goDepositNewUser={goDepositNewUser}
+              goAddCashBonus={goAddCashBonus}
+              newUser={newUser}
             />
           )}
           {!location.search && openTag === "transaction-history" && (
@@ -756,7 +769,11 @@ export function Logged({ mode, setMode }) {
             <NewAddCashVerify mode={mode} />
           )}
           {location.search === "?deposit=new&page=form" && (
-            <NewAddCashForm address={address} mode={mode} />
+            <NewAddCashForm
+              address={address}
+              mode={mode}
+              setNewUser={setNewUser}
+            />
           )}
           {location.search === "?deposit=new&page=address" && (
             <Address setAddress={setAddress} />

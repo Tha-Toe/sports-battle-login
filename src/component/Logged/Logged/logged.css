@@ -61,8 +61,15 @@
   width: 24px;
   margin-left: 5px;
 }
-
+@media (max-width: 1100px) {
+  .side-bar-icon {
+    margin-left: 0px;
+  }
+}
 @media (max-width: 700px) {
+  .side-bar-icon {
+    margin-left: 5px;
+  }
   .logoLogged {
     left: 35px;
   }

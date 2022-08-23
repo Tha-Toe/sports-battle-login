@@ -9,7 +9,7 @@ import "./newAddCashForm.css";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import FailVerify from "./FailVerify";
 
-export default function NewAddCashFrom({ address }) {
+export default function NewAddCashFrom({ address, setNewUser }) {
   let navigate = useNavigate();
   const goDepositVerify = () => {
     navigate("/logged?deposit=new&page=verify", { replace: true });
@@ -257,6 +257,7 @@ export default function NewAddCashFrom({ address }) {
           onClick={() => {
             setStartAnimation(true);
             goSuccess();
+            setNewUser(false);
           }}
         >
           {startAnimation ? (

@@ -173,16 +173,6 @@ const SubmitProjection = ({
               >
                 Your Entries
               </Typography>
-              <Typography
-                sx={{
-                  fontSize: "8px",
-                  fontWeight: 400,
-                  fontFamily: "poppins",
-                  color: "#2072C4",
-                }}
-              >
-                Change
-              </Typography>
             </Box>
 
             {selectCardId.map((e, index) => (
