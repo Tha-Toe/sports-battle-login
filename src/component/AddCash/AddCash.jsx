@@ -170,7 +170,8 @@ export default function AddCash() {
             mt: "23px",
           }}
         >
-          You will receive: ${Bonus * 2} (Bonus: ${Bonus})
+          You will receive: ${Bonus ? Bonus * 2 : 0} (Bonus: $
+          {Bonus ? Bonus : 0})
         </Typography>
         <Typography
           sx={{
