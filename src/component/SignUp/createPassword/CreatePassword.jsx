@@ -15,6 +15,7 @@ const CreatePassword = () => {
   const [enterPassword, setEnterPassword] = useState(null);
   const [reEnterPassword, setReEnterPassword] = useState(null);
   const [showPass, setShowPass] = useState(false);
+  const [showPass2, setShowPass2] = useState(false);
 
   let navigate = useNavigate();
 
@@ -110,9 +111,9 @@ const CreatePassword = () => {
             />
             <PasswordInputComponent
               placeholder={"Re-enter your new password"}
-              showPass={showPass}
+              showPass={showPass2}
               setReEnterPassword={setReEnterPassword}
-              setShowPass={setShowPass}
+              setShowPass={setShowPass2}
             />
             <Box
               component="div"

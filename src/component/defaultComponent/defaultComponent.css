@@ -1,3 +1,81 @@
 .disableButton:disabled {
   background-color: rgba(72, 49, 212, 0.4);
 }
+.inputCompleteLogin {
+  width: 389px;
+  height: 64px;
+  border: 1px solid #2c2c2c;
+  background-color: #222222;
+  border-radius: 5px;
+  color: white;
+  padding-left: 15px;
+  font-size: 16px;
+  margin-bottom: 16px;
+  font-weight: 300;
+  font-family: "Poppins";
+}
+.inputCompleteLogin:focus {
+  background-color: black;
+}
+.input-component {
+  width: 389px;
+  height: 64px;
+  border: 1px solid #2c2c2c;
+  background-color: #222222;
+  border-radius: 5px;
+  color: white;
+  padding-left: 15px;
+  font-size: 16px;
+  margin-bottom: 16px;
+  font-weight: 300;
+  font-family: "Poppins";
+  outline: none;
+}
+.input-component:focus {
+  border: 1px solid #2c2c2c;
+  background-color: black;
+}
+@media (max-width: 900px) {
+  .inputCompleteLogin,
+  .input-component {
+    width: 372px;
+    height: 64px;
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+}
+@media (max-width: 700px) {
+  .inputCompleteLogin,
+  .input-component {
+    width: 389px;
+    height: 64px;
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+}
+@media (max-width: 500px) {
+  .inputCompleteLogin,
+  .input-component {
+    width: 282px;
+    height: 46px;
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+}
+@media (max-width: 350px) {
+  .inputCompleteLogin,
+  .input-component {
+    width: 232px;
+    height: 46px;
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+}
+
+/* xxxs: 0,
+xxs: 350,
+xs: 500,
+sm: 700,
+md: 900,
+lg: 1100,
+xl: 1550, */

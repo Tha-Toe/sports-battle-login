@@ -163,36 +163,10 @@ export function InputComponent({
   setVerifyCode,
 }) {
   return (
-    <Input
+    <input
       placeholder={placeholder}
       type="text"
-      variant="filled"
-      disableUnderline
-      sx={{
-        width: {
-          md: "408px",
-          sm: "390px",
-          xs: "408px",
-          xxs: "300px",
-          xxxs: "250px",
-        },
-        height: { xs: "64px", xxxs: "50px" },
-        border: "1px solid #2c2c2c",
-        background: "#222222",
-        borderRadius: "5px",
-        color: "white",
-        boxShadow: 3,
-        pl: 2,
-        fontSize: { xs: "16px", xxxs: "14px" },
-        mb: "16px",
-        fontWeight: 300,
-        fontFamily: "Poppins",
-        "&.Mui-focused": {
-          bgcolor: "black",
-          border: "1px solid #2C2C2C",
-          outline: 1,
-        },
-      }}
+      className="input-component"
       onChange={(e) => {
         setName && setName(e.target.value);
         setEmail && setEmail(e.target.value);
@@ -229,11 +203,12 @@ export function PasswordInputComponent({
       }}
       component="div"
     >
-      <Input
+      <input
         placeholder={placeholder}
         type={showPass ? "text" : "password"}
         variant="outlined"
         disableUnderline
+        className="input-component"
         sx={{
           width: 1,
           height: 1,
@@ -299,36 +274,10 @@ export function InputComponentLogin({
   setVerifyCode,
 }) {
   return (
-    <Input
+    <input
       placeholder={placeholder}
       type="text"
-      variant="filled"
-      disableUnderline
-      sx={{
-        width: {
-          md: "408px",
-          sm: "390px",
-          xs: "408px",
-          xxs: "300px",
-          xxxs: "250px",
-        },
-        height: { xs: "64px", xxxs: "50px" },
-        border: "1px solid #2c2c2c",
-        background: "#222222",
-        borderRadius: "5px",
-        color: "white",
-        boxShadow: 3,
-        pl: 2,
-        fontSize: { xs: "16px", xxxs: "14px" },
-        mb: "16px",
-        fontWeight: 300,
-        fontFamily: "Poppins",
-        "&.Mui-focused": {
-          bgcolor: "black",
-          border: "1px solid #EBE6E6",
-          outline: 1,
-        },
-      }}
+      className="inputCompleteLogin"
       onChange={(e) => {
         setName && setName(e.target.value);
         setEmail && setEmail(e.target.value);
@@ -364,11 +313,12 @@ export function PasswordInputComponentLogin({
       }}
       component="div"
     >
-      <Input
+      <input
         placeholder={placeholder}
         type={showPass ? "text" : "password"}
         variant="outlined"
         disableUnderline
+        className="input-component"
         sx={{
           width: 1,
           height: 1,
