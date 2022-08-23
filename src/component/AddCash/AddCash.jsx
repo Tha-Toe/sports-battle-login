@@ -20,13 +20,14 @@ import SelectDepositOption from "./SelectDepositOption";
 
 export default function AddCash() {
   const [amountList, setAmountList] = useState([
-    { amount: "$30" },
-    { amount: "$50" },
-    { amount: "$100" },
-    { amount: "$250" },
-    { amount: "Other" },
+    { amount: "$30", bonus: 30 },
+    { amount: "$50", bonus: 50 },
+    { amount: "$100", bonus: 100 },
+    { amount: "$250", bonus: 250 },
+    { amount: "Other", bonus: 100 },
   ]);
   const [amount, setAmount] = useState("$30");
+  const [Bonus, setBonus] = useState(30);
   const [showLimit, setShowLimit] = useState(false);
   const [openSelectDepositOption, setOpenSelectDepositOption] = useState(false);
   return (
@@ -106,6 +107,7 @@ export default function AddCash() {
               }}
               onClick={() => {
                 setAmount(e.amount);
+                setBonus(e.bonus);
               }}
             >
               {e.amount}
@@ -139,7 +141,10 @@ export default function AddCash() {
                 fontFamily: "poppins",
                 outline: "none",
               }}
-              onChange={() => setShowLimit(true)}
+              onChange={(e) => {
+                setShowLimit(true);
+                setBonus(e.target.valueAsNumber);
+              }}
             />
             {showLimit && (
               <Typography
@@ -165,7 +170,7 @@ export default function AddCash() {
             mt: "23px",
           }}
         >
-          You will receive: $200 (Bonus: $100)
+          You will receive: ${Bonus * 2} (Bonus: ${Bonus})
         </Typography>
         <Typography
           sx={{

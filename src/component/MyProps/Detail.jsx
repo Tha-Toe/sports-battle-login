@@ -71,7 +71,7 @@ export default function Detail({
             fontFamily: "poppins",
           }}
         >
-          SpportsBattle
+          SportsBattle
         </Typography>
       </Box>
       {detailData ? (
