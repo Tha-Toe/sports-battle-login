@@ -598,7 +598,7 @@ export default function MyProfile({
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-
+            mt: "10px",
             borderRadius: "4px",
           }}
         >

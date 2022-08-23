@@ -82,11 +82,11 @@ export function AndresCard({
         >
           <img
             src="/mlb.png"
-            style={{ width: "7px", height: "7px", marginRight: "2px" }}
+            style={{ width: "9px", height: "9px", marginRight: "2px" }}
           />
           <Typography
             sx={{
-              fontSize: "6px",
+              fontSize: "8px",
               fontWeight: 400,
               fontFamily: "poppins",
             }}
