@@ -22,6 +22,7 @@ import PaperECheck from "./PaperECheck";
 import SelectAddressPaperCheck from "./SelectAddressPaperCheck";
 import AddPhoneNumber from "./AddPhoneNumber";
 import VerifycationCode from "./VerifycationCode";
+import AccountSetup from "./AccountSetup";
 
 export default function MyProfile({
   mode,
@@ -165,6 +166,8 @@ export default function MyProfile({
         setOpenTag={setOpenTag}
       />
     );
+  } else if (openTag === "account-setup") {
+    return <AccountSetup setOpenTag={setOpenTag} />;
   } else {
     return (
       <Box
@@ -185,7 +188,7 @@ export default function MyProfile({
         }}
         component="div"
       >
-        {!verify && <ProfileComplete />}
+        {!verify && <ProfileComplete setOpenTag={setOpenTag} />}
         <Box
           sx={{
             width: "100%",

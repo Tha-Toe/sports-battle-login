@@ -12,7 +12,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import ClearIcon from "@mui/icons-material/Clear";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
-export default function ProfileComplete({ mode }) {
+export default function ProfileComplete({ mode, setOpenTag }) {
   return (
     <Box
       sx={{
@@ -117,6 +117,10 @@ export default function ProfileComplete({ mode }) {
             "&.MuiButtonBase-root:hover": {
               background: "#52C03C",
             },
+            cursor: "pointer",
+          }}
+          onClick={() => {
+            setOpenTag("account-setup");
           }}
         >
           Complete Profile
