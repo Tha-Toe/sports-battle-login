@@ -70,6 +70,7 @@ export default function KnowMore({ mode }) {
           component="div"
           sx={{
             width: {
+              xl: "80%",
               lg: "836px",
               md: "700px",
               sm: "550px",
@@ -80,7 +81,7 @@ export default function KnowMore({ mode }) {
             display: "flex",
             flexDirection: "row",
             alignItems: "center",
-            justifyContent: "space-between",
+            justifyContent: { xl: "center", xxxs: "space-between" },
             overflow: "scroll",
             "&::-webkit-scrollbar": {
               display: "none",
@@ -136,6 +137,7 @@ export default function KnowMore({ mode }) {
       <Box
         sx={{
           width: {
+            xl: "80%",
             lg: "836px",
             md: "700px",
             sm: "550px",

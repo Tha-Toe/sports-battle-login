@@ -182,6 +182,7 @@ export default function MyProps({ mode }) {
     <Box
       sx={{
         width: {
+          xl: "80%",
           lg: "836px",
           md: "700px",
           sm: "500px",

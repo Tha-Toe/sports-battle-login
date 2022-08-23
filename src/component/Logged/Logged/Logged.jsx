@@ -205,6 +205,7 @@ export function Logged({ mode, setMode }) {
             <Box
               sx={{
                 width: {
+                  xl: "80%",
                   lg: "836px",
                   md: "700px",
                   sm: "500px",
@@ -584,7 +585,7 @@ export function Logged({ mode, setMode }) {
               component="div"
               sx={{
                 display: "flex",
-                flexDirection: "row",
+                flexDirection: { lg: "row", sm: "column", xxxs: "row" },
                 justifyContent: "space-between",
                 alignItems: "center",
                 height: "7%",

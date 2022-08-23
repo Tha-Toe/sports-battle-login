@@ -42,6 +42,7 @@ export default function EmailPrefrence() {
     <Box
       sx={{
         width: {
+          xl: "80%",
           lg: "836px",
           md: "700px",
           sm: "500px",

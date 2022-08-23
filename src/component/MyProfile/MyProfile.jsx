@@ -170,6 +170,8 @@ export default function MyProfile({
       <Box
         sx={{
           width: {
+            xl: "80%",
+
             lg: "836px",
             md: "700px",
             sm: "560px",

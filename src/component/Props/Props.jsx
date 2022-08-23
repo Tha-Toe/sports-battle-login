@@ -249,6 +249,7 @@ export default function Props({ mode }) {
       <Box
         sx={{
           width: {
+            xl: "80%",
             lg: "836px",
             md: "700px",
             sm: "500px",
@@ -267,7 +268,7 @@ export default function Props({ mode }) {
             display: "flex",
             flexDirection: "row",
             alignItems: "center",
-            justifyContent: "space-between",
+            justifyContent: { xl: "flex-end", xxxs: "space-between" },
             overflow: "scroll",
             "&::-webkit-scrollbar": {
               display: "none",
@@ -336,7 +337,7 @@ export default function Props({ mode }) {
               display: "flex",
               flexDirection: "rows",
               alignItems: "center",
-              justifyContent: "space-between",
+              justifyContent: { xl: "flex-start", xxxs: "space-between" },
               width: "40%",
             }}
           >
@@ -349,6 +350,7 @@ export default function Props({ mode }) {
                   justifyContent: "center",
                   cursor: "pointer",
                   flexWrap: "wrap",
+                  mr: { xl: "10px", xxxs: "0px" },
                 }}
                 onClick={e.func}
               >
