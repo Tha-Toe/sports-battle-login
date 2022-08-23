@@ -70,7 +70,6 @@ export function Logged({ mode, setMode }) {
     navigate("/logged?deposit=old-user", { replace: true });
   };
   const goRefralBonusCashRadeem = () => {
-    navigate("/logged", { replace: true });
     setOpenTag("enter-referral-code");
     navigate("/logged?deposit=go-refral-bonus-cash-randoom", { replace: true });
     setOpenSideNav(false);
@@ -489,6 +488,7 @@ export function Logged({ mode, setMode }) {
                 alignItems: "flex-start",
                 height: "39%",
                 width: { lg: "145px", md: "90px", sm: "70px", xxxs: "145px" },
+                mt: "20px",
               }}
             >
               {sideBar.map((e) => (
@@ -733,7 +733,12 @@ export function Logged({ mode, setMode }) {
             <MyProps mode={mode} />
           )}
           {!location.search && openTag === "my-profile" && (
-            <MyProfile mode={mode} myProfileOpen={myProfileOpen} />
+            <MyProfile
+              mode={mode}
+              myProfileOpen={myProfileOpen}
+              goRefralBonusCashRadeem={goRefralBonusCashRadeem}
+              transactionHistoryOpen={transactionHistoryOpen}
+            />
           )}
           {!location.search && openTag === "transaction-history" && (
             <TransactionHistory mode={mode} />

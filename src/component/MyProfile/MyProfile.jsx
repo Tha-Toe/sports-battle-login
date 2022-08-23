@@ -23,7 +23,12 @@ import SelectAddressPaperCheck from "./SelectAddressPaperCheck";
 import AddPhoneNumber from "./AddPhoneNumber";
 import VerifycationCode from "./VerifycationCode";
 
-export default function MyProfile({ mode, myProfileOpen }) {
+export default function MyProfile({
+  mode,
+  myProfileOpen,
+  goRefralBonusCashRadeem,
+  transactionHistoryOpen,
+}) {
   const [wallet, setWallet] = useState([
     {
       name: "Total Won Cash",
@@ -78,6 +83,7 @@ export default function MyProfile({ mode, myProfileOpen }) {
       name: "Transaction History",
       note: "",
       icon: "/transcationHistoryActive.png",
+      func: transactionHistoryOpen,
     },
   ]);
   const [history, setHistory] = useState([
@@ -172,7 +178,7 @@ export default function MyProfile({ mode, myProfileOpen }) {
           },
           minHeight: "100vh",
           margin: "auto",
-          mt: "10px",
+          mt: "30px",
           mb: "30px",
         }}
         component="div"
@@ -851,7 +857,9 @@ export default function MyProfile({ mode, myProfileOpen }) {
             margin: "0 auto",
             mt: "13px",
             pb: "9px",
+            cursor: "pointer",
           }}
+          onClick={goRefralBonusCashRadeem}
         >
           <Box
             sx={{

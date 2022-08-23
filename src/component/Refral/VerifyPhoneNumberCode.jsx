@@ -60,6 +60,7 @@ export default function VerifyPhoneNumberCode({ number, mode }) {
         alignItems: "center",
         justifyContent: "center",
         margin: "0 auto",
+        mt: "40px",
       }}
     >
       <Box

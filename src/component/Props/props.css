@@ -4,6 +4,7 @@ a {
 .props-container {
   max-width: 100%;
   min-height: 100vh;
+  margin-top: 50px;
 }
 .statsContainer,
 .matchesContainer {

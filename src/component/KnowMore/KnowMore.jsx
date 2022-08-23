@@ -64,7 +64,7 @@ export default function KnowMore({ mode }) {
   const [selectSports, setSelectSports] = useState("MLB");
 
   return (
-    <Box sx={{ minHeight: "100vh", width: "100%", mt: "10px" }}>
+    <Box sx={{ minHeight: "100vh", width: "100%", mt: "50px" }}>
       {openTag === "Over-Under Points System" && (
         <Box
           component="div"

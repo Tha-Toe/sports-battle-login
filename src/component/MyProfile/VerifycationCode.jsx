@@ -44,7 +44,7 @@ export default function VerifycationCode({
         },
         minHeight: "100vh",
         margin: "auto",
-        mt: "10px",
+        mt: "40px",
         mb: "30px",
         display: "flex",
         flexDirection: "column",

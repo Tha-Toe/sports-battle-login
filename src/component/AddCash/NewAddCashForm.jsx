@@ -42,6 +42,7 @@ export default function NewAddCashFrom({ address }) {
         alignItems: "center",
         justifyContent: "center",
         margin: "0 auto",
+        mt: "30px",
       }}
     >
       <Box
@@ -160,8 +161,9 @@ export default function NewAddCashFrom({ address }) {
           Date of Birth
         </Typography>
         <Input
-          type="date"
+          type="text"
           variant="outlined"
+          placeholder="MM/DD/YYYY"
           sx={{
             color: "secondary.main",
             borderBottom: "1px solid #494949",
@@ -219,7 +221,6 @@ export default function NewAddCashFrom({ address }) {
               color: "white",
               mb: "12px",
               width: { md: "25%", xs: "40%", xxxs: "60%" },
-              ml: "10px",
             }}
           >
             {address ? address : "Select your address"}
