@@ -172,115 +172,215 @@ export default function WidthDrawCash({ setOpenTag, alreadyChooseWidthDraw }) {
       </Box>
       {alreadyChooseWidthDraw ? (
         <>
-          <Box
-            sx={{
-              width: "100%",
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "flex-start",
-              alignItems: "center",
-              mt: "13px",
-            }}
-          >
-            <Typography
-              sx={{
-                fontSize: { sm: "14px", xxs: "12px", xxxs: "10px" },
-                fontWeight: 400,
-                fontFamily: "poppins",
-                color: "secondary.main",
-              }}
-            >
-              Withdrawing Amount -{" "}
-            </Typography>{" "}
-            <Typography
-              sx={{
-                fontSize: { sm: "16px", xxs: "14px", xxxs: "12px" },
-                fontWeight: 600,
-                fontFamily: "poppins",
-                color: "#EA1E63",
-                ml: "4px",
-              }}
-            >
-              $25{" "}
-            </Typography>
-          </Box>
-          <Box
-            sx={{
-              width: "100%",
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-              justifyContent: "flex-between",
-              mt: "15px",
-              cursor: "pointer",
-            }}
-          >
-            <Box
-              sx={{
-                width: "95%",
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-              }}
-            >
-              <img src="/credit-card1.png" className="chooseIcon" />
+          {alreadyChooseWidthDraw === "standard-eCheck" && (
+            <>
               <Box
                 sx={{
+                  width: "100%",
                   display: "flex",
-                  flexDirection: "column",
-                  alignItems: "flex-start",
-                  justifyContent: "center",
-                  width: "90%",
+                  flexDirection: "row",
+                  justifyContent: "flex-start",
+                  alignItems: "center",
+                  mt: "13px",
                 }}
               >
-                <Typography
+                <Input
+                  type="number"
+                  placeholder="25000"
                   sx={{
+                    width: "100%",
+                    borderBottom: "1px solid #494949",
+                    color: "secondary.main",
                     fontSize: { sm: "16px", xxs: "14px", xxxs: "12px" },
-                    fontWeight: 600,
-                    fontFamily: "poppins",
-                    color: "secondary.main",
-                    width: "100%",
-                    mb: "4px",
+                    fontWeight: 500,
                   }}
-                >
-                  Withdrawing to Standard eCheck{" "}
-                </Typography>
-                <Typography
-                  sx={{
-                    fontSize: { sm: "14px", xxs: "12px", xxxs: "10px" },
-                    fontWeight: 400,
-                    fontFamily: "poppins",
-                    color: "secondary.main",
-                    width: "100%",
-                    mb: "4px",
-                  }}
-                >
-                  Standard eCheck delivery to dattaganeshan@gmail.com{" "}
-                </Typography>
+                />
               </Box>
-            </Box>
-            <ArrowForwardIosIcon />
-          </Box>
-          <Button
-            sx={{
-              fontSize: { sm: "14px", xxs: "12px", xxxs: "10px" },
-              fontWeight: 600,
-              fontFamily: "poppins",
-              color: "white",
-              background: "#4831D4",
-              padding: "14px 77px",
-              mt: "32px",
-              borderRadius: "8px",
-              textTransform: "none",
+              <Box
+                sx={{
+                  width: "100%",
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                  justifyContent: "flex-between",
+                  mt: "24px",
+                  cursor: "pointer",
+                }}
+              >
+                <Box
+                  sx={{
+                    width: "95%",
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems: "center",
+                  }}
+                >
+                  <img src="/credit-card1.png" className="chooseIcon" />
+                  <Box
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "flex-start",
+                      justifyContent: "center",
+                      width: "90%",
+                    }}
+                  >
+                    <Typography
+                      sx={{
+                        fontSize: { sm: "16px", xxs: "14px", xxxs: "12px" },
+                        fontWeight: 600,
+                        fontFamily: "poppins",
+                        color: "secondary.main",
+                        width: "100%",
+                        mb: "4px",
+                      }}
+                    >
+                      Withdrawing to Standard eCheck{" "}
+                    </Typography>
+                    <Typography
+                      sx={{
+                        fontSize: { sm: "14px", xxs: "12px", xxxs: "10px" },
+                        fontWeight: 400,
+                        fontFamily: "poppins",
+                        color: "secondary.main",
+                        width: "100%",
+                        mb: "4px",
+                        width: { sm: "40%", xxxs: "80%" },
+                      }}
+                    >
+                      Standard eCheck delivery to dattaganeshan@gmail.com{" "}
+                    </Typography>
+                  </Box>
+                </Box>
+                <ArrowForwardIosIcon />
+              </Box>
+              <Button
+                sx={{
+                  fontSize: { sm: "14px", xxs: "12px", xxxs: "10px" },
+                  fontWeight: 600,
+                  fontFamily: "poppins",
+                  color: "white",
+                  background: "#4831D4",
+                  padding: "14px 77px",
+                  mt: "32px",
+                  borderRadius: "8px",
+                  textTransform: "none",
 
-              "&.MuiButtonBase-root:hover": {
-                background: "#4831D4",
-              },
-            }}
-            onClick={openConfirm}
-          >
-            Submit Request{" "}
-          </Button>
+                  "&.MuiButtonBase-root:hover": {
+                    background: "#4831D4",
+                  },
+                }}
+                onClick={openConfirm}
+              >
+                Submit Request{" "}
+              </Button>
+            </>
+          )}
+          {alreadyChooseWidthDraw === "paper-eCheck" && (
+            <>
+              <Box
+                sx={{
+                  width: "100%",
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "flex-start",
+                  alignItems: "center",
+                  mt: "13px",
+                }}
+              >
+                <Input
+                  type="number"
+                  placeholder="25000"
+                  sx={{
+                    width: "100%",
+                    borderBottom: "1px solid #494949",
+                    color: "secondary.main",
+                    fontSize: { sm: "16px", xxs: "14px", xxxs: "12px" },
+                    fontWeight: 500,
+                  }}
+                />
+              </Box>
+              <Box
+                sx={{
+                  width: "100%",
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                  justifyContent: "flex-between",
+                  mt: "24px",
+                  cursor: "pointer",
+                }}
+              >
+                <Box
+                  sx={{
+                    width: "95%",
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems: "center",
+                  }}
+                >
+                  <img src="/credit-card1.png" className="chooseIcon" />
+                  <Box
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "flex-start",
+                      justifyContent: "center",
+                      width: "90%",
+                    }}
+                  >
+                    <Typography
+                      sx={{
+                        fontSize: { sm: "16px", xxs: "14px", xxxs: "12px" },
+                        fontWeight: 600,
+                        fontFamily: "poppins",
+                        color: "secondary.main",
+                        width: "100%",
+                        mb: "4px",
+                      }}
+                    >
+                      Withdrawing to Paper Check{" "}
+                    </Typography>
+                    <Typography
+                      sx={{
+                        fontSize: { sm: "14px", xxs: "12px", xxxs: "10px" },
+                        fontWeight: 400,
+                        fontFamily: "poppins",
+                        color: "secondary.main",
+                        width: "100%",
+                        mb: "4px",
+                        width: { sm: "40%", xxxs: "80%" },
+                      }}
+                    >
+                      Standard Paper Check delivery to 27834 Gateway Blvd, B308
+                      Farmington hills, Michigan, 48334{" "}
+                    </Typography>
+                  </Box>
+                </Box>
+                <ArrowForwardIosIcon />
+              </Box>
+              <Button
+                sx={{
+                  fontSize: { sm: "14px", xxs: "12px", xxxs: "10px" },
+                  fontWeight: 600,
+                  fontFamily: "poppins",
+                  color: "white",
+                  background: "#4831D4",
+                  padding: "14px 77px",
+                  mt: "32px",
+                  borderRadius: "8px",
+                  textTransform: "none",
+
+                  "&.MuiButtonBase-root:hover": {
+                    background: "#4831D4",
+                  },
+                }}
+                onClick={openConfirm}
+              >
+                Submit Request{" "}
+              </Button>
+            </>
+          )}
         </>
       ) : (
         <form onSubmit={goChooseWidthDrawPage} style={{ width: "100%" }}>

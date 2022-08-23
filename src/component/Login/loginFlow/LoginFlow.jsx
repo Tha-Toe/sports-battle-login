@@ -215,7 +215,7 @@ const LoginFlow = () => {
                   fontFamily: "Poppins",
                 }}
               >
-                Not a member yet?
+                Not a member?
               </Typography>
               <Link to="/choose">
                 <Typography

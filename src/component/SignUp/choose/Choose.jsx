@@ -5,6 +5,7 @@ import { Button, FormControl, Typography } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import GoogleIcon from "@mui/icons-material/Google";
 import AppleIcon from "@mui/icons-material/Apple";
+import MailOutlineIcon from "@mui/icons-material/MailOutline";
 const Choose = () => {
   let navigate = useNavigate();
 
@@ -115,7 +116,7 @@ const Choose = () => {
                   fontFamily: "Poppins",
                 }}
               >
-                Login with Google
+                Signup with Google
               </Button>
               <Button
                 startIcon={<AppleIcon />}
@@ -140,12 +141,12 @@ const Choose = () => {
                   fontFamily: "Poppins",
                 }}
               >
-                Login with Apple
+                Signup with Apple
               </Button>
             </Box>
 
             <Button
-              startIcon={<AppleIcon />}
+              startIcon={<MailOutlineIcon />}
               sx={{
                 color: "white",
                 width: {
@@ -194,7 +195,7 @@ const Choose = () => {
                   fontFamily: "Poppins",
                 }}
               >
-                Already a member yet?
+                Already a member?
               </Typography>
               <Link to="/">
                 <Typography

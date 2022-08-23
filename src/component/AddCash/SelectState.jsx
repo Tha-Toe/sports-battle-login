@@ -199,6 +199,7 @@ export default function SelectState({ setOpenStatePicker }) {
               background: "#4831D4",
             },
             mb: "12px",
+            fontFamily: "poppins",
           }}
           onClick={() => setOpenStatePicker(false)}
         >

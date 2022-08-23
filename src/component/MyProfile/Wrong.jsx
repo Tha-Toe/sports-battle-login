@@ -79,28 +79,60 @@ export default function Wrong({ setWrong }) {
         >
           Something went wrong, Please try again
         </Typography>
-        <Button
+        <Box
           sx={{
-            fontSize: { sm: "14px", xxs: "12px", xxxs: "10px" },
-            fontWeight: 600,
-            fontFamily: "poppins",
-            color: "white",
-            background: "#4831D4",
-            py: "14px",
-            mt: "25px",
-            width: "60%",
-            borderRadius: "8px",
-            textTransform: "none",
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "center",
+            width: "90%",
             mb: "48px",
-
-            "&.MuiButtonBase-root:hover": {
-              background: "#4831D4",
-            },
           }}
-          onClick={() => setWrong(false)}
         >
-          Okay
-        </Button>
+          <Button
+            sx={{
+              fontSize: { sm: "14px", xxs: "12px", xxxs: "10px" },
+              fontWeight: 600,
+              fontFamily: "poppins",
+              color: "white",
+              background: "#4831D4",
+              py: "14px",
+              mt: "25px",
+              width: "45%",
+              borderRadius: "8px",
+              textTransform: "none",
+
+              "&.MuiButtonBase-root:hover": {
+                background: "#4831D4",
+              },
+              mr: "24px",
+            }}
+            onClick={() => setWrong(false)}
+          >
+            Back to My Account
+          </Button>
+          <Button
+            sx={{
+              fontSize: { sm: "14px", xxs: "12px", xxxs: "10px" },
+              fontWeight: 600,
+              fontFamily: "poppins",
+              color: "#439F48",
+              background: "transparent",
+              py: "14px",
+              mt: "25px",
+              width: "45%",
+              borderRadius: "8px",
+              border: "1px solid #439F48",
+              textTransform: "none",
+              "&.MuiButtonBase-root:hover": {
+                background: "transparent",
+              },
+            }}
+            onClick={() => setWrong(false)}
+          >
+            Support Chat{" "}
+          </Button>
+        </Box>
       </Box>
     </Box>
   );

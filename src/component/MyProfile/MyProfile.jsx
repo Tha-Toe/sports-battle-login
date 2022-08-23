@@ -18,6 +18,10 @@ import ChooseAWithDraw from "./ChooseAWithDraw";
 import StandardECheck from "./StandardECheck";
 import MyWithDraw from "./MyWithDraw";
 import ReferalHistory from "./ReferalHistory";
+import PaperECheck from "./PaperECheck";
+import SelectAddressPaperCheck from "./SelectAddressPaperCheck";
+import AddPhoneNumber from "./AddPhoneNumber";
+import VerifycationCode from "./VerifycationCode";
 
 export default function MyProfile({ mode, myProfileOpen }) {
   const [wallet, setWallet] = useState([
@@ -97,6 +101,13 @@ export default function MyProfile({ mode, myProfileOpen }) {
   const [openTag, setOpenTag] = useState("profile");
   const [alreadyChooseWidthDraw, setAlreadyChooseWidthDraw] = useState(null);
   const [openReferalHistory, setOpenReferalHistory] = useState(false);
+  useEffect(() => {
+    console.log(openTag);
+  }, [openTag]);
+
+  const [address, setAddress] = useState(null);
+  const [phoneNumber, setPhoneNumber] = useState(null);
+  const [verify, setVerify] = useState(false);
 
   if (openTag === "WidthDrawCash") {
     return (
@@ -114,8 +125,40 @@ export default function MyProfile({ mode, myProfileOpen }) {
         setAlreadyChooseWidthDraw={setAlreadyChooseWidthDraw}
       />
     );
+  } else if (openTag === "paperECheck") {
+    return (
+      <PaperECheck
+        setOpenTag={setOpenTag}
+        setAlreadyChooseWidthDraw={setAlreadyChooseWidthDraw}
+        address={address}
+        setAddress={setAddress}
+      />
+    );
+  } else if (openTag === "select-address-paper-check") {
+    return (
+      <SelectAddressPaperCheck
+        setOpenTag={setOpenTag}
+        setAddress={setAddress}
+      />
+    );
   } else if (openTag === "myWithDraw") {
     return <MyWithDraw />;
+  } else if (openTag === "add-phone-number") {
+    return (
+      <AddPhoneNumber
+        setOpenTag={setOpenTag}
+        phoneNumber={phoneNumber}
+        setPhoneNumber={setPhoneNumber}
+      />
+    );
+  } else if (openTag === "verifycation-code") {
+    return (
+      <VerifycationCode
+        phoneNumber={phoneNumber}
+        setVerify={setVerify}
+        setOpenTag={setOpenTag}
+      />
+    );
   } else {
     return (
       <Box
@@ -134,7 +177,7 @@ export default function MyProfile({ mode, myProfileOpen }) {
         }}
         component="div"
       >
-        <ProfileComplete />
+        {!verify && <ProfileComplete />}
         <Box
           sx={{
             width: "100%",
@@ -160,7 +203,21 @@ export default function MyProfile({ mode, myProfileOpen }) {
               ml: { xs: "21px", xxxs: "10px" },
             }}
           >
-            <img src="/account-profile.png" className="profileImage" />
+            <Typography
+              sx={{
+                width: { xs: "64px", xxxs: "35px" },
+                height: { xs: "64px", xxxs: "35px" },
+                background: "#439F48",
+                borderRadius: "50%",
+                textAlign: "center",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              JS
+            </Typography>
             <Box
               sx={{
                 display: "flex",
@@ -269,21 +326,36 @@ export default function MyProfile({ mode, myProfileOpen }) {
             >
               Phone Number{" "}
             </Typography>
-            <Button
-              sx={{
-                color: "white",
-                fontSize: { sm: "12px", xs: "10px", xxxs: "8px" },
-                fontWeight: 500,
-                fontFamily: "poppins",
-                background: "#4831D4",
-                padding: { xs: "7px 24px", xxxs: "5px 10px" },
-                "&.MuiButtonBase-root:hover": {
+            {verify ? (
+              <Typography
+                sx={{
+                  fontSize: { sm: "14px", xs: "12px", xxxs: "10px" },
+                  fontWeight: 500,
+                  fontFamily: "poppins",
+                  color: "secondary.main",
+                  mt: "11px",
+                }}
+              >
+                {phoneNumber}
+              </Typography>
+            ) : (
+              <Button
+                sx={{
+                  color: "white",
+                  fontSize: { sm: "12px", xs: "10px", xxxs: "8px" },
+                  fontWeight: 500,
+                  fontFamily: "poppins",
                   background: "#4831D4",
-                },
-              }}
-            >
-              Add Phone Number{" "}
-            </Button>
+                  padding: { xs: "7px 24px", xxxs: "5px 10px" },
+                  "&.MuiButtonBase-root:hover": {
+                    background: "#4831D4",
+                  },
+                }}
+                onClick={() => setOpenTag("add-phone-number")}
+              >
+                Add Phone Number{" "}
+              </Button>
+            )}
           </Box>
         </Box>
         <Box

@@ -239,7 +239,7 @@ export default function NewAddCashFrom({ address }) {
         Please enter your details as per your license or any form of legal
         document{" "}
       </Typography>
-      {address && firstName && lastName && (
+      {address && (
         <Button
           sx={{
             background: "#4831D4",

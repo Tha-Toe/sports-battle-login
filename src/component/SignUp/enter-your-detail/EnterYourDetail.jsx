@@ -107,7 +107,7 @@ const EnterYourDetail = () => {
                 fontFamily: "Poppins",
               }}
             >
-              You'll recieve code for your email verification.
+              You'll receive code for your email verification.
             </Typography>
             <InputComponent placeholder={"Full Name"} setName={setName} />
             <Typography

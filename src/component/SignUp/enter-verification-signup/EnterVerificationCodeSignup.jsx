@@ -10,7 +10,7 @@ import {
   ContinueButtonComponent,
 } from "../../defaultComponent/DefaultComponent";
 import ClearIcon from "@mui/icons-material/Clear";
-const EnterVerificationCodeSignup = () => {
+const EnterVerificationCodeSignup = ({}) => {
   const [verifyCode, setVerifyCode] = useState(null);
   let navigate = useNavigate();
   const handleBack = () => {
@@ -95,13 +95,22 @@ const EnterVerificationCodeSignup = () => {
             </Typography>
             <Typography
               sx={{
-                fontSize: { xs: "14px", xxs: "12px", xxxs: "10px" },
+                fontSize: { xs: "12px", xxs: "10px", xxxs: "8px" },
                 mb: "21px",
                 fontFamily: "Poppins",
               }}
             >
               You would receive a verificaton code to your mail, Kindly enter
-              the code, If you are unsure about it, Click here to update
+              the code, If you are unsure about it, Click here to{" "}
+              <span
+                style={{
+                  fontWeight: 700,
+                  textDecoration: "underline",
+                  display: "inline-block",
+                }}
+              >
+                update
+              </span>
             </Typography>
             <Box
               component={"div"}

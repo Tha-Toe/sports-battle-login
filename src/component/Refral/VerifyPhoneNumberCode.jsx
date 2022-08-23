@@ -9,7 +9,7 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { useEffect } from "react";
 import "./refralBonus.css";
 
-export default function VerifyPhoneNumberCode({ number }) {
+export default function VerifyPhoneNumberCode({ number, mode }) {
   const navigate = useNavigate();
   const goRefralBonusCashRandoom = () => {
     navigate("/logged?deposit=go-refral-bonus-cash-randoom", { replace: true });
@@ -74,13 +74,18 @@ export default function VerifyPhoneNumberCode({ number }) {
         }}
         onClick={goRefralBonusCashRandoom}
       >
-        <ArrowBackIosIcon sx={{ fontSize: { md: "23px", xxxs: "18px" } }} />
+        <ArrowBackIosIcon
+          sx={{
+            fontSize: { md: "23px", xxxs: "18px" },
+            color: "secondary.main",
+          }}
+        />
         <Typography
           sx={{
             fontSize: { md: "16px", sm: "14px", xxxs: "12px" },
             fontWeight: 600,
             fontFamily: "poppins",
-            color: "white",
+            color: "secondary.main",
           }}
         >
           Back to Phone number{" "}
@@ -94,6 +99,7 @@ export default function VerifyPhoneNumberCode({ number }) {
           color: "white",
           width: "100%",
           mt: "23px",
+          color: "secondary.main",
         }}
       >
         Verification Code{" "}
@@ -112,6 +118,8 @@ export default function VerifyPhoneNumberCode({ number }) {
         <Typography
           sx={{
             fontSize: { md: "16px", sm: "14px", xxxs: "12px" },
+            fontFamily: "poppins",
+            color: "secondary.main",
           }}
         >
           Please enter verification code sent to your phone number -{number}
@@ -121,9 +129,9 @@ export default function VerifyPhoneNumberCode({ number }) {
         <Input
           type="number"
           variant="outlined"
-          placeholder="Enter Verifycation Code"
+          placeholder="Enter Verification Code"
           sx={{
-            color: "white",
+            color: `${mode === "dark" ? "white" : "black"}`,
             borderBottom: "1px solid #494949",
             width: "100%",
             py: "8px",
@@ -160,6 +168,7 @@ export default function VerifyPhoneNumberCode({ number }) {
               background: "black",
             },
             border: "1px solid white",
+            textTransform: "none",
           }}
         >
           Resend Code(30s){" "}
@@ -178,6 +187,7 @@ export default function VerifyPhoneNumberCode({ number }) {
               "&.MuiButtonBase-root:hover": {
                 background: "#4831D4",
               },
+              textTransform: "none",
             }}
             disabled={disableButton}
             className="disableButton"

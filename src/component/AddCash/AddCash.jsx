@@ -63,7 +63,7 @@ export default function AddCash() {
       >
         <Typography
           sx={{
-            fontSize: "16px",
+            fontSize: { xs: "16px", xxxs: "14px" },
             fontWeight: 600,
             fontFamily: "poppins",
             color: "secondary.main",
@@ -74,7 +74,7 @@ export default function AddCash() {
         </Typography>
         <Typography
           sx={{
-            fontSize: "14px",
+            fontSize: { xs: "14px", xxxs: "12px" },
             fontWeight: 300,
             fontFamily: "poppins",
             color: "secondary.main",
@@ -113,10 +113,10 @@ export default function AddCash() {
           ))}
         </Box>
         {amount === "Other" && (
-          <Box sx={{ mt: "23px", mb: "16px" }}>
+          <Box sx={{ mt: "23px", mb: "0px" }}>
             <Typography
               sx={{
-                fontSize: "14px",
+                fontSize: { xs: "14px", xxxs: "12px" },
                 fontWeight: 600,
                 fontFamily: "poppins",
                 color: "secondary.main",
@@ -134,7 +134,7 @@ export default function AddCash() {
                 borderBottom: "1px solid #439F48",
                 width: "100%",
                 py: "7px",
-                fontSize: "16px",
+                fontSize: { xs: "16px", xxxs: "14px" },
                 fontWeight: 500,
                 fontFamily: "poppins",
                 outline: "none",
@@ -144,7 +144,7 @@ export default function AddCash() {
             {showLimit && (
               <Typography
                 sx={{
-                  fontSize: "14px",
+                  fontSize: { xs: "14px", xxxs: "12px" },
                   fontWeight: 600,
                   fontFamily: "poppins",
                   color: "#E4313C",
@@ -156,6 +156,30 @@ export default function AddCash() {
             )}
           </Box>
         )}
+        <Typography
+          sx={{
+            fontSize: { xs: "14px", xxxs: "12px" },
+            fontWeight: 600,
+            fontFamily: "poppins",
+            color: "#439F48",
+            mt: "23px",
+          }}
+        >
+          You will receive: $200 (Bonus: $100)
+        </Typography>
+        <Typography
+          sx={{
+            fontSize: { xs: "14px", xxxs: "12px" },
+            fontWeight: 300,
+            fontFamily: "poppins",
+            color: "secondary.main",
+            mt: "8px",
+            textAlign: { xs: "start", xxxs: "center" },
+          }}
+        >
+          You will see this transaction as from Onecricket Fantasy Inc, in your
+          statement{" "}
+        </Typography>
         <Button
           sx={{
             color: "white",
@@ -177,11 +201,12 @@ export default function AddCash() {
         <Box sx={{ background: "#494949", height: "2px", mt: "24px" }}></Box>
         <Typography
           sx={{
-            fontSize: "14px",
+            fontSize: { xs: "14px", xxxs: "12px" },
             fontWeight: 300,
             fontFamily: "poppins",
             color: "secondary.main",
             mt: "16px",
+            textAlign: { xs: "start", xxxs: "center" },
           }}
         >
           You will see this transaction as from Onecricket Fantasy Inc, in your
@@ -190,7 +215,7 @@ export default function AddCash() {
         <Button
           sx={{
             color: "#439F48",
-            fontSize: "14px",
+            fontSize: { xs: "14px", xxxs: "12px" },
             fontWeight: 500,
             fontFamily: "poppins",
             background: "primary.main",
@@ -220,7 +245,7 @@ export default function AddCash() {
       >
         <Typography
           sx={{
-            fontSize: "16px",
+            fontSize: { xs: "16px", xxxs: "14px" },
             fontWeight: 600,
             fontFamily: "poppins",
             color: "#4831D4",
@@ -241,14 +266,14 @@ export default function AddCash() {
           <CheckCircleIcon
             sx={{
               color: "#52C03C",
-              fontSize: { xs: "20px", xxxs: "20px" },
+              fontSize: { xs: "20px", xxxs: "18px" },
               mr: "12px",
             }}
           />
           <Typography
             sx={{
               color: "secondary.main",
-              fontSize: { xs: "14px", xxxs: "14px" },
+              fontSize: { xs: "14px", xxxs: "12px" },
               fontWeight: 600,
               fontFamily: "poppins",
             }}
@@ -262,7 +287,7 @@ export default function AddCash() {
         ></Box>
         <Typography
           sx={{
-            fontSize: "16px",
+            fontSize: { xs: "16px", xxxs: "14px" },
             fontWeight: 600,
             fontFamily: "poppins",
             color: "secondary.main",
@@ -273,7 +298,7 @@ export default function AddCash() {
         </Typography>
         <Typography
           sx={{
-            fontSize: "16px",
+            fontSize: { xs: "16px", xxxs: "14px" },
             fontWeight: 500,
             fontFamily: "poppins",
             color: "secondary.main",
@@ -284,7 +309,7 @@ export default function AddCash() {
         </Typography>
         <Typography
           sx={{
-            fontSize: "14px",
+            fontSize: { xs: "14px", xxxs: "12px" },
             fontWeight: 400,
             fontFamily: "poppins",
             color: "secondary.main",
@@ -301,7 +326,7 @@ export default function AddCash() {
         ></Box>
         <Typography
           sx={{
-            fontSize: "16px",
+            fontSize: { xs: "16px", xxxs: "14px" },
             fontWeight: 500,
             fontFamily: "poppins",
             color: "secondary.main",
@@ -312,7 +337,7 @@ export default function AddCash() {
         </Typography>
         <Typography
           sx={{
-            fontSize: "14px",
+            fontSize: { xs: "14px", xxxs: "12px" },
             fontWeight: 400,
             fontFamily: "poppins",
             color: "secondary.main",
@@ -329,7 +354,7 @@ export default function AddCash() {
         ></Box>
         <Typography
           sx={{
-            fontSize: "16px",
+            fontSize: { xs: "16px", xxxs: "14px" },
             fontWeight: 500,
             fontFamily: "poppins",
             color: "secondary.main",
@@ -340,7 +365,7 @@ export default function AddCash() {
         </Typography>
         <Typography
           sx={{
-            fontSize: "14px",
+            fontSize: { xs: "14px", xxxs: "12px" },
             fontWeight: 400,
             fontFamily: "poppins",
             color: "secondary.main",

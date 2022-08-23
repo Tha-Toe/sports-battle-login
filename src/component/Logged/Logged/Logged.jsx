@@ -170,9 +170,6 @@ export function Logged({ mode, setMode }) {
       setMode("dark");
     }
   };
-  useEffect(() => {
-    console.log(mode);
-  }, [mode]);
 
   const [openDropDown, setOpenDropDown] = useState(false);
   return (
@@ -765,7 +762,7 @@ export function Logged({ mode, setMode }) {
             <RefralBonusCashRandoom setNumber={setNumber} number={number} />
           )}
           {location.search === "?deposit=verify-phone-number-code" && (
-            <VerifyPhoneNumberCode number={number} />
+            <VerifyPhoneNumberCode number={number} mode={mode} />
           )}
           {location.search === "?deposit=refral-bonus-cash-code" && (
             <RefralBonusCashCode />

@@ -84,7 +84,7 @@ export default function RefralBonusCashRandoom({ number, setNumber }) {
           fontSize: { md: "14px", sm: "12px", xxxs: "10px" },
           fontWeight: 400,
           fontFamily: "poppins",
-          color: "#4831D4",
+          color: "white",
           width: "100%",
           mt: "21px",
         }}
@@ -148,6 +148,7 @@ export default function RefralBonusCashRandoom({ number, setNumber }) {
               background: "#4831D4",
             },
             mt: "24px",
+            textTransform: "none",
           }}
           disabled={disableVerify}
           className="disableButton"

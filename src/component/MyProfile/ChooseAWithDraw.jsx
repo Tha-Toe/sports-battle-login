@@ -20,6 +20,9 @@ export default function ChooseAWithDraw({ setOpenTag }) {
   const openStandardECheck = () => {
     setOpenTag("standardECheck");
   };
+  const openPaperECheck = () => {
+    setOpenTag("paperECheck");
+  };
 
   const [chooseType, setChooseType] = useState([
     {
@@ -28,6 +31,7 @@ export default function ChooseAWithDraw({ setOpenTag }) {
       waitingTime: "Takes upto 7-10 business days",
       about:
         "A paper check on your name is mailed to your address that can be used to deposit at the bank in your preferred way. ",
+      func: openPaperECheck,
     },
     {
       icon: "/mailbox1.png",

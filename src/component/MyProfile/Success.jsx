@@ -103,7 +103,7 @@ export default function Success({ setConfirm, setSuccess, setWrong }) {
           }}
           onClick={goWrongPage}
         >
-          Okay
+          Back to my account
         </Button>
       </Box>
     </Box>
