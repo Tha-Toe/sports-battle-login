@@ -81,7 +81,7 @@ export default function KnowMore({ mode }) {
             display: "flex",
             flexDirection: "row",
             alignItems: "center",
-            justifyContent: { xl: "center", xxxs: "space-between" },
+            justifyContent: { xl: "space-between", xxxs: "space-between" },
             overflow: "scroll",
             "&::-webkit-scrollbar": {
               display: "none",
@@ -137,7 +137,7 @@ export default function KnowMore({ mode }) {
       <Box
         sx={{
           width: {
-            xl: "80%",
+            xl: "1000px",
             lg: "836px",
             md: "700px",
             sm: "550px",
