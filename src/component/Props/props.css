@@ -34,12 +34,7 @@ a {
   flex-direction: row;
   justify-content: space-between;
 }
-.statsChild::-webkit-scrollbar {
-  display: none;
-}
-.matchesChild::-webkit-scrollbar {
-  display: none;
-}
+
 .statsButton,
 .matchesButton {
   font-size: 12px;

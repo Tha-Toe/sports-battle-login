@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 
@@ -179,6 +179,13 @@ export function Logged({ mode, setMode }) {
   const [selectSports, setSelectSports] = useState("MLB");
   const [selectSrc, setSelectSrc] = useState("/mlb.png");
   const [selectColor, setSelectColor] = useState("blue");
+
+  const loggedRef = useRef();
+
+  useEffect(() => {
+    loggedRef.current.scrollTop = 0;
+  }, [location]);
+
   return (
     <main className="logged-container">
       <Box
@@ -742,6 +749,7 @@ export function Logged({ mode, setMode }) {
               display: "none",
             },
           }}
+          ref={loggedRef}
         >
           {!location.search && openTag === "props" && (
             <Props

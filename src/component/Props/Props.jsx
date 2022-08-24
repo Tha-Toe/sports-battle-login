@@ -126,7 +126,12 @@ export default function Props({
     setWidth(total);
     setMatchesWidth(matchesTotal);
   }, []);
-  const goForwardStats = () => {};
+  const goForwardStats = () => {
+    parentRef.current.scrollLeft = parentRef.current.scrollLeft + 100;
+  };
+  const goForwardMatches = () => {
+    matchesRef.current.scrollLeft = matchesRef.current.scrollLeft + 100;
+  };
 
   //card
   const [cardInfo, setCardInfo] = useState([
@@ -254,6 +259,7 @@ export default function Props({
   const [successSubmit, setSuccessSubmit] = useState(false);
   const [errorSubmit, setErrorSubmit] = useState(false);
   const [notEnoughBalance, setNotEnoughBalance] = useState(false);
+
   return (
     <main className="props-container">
       <Box
@@ -591,6 +597,7 @@ export default function Props({
                 position: "absolute",
                 right: 0,
               }}
+              onClick={goForwardMatches}
             >
               <ArrowForwardIosIcon
                 sx={{
