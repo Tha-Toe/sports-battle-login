@@ -24,7 +24,7 @@ const CreatePassword = () => {
   };
 
   const handleContinue = () => {
-    return;
+    navigate("/", { replace: true });
   };
 
   const [disableButton, setDisableButton] = useState(false);

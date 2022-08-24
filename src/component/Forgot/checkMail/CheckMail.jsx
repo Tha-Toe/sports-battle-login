@@ -16,7 +16,7 @@ const CheckMail = () => {
   };
 
   const handleContinue = () => {
-    navigate("/newpassword", { replace: true });
+    navigate("/", { replace: true });
   };
 
   const [disableButton, setDisableButton] = useState(false);
@@ -116,7 +116,11 @@ const CheckMail = () => {
               }}
             >
               <BackButtonComponent text={"Back"} handleBack={handleBack} />
-              <ContinueButtonComponent text={"Login Now"} disabled={false} />
+              <ContinueButtonComponent
+                text={"Login Now"}
+                disabled={false}
+                handleContinue={handleContinue}
+              />
             </Box>
           </FormControl>
         </Box>
