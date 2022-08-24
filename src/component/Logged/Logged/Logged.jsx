@@ -405,7 +405,7 @@ export function Logged({ mode, setMode }) {
                         color: "primary.main",
                         width: { sm: "180px", xs: "150px", xxxs: "130px" },
                         py: { sm: "18px", xs: "14px", xxxs: "12px" },
-                        fontSize: "14px",
+                        fontSize: { sm: "14px", xxxs: "12px" },
                         fontWeight: 600,
                         fontFamily: "poppins",
                         textTransform: "none",
