@@ -8,10 +8,19 @@ export function AndresCard({
   selectCardId,
   setSelectCardId,
 }) {
+  useEffect(() => {
+    console.log(e);
+  }, []);
   const handleChangeOverUnder = (type) => {
     let selectCardIdClone = selectCardId.map((each) => {
       if (each.index === e.index) {
-        return { index: each.index, type: type };
+        return {
+          index: each.index,
+          type: type,
+          selectSports: each.selectSports,
+          selectColor: each.selectColor,
+          selectSrc: each.selectSrc,
+        };
       } else {
         return each;
       }
@@ -70,7 +79,7 @@ export function AndresCard({
           sx={{
             display: "flex",
             justifyContent: "center",
-            background: "#4831D4",
+            background: `${e.selectColor}`,
             borderRadius: "4px",
             padding: "5px",
             width: "auto",
@@ -81,7 +90,7 @@ export function AndresCard({
           }}
         >
           <img
-            src="/mlb.png"
+            src={e.selectSrc}
             style={{ width: "9px", height: "9px", marginRight: "2px" }}
           />
           <Typography
@@ -91,7 +100,7 @@ export function AndresCard({
               fontFamily: "poppins",
             }}
           >
-            MLB: CLE - Batter vs HOU
+            {e.selectSports}: CLE - Batter vs HOU
           </Typography>
         </Box>
         <Box

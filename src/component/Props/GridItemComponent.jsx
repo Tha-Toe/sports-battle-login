@@ -8,6 +8,9 @@ const GridItemComponent = ({
   selectCardId,
   index,
   addCardIndex,
+  selectSports,
+  selectColor,
+  selectSrc,
   mode,
 }) => {
   useEffect(() => {
@@ -26,12 +29,24 @@ const GridItemComponent = ({
   const [type, setType] = useState(null);
   const addCard = (type) => {
     if (!alreadyPicked) {
-      let data = { index: index, type: type };
+      let data = {
+        index: index,
+        type: type,
+        selectSports: selectSports,
+        selectColor: selectColor,
+        selectSrc: selectSrc,
+      };
       addCardIndex(data);
     } else {
       let selectCardIdClone = selectCardId.map((each) => {
         if (each.index === index) {
-          return { index: each.index, type: type };
+          return {
+            index: each.index,
+            type: type,
+            selectSports: each.selectSports,
+            selectColor: each.selectColor,
+            selectSrc: each.selectSrc,
+          };
         } else {
           return each;
         }

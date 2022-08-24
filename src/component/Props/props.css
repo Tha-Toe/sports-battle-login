@@ -10,6 +10,7 @@ a {
 .matchesContainer {
   overflow: scroll;
   margin: auto;
+  position: relative;
 }
 .statsContainer::-webkit-scrollbar {
   display: none;

@@ -29,7 +29,15 @@ import SuccessSubmit from "./SuccessSubmit";
 import ErrorSubmit from "./ErrorSubmit";
 import NotEnoughBalance from "./NotEnoughBalance";
 
-export default function Props({ mode }) {
+export default function Props({
+  mode,
+  selectSports,
+  setSelectSports,
+  selectColor,
+  setSelectColor,
+  selectSrc,
+  setSelectSrc,
+}) {
   const [openHowTo, setOpenHowTo] = useState(false);
   const [openRule, setOpenRule] = useState(false);
   const [openBaseBallPoint, setOpenBaseBallPoint] = useState(false);
@@ -60,7 +68,6 @@ export default function Props({ mode }) {
     { name: "Soccer", src: "/soccer.png", color: "#52C03C" },
     { name: "NBA", src: "/nba.png", color: "#F5A922" },
   ]);
-  const [selectSports, setSelectSports] = useState("MLB");
 
   const [propsGuide, setPropsGuide] = useState([
     {
@@ -108,7 +115,9 @@ export default function Props({ mode }) {
   const [width, setWidth] = useState();
   const [matchesWidth, setMatchesWidth] = useState();
   const parentRef = useRef();
+  const statsRef = useRef();
   const matchesRef = useRef();
+  const [statsLeftValue, setStatsLeftValue] = useState(0);
   useEffect(() => {
     const total =
       parentRef.current.scrollWidth - parentRef.current.offsetWidth + 50;
@@ -117,6 +126,7 @@ export default function Props({ mode }) {
     setWidth(total);
     setMatchesWidth(matchesTotal);
   }, []);
+  const goForwardStats = () => {};
 
   //card
   const [cardInfo, setCardInfo] = useState([
@@ -300,7 +310,11 @@ export default function Props({ mode }) {
                   bgcolor: `${e.name === selectSports ? e.color : "black"}`,
                   cursor: "pointer",
                 }}
-                onClick={() => setSelectSports(e.name)}
+                onClick={() => {
+                  setSelectSports(e.name);
+                  setSelectColor(e.color);
+                  setSelectSrc(e.src);
+                }}
               >
                 <img className="propsNavImg" src={e.src} />
               </Box>
@@ -446,11 +460,14 @@ export default function Props({ mode }) {
           <motion.div className="statsContainer" ref={parentRef}>
             <motion.div
               className="statsChild"
+              ref={statsRef}
               drag="x"
               dragConstraints={{ right: 0, left: -width }}
             >
-              {stats.map((e) => (
+              {stats.map((e, index) => (
                 <button
+                  key={index}
+                  id={`${stats.length === index + 1 && "#lastStats"}`}
                   style={{ color: `${e.color}`, background: `${e.bg}` }}
                   className="statsButton"
                 >
@@ -492,6 +509,7 @@ export default function Props({ mode }) {
                 position: "absolute",
                 right: 0,
               }}
+              onClick={goForwardStats}
             >
               <ArrowForwardIosIcon
                 sx={{
@@ -617,6 +635,10 @@ export default function Props({ mode }) {
                   setSelectCardId={setSelectCardId}
                   addCardIndex={addCardIndex}
                   mode={mode}
+                  selectSports={selectSports}
+                  setSelectSports={setSelectSports}
+                  selectColor={selectColor}
+                  selectSrc={selectSrc}
                 />
               ))}
             </Grid>

@@ -175,6 +175,10 @@ export function Logged({ mode, setMode }) {
   };
 
   const [openDropDown, setOpenDropDown] = useState(false);
+
+  const [selectSports, setSelectSports] = useState("MLB");
+  const [selectSrc, setSelectSrc] = useState("/mlb.png");
+  const [selectColor, setSelectColor] = useState("blue");
   return (
     <main className="logged-container">
       <Box
@@ -523,6 +527,7 @@ export function Logged({ mode, setMode }) {
                       fontFamily: "poppins",
                       fontSize: { md: "10px", xxxs: "8px" },
                       textAlign: "center",
+                      fontWeight: `${openTag === e.activeName ? 600 : 400}`,
                       mt: "3px",
                       ml: { lg: "8px", sm: "0px", xxxs: "8px" },
                     }}
@@ -580,6 +585,7 @@ export function Logged({ mode, setMode }) {
                       fontSize: { md: "10px", xxxs: "8px" },
                       textAlign: "center",
                       mt: "3px",
+                      fontWeight: `${openTag === e.activeName ? 600 : 400}`,
                       ml: { lg: "8px", sm: "0px", xxxs: "8px" },
                     }}
                   >
@@ -738,7 +744,15 @@ export function Logged({ mode, setMode }) {
           }}
         >
           {!location.search && openTag === "props" && (
-            <Props mode={mode}></Props>
+            <Props
+              mode={mode}
+              selectSports={selectSports}
+              setSelectSports={setSelectSports}
+              setSelectColor={setSelectColor}
+              setSelectSrc={setSelectSrc}
+              selectColor={selectColor}
+              selectSrc={selectSrc}
+            ></Props>
           )}
           {!location.search && openTag === "my-props" && (
             <MyProps mode={mode} />
