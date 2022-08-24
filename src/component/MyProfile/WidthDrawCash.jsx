@@ -78,7 +78,6 @@ export default function WidthDrawCash({ setOpenTag, alreadyChooseWidthDraw }) {
           xs: "90%",
           xxxs: "90%",
         },
-        minHeight: "100vh",
         margin: "auto",
         mt: "10px",
         mb: "30px",

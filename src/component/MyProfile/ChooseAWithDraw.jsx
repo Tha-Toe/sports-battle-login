@@ -26,7 +26,7 @@ export default function ChooseAWithDraw({ setOpenTag }) {
 
   const [chooseType, setChooseType] = useState([
     {
-      icon: "/bank1.png",
+      icon: "/mailbox1.png",
       name: "Paper Check",
       waitingTime: "Takes upto 7-10 business days",
       about:
@@ -34,7 +34,7 @@ export default function ChooseAWithDraw({ setOpenTag }) {
       func: openPaperECheck,
     },
     {
-      icon: "/mailbox1.png",
+      icon: "/bank1.png",
       name: "Direct Deposit ",
       waitingTime: "Takes upto 3-5 business days",
       about:

@@ -784,7 +784,11 @@ export function Logged({ mode, setMode }) {
             <AddAddress setAddress={setAddress} />
           )}
           {location.search === "?deposit=go-refral-bonus-cash-randoom" && (
-            <RefralBonusCashRandoom setNumber={setNumber} number={number} />
+            <RefralBonusCashRandoom
+              setNumber={setNumber}
+              number={number}
+              setOpenTag={setOpenTag}
+            />
           )}
           {location.search === "?deposit=verify-phone-number-code" && (
             <VerifyPhoneNumberCode number={number} mode={mode} />

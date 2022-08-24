@@ -9,10 +9,15 @@ import { useEffect } from "react";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import "./refralBonus.css";
 
-export default function RefralBonusCashRandoom({ number, setNumber }) {
+export default function RefralBonusCashRandoom({
+  number,
+  setNumber,
+  setOpenTag,
+}) {
   let navigate = useNavigate();
   const backPropsPage = () => {
     navigate("/logged", { replace: true });
+    setOpenTag("props");
   };
   const goVerifyPhoneNumberCode = () => {
     navigate("/logged?deposit=verify-phone-number-code", { replace: true });

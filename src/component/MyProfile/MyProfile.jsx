@@ -831,7 +831,9 @@ export default function MyProfile({
             margin: "0 auto",
             mt: "13px",
             pb: "9px",
+            cursor: "pointer",
           }}
+          onClick={() => setOpenReferalHistory(true)}
         >
           <Box
             sx={{
@@ -840,7 +842,6 @@ export default function MyProfile({
               alignItems: "center",
               cursor: "pointer",
             }}
-            onClick={() => setOpenReferalHistory(true)}
           >
             <img src="/group.png" className="groupImage" />
             <Typography
