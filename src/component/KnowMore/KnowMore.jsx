@@ -44,7 +44,6 @@ export default function KnowMore({ mode }) {
   ]);
 
   const [openTag, setOpenTag] = useState("Over-Under Points System");
-
   const [overUnderNav, setOverUnderNav] = useState([
     { name: "MLB", src: "/mlb.png", color: "blue" },
     { name: "PGA", src: "/pga.png", color: "blue" },
@@ -61,7 +60,7 @@ export default function KnowMore({ mode }) {
     { name: "Soccer", src: "/soccer.png", color: "#52C03C" },
     { name: "NBA", src: "/nba.png", color: "#F5A922" },
   ]);
-  const [selectSports, setSelectSports] = useState("MLB");
+  const [selectSports, setSelectSports] = useState("Cricket");
 
   return (
     <Box sx={{ minHeight: "100vh", width: "100%", mt: "50px" }}>
@@ -296,7 +295,9 @@ export default function KnowMore({ mode }) {
           ))}
         </Box>
         <Box sx={{ width: { xs: "65%", xxxs: "75%" } }}>
-          {openTag === "Over-Under Points System" && <OverUnderPointSystem />}
+          {openTag === "Over-Under Points System" && (
+            <OverUnderPointSystem selectSports={selectSports} />
+          )}
           {openTag === "Frequently Asked Questions" && <FAQ />}
           {openTag === "Sports Battle Operating States" && <OperatingState />}
         </Box>
