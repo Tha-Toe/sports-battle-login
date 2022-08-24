@@ -186,6 +186,10 @@ export function Logged({ mode, setMode }) {
     loggedRef.current.scrollTop = 0;
   }, [location]);
 
+  const logout = () => {
+    navigate("/", { replace: true });
+  };
+
   return (
     <main className="logged-container">
       <Box
@@ -367,6 +371,7 @@ export function Logged({ mode, setMode }) {
                       fontSize: "25px",
                       cursor: "pointer",
                     }}
+                    onClick={() => setOpenDropDown(false)}
                   />
                 ) : (
                   <KeyboardArrowDownIcon
@@ -375,67 +380,42 @@ export function Logged({ mode, setMode }) {
                       fontSize: "25px",
                       cursor: "pointer",
                     }}
+                    onClick={() => setOpenDropDown(true)}
                   />
                 )}
 
                 {openDropDown && (
                   <Box
                     sx={{
-                      position: "fixed",
-                      top: 0,
-                      left: 0,
-                      width: "100vw",
-                      height: "100vh",
-                      background: "rgba(0,0,0,0.9)",
+                      position: "absolute",
+                      top: "152%",
+                      right: 0,
+                      bgcolor: "secondary.main",
                       display: "flex",
                       flexDirection: "column",
                       alignItems: "center",
-                      justifyContent: "center",
+                      justifyContent: "flex-start",
+                      borderBottomLeftRadius: "4px",
+                      borderBottomRightRadius: "4px",
                     }}
                   >
-                    {" "}
                     <Box
                       sx={{
-                        width: { sm: "500px", xxxs: "80%" },
-                        padding: "10px",
-                        display: "flex",
-                        flexDirection: "row",
-                        alignItems: "center",
-                        justifyContent: "flex-end",
+                        background: "transparent",
+                        color: "primary.main",
+                        width: { sm: "180px", xs: "150px", xxxs: "130px" },
+                        py: { sm: "18px", xs: "14px", xxxs: "12px" },
+                        fontSize: "14px",
+                        fontWeight: 600,
+                        fontFamily: "poppins",
+                        textTransform: "none",
+                        pr: { xs: "10px", xxxs: "5px" },
+                        textAlign: "end",
                         cursor: "pointer",
                       }}
+                      onClick={() => logout()}
                     >
-                      <Clear
-                        sx={{ color: "white" }}
-                        onClick={() => setOpenDropDown(false)}
-                      />
-                    </Box>
-                    <Box
-                      sx={{
-                        width: { sm: "500px", xxxs: "80%" },
-                        padding: "10px",
-                        display: "flex",
-                        flexDirection: "row",
-                        alignItems: "center",
-                        justifyContent: "flex-start",
-                        border: "1px solid white",
-                        borderRadius: "4px",
-                        background: "black",
-                        cursor: "pointer",
-                      }}
-                      onClick={goEmailPrefrencePage}
-                    >
-                      <SettingsIcon sx={{ color: "white", mr: "5px" }} />
-                      <Typography
-                        sx={{
-                          fontSize: { xs: "15px", xxxs: "12px" },
-                          fontWeight: 400,
-                          fontFamily: "poppins",
-                          color: "white",
-                        }}
-                      >
-                        Setting
-                      </Typography>
+                      Log Out
                     </Box>
                   </Box>
                 )}
