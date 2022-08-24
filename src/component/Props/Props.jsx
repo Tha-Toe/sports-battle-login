@@ -607,14 +607,14 @@ export default function Props({
           sx={{
             width: "100%",
             display: "flex",
-            flexDirection: { xs: "row", xxxs: "column" },
+            flexDirection: { sm: "row", xxxs: "column" },
             justifyContent: "center",
             alignItems: { xs: "flex-start", xxxs: "center" },
           }}
         >
           <Box
             sx={{
-              width: { md: "70%", xs: "50%", xxxs: "100%" },
+              width: { md: "70%", sm: "50%", xxxs: "100%" },
               height: "auto",
               ml: { xs: 0, xxxs: "10px" },
             }}

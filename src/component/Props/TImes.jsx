@@ -41,7 +41,7 @@ export default function Times({ selectCardId }) {
         <Box
           sx={{
             padding: "5px 8px",
-            background: "#439F48",
+            bgcolor: `${selectCardId.length === 2 ? "#439F48" : "#2E2D2D"}`,
             borderRadius: "4px",
             fontFamily: "poppins",
             fontWeight: 500,
@@ -49,12 +49,12 @@ export default function Times({ selectCardId }) {
             mr: "4px",
           }}
         >
-          2.6x
+          {selectCardId.length === 2 ? "2.6x" : "2"}
         </Box>
         <Box
           sx={{
             padding: "5px 8px",
-            bgcolor: "#2E2D2D",
+            bgcolor: `${selectCardId.length === 3 ? "#439F48" : "#2E2D2D"}`,
             borderRadius: "4px",
             fontFamily: "poppins",
             fontWeight: 500,
@@ -62,12 +62,12 @@ export default function Times({ selectCardId }) {
             mr: "4px",
           }}
         >
-          3
+          {selectCardId.length === 3 ? "3.6x" : "3"}
         </Box>
         <Box
           sx={{
             padding: "5px 8px",
-            bgcolor: "#2E2D2D",
+            bgcolor: `${selectCardId.length === 4 ? "#439F48" : "#2E2D2D"}`,
             borderRadius: "4px",
             fontFamily: "poppins",
             fontWeight: 500,
@@ -75,12 +75,12 @@ export default function Times({ selectCardId }) {
             mr: "4px",
           }}
         >
-          4
+          {selectCardId.length === 4 ? "4.6x" : "4"}
         </Box>
         <Box
           sx={{
             padding: "5px 8px",
-            bgcolor: "#2E2D2D",
+            bgcolor: `${selectCardId.length > 4 ? "#439F48" : "#2E2D2D"}`,
             borderRadius: "4px",
             fontFamily: "poppins",
             fontWeight: 500,
@@ -88,7 +88,7 @@ export default function Times({ selectCardId }) {
             mr: "4px",
           }}
         >
-          5
+          {selectCardId.length > 4 ? "5.6x" : "5"}
         </Box>
       </Box>
     </Box>

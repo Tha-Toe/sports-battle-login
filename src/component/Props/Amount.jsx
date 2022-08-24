@@ -22,7 +22,7 @@ export default function ({ setSelectAmount, selectAmount }) {
           alignItems: "center",
           justifyContent: {
             xl: "flex-start",
-            xs: "space-between",
+            sm: "space-between",
             xxxs: "flex-start",
           },
           mb: "4px",
@@ -37,7 +37,7 @@ export default function ({ setSelectAmount, selectAmount }) {
             fontFamily: "poppins",
             fontWeight: 500,
             fontSize: "10px",
-            mr: { xl: "7px", xs: 0, xxxs: "7px" },
+            mr: { xl: "7px", sm: 0, xxxs: "7px" },
           }}
           onClick={() => setSelectAmount(5)}
         >
@@ -52,7 +52,7 @@ export default function ({ setSelectAmount, selectAmount }) {
             fontFamily: "poppins",
             fontWeight: 500,
             fontSize: "10px",
-            mr: { xl: "7px", xs: 0, xxxs: "7px" },
+            mr: { xl: "7px", sm: 0, xxxs: "7px" },
           }}
           onClick={() => setSelectAmount(10)}
         >
@@ -67,7 +67,7 @@ export default function ({ setSelectAmount, selectAmount }) {
             fontFamily: "poppins",
             fontWeight: 500,
             fontSize: "10px",
-            mr: { xl: "7px", xs: 0, xxxs: "7px" },
+            mr: { xl: "7px", sm: 0, xxxs: "7px" },
           }}
           onClick={() => setSelectAmount(25)}
         >
@@ -82,7 +82,7 @@ export default function ({ setSelectAmount, selectAmount }) {
             fontFamily: "poppins",
             fontWeight: 500,
             fontSize: "10px",
-            mr: { xl: "7px", xs: 0, xxxs: "7px" },
+            mr: { xl: "7px", sm: 0, xxxs: "7px" },
           }}
           onClick={() => setSelectAmount(50)}
         >

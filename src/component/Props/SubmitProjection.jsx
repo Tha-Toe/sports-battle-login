@@ -38,7 +38,7 @@ const SubmitProjection = ({
   return (
     <Box
       sx={{
-        width: { md: "30%", xs: "50%", xxxs: "100%" },
+        width: { md: "30%", sm: "50%", xxxs: "100%" },
         minHeight: "522px",
         border: "1px solid #2c2c2c",
         display: "flex",
