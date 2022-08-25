@@ -64,6 +64,7 @@ export default function WidthDrawCash({ setOpenTag, alreadyChooseWidthDraw }) {
   const [startAnimation, setStartAnimation] = useState(false);
   const goSuccess = () => {
     setTimeout(() => {
+      setStartAnimation(false);
       setConfirm(false);
       setSuccess(true);
     }, 2000);
@@ -620,7 +621,7 @@ export default function WidthDrawCash({ setOpenTag, alreadyChooseWidthDraw }) {
         </Box>
       )}
       {success && <Success setSuccess={setSuccess} setWrong={setWrong} />}
-      {wrong && <Wrong setWrong={setWrong} />}
+      {wrong && <Wrong setWrong={setWrong} setOpenTag={setOpenTag} />}
     </Box>
   );
 }

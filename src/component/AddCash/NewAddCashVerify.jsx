@@ -85,6 +85,7 @@ export default function NewAddCashVerify() {
           "&.MuiButtonBase-root:hover": {
             background: "#4831D4",
           },
+          textTransform: "none",
         }}
         onClick={() => {
           goDepositForm();

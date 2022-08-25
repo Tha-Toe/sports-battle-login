@@ -89,9 +89,24 @@ export default function VerifyPhoneNumberCode({ number, mode }) {
             color: "secondary.main",
           }}
         >
-          Back to Phone number{" "}
+          Referral Bonus Cash Radeem{" "}
         </Typography>
       </Box>
+      <Typography
+        sx={{
+          fontSize: { md: "14px", sm: "12px", xxxs: "10px" },
+          fontWeight: 400,
+          fontFamily: "poppins",
+          color: "white",
+          width: "100%",
+          mt: "16px",
+          color: "secondary.main",
+        }}
+      >
+        Please verify phone number to redeem referral bonus cash. We require you
+        to verify phone number to make sure every user maintains one playing
+        profile
+      </Typography>
       <Typography
         sx={{
           fontSize: { md: "16px", sm: "14px", xxxs: "12px" },
@@ -99,7 +114,7 @@ export default function VerifyPhoneNumberCode({ number, mode }) {
           fontFamily: "poppins",
           color: "white",
           width: "100%",
-          mt: "23px",
+          mt: "28px",
           color: "secondary.main",
         }}
       >
@@ -118,8 +133,9 @@ export default function VerifyPhoneNumberCode({ number, mode }) {
       >
         <Typography
           sx={{
-            fontSize: { md: "16px", sm: "14px", xxxs: "12px" },
+            fontSize: { md: "14px", sm: "12px", xxxs: "10px" },
             fontFamily: "poppins",
+            fontWeight: 500,
             color: "secondary.main",
           }}
         >

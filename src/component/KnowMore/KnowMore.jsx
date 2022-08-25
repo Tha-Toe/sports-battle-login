@@ -50,7 +50,7 @@ export default function KnowMore({ mode }) {
     { name: "GOLF", src: "/golf.png", color: "#E431F4" },
     { name: "NFL", src: "/nfl.png", color: "#F5A922" },
     { name: "WNBA", src: "/wnba.png", color: "#F5A922" },
-    { name: "Cricket", src: "/cricket.png", color: "#D04643" },
+    { name: "Cricket", src: "/cricket.png", color: "#EA1E63" },
     { name: "CSGO", src: "/csgo.png", color: "#00ffff" },
     { name: "MMA", src: "/mma.png", color: "orange" },
     { name: "F1", src: "/f1.png", color: "red" },

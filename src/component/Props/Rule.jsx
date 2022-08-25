@@ -168,6 +168,8 @@ export default function Rule({ setOpenRule }) {
             "&.MuiButtonBase-root:hover": {
               background: "#4831D4",
             },
+            textTransform: "none",
+            borderRadius: "8px",
           }}
           onClick={() => {
             setOpenRule(false);

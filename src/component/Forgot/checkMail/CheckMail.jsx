@@ -60,7 +60,7 @@ const CheckMail = () => {
             mr: { xxxs: "20px", sm: 0 },
           }}
         >
-          <Box component={"div"} sx={{ width: 1, mb: "43px" }}>
+          <Box component={"div"} sx={{ width: 1, mb: "75px" }}>
             <img src="/sportsbattle.png" className="logo" />
           </Box>
           <FormControl

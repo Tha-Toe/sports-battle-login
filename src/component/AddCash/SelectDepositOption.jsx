@@ -101,6 +101,7 @@ export default function SelectDepositOption({ setOpenSelectDepositOption }) {
               fontSize: { sm: "14px", xxs: "12px", xxxs: "10px" },
               fontWeight: 500,
               fontFamily: "poppins",
+              textTransform: "none",
             }}
           >
             Instant Deposit

@@ -98,7 +98,7 @@ const EnterYourDetail = () => {
                 fontFamily: "Poppins",
               }}
             >
-              Enter Your Details
+              Enter your details
             </Typography>
             <Typography
               sx={{

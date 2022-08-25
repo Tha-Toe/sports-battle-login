@@ -204,7 +204,7 @@ export default function RefralBonusCashCode({ number, setNumber }) {
               fontWeight: 600,
               fontFamily: "poppins",
               color: "secondary.main",
-              width: "70%",
+              width: "80%",
               mt: "16px",
               textAlign: "center",
             }}

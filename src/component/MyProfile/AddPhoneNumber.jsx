@@ -60,7 +60,7 @@ export default function AddPhoneNumber({
         }}
         onClick={() => setOpenTag("profile")}
       >
-        <ArrowBackIosNewIcon />
+        <ArrowBackIosNewIcon sx={{ color: "secondary.main" }} />
         <Typography
           sx={{
             fontSize: { sm: "16px", xxs: "14px", xxxs: "12px" },

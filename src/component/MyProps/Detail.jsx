@@ -25,6 +25,7 @@ export default function Detail({
   referCode,
   mainDetail,
   clicked,
+  emptyText,
 }) {
   const [tabelHead, setTabelHead] = useState([
     "Game",
@@ -325,6 +326,7 @@ export default function Detail({
                 },
                 width: "47%",
                 py: "11px",
+                textTransform: "none",
               }}
             >
               Entry: $5
@@ -342,6 +344,7 @@ export default function Detail({
                 },
                 width: "47%",
                 py: "11px",
+                textTransform: "none",
               }}
             >
               TO WIN: $11.25
@@ -417,7 +420,7 @@ export default function Detail({
             textAlign: "center",
           }}
         >
-          Select a prop to know more information{" "}
+          {emptyText}
         </Typography>
       )}
       {openPayoutScenarious && (

@@ -118,6 +118,7 @@ export default function ProfileComplete({ mode, setOpenTag }) {
               background: "#52C03C",
             },
             cursor: "pointer",
+            textTransform: "none",
           }}
           onClick={() => {
             setOpenTag("account-setup");

@@ -311,7 +311,9 @@ export default function MyPropsCardContainer({ mode, mainDetail, openTag }) {
           </Grid>
         ))}
       </Grid>
-      {!openDetail && <Detail />}
+      {!openDetail && (
+        <Detail emptyText={"Select a prop to know more information "} />
+      )}
       {openDetail === "Upcomming" && (
         <Detail
           setOpenDetail={setOpenDetail}

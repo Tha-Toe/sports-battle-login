@@ -649,7 +649,7 @@ export function Logged({ mode, setMode }) {
                   color: "#2582E3",
                   width: "100%",
                   mb: "5px",
-                  ml: "10px",
+                  ml: "20px",
                 }}
               >
                 Our Socials
@@ -763,7 +763,7 @@ export function Logged({ mode, setMode }) {
             <KnowMore setOpenInviteFriend={setOpenInviteFriend} mode={mode} />
           )}
           {!location.search && openTag === "email-prefrence" && (
-            <EmailPrefrence />
+            <EmailPrefrence setOpenTag={setOpenTag} />
           )}
 
           {location.search === "?deposit=old-user" && <AddCash mode={mode} />}

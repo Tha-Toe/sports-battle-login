@@ -284,6 +284,7 @@ export default function MyProfile({
               "&.MuiButtonBase-root:hover": {
                 background: "#4831D4",
               },
+              textTransform: "none",
             }}
           >
             Add Cash
@@ -373,6 +374,7 @@ export default function MyProfile({
                   "&.MuiButtonBase-root:hover": {
                     background: "#4831D4",
                   },
+                  textTransform: "none",
                 }}
                 onClick={() => setOpenTag("add-phone-number")}
               >

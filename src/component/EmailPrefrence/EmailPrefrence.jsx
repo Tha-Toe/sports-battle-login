@@ -15,7 +15,7 @@ import ClearIcon from "@mui/icons-material/Clear";
 
 import SettingsIcon from "@mui/icons-material/Settings";
 
-export default function EmailPrefrence() {
+export default function EmailPrefrence({ setOpenTag }) {
   const [emailSettingStore, setEmailSettingStore] = useState([
     { name: " When I join game plays ", open: true },
     { name: "When I withdraw from game plays", open: true },
@@ -36,6 +36,7 @@ export default function EmailPrefrence() {
   };
   let navigate = useNavigate();
   const propsOpen = () => {
+    setOpenTag("props");
     navigate("/logged", { replace: true });
   };
   return (

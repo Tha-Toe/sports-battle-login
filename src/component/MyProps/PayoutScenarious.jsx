@@ -128,8 +128,7 @@ export default function PayoutScenarious({ setOpenPayoutScenarious }) {
             fontFamily: "poppins",
             color: "white",
             py: "16px",
-            borderBottom: "1px solid #D9D9D9",
-            mb: "13px",
+            mb: "5px",
           }}
         >
           If no valid players remain or all valid players are from same team,

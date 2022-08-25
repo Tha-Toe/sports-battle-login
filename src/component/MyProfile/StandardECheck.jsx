@@ -84,6 +84,7 @@ export default function StandardECheck({
             textDecoration: "underline",
             cursor: "pointer",
           }}
+          onClick={() => setOpenTag("chooseAWithdrawMethod")}
         >
           Show all options
         </Typography>

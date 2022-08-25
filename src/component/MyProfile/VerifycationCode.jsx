@@ -74,7 +74,7 @@ export default function VerifycationCode({
           }}
           onClick={() => setOpenTag("add-phone-number")}
         >
-          <ArrowBackIosNewIcon />
+          <ArrowBackIosNewIcon sx={{ color: "secondary.main" }} />
           <Typography
             sx={{
               fontSize: { sm: "16px", xxs: "14px", xxxs: "12px" },
@@ -146,12 +146,12 @@ export default function VerifycationCode({
         <Button
           sx={{
             py: "14px",
-            background: "transparent",
+            background: "#000000",
             color: "white",
             textTransform: "none",
             borderRadius: "8px",
             "&.MuiButtonBase-root:hover": {
-              background: "transparent",
+              background: "#000000",
             },
             fontSize: { sm: "14px", xxs: "12px", xxxs: "10px" },
             fontWeight: 600,

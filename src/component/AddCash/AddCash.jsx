@@ -96,7 +96,7 @@ export default function AddCash() {
                 border: "1px solid #439F48",
                 borderRadius: "4px",
                 fontSize: { xs: "16px", xxxs: "14px" },
-                fontWeight: 500,
+                fontWeight: 600,
                 fontFamily: "poppins",
                 color: `${amount === e.amount ? "black" : "#439F48"}`,
                 mr: "4px",

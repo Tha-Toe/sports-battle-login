@@ -67,7 +67,7 @@ const ForgotPassword = () => {
               alignItems: "flex-start",
             }}
           >
-            <Box component={"div"} sx={{ width: 1, mb: "43px" }}>
+            <Box component={"div"} sx={{ width: 1, mb: "74px" }}>
               <img src="/sportsbattle.png" className="logo" />
             </Box>
           </Box>
@@ -105,7 +105,7 @@ const ForgotPassword = () => {
             >
               We’ll send a verification code to your mail id if registered
             </Typography>
-            <InputComponent placeholder={"Email Address"} setEmail={setEmail} />
+            <InputComponent placeholder={"Email address"} setEmail={setEmail} />
             {!matchAccount && (
               <Box
                 sx={{

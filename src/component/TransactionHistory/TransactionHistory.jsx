@@ -294,7 +294,7 @@ export default function TransactionHistory() {
             mainDetail={history}
           />
         ) : (
-          <Detail />
+          <Detail emptyText={"Select a transaction to know more information"} />
         )}
       </Box>
     </Box>

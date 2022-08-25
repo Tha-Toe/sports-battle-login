@@ -16,7 +16,7 @@ import { Input } from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
-export default function Wrong({ setWrong }) {
+export default function Wrong({ setWrong, setOpenTag }) {
   return (
     <Box
       sx={{
@@ -107,7 +107,10 @@ export default function Wrong({ setWrong }) {
               },
               mr: "24px",
             }}
-            onClick={() => setWrong(false)}
+            onClick={() => {
+              setWrong(false);
+              setOpenTag("profile");
+            }}
           >
             Back to My Account
           </Button>

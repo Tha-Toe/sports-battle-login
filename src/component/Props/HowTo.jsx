@@ -166,6 +166,8 @@ export default function HowTo({ setOpenHowTo }) {
             "&.MuiButtonBase-root:hover": {
               background: "#4831D4",
             },
+            borderRadius: "8px",
+            textTransform: "none",
           }}
           onClick={() => {
             setOpenHowTo(false);

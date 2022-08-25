@@ -66,7 +66,7 @@ export default function NewAddCashFrom({ address, setNewUser }) {
             color: "secondary.main",
           }}
         >
-          Age Verification
+          Age Verification Setup
         </Typography>
       </Box>
       <Box

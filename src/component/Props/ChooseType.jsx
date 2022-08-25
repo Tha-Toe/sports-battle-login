@@ -49,7 +49,7 @@ export default function ({ setPickPlayType, pickPlayType }) {
               border: `${
                 pickPlayType === "defence" ? "1px solid #4831D4" : "none"
               }`,
-              borderRadius: "1px",
+              borderRadius: "3px",
               cursor: "pointer",
             }}
             onClick={() => setPickPlayType("defence")}
@@ -92,7 +92,7 @@ export default function ({ setPickPlayType, pickPlayType }) {
               alignItems: "center",
               mt: "5px",
               p: "8px 4px",
-              borderRadius: "1px",
+              borderRadius: "3px",
               border: `${
                 pickPlayType === "attack" ? "1px solid #4831D4" : "none"
               }`,

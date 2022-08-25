@@ -90,6 +90,7 @@ export default function PaperECheck({
             textDecoration: "underline",
             cursor: "pointer",
           }}
+          onClick={() => setOpenTag("chooseAWithdrawMethod")}
         >
           Show all options
         </Typography>

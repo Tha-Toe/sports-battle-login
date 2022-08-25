@@ -91,7 +91,7 @@ const EnterVerificationCodeSignup = ({}) => {
                 fontFamily: "Poppins",
               }}
             >
-              Enter Verification Code
+              Enter verification code
             </Typography>
             <Typography
               sx={{
