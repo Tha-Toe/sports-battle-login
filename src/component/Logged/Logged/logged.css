@@ -16,6 +16,9 @@
   left: 20px;
   border-radius: 5px;
 }
+.logos {
+  height: 33px;
+}
 .discord-logo {
   padding: 6px;
   border-radius: 3px;

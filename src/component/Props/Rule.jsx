@@ -49,7 +49,7 @@ export default function Rule({ setOpenRule }) {
             xxxs: "280px",
           },
           height: "461px",
-          background: "#2C2C2C",
+          bgcolor: "primary.dark",
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-evenly",
@@ -85,7 +85,7 @@ export default function Rule({ setOpenRule }) {
           />
           <Typography
             sx={{
-              color: "white",
+              color: "secondary.dark_gray",
               fontSize: { xs: "16px", xxxs: "12px" },
               fontWeight: 400,
               fontFamily: "poppins",
@@ -114,7 +114,7 @@ export default function Rule({ setOpenRule }) {
           />
           <Typography
             sx={{
-              color: "white",
+              color: "secondary.dark_gray",
               fontSize: { xs: "16px", xxxs: "12px" },
               fontWeight: 400,
               fontFamily: "poppins",
@@ -144,7 +144,7 @@ export default function Rule({ setOpenRule }) {
           />
           <Typography
             sx={{
-              color: "white",
+              color: "secondary.dark_gray",
               fontSize: { xs: "16px", xxxs: "12px" },
               fontWeight: 400,
               fontFamily: "poppins",

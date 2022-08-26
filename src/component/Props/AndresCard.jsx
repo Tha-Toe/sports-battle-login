@@ -7,6 +7,7 @@ export function AndresCard({
   e,
   selectCardId,
   setSelectCardId,
+  mode,
 }) {
   useEffect(() => {
     console.log(e);
@@ -36,9 +37,10 @@ export function AndresCard({
         margin: "0 auto",
         display: "flex",
         flexDirection: "column",
-        background: "#1E1E1E",
+        bgcolor: "primary.dark",
         borderRadius: "4px",
         mb: "8px",
+        border: `${mode === "dark" ? "none" : "1px solid #EBEBEB"}`,
       }}
     >
       <Box>
@@ -59,6 +61,7 @@ export function AndresCard({
               fontWeight: 600,
               fontFamily: "poppins",
               ml: "10px",
+              color: "secondary.dark_gray",
             }}
           >
             Andres Gimenez
@@ -98,6 +101,7 @@ export function AndresCard({
               fontSize: "8px",
               fontWeight: 400,
               fontFamily: "poppins",
+              color: "white",
             }}
           >
             {e.selectSports}: CLE - Batter vs HOU
@@ -127,7 +131,7 @@ export function AndresCard({
                   fontSize: "6px",
                   fontWeight: 400,
                   fontFamily: "poppins",
-                  color: "white",
+                  color: "secondary.dark_gray",
                 }}
               >
                 Last 5
@@ -152,7 +156,7 @@ export function AndresCard({
                   fontSize: "8px",
                   fontWeight: 400,
                   fontFamily: "poppins",
-                  color: "white",
+                  color: "secondary.dark_gray",
                 }}
               >
                 Avg
@@ -176,7 +180,7 @@ export function AndresCard({
                   fontSize: "9px",
                   fontWeight: 600,
                   fontFamily: "poppins",
-                  color: " white",
+                  color: "secondary.dark_gray",
                   ml: "6px",
                 }}
               >
@@ -186,7 +190,7 @@ export function AndresCard({
           </Box>
           <Box
             sx={{
-              background: "#161616",
+              bgcolor: "primary.dark_gray",
               display: "flex",
               alignItems: "center",
               width: "40%",
@@ -199,7 +203,7 @@ export function AndresCard({
                 fontFamily: "poppins",
                 fontSize: "8px",
                 fontWeight: 400,
-                color: "white",
+                color: "secondary.dark_gray",
               }}
             >
               Bat.Runs + RBIs
@@ -209,7 +213,7 @@ export function AndresCard({
                 fontFamily: "poppins",
                 fontSize: "18px",
                 fontWeight: 600,
-                color: "white",
+                color: "secondary.dark_gray",
                 ml: "6px",
               }}
             >
@@ -230,11 +234,13 @@ export function AndresCard({
               background: `${e.type === "over" ? "#4831D4" : "transparent"}`,
               width: "50%",
               py: "6px",
-              color: "white",
+              color: `${e.type === "over" ? "white" : "secondary.dark_gray"}`,
               fontSize: "9px",
               fontFamily: "poppins",
               fontWeigh: 600,
-              border: "1px solid #2C2C2C",
+              border: `${
+                mode === "dark" ? "1px solid #525252" : "1px solid #EBEBEB"
+              }`,
               borderRadius: "5px 0px 0px 5px",
               "&.MuiButtonBase-root:hover": {
                 background: `${e.type === "over" ? "#4831D4" : "transparent"}`,
@@ -249,11 +255,13 @@ export function AndresCard({
               background: `${e.type === "under" ? "#4831D4" : "transparent"}`,
               width: "50%",
               py: "6px",
-              color: "white",
+              color: `${e.type === "under" ? "white" : "secondary.dark_gray"}`,
               fontSize: "9px",
               fontFamily: "poppins",
               fontWeigh: 600,
-              border: "1px solid #2C2C2C",
+              border: `${
+                mode === "dark" ? "1px solid #525252" : "1px solid #EBEBEB"
+              }`,
               borderRadius: "0px 5px 5px 0px",
               "&.MuiButtonBase-root:hover": {
                 background: `${e.type === "under" ? "#4831D4" : "transparent"}`,

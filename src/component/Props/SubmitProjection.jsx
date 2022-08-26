@@ -40,12 +40,13 @@ const SubmitProjection = ({
       sx={{
         width: { md: "30%", sm: "50%", xxxs: "100%" },
         minHeight: "522px",
-        border: "1px solid #2c2c2c",
+        border: `${mode === "dark" ? "1px solid #2c2c2c" : "none"}`,
         display: "flex",
         flexDirection: "column",
         ml: "3px",
         borderRadius: "4px",
         mb: "30px",
+        bgcolor: "primary.main",
       }}
     >
       <Typography
@@ -59,7 +60,7 @@ const SubmitProjection = ({
           fontFamily: "poppins",
           fontSize: "14px",
           fontWeight: 600,
-          color: "secondary.main",
+          color: "secondary.dark_gray",
           mt: "13px",
           mb: "9px",
           width: "90%",
@@ -101,7 +102,7 @@ const SubmitProjection = ({
                 >
                   <Typography
                     sx={{
-                      color: "secondary.main",
+                      color: "secondary.dark_gray",
                       width: "100%",
                       fontSize: "8px",
                       fontWeight: "500",
@@ -117,7 +118,7 @@ const SubmitProjection = ({
                       fontSize: "8px",
                       fontWeight: 400,
                       fontFamily: "poppins",
-                      color: "secondary.main",
+                      color: "secondary.dark_gray",
                       borderBottom: "1px solid #4831D4",
                       py: "8px",
                     }}
@@ -168,7 +169,7 @@ const SubmitProjection = ({
                   fontWeight: 400,
                   fontFamily: "poppins",
                   mr: "3px",
-                  color: "secondary.main",
+                  color: "secondary.dark_gray",
                 }}
               >
                 Your Entries
@@ -182,6 +183,7 @@ const SubmitProjection = ({
                 e={e}
                 selectCardId={selectCardId}
                 setSelectCardId={setSelectCardId}
+                mode={mode}
               />
             ))}
           </Box>
@@ -199,6 +201,7 @@ const SubmitProjection = ({
                 "&.MuiButtonBase-root:hover": {
                   background: "#4831D4",
                 },
+                textTransform: "none",
               }}
               onClick={() => setSuccessSubmit(true)}
             >
@@ -212,7 +215,7 @@ const SubmitProjection = ({
             fontFamily: "poppins",
             fontSize: "12px",
             fontWeight: 400,
-            color: "secondary.main",
+            color: "secondary.dark_gray",
             mx: "auto",
             mt: "60px",
             mb: "9px",

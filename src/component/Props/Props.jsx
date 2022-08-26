@@ -53,20 +53,85 @@ export default function Props({
     setOpenBaseBallPoint(true);
   };
   const [propsNav, setPropsNav] = useState([
-    { name: "MLB", src: "/mlb.png", color: "blue" },
-    { name: "PGA", src: "/pga.png", color: "blue" },
-    { name: "GOLF", src: "/golf.png", color: "#E431F4" },
-    { name: "NFL", src: "/nfl.png", color: "#F5A922" },
-    { name: "WNBA", src: "/wnba.png", color: "#F5A922" },
-    { name: "Cricket", src: "/cricket.png", color: "#D04643" },
-    { name: "CSGO", src: "/csgo.png", color: "#00ffff" },
-    { name: "MMA", src: "/mma.png", color: "orange" },
-    { name: "F1", src: "/f1.png", color: "red" },
-    { name: "CFL", src: "/cfl.png", color: "#F5A922" },
-    { name: "DOTA2", src: "/dota2.png", color: "#00ffff" },
-    { name: "VAL", src: "/val.png", color: "blue" },
-    { name: "Soccer", src: "/soccer.png", color: "#52C03C" },
-    { name: "NBA", src: "/nba.png", color: "#F5A922" },
+    {
+      name: "MLB",
+      src: "/mlb.png",
+      light_src: "/mlb_light.png",
+      color: "blue",
+    },
+    {
+      name: "PGA",
+      src: "/pga.png",
+      light_src: "/pga_light.png",
+      color: "blue",
+    },
+    {
+      name: "GOLF",
+      src: "/golf.png",
+      light_src: "/golf_light.png",
+      color: "#E431F4",
+    },
+    {
+      name: "NFL",
+      src: "/nfl.png",
+      light_src: "/nfl_light.png",
+      color: "#F5A922",
+    },
+    {
+      name: "WNBA",
+      src: "/wnba.png",
+      light_src: "/wnba_light.png",
+      color: "#F5A922",
+    },
+    {
+      name: "Cricket",
+      src: "/cricket.png",
+      light_src: "/cricket_light.png",
+      color: "#D04643",
+    },
+    {
+      name: "CSGO",
+      src: "/csgo.png",
+      light_src: "/csgo_light.png",
+      color: "#00ffff",
+    },
+    {
+      name: "MMA",
+      src: "/mma.png",
+      light_src: "/mma_light.png",
+      color: "orange",
+    },
+    { name: "F1", src: "/f1.png", light_src: "/f1_light.png", color: "red" },
+    {
+      name: "CFL",
+      src: "/cfl.png",
+      light_src: "/cfl_light.svg",
+      color: "#F5A922",
+    },
+    {
+      name: "DOTA2",
+      src: "/dota2.png",
+      light_src: "/dota2_light.png",
+      color: "#00ffff",
+    },
+    {
+      name: "VAL",
+      src: "/val.png",
+      light_src: "/val_light.png",
+      color: "blue",
+    },
+    {
+      name: "Soccer",
+      src: "/soccer.png",
+      light_src: "/soccer_light.png",
+      color: "#52C03C",
+    },
+    {
+      name: "NBA",
+      src: "/nba.png",
+      light_src: "/nba_light.png",
+      color: "#F5A922",
+    },
   ]);
 
   const [propsGuide, setPropsGuide] = useState([
@@ -92,15 +157,69 @@ export default function Props({
   ]);
 
   const [stats, setStats] = useState([
-    { name: "Bat.Runs + RBIs", bg: "#4831D4", color: "white" },
-    { name: "Fantasy Score (77)", bg: " #459F48", color: "black" },
-    { name: "Hits Allowed", bg: "#4831D4", color: "white" },
-    { name: "Num. of Pitches", bg: "#4831D4", color: "white" },
-    { name: "Pitch Outs", bg: "#4831D4", color: "white" },
-    { name: "Strike Outs", bg: "#4831D4", color: "white" },
-    { name: "Bat.Runs + RBIs", bg: "#4831D4", color: "white" },
-    { name: "Hits Allowed", bg: "#4831D4", color: "white" },
-    { name: "Num. of Pitches", bg: "#4831D4", color: "white" },
+    {
+      name: "Bat.Runs + RBIs",
+      bg: "#4831D4",
+      color: "white",
+      light_color: "#4831D4",
+      light_bg: "#DAD5F6",
+    },
+    {
+      name: "Fantasy Score (77)",
+      bg: " #459F48",
+      color: "black",
+      light_color: "white",
+      light_bg: " #459F48",
+    },
+    {
+      name: "Hits Allowed",
+      bg: "#4831D4",
+      color: "white",
+      light_color: "#4831D4",
+      light_bg: "#DAD5F6",
+    },
+    {
+      name: "Num. of Pitches",
+      bg: "#4831D4",
+      color: "white",
+      light_color: "#4831D4",
+      light_bg: "#DAD5F6",
+    },
+    {
+      name: "Pitch Outs",
+      bg: "#4831D4",
+      color: "white",
+      light_color: "#4831D4",
+      light_bg: "#DAD5F6",
+    },
+    {
+      name: "Strike Outs",
+      bg: "#4831D4",
+      color: "white",
+      light_color: "#4831D4",
+      light_bg: "#DAD5F6",
+    },
+    {
+      name: "Bat.Runs + RBIs",
+      bg: "#4831D4",
+      color: "white",
+      light_color: "#4831D4",
+      light_bg: "#DAD5F6",
+    },
+    {
+      name: "Hits Allowed",
+      bg: "#4831D4",
+      color: "white",
+      light_color: "#4831D4",
+      light_bg: "#DAD5F6",
+    },
+    {
+      name: "Num. of Pitches",
+      bg: "#4831D4",
+      color: "white",
+      light_color: "#4831D4",
+      light_bg: "#DAD5F6",
+    },
   ]);
   const [matches, setMatches] = useState([
     { name: "PHI vs WSH", time: "13h 48m" },
@@ -306,14 +425,18 @@ export default function Props({
                 sx={{
                   height: { xs: "34px", xxxs: "30px" },
                   width: { xs: "34px", xxxs: "30px" },
-                  border: "2px solid white",
+                  border: `${
+                    mode === "dark" ? "2px solid white" : "1px solid #494949"
+                  }`,
                   borderRadius: "50%",
                   mt: "13px",
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
                   justifyContent: "center",
-                  bgcolor: `${e.name === selectSports ? e.color : "black"}`,
+                  bgcolor: `${
+                    e.name === selectSports ? e.color : "primary.main"
+                  }`,
                   cursor: "pointer",
                 }}
                 onClick={() => {
@@ -322,7 +445,17 @@ export default function Props({
                   setSelectSrc(e.src);
                 }}
               >
-                <img className="propsNavImg" src={e.src} />
+                {mode === "dark" ? (
+                  <img className="propsNavImg" src={e.src} />
+                ) : (
+                  <>
+                    {e.name === selectSports ? (
+                      <img className="propsNavImg" src={e.src} />
+                    ) : (
+                      <img className="propsNavImg" src={e.light_src} />
+                    )}
+                  </>
+                )}
               </Box>
               <Typography
                 sx={{
@@ -330,7 +463,9 @@ export default function Props({
                   fontWeight: 400,
                   fontFamily: "poppins",
                   mt: "5px",
-                  color: "secondary.main",
+                  color: `${
+                    e.name === selectSports ? e.color : "secondary.main"
+                  }`,
                 }}
               >
                 {" "}
@@ -410,7 +545,7 @@ export default function Props({
               <InputAdornment position="end">
                 <SearchIcon
                   sx={{
-                    color: "#494949",
+                    color: "secondary.gray",
                     fontSize: "25px",
                     mr: "7px",
                   }}
@@ -420,7 +555,7 @@ export default function Props({
             placeholder="Search"
             disableUnderline
             sx={{
-              bgcolor: "primary.light",
+              bgcolor: `${mode === "dark" ? "#242423" : "white"}`,
               border: `${mode === "dark" ? "1px solid #2c2c2c" : "none"}`,
               width: {
                 md: "324px",
@@ -429,7 +564,7 @@ export default function Props({
                 xxs: "180px",
                 xxxs: "160px",
               },
-              color: "white",
+              color: "secondary.main",
               fontSize: "12px",
               fontWeight: 400,
               fontFamily: "poppins",
@@ -473,8 +608,10 @@ export default function Props({
               {stats.map((e, index) => (
                 <button
                   key={index}
-                  id={`${stats.length === index + 1 && "#lastStats"}`}
-                  style={{ color: `${e.color}`, background: `${e.bg}` }}
+                  style={{
+                    color: `${mode === "dark" ? e.color : e.light_color}`,
+                    background: `${mode === "dark" ? e.bg : e.light_bg}`,
+                  }}
                   className="statsButton"
                 >
                   {e.name}
@@ -505,7 +642,7 @@ export default function Props({
             ></Box>
             <Box
               sx={{
-                bgcolor: "white",
+                bgcolor: "secondary.dark_gray",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
@@ -520,7 +657,7 @@ export default function Props({
               <ArrowForwardIosIcon
                 sx={{
                   fontSize: "18px",
-                  color: "black",
+                  color: "primary.main",
                 }}
               />
             </Box>
@@ -557,9 +694,28 @@ export default function Props({
               dragConstraints={{ right: 0, left: -matchesWidth }}
             >
               {matches.map((e) => (
-                <div className="matchesButton">
-                  <div className="matchesName">{e.name}</div>
-                  <div className="matchesTime">{e.time}</div>
+                <div
+                  className="matchesButton"
+                  style={{
+                    background: `${mode === "dark" ? "#4831D4" : "#DAD5F6"}`,
+                  }}
+                >
+                  <div
+                    className="matchesName"
+                    style={{
+                      color: `${mode === "dark" ? "white" : "#4831D4"}`,
+                    }}
+                  >
+                    {e.name}
+                  </div>
+                  <div
+                    className="matchesTime"
+                    style={{
+                      color: `${mode === "dark" ? "white" : "#4831D4"}`,
+                    }}
+                  >
+                    {e.time}
+                  </div>
                 </div>
               ))}
             </motion.div>
@@ -587,7 +743,7 @@ export default function Props({
             ></Box>
             <Box
               sx={{
-                background: "white",
+                bgcolor: "secondary.dark_gray",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
@@ -602,7 +758,7 @@ export default function Props({
               <ArrowForwardIosIcon
                 sx={{
                   fontSize: "18px",
-                  color: "black",
+                  color: "primary.main",
                 }}
               />
             </Box>

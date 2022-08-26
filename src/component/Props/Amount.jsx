@@ -9,7 +9,7 @@ export default function ({ setSelectAmount, selectAmount }) {
           fontFamily: "poppins",
           fontSize: "8px",
           fontWeight: 400,
-          color: "secondary.main",
+          color: "secondary.dark_gray",
           mb: "7px",
         }}
       >
@@ -31,13 +31,14 @@ export default function ({ setSelectAmount, selectAmount }) {
         <Box
           sx={{
             padding: "8.5px 8px",
-            background: `${selectAmount === 5 ? "#4831D4" : "#2E2D2D"}`,
+            bgcolor: `${selectAmount === 5 ? "#4831D4" : "primary.gray"}`,
             cursor: "pointer",
             borderRadius: "4px",
             fontFamily: "poppins",
             fontWeight: 500,
             fontSize: "10px",
             mr: { xl: "7px", sm: 0, xxxs: "7px" },
+            color: `${selectAmount === 5 ? "white" : "secondary.dark_gray"}`,
           }}
           onClick={() => setSelectAmount(5)}
         >
@@ -46,13 +47,14 @@ export default function ({ setSelectAmount, selectAmount }) {
         <Box
           sx={{
             padding: "8.5px 8px",
-            background: `${selectAmount === 10 ? "#4831D4" : "#2E2D2D"}`,
+            bgcolor: `${selectAmount === 10 ? "#4831D4" : "primary.gray"}`,
             cursor: "pointer",
             borderRadius: "4px",
             fontFamily: "poppins",
             fontWeight: 500,
             fontSize: "10px",
             mr: { xl: "7px", sm: 0, xxxs: "7px" },
+            color: `${selectAmount === 10 ? "white" : "secondary.dark_gray"}`,
           }}
           onClick={() => setSelectAmount(10)}
         >
@@ -61,13 +63,14 @@ export default function ({ setSelectAmount, selectAmount }) {
         <Box
           sx={{
             padding: "8.5px 8px",
-            background: `${selectAmount === 25 ? "#4831D4" : "#2E2D2D"}`,
+            bgcolor: `${selectAmount === 25 ? "#4831D4" : "primary.gray"}`,
             cursor: "pointer",
             borderRadius: "4px",
             fontFamily: "poppins",
             fontWeight: 500,
             fontSize: "10px",
             mr: { xl: "7px", sm: 0, xxxs: "7px" },
+            color: `${selectAmount === 25 ? "white" : "secondary.dark_gray"}`,
           }}
           onClick={() => setSelectAmount(25)}
         >
@@ -76,13 +79,14 @@ export default function ({ setSelectAmount, selectAmount }) {
         <Box
           sx={{
             padding: "8.5px 8px",
-            background: `${selectAmount === 50 ? "#4831D4" : "#2E2D2D"}`,
+            bgcolor: `${selectAmount === 50 ? "#4831D4" : "primary.gray"}`,
             cursor: "pointer",
             borderRadius: "4px",
             fontFamily: "poppins",
             fontWeight: 500,
             fontSize: "10px",
             mr: { xl: "7px", sm: 0, xxxs: "7px" },
+            color: `${selectAmount === 50 ? "white" : "secondary.dark_gray"}`,
           }}
           onClick={() => setSelectAmount(50)}
         >
@@ -91,12 +95,15 @@ export default function ({ setSelectAmount, selectAmount }) {
         <Box
           sx={{
             padding: "8.5px 8px",
-            background: `${selectAmount === "other" ? "#4831D4" : "#2E2D2D"}`,
+            bgcolor: `${selectAmount === "other" ? "#4831D4" : "primary.gray"}`,
             cursor: "pointer",
             borderRadius: "4px",
             fontFamily: "poppins",
             fontWeight: 500,
             fontSize: "10px",
+            color: `${
+              selectAmount === "other" ? "white" : "secondary.dark_gray"
+            }`,
           }}
           onClick={() => setSelectAmount("other")}
         >

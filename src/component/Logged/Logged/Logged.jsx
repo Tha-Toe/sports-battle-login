@@ -203,7 +203,7 @@ export function Logged({ mode, setMode }) {
         <AppBar
           component="nav"
           sx={{
-            borderBottom: "1px solid gray",
+            borderBottom: `${mode === "dark" ? "1px solid gray" : "none"}`,
             position: "relative",
             boxShadow: "none",
             zIndex: { sm: 4, xxxs: 3 },
@@ -220,7 +220,36 @@ export function Logged({ mode, setMode }) {
             }}
             bgcolor="primary.main"
           >
-            <img src="/sportsbattle.png" className="logoLogged" />
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "center",
+                mt: "5px",
+                width: "151px",
+                background: "black",
+                position: { sm: "absolute", xxxs: "static" },
+                left: { sm: "20px", xxxs: "35px" },
+                mx: { sm: "auto", xxxs: "auto" },
+                pl: "7px",
+              }}
+            >
+              <img src="/sportBattleMyPropsLogo.png" className="logos" />
+              <Typography
+                sx={{
+                  color: "white",
+                  fontSize: { sm: "16px", xxs: "14px", xxxs: "12px" },
+                  fontWeight: 700,
+                  fontFamily: "poppins",
+                  position: "relative",
+                  left: "-10px",
+                }}
+              >
+                SportsBattle
+              </Typography>
+            </Box>
+            {/* <img src="/sportsbattle.png" className="logoLogged" /> */}
             <Box
               sx={{
                 width: {
@@ -257,10 +286,11 @@ export function Logged({ mode, setMode }) {
                   minWidth: { sm: "auto", xxs: "22%", xxxs: "25%" },
                   mr: { sm: "12px", xs: "8px", xxxs: "4px" },
                   "&.MuiButtonBase-root:hover": {
-                    bgcolor: "secondary.main",
+                    bgcolor: "secondary.gray",
                   },
+                  color: "black",
                   cursor: "pointer",
-                  bgcolor: "secondary.main",
+                  bgcolor: "secondary.gray",
                 }}
                 onClick={() => {
                   setOpenInviteFriend(true);
@@ -363,7 +393,24 @@ export function Logged({ mode, setMode }) {
                   right: "10px",
                 }}
               >
-                <img src="/profile.png" className="accountImage" />
+                <Box
+                  sx={{
+                    background: "#439F48",
+                    fontSize: "13px",
+                    fontWeight: 400,
+                    color: "white",
+                    fontFamily: "poppins",
+                    height: "31px",
+                    width: "31px",
+                    borderRadius: "50%",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  JD
+                </Box>
+                {/* <img src="/profile.png" className="accountImage" /> */}
                 {openDropDown ? (
                   <KeyboardArrowUpIcon
                     sx={{
@@ -453,7 +500,7 @@ export function Logged({ mode, setMode }) {
               justifyContent: "flex-start",
               alignItems: "center",
               width: { lg: "105px", md: "50px", sm: "30px", xxxs: "185px" },
-              borderRight: "1px solid gray",
+              borderRight: `${mode === "dark" ? "1px solid gray" : "none"}`,
               height: "100%",
               position: "relative",
               bgcolor: "primary.main",
@@ -517,6 +564,7 @@ export function Logged({ mode, setMode }) {
                       fontWeight: `${openTag === e.activeName ? 600 : 400}`,
                       mt: "3px",
                       ml: { lg: "8px", sm: "0px", xxxs: "8px" },
+                      color: "secondary.dark_gray",
                     }}
                   >
                     {e.name}
@@ -574,6 +622,7 @@ export function Logged({ mode, setMode }) {
                       mt: "3px",
                       fontWeight: `${openTag === e.activeName ? 600 : 400}`,
                       ml: { lg: "8px", sm: "0px", xxxs: "8px" },
+                      color: "secondary.dark_gray",
                     }}
                   >
                     {e.name}
@@ -680,6 +729,7 @@ export function Logged({ mode, setMode }) {
                     fontSize: "10px",
                     ml: { lg: "10px", sm: "0px", xxxs: "10px" },
                     textAlign: "center",
+                    color: "secondary.dark_gray",
                   }}
                 >
                   Join our Discord
@@ -712,6 +762,7 @@ export function Logged({ mode, setMode }) {
                     fontSize: "10px",
                     ml: { lg: "10px", sm: "0px", xxxs: "10px" },
                     textAlign: "center",
+                    color: "secondary.dark_gray",
                   }}
                 >
                   Follow Twitter{" "}
@@ -728,6 +779,7 @@ export function Logged({ mode, setMode }) {
             "&::-webkit-scrollbar": {
               display: "none",
             },
+            bgcolor: "primary.dark_gray",
           }}
           ref={loggedRef}
         >

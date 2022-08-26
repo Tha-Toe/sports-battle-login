@@ -94,7 +94,7 @@ export default function BaseBallPoint({ setOpenBaseBallPoint }) {
           >
             <Typography
               sx={{
-                color: "secondary.main",
+                color: "secondary.dark_gray",
                 fontSize: { sm: "20px", xxxs: "16px" },
                 fontWeight: 700,
                 fontFamily: "poppins",
@@ -105,7 +105,7 @@ export default function BaseBallPoint({ setOpenBaseBallPoint }) {
             </Typography>{" "}
             <Typography
               sx={{
-                color: "secondary.main",
+                color: "secondary.dark_gray",
                 fontSize: { sm: "20px", xxxs: "16px" },
                 fontWeight: 700,
                 fontFamily: "poppins",
@@ -117,7 +117,7 @@ export default function BaseBallPoint({ setOpenBaseBallPoint }) {
           <ClearIcon
             sx={{
               fontSize: "35px",
-              color: "secondary.main",
+              color: "secondary.dark_gray",
               cursor: "pointer",
             }}
             onClick={() => {
@@ -185,7 +185,7 @@ export default function BaseBallPoint({ setOpenBaseBallPoint }) {
             >
               <Typography
                 sx={{
-                  color: "secondary.main",
+                  color: "secondary.dark_gray",
                   fontSize: "14px",
                   fontWeight: 600,
                   fontFamily: "poppins",

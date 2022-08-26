@@ -22,10 +22,15 @@ function App() {
       primary: {
         main: "#000000", //black
         light: "#242423", //rgba(36, 36, 35, 1)
+        dark_gray: "#000000",
+        dark: "#2C2C2C",
+        gray: "#2E2D2D",
       },
       secondary: {
         main: "#ffffff", //white
         dark: "#FAFAFA",
+        gray: "#ffffff",
+        dark_gray: "#ffffff",
       },
     },
     breakpoints: {
@@ -45,10 +50,15 @@ function App() {
       primary: {
         main: "#ffffff",
         light: "#696969",
+        dark_gray: "#f3f4f8",
+        dark: "#ffffff",
+        gray: "#D9D9D9",
       },
       secondary: {
         main: "#000000",
         dark: "#696969",
+        gray: "#D9D9D9",
+        dark_gray: "#494949",
       },
     },
     breakpoints: {

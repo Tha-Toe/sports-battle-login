@@ -11,7 +11,7 @@ export default function ({ setPickPlayType, pickPlayType }) {
           fontSize: "8px",
           fontFamily: "poppins",
           fontWeight: 600,
-          color: "secondary.main",
+          color: "secondary.dark_gray",
           mb: "2px",
         }}
       >
@@ -22,7 +22,7 @@ export default function ({ setPickPlayType, pickPlayType }) {
           fontSize: "6px",
           fontFamily: "poppins",
           fontWeight: 400,
-          color: "#FFCED6",
+          color: "#EA1E63",
         }}
       >
         This entry can only be attack
@@ -42,7 +42,7 @@ export default function ({ setPickPlayType, pickPlayType }) {
           <Box
             sx={{
               display: "flex",
-              background: "#2E2D2D",
+              bgcolor: "primary.gray",
               alignItems: "center",
               mt: "5px",
               p: "8px 4px",
@@ -65,7 +65,7 @@ export default function ({ setPickPlayType, pickPlayType }) {
                   fontSize: "8px",
                   fontWeight: 400,
                   fontFamily: "poppins",
-                  color: "white",
+                  color: "secondary.dark_gray",
                 }}
               >
                 2 correct pays 2x
@@ -75,7 +75,7 @@ export default function ({ setPickPlayType, pickPlayType }) {
                   fontSize: "8px",
                   fontWeight: 400,
                   fontFamily: "poppins",
-                  color: "white",
+                  color: "secondary.dark_gray",
                 }}
               >
                 1 correct pays 0.5x{" "}
@@ -88,7 +88,7 @@ export default function ({ setPickPlayType, pickPlayType }) {
           <Box
             sx={{
               display: "flex",
-              background: "#2E2D2D",
+              bgcolor: "primary.gray",
               alignItems: "center",
               mt: "5px",
               p: "8px 4px",
@@ -111,7 +111,7 @@ export default function ({ setPickPlayType, pickPlayType }) {
                   fontSize: "8px",
                   fontWeight: 400,
                   fontFamily: "poppins",
-                  color: "white",
+                  color: "secondary.dark_gray",
                 }}
               >
                 2 correct pays{" "}
@@ -121,7 +121,7 @@ export default function ({ setPickPlayType, pickPlayType }) {
                   fontSize: "8px",
                   fontWeight: 400,
                   fontFamily: "poppins",
-                  color: "white",
+                  color: "secondary.dark_gray",
                 }}
               >
                 2.6x{" "}

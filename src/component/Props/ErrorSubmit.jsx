@@ -37,7 +37,7 @@ export default function ErrorSubmit({
       <Box
         sx={{
           width: { sm: "444px", xxxs: "90%" },
-          background: "#2A2A2A",
+          bgcolor: "primary.dark",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
@@ -54,13 +54,13 @@ export default function ErrorSubmit({
           }}
         >
           <ClearIcon
-            sx={{ color: "secondary.main", cursor: "pointer" }}
+            sx={{ color: "secondary.dark_gray", cursor: "pointer" }}
             onClick={() => setErrorSubmit(false)}
           />
         </Box>
         <ClearIcon
           sx={{
-            color: "black",
+            color: "white",
             bgcolor: "#E4313C",
             borderRadius: "50%",
             fontSize: "40px",
@@ -71,7 +71,7 @@ export default function ErrorSubmit({
             fontSize: { sm: "14px", xxs: "12px", xxxs: "10px" },
             fontWeight: 400,
             fontFamily: "poppins",
-            color: "secondary.main",
+            color: "secondary.dark_gray",
             mt: "8px",
             textAlign: "center",
             width: "75%",
@@ -86,7 +86,7 @@ export default function ErrorSubmit({
             fontSize: { sm: "14px", xxs: "12px", xxxs: "10px" },
             fontWeigh: 500,
             fontFamily: "poppins",
-            color: "secondary.main",
+            color: "white",
             background: "#4831D4",
             mt: "24px",
             mb: "32px",
