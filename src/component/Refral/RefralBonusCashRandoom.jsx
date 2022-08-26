@@ -73,13 +73,18 @@ export default function RefralBonusCashRandoom({
         }}
         onClick={backPropsPage}
       >
-        <ArrowBackIosIcon sx={{ fontSize: { md: "23px", xxxs: "18px" } }} />
+        <ArrowBackIosIcon
+          sx={{
+            fontSize: { md: "23px", xxxs: "18px" },
+            color: "secondary.dark_gray",
+          }}
+        />
         <Typography
           sx={{
             fontSize: { md: "16px", sm: "14px", xxxs: "12px" },
             fontWeight: 600,
             fontFamily: "poppins",
-            color: "white",
+            color: "secondary.dark_gray",
           }}
         >
           Referral Bonus Cash Redeem{" "}
@@ -90,7 +95,7 @@ export default function RefralBonusCashRandoom({
           fontSize: { md: "14px", sm: "12px", xxxs: "10px" },
           fontWeight: 400,
           fontFamily: "poppins",
-          color: "white",
+          color: "secondary.dark_gray",
           width: "100%",
           mt: "21px",
         }}
@@ -104,7 +109,7 @@ export default function RefralBonusCashRandoom({
           fontSize: { md: "16px", sm: "14px", xxxs: "12px" },
           fontWeight: 600,
           fontFamily: "poppins",
-          color: "white",
+          color: "secondary.dark_gray",
           width: "100%",
           mt: "23px",
         }}
@@ -116,7 +121,7 @@ export default function RefralBonusCashRandoom({
           fontSize: { md: "16px", sm: "14px", xxxs: "12px" },
           fontWeight: 400,
           fontFamily: "poppins",
-          color: "white",
+          color: "secondary.dark_gray",
           width: "100%",
           mt: "13px",
         }}
@@ -129,7 +134,7 @@ export default function RefralBonusCashRandoom({
         variant="outlined"
         placeholder="Phone Number"
         sx={{
-          color: "white",
+          color: "secondary.dark_gray",
           borderBottom: "1px solid #494949",
           width: "100%",
           py: "8px",

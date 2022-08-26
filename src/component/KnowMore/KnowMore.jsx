@@ -45,20 +45,85 @@ export default function KnowMore({ mode }) {
 
   const [openTag, setOpenTag] = useState("Over-Under Points System");
   const [overUnderNav, setOverUnderNav] = useState([
-    { name: "MLB", src: "/mlb.png", color: "blue" },
-    { name: "PGA", src: "/pga.png", color: "blue" },
-    { name: "GOLF", src: "/golf.png", color: "#E431F4" },
-    { name: "NFL", src: "/nfl.png", color: "#F5A922" },
-    { name: "WNBA", src: "/wnba.png", color: "#F5A922" },
-    { name: "Cricket", src: "/cricket.png", color: "#EA1E63" },
-    { name: "CSGO", src: "/csgo.png", color: "#00ffff" },
-    { name: "MMA", src: "/mma.png", color: "orange" },
-    { name: "F1", src: "/f1.png", color: "red" },
-    { name: "CFL", src: "/cfl.png", color: "#F5A922" },
-    { name: "DOTA2", src: "/dota2.png", color: "#00ffff" },
-    { name: "VAL", src: "/val.png", color: "blue" },
-    { name: "Soccer", src: "/soccer.png", color: "#52C03C" },
-    { name: "NBA", src: "/nba.png", color: "#F5A922" },
+    {
+      name: "MLB",
+      src: "/mlb.png",
+      light_src: "/mlb_light.png",
+      color: "blue",
+    },
+    {
+      name: "PGA",
+      src: "/pga.png",
+      light_src: "/pga_light.png",
+      color: "blue",
+    },
+    {
+      name: "GOLF",
+      src: "/golf.png",
+      light_src: "/golf_light.png",
+      color: "#E431F4",
+    },
+    {
+      name: "NFL",
+      src: "/nfl.png",
+      light_src: "/nfl_light.png",
+      color: "#F5A922",
+    },
+    {
+      name: "WNBA",
+      src: "/wnba.png",
+      light_src: "/wnba_light.png",
+      color: "#F5A922",
+    },
+    {
+      name: "Cricket",
+      src: "/cricket.png",
+      light_src: "/cricket_light.png",
+      color: "#D04643",
+    },
+    {
+      name: "CSGO",
+      src: "/csgo.png",
+      light_src: "/csgo_light.png",
+      color: "#00ffff",
+    },
+    {
+      name: "MMA",
+      src: "/mma.png",
+      light_src: "/mma_light.png",
+      color: "orange",
+    },
+    { name: "F1", src: "/f1.png", light_src: "/f1_light.png", color: "red" },
+    {
+      name: "CFL",
+      src: "/cfl.png",
+      light_src: "/cfl_light.svg",
+      color: "#F5A922",
+    },
+    {
+      name: "DOTA2",
+      src: "/dota2.png",
+      light_src: "/dota2_light.png",
+      color: "#00ffff",
+    },
+    {
+      name: "VAL",
+      src: "/val.png",
+      light_src: "/val_light.png",
+      color: "blue",
+    },
+    {
+      name: "Soccer",
+      src: "/soccer.png",
+      light_src: "/soccer_light.png",
+      color: "#52C03C",
+    },
+    {
+      name: "NBA",
+      src: "/nba.png",
+      light_src: "/nba_light.png",
+      color: "#F5A922",
+    },
   ]);
   const [selectSports, setSelectSports] = useState("Cricket");
 
@@ -103,19 +168,33 @@ export default function KnowMore({ mode }) {
                 sx={{
                   height: { xs: "34px", xxxs: "30px" },
                   width: { xs: "34px", xxxs: "30px" },
-                  border: "2px solid white",
+                  border: `${
+                    mode === "dark" ? "2px solid white" : "1px solid #494949"
+                  }`,
                   borderRadius: "50%",
                   mt: "13px",
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
                   justifyContent: "center",
+                  bgcolor: `${
+                    e.name === selectSports ? e.color : "primary.main"
+                  }`,
                   cursor: "pointer",
-                  bgcolor: `${e.name === selectSports ? e.color : "black"}`,
                 }}
                 onClick={() => setSelectSports(e.name)}
               >
-                <img className="overUnderNavImage" src={e.src} />
+                {mode === "dark" ? (
+                  <img className="propsNavImg" src={e.src} />
+                ) : (
+                  <>
+                    {e.name === selectSports ? (
+                      <img className="propsNavImg" src={e.src} />
+                    ) : (
+                      <img className="propsNavImg" src={e.light_src} />
+                    )}
+                  </>
+                )}
               </Box>
               <Typography
                 sx={{
@@ -123,7 +202,9 @@ export default function KnowMore({ mode }) {
                   fontWeight: 400,
                   fontFamily: "poppins",
                   mt: "5px",
-                  color: "secondary.main",
+                  color: `${
+                    e.name === selectSports ? e.color : "secondary.main"
+                  }`,
                 }}
               >
                 {" "}
@@ -163,7 +244,7 @@ export default function KnowMore({ mode }) {
               fontWeight: 700,
               fontFamily: "poppins",
               width: "100%",
-              color: "secondary.main",
+              color: "secondary.dark_gray",
               mb: "12px",
               ml: { xs: 0, xxxs: "5px" },
             }}
@@ -206,7 +287,7 @@ export default function KnowMore({ mode }) {
                     fontSize: { lg: "14px", xs: "12px", xxxs: "10px" },
                     fontWeight: 700,
                     color: `${
-                      openTag === e.name ? "#4831D4" : "secondary.main"
+                      openTag === e.name ? "#4831D4" : "secondary.dark_gray"
                     }`,
                     fontFamily: "poppins",
                   }}
@@ -218,7 +299,7 @@ export default function KnowMore({ mode }) {
                     sx={{
                       fontSize: { lg: "12px", xs: "10px", xxxs: "8px" },
                       fontWeight: 400,
-                      color: "secondary.main",
+                      color: "secondary.dark_gray",
                       fontFamily: "poppins",
                     }}
                   >
@@ -234,7 +315,7 @@ export default function KnowMore({ mode }) {
               fontWeight: 700,
               fontFamily: "poppins",
               width: "100%",
-              color: "secondary.main",
+              color: "secondary.dark_gray",
               mb: "12px",
               mt: "24px",
               ml: { xs: 0, xxxs: "5px" },
@@ -273,7 +354,7 @@ export default function KnowMore({ mode }) {
                     fontSize: { lg: "14px", xs: "12px", xxxs: "10px" },
                     fontWeight: 700,
                     fontFamily: "poppins",
-                    color: "secondary.main",
+                    color: "secondary.dark_gray",
                   }}
                 >
                   {e.name}
@@ -284,7 +365,7 @@ export default function KnowMore({ mode }) {
                       fontSize: { lg: "12px", xs: "10px", xxxs: "8px" },
                       fontWeight: 400,
                       fontFamily: "poppins",
-                      color: "secondary.main",
+                      color: "secondary.dark_gray",
                     }}
                   >
                     {e.extra}

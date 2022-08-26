@@ -82,7 +82,7 @@ export default function SelectState({ setOpenStatePicker }) {
               fontSize: { sm: "20px", xxs: "18px", xxxs: "16px" },
               fontWeight: 700,
               fontFamily: "poppins",
-              color: "secondary.main",
+              color: "secondary.dark_gray",
             }}
           >
             Select a State
@@ -96,7 +96,7 @@ export default function SelectState({ setOpenStatePicker }) {
           sx={{
             height: "4px",
             width: "80px",
-            bgcolor: "secondary.main",
+            bgcolor: "secondary.dark_gray",
             borderRadius: "4px",
             ml: "20px",
             mt: "5px",
@@ -154,7 +154,8 @@ export default function SelectState({ setOpenStatePicker }) {
                     />
                     <Typography
                       sx={{
-                        color: "secondary.main",
+                        color: "secondary.dark_gray",
+
                         fontSize: { sm: "16px", xxs: "14px", xxxs: "12px" },
                         fontWeight: 400,
                         ml: "18px",

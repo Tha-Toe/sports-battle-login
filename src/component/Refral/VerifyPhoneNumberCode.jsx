@@ -78,7 +78,7 @@ export default function VerifyPhoneNumberCode({ number, mode }) {
         <ArrowBackIosIcon
           sx={{
             fontSize: { md: "23px", xxxs: "18px" },
-            color: "secondary.main",
+            color: "secondary.dark_gray",
           }}
         />
         <Typography
@@ -86,7 +86,7 @@ export default function VerifyPhoneNumberCode({ number, mode }) {
             fontSize: { md: "16px", sm: "14px", xxxs: "12px" },
             fontWeight: 600,
             fontFamily: "poppins",
-            color: "secondary.main",
+            color: "secondary.dark_gray",
           }}
         >
           Referral Bonus Cash Radeem{" "}
@@ -97,10 +97,9 @@ export default function VerifyPhoneNumberCode({ number, mode }) {
           fontSize: { md: "14px", sm: "12px", xxxs: "10px" },
           fontWeight: 400,
           fontFamily: "poppins",
-          color: "white",
           width: "100%",
           mt: "16px",
-          color: "secondary.main",
+          color: "secondary.dark_gray",
         }}
       >
         Please verify phone number to redeem referral bonus cash. We require you
@@ -112,10 +111,9 @@ export default function VerifyPhoneNumberCode({ number, mode }) {
           fontSize: { md: "16px", sm: "14px", xxxs: "12px" },
           fontWeight: 600,
           fontFamily: "poppins",
-          color: "white",
           width: "100%",
           mt: "28px",
-          color: "secondary.main",
+          color: "secondary.dark_gray",
         }}
       >
         Verification Code{" "}
@@ -125,7 +123,6 @@ export default function VerifyPhoneNumberCode({ number, mode }) {
           width: "100%",
           fontWeight: 700,
           fontFamily: "poppins",
-          color: "white",
           mt: "13px",
           display: "flex",
           alignItems: "center",
@@ -136,7 +133,7 @@ export default function VerifyPhoneNumberCode({ number, mode }) {
             fontSize: { md: "14px", sm: "12px", xxxs: "10px" },
             fontFamily: "poppins",
             fontWeight: 500,
-            color: "secondary.main",
+            color: "secondary.dark_gray",
           }}
         >
           Please enter verification code sent to your phone number -{number}

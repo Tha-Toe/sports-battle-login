@@ -16,7 +16,7 @@ import { motion } from "framer-motion";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import Detail from "../MyProps/Detail";
 
-export default function TransactionHistory() {
+export default function TransactionHistory({ mode }) {
   const [history, setHistory] = useState([
     {
       name: "Prop join",
@@ -163,7 +163,7 @@ export default function TransactionHistory() {
           fontSize: { xs: "16px", xxs: "14px", xxxs: "12px" },
           fontWeight: 700,
           fontFamily: "poppins",
-          color: "secondary.main",
+          color: "secondary.dark_gray",
           mt: "23px",
           width: "100%",
         }}
@@ -200,7 +200,9 @@ export default function TransactionHistory() {
                   border: `${
                     clicked === index
                       ? "1px solid #4831D4"
-                      : "1px solid #494949"
+                      : mode === "dark"
+                      ? "1px solid #494949"
+                      : "none"
                   }`,
                   bgcolor: "primary.main",
                 }}
@@ -265,7 +267,15 @@ export default function TransactionHistory() {
                       fontSize: { xs: "16px", xxs: "14px", xxxs: "12px" },
                       fontWeight: 600,
                       fontFamily: "poppins",
-                      color: `${e.won ? "#C2DEC7" : "#FFCED6"}`,
+                      color: `${
+                        e.won
+                          ? mode === "dark"
+                            ? "#C2DEC7"
+                            : "#52C03C"
+                          : mode === "dark"
+                          ? "#FFCED6"
+                          : "#E4313C"
+                      }`,
                     }}
                   >
                     {e.amount}
@@ -292,9 +302,13 @@ export default function TransactionHistory() {
             referCode={referCode}
             clicked={clicked}
             mainDetail={history}
+            mode={mode}
           />
         ) : (
-          <Detail emptyText={"Select a transaction to know more information"} />
+          <Detail
+            emptyText={"Select a transaction to know more information"}
+            mode={mode}
+          />
         )}
       </Box>
     </Box>

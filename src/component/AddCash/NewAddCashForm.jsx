@@ -57,13 +57,18 @@ export default function NewAddCashFrom({ address, setNewUser }) {
         }}
         onClick={goDepositVerify}
       >
-        <ArrowBackIosIcon sx={{ fontSize: { sm: "23px", xxxs: "18px" } }} />
+        <ArrowBackIosIcon
+          sx={{
+            fontSize: { sm: "23px", xxxs: "18px" },
+            color: "secondary.dark_gray",
+          }}
+        />
         <Typography
           sx={{
             fontSize: { sm: "16px", xxxs: "14px" },
             fontWeight: 600,
             fontFamily: "poppins",
-            color: "secondary.main",
+            color: "secondary.dark_gray",
           }}
         >
           Age Verification Setup
@@ -91,7 +96,7 @@ export default function NewAddCashFrom({ address, setNewUser }) {
               fontSize: { sm: "14px", xxxs: "12px" },
               fontWeight: 600,
               fontFamily: "poppins",
-              color: "secondary.main",
+              color: "secondary.dark_gray",
               mb: "12px",
             }}
           >
@@ -102,7 +107,7 @@ export default function NewAddCashFrom({ address, setNewUser }) {
             placeholder="Legal First Name"
             variant="outlined"
             sx={{
-              color: "secondary.main",
+              color: "secondary.dark_gray",
               borderBottom: "1px solid #494949",
               width: "100%",
               py: "7px",
@@ -122,7 +127,7 @@ export default function NewAddCashFrom({ address, setNewUser }) {
               fontSize: { sm: "14px", xxxs: "12px" },
               fontWeight: 600,
               fontFamily: "poppins",
-              color: "secondary.main",
+              color: "secondary.dark_gray",
               mb: "12px",
             }}
           >
@@ -133,7 +138,7 @@ export default function NewAddCashFrom({ address, setNewUser }) {
             placeholder="Legal First Name"
             variant="outlined"
             sx={{
-              color: "secondary.main",
+              color: "secondary.dark_gray",
               borderBottom: "1px solid #494949",
               width: "100%",
               py: "7px",
@@ -154,7 +159,7 @@ export default function NewAddCashFrom({ address, setNewUser }) {
             fontSize: { sm: "14px", xxxs: "12px" },
             fontWeight: 600,
             fontFamily: "poppins",
-            color: "secondary.main",
+            color: "secondary.dark_gray",
             mb: "12px",
           }}
         >
@@ -165,7 +170,7 @@ export default function NewAddCashFrom({ address, setNewUser }) {
           variant="outlined"
           placeholder="MM/DD/YYYY"
           sx={{
-            color: "secondary.main",
+            color: "secondary.dark_gray",
             borderBottom: "1px solid #494949",
             width: "100%",
             py: "7px",
@@ -304,7 +309,7 @@ export default function NewAddCashFrom({ address, setNewUser }) {
           <Box
             sx={{
               width: { sm: "444px", xxxs: "90%" },
-              background: "#2A2A2A",
+              bgcolor: "primary.dark",
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
@@ -319,7 +324,7 @@ export default function NewAddCashFrom({ address, setNewUser }) {
             />
             <Typography
               sx={{
-                color: "white",
+                color: "secondary.dark_gray",
                 fontSize: { sm: "14px", xxs: "12px", xxxs: "10px" },
                 fontWeight: 700,
                 fontFamily: "poppins",

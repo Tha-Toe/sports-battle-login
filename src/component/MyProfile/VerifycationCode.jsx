@@ -74,13 +74,13 @@ export default function VerifycationCode({
           }}
           onClick={() => setOpenTag("add-phone-number")}
         >
-          <ArrowBackIosNewIcon sx={{ color: "secondary.main" }} />
+          <ArrowBackIosNewIcon sx={{ color: "secondary.dark_gray" }} />
           <Typography
             sx={{
               fontSize: { sm: "16px", xxs: "14px", xxxs: "12px" },
               fontWeight: 600,
               fontFamily: "poppins",
-              color: "secondary.main",
+              color: "secondary.dark_gray",
               ml: "15px",
             }}
           >
@@ -88,7 +88,7 @@ export default function VerifycationCode({
           </Typography>
         </Box>
         <ClearIcon
-          sx={{ color: "secondary.main", cursor: "pointer" }}
+          sx={{ color: "secondary.dark_gray", cursor: "pointer" }}
           onClick={() => setOpenTag("profile")}
         />
       </Box>
@@ -97,7 +97,7 @@ export default function VerifycationCode({
           fontSize: { sm: "16px", xxs: "14px", xxxs: "12px" },
           fontFamily: "poppins",
           fontWeight: 600,
-          color: "secondary.main",
+          color: "secondary.dark_gray",
           mt: "31px",
           width: "100%",
         }}
@@ -109,7 +109,7 @@ export default function VerifycationCode({
           fontSize: { sm: "14px", xxs: "12px", xxxs: "10px" },
           fontFamily: "poppins",
           fontWeight: 400,
-          color: "secondary.main",
+          color: "secondary.dark_gray",
           mt: "13px",
           width: "100%",
         }}
@@ -123,7 +123,7 @@ export default function VerifycationCode({
         sx={{
           width: "100%",
           borderBottom: "1px solid #494949",
-          color: "secondary.main",
+          color: "secondary.dark_gray",
           fontSize: { sm: "16px", xxs: "14px", xxxs: "12px" },
           fontWeight: 500,
           mt: "24px",

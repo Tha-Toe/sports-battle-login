@@ -4,6 +4,7 @@
 }
 .know-icon {
   display: block;
+  height: 20px;
 }
 @media (max-width: 500px) {
   .know-icon {

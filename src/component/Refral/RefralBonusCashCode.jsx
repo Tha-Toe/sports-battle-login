@@ -79,7 +79,7 @@ export default function RefralBonusCashCode({ number, setNumber }) {
         <ArrowBackIosIcon
           sx={{
             fontSize: { md: "23px", xxxs: "18px" },
-            color: "secondary.main",
+            color: "secondary.dark_gray",
           }}
         />
         <Typography
@@ -87,7 +87,7 @@ export default function RefralBonusCashCode({ number, setNumber }) {
             fontSize: { md: "16px", sm: "14px", xxxs: "12px" },
             fontWeight: 600,
             fontFamily: "poppins",
-            color: "secondary.main",
+            color: "secondary.dark_gray",
           }}
         >
           Referral Bonus Cash Redeem{" "}
@@ -98,7 +98,7 @@ export default function RefralBonusCashCode({ number, setNumber }) {
           fontSize: { md: "14px", sm: "12px", xxxs: "10px" },
           fontWeight: 400,
           fontFamily: "poppins",
-          color: "secondary.main",
+          color: "secondary.dark_gray",
           width: "100%",
           mt: "21px",
         }}
@@ -111,7 +111,7 @@ export default function RefralBonusCashCode({ number, setNumber }) {
           fontSize: { md: "14px", sm: "12px", xxxs: "10px" },
           fontWeight: 400,
           fontFamily: "poppins",
-          color: "secondary.main",
+          color: "secondary.dark_gray",
           width: "100%",
           mt: "21px",
         }}
@@ -124,7 +124,7 @@ export default function RefralBonusCashCode({ number, setNumber }) {
           fontSize: { md: "16px", sm: "14px", xxxs: "12px" },
           fontWeight: 600,
           fontFamily: "poppins",
-          color: "secondary.main",
+          color: "secondary.dark_gray",
           width: "100%",
           mt: "23px",
         }}
@@ -136,7 +136,7 @@ export default function RefralBonusCashCode({ number, setNumber }) {
           fontSize: { md: "12px", sm: "10px", xxxs: "8px" },
           fontWeight: 400,
           fontFamily: "poppins",
-          color: "secondary.main",
+          color: "secondary.dark_gray",
           width: "100%",
           mt: "13px",
         }}
@@ -148,7 +148,7 @@ export default function RefralBonusCashCode({ number, setNumber }) {
         variant="outlined"
         placeholder="Enter Referral Code"
         sx={{
-          color: "secondary.main",
+          color: "secondary.dark_gray",
           borderBottom: "1px solid #494949",
           width: "100%",
           py: "8px",
@@ -203,7 +203,7 @@ export default function RefralBonusCashCode({ number, setNumber }) {
               fontSize: { md: "14px", sm: "12px", xxxs: "10px" },
               fontWeight: 600,
               fontFamily: "poppins",
-              color: "secondary.main",
+              color: "secondary.dark_gray",
               width: "80%",
               mt: "16px",
               textAlign: "center",

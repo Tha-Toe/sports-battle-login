@@ -62,13 +62,13 @@ export default function StandardECheck({
           }}
           onClick={() => setOpenTag("chooseAWithdrawMethod")}
         >
-          <ArrowBackIosNewIcon />
+          <ArrowBackIosNewIcon sx={{ color: "secondary.dark_gray" }} />
           <Typography
             sx={{
               fontSize: { sm: "16px", xxs: "14px", xxxs: "12px" },
               fontWeight: 600,
               fontFamily: "poppins",
-              color: "secondary.main",
+              color: "secondary.dark_gray",
               ml: "15px",
             }}
           >
@@ -80,7 +80,7 @@ export default function StandardECheck({
             fontSize: { sm: "14px", xxs: "12px", xxxs: "10px" },
             fontWeight: 500,
             fontFamily: "poppins",
-            color: "secondary.main",
+            color: "secondary.dark_gray",
             textDecoration: "underline",
             cursor: "pointer",
           }}
@@ -124,7 +124,7 @@ export default function StandardECheck({
                 fontSize: { sm: "16px", xxs: "14px", xxxs: "12px" },
                 fontWeight: 600,
                 fontFamily: "poppins",
-                color: "secondary.main",
+                color: "secondary.dark_gray",
                 width: "100%",
                 mb: "4px",
               }}
@@ -136,7 +136,7 @@ export default function StandardECheck({
                 fontSize: { sm: "12px", xxs: "10px", xxxs: "8px" },
                 fontWeight: 400,
                 fontFamily: "poppins",
-                color: "secondary.main",
+                color: "secondary.dark_gray",
                 width: "100%",
                 mb: "4px",
               }}
@@ -148,7 +148,7 @@ export default function StandardECheck({
                 fontSize: { sm: "14px", xxs: "12px", xxxs: "10px" },
                 fontWeight: 400,
                 fontFamily: "poppins",
-                color: "secondary.main",
+                color: "secondary.dark_gray",
                 width: "100%",
                 mb: "4px",
               }}
@@ -163,7 +163,7 @@ export default function StandardECheck({
       </Box>
       <Typography
         sx={{
-          color: "secondary.main",
+          color: "secondary.dark_gray",
           fontFamily: "poppins",
           fontSize: { sm: "16px", xxs: "14px", xxxs: "12px" },
           fontWeight: 600,
@@ -185,7 +185,7 @@ export default function StandardECheck({
       >
         <Typography
           sx={{
-            color: "secondary.main",
+            color: "secondary.dark_gray",
             fontFamily: "poppins",
             fontSize: { sm: "16px", xxs: "14px", xxxs: "12px" },
             fontWeight: 600,
@@ -195,7 +195,7 @@ export default function StandardECheck({
         </Typography>
         <Typography
           sx={{
-            color: "secondary.main",
+            color: "secondary.dark_gray",
             fontFamily: "poppins",
             fontSize: { sm: "16px", xxs: "14px", xxxs: "12px" },
             fontWeight: 400,
@@ -217,7 +217,7 @@ export default function StandardECheck({
       >
         <Typography
           sx={{
-            color: "secondary.main",
+            color: "secondary.dark_gray",
             fontFamily: "poppins",
             fontSize: { sm: "16px", xxs: "14px", xxxs: "12px" },
             fontWeight: 600,
@@ -227,7 +227,7 @@ export default function StandardECheck({
         </Typography>
         <Typography
           sx={{
-            color: "secondary.main",
+            color: "secondary.dark_gray",
             fontFamily: "poppins",
             fontSize: { sm: "16px", xxs: "14px", xxxs: "12px" },
             fontWeight: 400,
@@ -264,7 +264,7 @@ export default function StandardECheck({
           fontSize: { sm: "14px", xxs: "12px", xxxs: "10px" },
           fontWeight: 400,
           fontFamily: "poppins",
-          color: "secondary.main",
+          color: "secondary.dark_gray",
           width: "100%",
           mt: "32px",
         }}

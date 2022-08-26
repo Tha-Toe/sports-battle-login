@@ -143,7 +143,7 @@ export default function MyPropsCardContainer({ mode, mainDetail, openTag }) {
         container
         sx={{
           width: { md: "50%", xxxs: "100%" },
-          border: "1px solid #494949",
+          border: `${mode === "dark" ? "1px solid #494949" : "none"}`,
         }}
       >
         {mainDetail.map((e, index) => (
@@ -171,7 +171,11 @@ export default function MyPropsCardContainer({ mode, mainDetail, openTag }) {
                 bgcolor: "primary.main",
                 borderRadius: "4px",
                 border: `${
-                  clicked === index ? "1px solid #4831D4" : "1px solid #494949"
+                  clicked === index
+                    ? "1px solid #4831D4"
+                    : mode === "dark"
+                    ? "1px solid #494949"
+                    : "none"
                 }`,
 
                 cursor: "pointer",
@@ -202,7 +206,7 @@ export default function MyPropsCardContainer({ mode, mainDetail, openTag }) {
                   fontSize: { xs: "16px", xxs: "14px", xxxs: "12px" },
                   fontWeight: 700,
                   fontFamily: "poppins",
-                  color: "secondary.main",
+                  color: "secondary.dark_gray",
                   mt: "7px",
                   width: "95%",
                 }}
@@ -214,7 +218,7 @@ export default function MyPropsCardContainer({ mode, mainDetail, openTag }) {
                   fontSize: { xs: "12px", xxs: "10px", xxxs: "8px" },
                   fontWeight: 500,
                   fontFamily: "poppins",
-                  color: "secondary.main",
+                  color: "secondary.dark_gray",
                   mt: "5px",
                   width: "95%",
                 }}
@@ -244,7 +248,7 @@ export default function MyPropsCardContainer({ mode, mainDetail, openTag }) {
                       fontSize: { xs: "12px", xxxs: "10px" },
                       fontWeight: 500,
                       fontFamily: "poppins",
-                      color: "secondary.main",
+                      color: "secondary.dark_gray",
                       mt: "5px",
                     }}
                   >
@@ -300,7 +304,7 @@ export default function MyPropsCardContainer({ mode, mainDetail, openTag }) {
                     fontSize: { xs: "12px", xxs: "10px", xxxs: "8px" },
                     fontWeight: 500,
                     fontFamily: "poppins",
-                    color: "secondary.main",
+                    color: "secondary.dark_gray",
                     ml: "5px",
                   }}
                 >
@@ -312,7 +316,10 @@ export default function MyPropsCardContainer({ mode, mainDetail, openTag }) {
         ))}
       </Grid>
       {!openDetail && (
-        <Detail emptyText={"Select a prop to know more information "} />
+        <Detail
+          emptyText={"Select a prop to know more information "}
+          mode={mode}
+        />
       )}
       {openDetail === "Upcomming" && (
         <Detail
@@ -321,6 +328,7 @@ export default function MyPropsCardContainer({ mode, mainDetail, openTag }) {
           openDetail={openDetail}
           mainDetail={mainDetail}
           clicked={clicked}
+          mode={mode}
         />
       )}
       {openDetail === "Live" && (
@@ -330,6 +338,7 @@ export default function MyPropsCardContainer({ mode, mainDetail, openTag }) {
           openDetail={openDetail}
           mainDetail={mainDetail}
           clicked={clicked}
+          mode={mode}
         />
       )}
       {openDetail === "Completed" && (
@@ -339,6 +348,7 @@ export default function MyPropsCardContainer({ mode, mainDetail, openTag }) {
           openDetail={openDetail}
           mainDetail={mainDetail}
           clicked={clicked}
+          mode={mode}
         />
       )}
     </Box>

@@ -46,7 +46,8 @@ export default function Detail({
         flexDirection: "column",
         alignItems: "center",
         ml: { md: "10px", xxxs: "0px" },
-        border: "1px solid #494949",
+        border: `${mode === "dark" ? "1px solid #494949" : "none"}`,
+        bgcolor: "primary.main",
         mt: "0px",
       }}
       component="div"
@@ -60,13 +61,14 @@ export default function Detail({
           mt: "5px",
           borderBottom: "1px solid #494949",
           pb: "5px",
-          width: "90%",
+          width: "151px",
+          background: "black",
         }}
       >
         <img src="/sportBattleMyPropsLogo.png" className="logoDetail" />
         <Typography
           sx={{
-            color: "secondary.main",
+            color: "white",
             fontSize: { sm: "16px", xxs: "14px", xxxs: "12px" },
             fontWeight: 700,
             fontFamily: "poppins",
@@ -82,7 +84,7 @@ export default function Detail({
               fontSize: { sm: "16px", xxs: "14px", xxxs: "12px" },
               fontWeight: 600,
               fontFamily: "poppins",
-              color: "secondary.main",
+              color: "secondary.dark_gray",
               mt: "14px",
             }}
           >
@@ -93,7 +95,7 @@ export default function Detail({
               width: "91px",
               height: "3px",
               mt: "6px",
-              bgcolor: "secondary.main",
+              color: "secondary.dark_gray",
             }}
           ></Box>
           {detailData.map((e) => (
@@ -116,7 +118,7 @@ export default function Detail({
                     fontSize: { sm: "14px", xxs: "12px", xxxs: "10px" },
                     fontWeight: 700,
                     fontFamily: "poppins",
-                    color: "secondary.main",
+                    color: "secondary.dark_gray",
                   }}
                 >
                   {e.player.name}
@@ -126,7 +128,7 @@ export default function Detail({
                     fontSize: { sm: "12px", xxs: "10px", xxxs: "8px" },
                     fontWeight: 500,
                     fontFamily: "poppins",
-                    color: "secondary.main",
+                    color: "secondary.dark_gray",
                     mt: "1px",
                   }}
                 >
@@ -137,7 +139,7 @@ export default function Detail({
                     fontSize: { sm: "12px", xxs: "10px", xxxs: "8px" },
                     fontWeight: 500,
                     fontFamily: "poppins",
-                    color: "secondary.main",
+                    color: "secondary.dark_gray",
                     mt: "3px",
                   }}
                 >
@@ -148,20 +150,26 @@ export default function Detail({
                     fontSize: { sm: "12px", xxs: "10px", xxxs: "8px" },
                     fontWeight: 500,
                     fontFamily: "poppins",
-                    color: "secondary.main",
+                    color: "secondary.dark_gray",
                     mt: "3px",
                   }}
                 >
                   {e.game.vs}
                 </Typography>
               </Box>
-              <Box sx={{ display: "flex", flexDirection: "column" }}>
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                }}
+              >
                 <Typography
                   sx={{
                     fontSize: { sm: "20px", xxs: "18px", xxxs: "16px" },
                     fontWeight: 700,
                     fontFamily: "poppins",
-                    color: "secondary.main",
+                    color: "secondary.dark_gray",
                   }}
                 >
                   {e.goal.amount}
@@ -171,7 +179,7 @@ export default function Detail({
                     fontSize: { sm: "12px", xxs: "10px", xxxs: "8px" },
                     fontWeight: 500,
                     fontFamily: "poppins",
-                    color: "secondary.main",
+                    color: "secondary.dark_gray",
                     mt: "3px",
                   }}
                 >
@@ -191,7 +199,7 @@ export default function Detail({
                     fontSize: { sm: "10px", xxs: "8px", xxxs: "8px" },
                     fontWeight: 500,
                     fontFamily: "poppins",
-                    color: "#C2DDF8",
+                    color: `${mode === "dark" ? "#C2DDF8" : "#4831D4"}`,
                   }}
                 >
                   {e.status}
@@ -201,7 +209,7 @@ export default function Detail({
                     fontSize: { sm: "20px", xxs: "18px", xxxs: "16px" },
                     fontWeight: 700,
                     fontFamily: "poppins",
-                    color: "#C2DDF8",
+                    color: `${mode === "dark" ? "#C2DDF8" : "#4831D4"}`,
                     mt: "12px",
                   }}
                 >
@@ -261,7 +269,7 @@ export default function Detail({
                   fontSize: { sm: "12px", xxs: "10px", xxxs: "8px" },
                   fontWeight: 600,
                   fontFamily: "poppins",
-                  color: "secondary.main",
+                  color: "secondary.dark_gray",
                 }}
               >
                 3/3 correct - win $11.25{" "}
@@ -271,7 +279,7 @@ export default function Detail({
                   fontSize: { sm: "12px", xxs: "10px", xxxs: "8px" },
                   fontWeight: 600,
                   fontFamily: "poppins",
-                  color: "secondary.main",
+                  color: "secondary.dark_gray",
                 }}
               >
                 2/3 correct - win $6.25{" "}
@@ -398,7 +406,7 @@ export default function Detail({
                   fontSize: { sm: "24px", xxs: "22px", xxxs: "20px" },
                   fontWeight: 600,
                   fontFamily: "poppins",
-                  color: "secondary.main",
+                  color: "secondary.dark_gray",
                   mt: "3px",
                   mb: "15px",
                 }}
@@ -414,7 +422,7 @@ export default function Detail({
             fontSize: { sm: "16px", xxs: "14px", xxxs: "12px" },
             fontWeight: 400,
             fontFamily: "poppins",
-            color: "secondary.main",
+            color: "secondary.dark_gray",
             mt: "50%",
             width: "50%",
             textAlign: "center",

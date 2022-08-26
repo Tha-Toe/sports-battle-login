@@ -199,7 +199,7 @@ export default function MyProps({ mode }) {
           fontSize: { xs: "16px", xxs: "14px", xxxs: "12px" },
           fontWeight: 700,
           fontFamily: "poppins",
-          color: "secondary.main",
+          color: "secondary.dark_gray",
           mt: "23px",
           width: "100%",
         }}

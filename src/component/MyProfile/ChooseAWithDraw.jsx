@@ -83,13 +83,13 @@ export default function ChooseAWithDraw({ setOpenTag }) {
         }}
         onClick={() => setOpenTag("WidthDrawCash")}
       >
-        <ArrowBackIosNewIcon />
+        <ArrowBackIosNewIcon sx={{ color: "secondary.dark_gray" }} />
         <Typography
           sx={{
             fontSize: { sm: "16px", xxs: "14px", xxxs: "12px" },
             fontWeight: 600,
             fontFamily: "poppins",
-            color: "secondary.main",
+            color: "secondary.dark_gray",
             ml: "15px",
           }}
         >
@@ -133,7 +133,7 @@ export default function ChooseAWithDraw({ setOpenTag }) {
                   fontSize: { sm: "16px", xxs: "14px", xxxs: "12px" },
                   fontWeight: 600,
                   fontFamily: "poppins",
-                  color: "secondary.main",
+                  color: "secondary.dark_gray",
                   width: "100%",
                   mb: "4px",
                 }}
@@ -145,7 +145,7 @@ export default function ChooseAWithDraw({ setOpenTag }) {
                   fontSize: { sm: "14px", xxs: "12px", xxxs: "10px" },
                   fontWeight: 400,
                   fontFamily: "poppins",
-                  color: "secondary.main",
+                  color: "secondary.dark_gray",
                   width: "100%",
                   mb: "4px",
                 }}
@@ -157,7 +157,7 @@ export default function ChooseAWithDraw({ setOpenTag }) {
                   fontSize: { sm: "14px", xxs: "12px", xxxs: "10px" },
                   fontWeight: 400,
                   fontFamily: "poppins",
-                  color: "secondary.main",
+                  color: "secondary.dark_gray",
                   width: "100%",
                   mb: "4px",
                 }}
@@ -176,7 +176,7 @@ export default function ChooseAWithDraw({ setOpenTag }) {
           fontSize: { sm: "14px", xxs: "12px", xxxs: "10px" },
           fontWeight: 400,
           fontFamily: "poppins",
-          color: "secondary.main",
+          color: "secondary.dark_gray",
           width: "100%",
 
           mt: "5px",

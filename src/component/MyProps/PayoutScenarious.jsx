@@ -41,7 +41,7 @@ export default function PayoutScenarious({ setOpenPayoutScenarious }) {
       <Box
         sx={{
           width: { sm: "673px", xs: "400px", xxs: "350px", xxxs: "280px" },
-          background: "#2A2A2A",
+          bgcolor: "primary.dark",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
@@ -62,13 +62,13 @@ export default function PayoutScenarious({ setOpenPayoutScenarious }) {
               fontSize: { sm: "16px", xxs: "14px", xxxs: "12px" },
               fontWeight: 700,
               fontFamily: "poppins",
-              color: "white",
+              color: "secondary.dark_gray",
             }}
           >
             Payout Scenarios
           </Typography>
           <ClearIcon
-            sx={{ color: "white", cursor: "pointer" }}
+            sx={{ color: "secondary.dark_gray", cursor: "pointer" }}
             onClick={() => setOpenPayoutScenarious(false)}
           />
         </Box>
@@ -78,7 +78,7 @@ export default function PayoutScenarious({ setOpenPayoutScenarious }) {
             fontSize: { sm: "14px", xxs: "12px", xxxs: "10px" },
             fontWeight: 400,
             fontFamily: "poppins",
-            color: "white",
+            color: "secondary.dark_gray",
             mt: "16px",
             pb: "10px",
             borderBottom: "1px solid #D9D9D9",
@@ -97,7 +97,7 @@ export default function PayoutScenarious({ setOpenPayoutScenarious }) {
               fontSize: { sm: "14px", xxs: "12px", xxxs: "10px" },
               fontWeight: 400,
               fontFamily: "poppins",
-              color: "white",
+              color: "secondary.dark_gray",
               mt: "4px",
             }}
           >
@@ -110,7 +110,7 @@ export default function PayoutScenarious({ setOpenPayoutScenarious }) {
             fontSize: { sm: "14px", xxs: "12px", xxxs: "10px" },
             fontWeight: 400,
             fontFamily: "poppins",
-            color: "white",
+            color: "secondary.dark_gray",
             py: "16px",
             borderBottom: "1px solid #D9D9D9",
             borderTop: "1px solid #D9D9D9",
@@ -126,7 +126,7 @@ export default function PayoutScenarious({ setOpenPayoutScenarious }) {
             fontSize: { sm: "14px", xxs: "12px", xxxs: "10px" },
             fontWeight: 400,
             fontFamily: "poppins",
-            color: "white",
+            color: "secondary.dark_gray",
             py: "16px",
             mb: "5px",
           }}

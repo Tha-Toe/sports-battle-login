@@ -16,7 +16,7 @@ import { Input } from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
-export default function Wrong({ setWrong, setOpenTag }) {
+export default function Wrong({ setWrong, setOpenTag, mode }) {
   return (
     <Box
       sx={{
@@ -36,7 +36,7 @@ export default function Wrong({ setWrong, setOpenTag }) {
       <Box
         sx={{
           width: { sm: "673px", xxxs: "90%" },
-          background: "#2A2A2A",
+          bgcolor: "primary.dark",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
@@ -55,12 +55,12 @@ export default function Wrong({ setWrong, setOpenTag }) {
         >
           <ClearIcon
             onClick={() => setWrong(false)}
-            sx={{ cursor: "pointer" }}
+            sx={{ cursor: "pointer", color: "secondary.dark_gray" }}
           />
         </Box>
         <ClearIcon
           sx={{
-            color: "black",
+            color: "primary.main",
             fontSize: { sm: "60px", xxs: "50px", xxxs: "40px" },
             background: "#E4313C",
             borderRadius: "50%",
@@ -71,7 +71,7 @@ export default function Wrong({ setWrong, setOpenTag }) {
             fontSize: { sm: "14px", xxs: "12px", xxxs: "10px" },
             fontWeight: 400,
             fontFamily: "poppins",
-            color: "#F4C7CC",
+            color: `${mode === "dark" ? "#F4C7CC" : "#E4313C"}`,
             mt: "16px",
             width: "70%",
             textAlign: "center",

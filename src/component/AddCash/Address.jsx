@@ -52,7 +52,7 @@ export default function Address({ setAddress }) {
           <ArrowBackIosIcon
             sx={{
               fontSize: { sm: "23px", xxxs: "18px" },
-              color: "secondary.main",
+              color: "secondary.dark_gray",
             }}
           />
           <Typography
@@ -60,7 +60,7 @@ export default function Address({ setAddress }) {
               fontSize: { sm: "16px", xxs: "14px", xxxs: "12px" },
               fontWeight: 600,
               fontFamily: "poppins",
-              color: "secondary.main",
+              color: "secondary.dark_gray",
             }}
           >
             Age Verification Setup{" "}
@@ -81,7 +81,7 @@ export default function Address({ setAddress }) {
         >
           <Typography
             sx={{
-              color: "secondary.main",
+              color: "secondary.dark_gray",
               fontSize: "14px",
               fontWeight: 400,
               fontFamily: "poppins",
@@ -89,7 +89,7 @@ export default function Address({ setAddress }) {
           >
             Refresh
           </Typography>
-          <RestartAltIcon sx={{ color: "secondary.main", ml: "4px" }} />
+          <RestartAltIcon sx={{ color: "secondary.dark_gray", ml: "4px" }} />
         </Box>
       </Box>
       <Box
@@ -112,7 +112,7 @@ export default function Address({ setAddress }) {
         }}
       >
         <LocationOnIcon
-          sx={{ fontSize: "25px", mr: "15px", color: "secondary.main" }}
+          sx={{ fontSize: "25px", mr: "15px", color: "secondary.dark_gray" }}
         />
         <Box
           sx={{
@@ -130,7 +130,7 @@ export default function Address({ setAddress }) {
               fontSize: "14px",
               fontWeight: 400,
               fontFamily: "poppins",
-              color: "secondary.main",
+              color: "secondary.dark_gray",
               width: "100%",
             }}
           >

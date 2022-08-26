@@ -133,6 +133,7 @@ export default function MyProfile({
       <WidthDrawCash
         setOpenTag={setOpenTag}
         alreadyChooseWidthDraw={alreadyChooseWidthDraw}
+        mode={mode}
       />
     );
   } else if (openTag === "chooseAWithdrawMethod") {
@@ -161,7 +162,7 @@ export default function MyProfile({
       />
     );
   } else if (openTag === "myWithDraw") {
-    return <MyWithDraw />;
+    return <MyWithDraw mode={mode} />;
   } else if (openTag === "add-phone-number") {
     return (
       <AddPhoneNumber
@@ -314,7 +315,7 @@ export default function MyProfile({
                 fontSize: { sm: "14px", xs: "12px", xxxs: "10px" },
                 fontWeight: 500,
                 fontFamily: "poppins",
-                color: "secondary.main",
+                color: "secondary.dark_gray",
               }}
             >
               Email{" "}
@@ -324,7 +325,7 @@ export default function MyProfile({
                 fontSize: { sm: "14px", xs: "12px", xxxs: "10px" },
                 fontWeight: 500,
                 fontFamily: "poppins",
-                color: "secondary.main",
+                color: "secondary.dark_gray",
                 mt: "11px",
               }}
             >
@@ -344,7 +345,7 @@ export default function MyProfile({
                 fontSize: { sm: "14px", xs: "12px", xxxs: "10px" },
                 fontWeight: 500,
                 fontFamily: "poppins",
-                color: "secondary.main",
+                color: "secondary.dark_gray",
                 mb: "5px",
               }}
             >
@@ -356,7 +357,7 @@ export default function MyProfile({
                   fontSize: { sm: "14px", xs: "12px", xxxs: "10px" },
                   fontWeight: 500,
                   fontFamily: "poppins",
-                  color: "secondary.main",
+                  color: "secondary.dark_gray",
                   mt: "11px",
                 }}
               >
@@ -403,7 +404,7 @@ export default function MyProfile({
               fontSize: { sm: "16px", xs: "14px", xxxs: "12px" },
               fontWeight: 700,
               fontFamily: "poppins",
-              color: "secondary.main",
+              color: "secondary.dark_gray",
               width: "100%",
               mt: "9px",
               mb: "12px",
@@ -438,7 +439,7 @@ export default function MyProfile({
                   fontSize: { sm: "14px", xs: "12px", xxxs: "10px" },
                   fontWeight: 700,
                   fontFamily: "poppins",
-                  color: "secondary.main",
+                  color: "secondary.dark_gray",
                 }}
               >
                 Your Winnings{" "}
@@ -448,7 +449,7 @@ export default function MyProfile({
                   fontSize: { sm: "10px", xs: "8px", xxxs: "6px" },
                   fontWeight: 400,
                   fontFamily: "poppins",
-                  color: "secondary.main",
+                  color: "secondary.dark_gray",
                   mt: "4px",
                   maxWidth: "485px",
                 }}
@@ -488,7 +489,7 @@ export default function MyProfile({
                     fontSize: { sm: "12px", xs: "10px", xxxs: "8px" },
                     fontWeight: 600,
                     fontFamily: "poppins",
-                    color: "secondary.main",
+                    color: "secondary.dark_gray",
                     mt: "27px",
                     mb: "16px",
                   }}
@@ -500,7 +501,7 @@ export default function MyProfile({
                     fontSize: { sm: "30px", xs: "28px", xxxs: "26px" },
                     fontWeight: 700,
                     fontFamily: "poppins",
-                    color: "secondary.main",
+                    color: "secondary.dark_gray",
                     mb: "16px",
                   }}
                 >
@@ -511,7 +512,7 @@ export default function MyProfile({
                     fontSize: { sm: "10px", xs: "8px", xxxs: "6px" },
                     fontWeight: 400,
                     fontFamily: "poppins",
-                    color: "secondary.main",
+                    color: "secondary.dark_gray",
                     mb: "26px",
                     maxWidth: "90%",
 
@@ -560,7 +561,7 @@ export default function MyProfile({
                     fontSize: { sm: "14px", xs: "12px", xxxs: "10px" },
                     fontWeight: 400,
                     fontFamily: "poppins",
-                    color: "secondary.main",
+                    color: "secondary.dark_gray",
                     mt: "12px",
                     mb: "4px",
                   }}
@@ -572,7 +573,7 @@ export default function MyProfile({
                     fontSize: { sm: "10px", xs: "8px", xxxs: "6px" },
                     fontWeight: 400,
                     fontFamily: "poppins",
-                    color: "secondary.main",
+                    color: "secondary.dark_gray",
                     mb: "9px",
                   }}
                 >
@@ -582,7 +583,7 @@ export default function MyProfile({
             </Box>
             <ArrowForwardIosIcon
               sx={{
-                color: "secondary.main",
+                color: "secondary.dark_gray",
                 fontSize: { sm: "17px", xs: "15px", xxxs: "13px" },
                 mr: "10px",
               }}
@@ -609,7 +610,7 @@ export default function MyProfile({
               fontSize: { sm: "16px", xs: "14px", xxxs: "12px" },
               fontWeight: 700,
               fontFamily: "poppins",
-              color: "secondary.main",
+              color: "secondary.dark_gray",
               width: "100%",
               mt: "26px",
               mb: "12px",
@@ -657,9 +658,8 @@ export default function MyProfile({
                       fontSize: { sm: "20px", xs: "18px", xxxs: "16px" },
                       fontWeight: 700,
                       fontFamily: "poppins",
-                      color: "secondary.main",
+                      color: "secondary.dark_gray",
                       mt: "14px",
-                      color: "secondary.main",
                     }}
                   >
                     {e.firstAmount}{" "}
@@ -669,11 +669,11 @@ export default function MyProfile({
                       fontSize: { sm: "10px", xs: "8px", xxxs: "6px" },
                       fontWeight: 400,
                       fontFamily: "poppins",
-                      color: "secondary.main",
+                      color: "secondary.dark_gray",
                       mb: "4px",
                       maxWidth: "90%",
                       mt: "4px",
-                      color: "secondary.main",
+                      color: "secondary.dark_gray",
 
                       textAlign: "center",
                     }}
@@ -685,7 +685,7 @@ export default function MyProfile({
                       fontSize: { sm: "12px", xs: "10px", xxxs: "8px" },
                       fontWeight: 600,
                       fontFamily: "poppins",
-                      color: "secondary.main",
+                      color: "secondary.dark_gray",
                       mb: "13px",
                     }}
                   >
@@ -718,11 +718,10 @@ export default function MyProfile({
                       fontSize: { sm: "10px", xs: "8px", xxxs: "6px" },
                       fontWeight: 400,
                       fontFamily: "poppins",
-                      color: "secondary.main",
+                      color: "secondary.dark_gray",
                       mb: "4px",
                       maxWidth: "90%",
                       mt: "4px",
-                      color: "secondary.main",
 
                       textAlign: "center",
                     }}
@@ -734,7 +733,7 @@ export default function MyProfile({
                       fontSize: { sm: "12px", xs: "10px", xxxs: "8px" },
                       fontWeight: 600,
                       fontFamily: "poppins",
-                      color: "secondary.main",
+                      color: "secondary.dark_gray",
                       mb: "13px",
                     }}
                   >
@@ -749,7 +748,7 @@ export default function MyProfile({
               fontSize: { sm: "16px", xs: "14px", xxxs: "12px" },
               fontWeight: 700,
               fontFamily: "poppins",
-              color: "secondary.main",
+              color: "secondary.dark_gray",
               width: "100%",
               mb: "10px",
               width: "95%",
@@ -793,7 +792,7 @@ export default function MyProfile({
                   fontSize: { sm: "14px", xs: "12px", xxxs: "10px" },
                   fontWeight: 400,
                   fontFamily: "poppins",
-                  color: "secondary.main",
+                  color: "secondary.dark_gray",
                   mt: "12px",
                   mb: "4px",
                 }}
@@ -806,7 +805,7 @@ export default function MyProfile({
                   fontSize: { sm: "24px", xs: "22px", xxxs: "20px" },
                   fontWeight: 700,
                   fontFamily: "poppins",
-                  color: "secondary.main",
+                  color: "secondary.dark_gray",
                 }}
               >
                 AOOAEU77{" "}
@@ -816,7 +815,7 @@ export default function MyProfile({
 
           <ArrowForwardIosIcon
             sx={{
-              color: "secondary.main",
+              color: "secondary.dark_gray",
               fontSize: { sm: "17px", xs: "15px", xxxs: "13px" },
               mr: "10px",
             }}
@@ -851,7 +850,7 @@ export default function MyProfile({
                 fontSize: { sm: "14px", xs: "12px", xxxs: "10px" },
                 fontWeight: 400,
                 fontFamily: "poppins",
-                color: "secondary.main",
+                color: "secondary.dark_gray",
                 ml: { xs: "37px", xxxs: "10px" },
               }}
             >
@@ -860,7 +859,7 @@ export default function MyProfile({
           </Box>
           <ArrowForwardIosIcon
             sx={{
-              color: "secondary.main",
+              color: "secondary.dark_gray",
               fontSize: { sm: "17px", xs: "15px", xxxs: "13px" },
               mr: "10px",
             }}
@@ -894,7 +893,7 @@ export default function MyProfile({
                 fontSize: { sm: "14px", xs: "12px", xxxs: "10px" },
                 fontWeight: 400,
                 fontFamily: "poppins",
-                color: "secondary.main",
+                color: "secondary.dark_gray",
                 ml: { xs: "37px", xxxs: "10px" },
               }}
             >
@@ -903,7 +902,7 @@ export default function MyProfile({
           </Box>
           <ArrowForwardIosIcon
             sx={{
-              color: "secondary.main",
+              color: "secondary.dark_gray",
               fontSize: { sm: "17px", xs: "15px", xxxs: "13px" },
               mr: "10px",
             }}

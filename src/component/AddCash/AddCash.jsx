@@ -67,7 +67,7 @@ export default function AddCash() {
             fontSize: { xs: "16px", xxxs: "14px" },
             fontWeight: 600,
             fontFamily: "poppins",
-            color: "secondary.main",
+            color: "secondary.dark_gray",
             mt: "14px",
           }}
         >
@@ -78,7 +78,7 @@ export default function AddCash() {
             fontSize: { xs: "14px", xxxs: "12px" },
             fontWeight: 300,
             fontFamily: "poppins",
-            color: "secondary.main",
+            color: "secondary.dark_gray",
             mt: "16px",
           }}
         >
@@ -91,18 +91,18 @@ export default function AddCash() {
                 minWidth: { xs: "64px", xxxs: "50px" },
                 height: "40px",
                 background: `${
-                  amount === e.amount ? "#439F48" : "secondary.main"
+                  amount === e.amount ? "#439F48" : "secondary.dark_gray"
                 }`,
                 border: "1px solid #439F48",
                 borderRadius: "4px",
                 fontSize: { xs: "16px", xxxs: "14px" },
                 fontWeight: 600,
                 fontFamily: "poppins",
-                color: `${amount === e.amount ? "black" : "#439F48"}`,
+                color: `${amount === e.amount ? "primary.main" : "#439F48"}`,
                 mr: "4px",
                 "&.MuiButtonBase-root:hover": {
                   background: "#439F48",
-                  color: "black",
+                  color: "primary.main",
                 },
               }}
               onClick={() => {
@@ -121,7 +121,7 @@ export default function AddCash() {
                 fontSize: { xs: "14px", xxxs: "12px" },
                 fontWeight: 600,
                 fontFamily: "poppins",
-                color: "secondary.main",
+                color: "secondary.dark_gray",
                 mb: "7px",
               }}
             >
@@ -132,7 +132,7 @@ export default function AddCash() {
               placeholder="100"
               variant="outlined"
               sx={{
-                color: "secondary.main",
+                color: "secondary.dark_gray",
                 borderBottom: "1px solid #439F48",
                 width: "100%",
                 py: "7px",
@@ -178,7 +178,7 @@ export default function AddCash() {
             fontSize: { xs: "14px", xxxs: "12px" },
             fontWeight: 300,
             fontFamily: "poppins",
-            color: "secondary.main",
+            color: "secondary.dark_gray",
             mt: "8px",
             textAlign: { xs: "start", xxxs: "center" },
           }}
@@ -210,7 +210,7 @@ export default function AddCash() {
             fontSize: { xs: "14px", xxxs: "12px" },
             fontWeight: 300,
             fontFamily: "poppins",
-            color: "secondary.main",
+            color: "secondary.dark_gray",
             mt: "16px",
             textAlign: { xs: "start", xxxs: "center" },
           }}
@@ -278,7 +278,7 @@ export default function AddCash() {
           />
           <Typography
             sx={{
-              color: "secondary.main",
+              color: "secondary.dark_gray",
               fontSize: { xs: "14px", xxxs: "12px" },
               fontWeight: 600,
               fontFamily: "poppins",
@@ -296,7 +296,7 @@ export default function AddCash() {
             fontSize: { xs: "16px", xxxs: "14px" },
             fontWeight: 600,
             fontFamily: "poppins",
-            color: "secondary.main",
+            color: "secondary.dark_gray",
             mb: "14px",
           }}
         >
@@ -307,7 +307,7 @@ export default function AddCash() {
             fontSize: { xs: "16px", xxxs: "14px" },
             fontWeight: 500,
             fontFamily: "poppins",
-            color: "secondary.main",
+            color: "secondary.dark_gray",
             mb: "10px",
           }}
         >
@@ -318,7 +318,7 @@ export default function AddCash() {
             fontSize: { xs: "14px", xxxs: "12px" },
             fontWeight: 400,
             fontFamily: "poppins",
-            color: "secondary.main",
+            color: "secondary.dark_gray",
             mb: "10px",
           }}
         >
@@ -335,7 +335,7 @@ export default function AddCash() {
             fontSize: { xs: "16px", xxxs: "14px" },
             fontWeight: 500,
             fontFamily: "poppins",
-            color: "secondary.main",
+            color: "secondary.dark_gray",
             mb: "10px",
           }}
         >
@@ -346,7 +346,7 @@ export default function AddCash() {
             fontSize: { xs: "14px", xxxs: "12px" },
             fontWeight: 400,
             fontFamily: "poppins",
-            color: "secondary.main",
+            color: "secondary.dark_gray",
             mb: "10px",
           }}
         >
@@ -363,7 +363,7 @@ export default function AddCash() {
             fontSize: { xs: "16px", xxxs: "14px" },
             fontWeight: 500,
             fontFamily: "poppins",
-            color: "secondary.main",
+            color: "secondary.dark_gray",
             mb: "10px",
           }}
         >
@@ -374,7 +374,7 @@ export default function AddCash() {
             fontSize: { xs: "14px", xxxs: "12px" },
             fontWeight: 400,
             fontFamily: "poppins",
-            color: "secondary.main",
+            color: "secondary.dark_gray",
             mb: "10px",
           }}
         >

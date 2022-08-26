@@ -33,7 +33,7 @@ export default function SelectDepositOption({ setOpenSelectDepositOption }) {
       <Box
         sx={{
           width: { sm: "566px", xxxs: "90%" },
-          background: "#2A2A2A",
+          bgcolor: "primary.dark",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
@@ -51,7 +51,7 @@ export default function SelectDepositOption({ setOpenSelectDepositOption }) {
         >
           <Typography
             sx={{
-              color: "secondary.main",
+              color: "secondary.dark_gray",
               fontSize: { sm: "16px", xxs: "14px", xxxs: "12px" },
               fontWeight: 700,
               fontFamily: "poppins",
@@ -60,7 +60,7 @@ export default function SelectDepositOption({ setOpenSelectDepositOption }) {
             Select deposit option
           </Typography>
           <ClearIcon
-            sx={{ color: "secondary.main", cursor: "pointer" }}
+            sx={{ color: "secondary.dark_gray", cursor: "pointer" }}
             onClick={() => setOpenSelectDepositOption(false)}
           />
         </Box>
@@ -83,7 +83,7 @@ export default function SelectDepositOption({ setOpenSelectDepositOption }) {
               fontSize: { sm: "16px", xxs: "14px", xxxs: "12px" },
               fontWeight: 700,
               fontFamily: "poppins",
-              color: "secondary.main",
+              color: "secondary.dark_gray",
               ml: "10px",
             }}
           >
@@ -91,12 +91,12 @@ export default function SelectDepositOption({ setOpenSelectDepositOption }) {
           </Typography>
           <Button
             sx={{
-              color: "primary.main",
-              background: "#464646",
+              color: "secondary.dark_gray",
+              bgcolor: "primary.dark_gray",
               padding: "5px 12px",
               mr: "10px",
               "&.MuiButtonBase-root:hover": {
-                background: "#464646",
+                bgcolor: "primary.light",
               },
               fontSize: { sm: "14px", xxs: "12px", xxxs: "10px" },
               fontWeight: 500,
@@ -114,7 +114,7 @@ export default function SelectDepositOption({ setOpenSelectDepositOption }) {
             fontSize: { sm: "16px", xxs: "14px", xxxs: "12px" },
             fontWeigh: 600,
             fontFamily: "poppins",
-            color: "secondary.main",
+            color: "white",
             background: "#439F48",
             mt: "16px",
             mb: "21px",
@@ -133,7 +133,7 @@ export default function SelectDepositOption({ setOpenSelectDepositOption }) {
             fontSize: { sm: "12px", xxs: "10px", xxxs: "8px" },
             fontWeight: 400,
             fontFamily: "poppins",
-            color: "secondary.main",
+            color: "secondary.dark_gray",
           }}
         >
           By continuing, you agree to SportsBattle’s

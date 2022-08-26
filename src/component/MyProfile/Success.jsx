@@ -16,7 +16,7 @@ import { Input } from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
-export default function Success({ setConfirm, setSuccess, setWrong }) {
+export default function Success({ setConfirm, setSuccess, setWrong, mode }) {
   const goWrongPage = () => {
     setWrong(true);
     setSuccess(false);
@@ -41,7 +41,7 @@ export default function Success({ setConfirm, setSuccess, setWrong }) {
       <Box
         sx={{
           width: { sm: "673px", xxxs: "90%" },
-          background: "#2A2A2A",
+          bgcolor: "primary.dark",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
@@ -60,12 +60,12 @@ export default function Success({ setConfirm, setSuccess, setWrong }) {
         >
           <ClearIcon
             onClick={() => setSuccess(false)}
-            sx={{ cursor: "pointer" }}
+            sx={{ cursor: "pointer", color: "secondary.dark_gray" }}
           />
         </Box>
         <CheckCircleIcon
           sx={{
-            color: "#C8E6CA",
+            color: `${mode === "dark" ? "#C8E6CA" : "#439F48"}`,
             fontSize: { sm: "60px", xxs: "50px", xxxs: "40px" },
           }}
         />
@@ -74,7 +74,7 @@ export default function Success({ setConfirm, setSuccess, setWrong }) {
             fontSize: { sm: "14px", xxs: "12px", xxxs: "10px" },
             fontWeight: 400,
             fontFamily: "poppins",
-            color: "#C8E6CA",
+            color: `${mode === "dark" ? "#C8E6CA" : "#439F48"}`,
             mt: "16px",
             width: "70%",
             textAlign: "center",

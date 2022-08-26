@@ -18,7 +18,11 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import Success from "./Success";
 import Wrong from "./Wrong";
 
-export default function WidthDrawCash({ setOpenTag, alreadyChooseWidthDraw }) {
+export default function WidthDrawCash({
+  setOpenTag,
+  alreadyChooseWidthDraw,
+  mode,
+}) {
   const [note, setNote] = useState([
     {
       note: "Once you request a withdrawal, it takes our Compliance Team around 1-2 business days to review it. ",
@@ -100,13 +104,13 @@ export default function WidthDrawCash({ setOpenTag, alreadyChooseWidthDraw }) {
         }}
         onClick={() => setOpenTag("profile")}
       >
-        <ArrowBackIosNewIcon />
+        <ArrowBackIosNewIcon sx={{ color: "secondary.dark_gray" }} />
         <Typography
           sx={{
             fontSize: { sm: "16px", xxs: "14px", xxxs: "12px" },
             fontWeight: 600,
             fontFamily: "poppins",
-            color: "secondary.main",
+            color: "secondary.dark_gray",
             ml: "15px",
           }}
         >
@@ -119,7 +123,7 @@ export default function WidthDrawCash({ setOpenTag, alreadyChooseWidthDraw }) {
           fontSize: { sm: "14px", xxs: "12px", xxxs: "10px" },
           fontWeight: 400,
           fontFamily: "poppins",
-          color: "secondary.main",
+          color: "secondary.dark_gray",
           width: "100%",
           mt: "16px",
         }}
@@ -131,7 +135,7 @@ export default function WidthDrawCash({ setOpenTag, alreadyChooseWidthDraw }) {
           fontSize: { sm: "16px", xxs: "14px", xxxs: "12px" },
           fontWeight: 600,
           fontFamily: "poppins",
-          color: "secondary.main",
+          color: "secondary.dark_gray",
           width: "100%",
           mt: "10px",
         }}
@@ -153,7 +157,7 @@ export default function WidthDrawCash({ setOpenTag, alreadyChooseWidthDraw }) {
             fontSize: { sm: "14px", xxs: "12px", xxxs: "10px" },
             fontWeight: 400,
             fontFamily: "poppins",
-            color: "secondary.main",
+            color: "secondary.dark_gray",
           }}
         >
           Available cash to withdraw -{" "}
@@ -190,7 +194,7 @@ export default function WidthDrawCash({ setOpenTag, alreadyChooseWidthDraw }) {
                   sx={{
                     width: "100%",
                     borderBottom: "1px solid #494949",
-                    color: "secondary.main",
+                    color: "secondary.dark_gray",
                     fontSize: { sm: "16px", xxs: "14px", xxxs: "12px" },
                     fontWeight: 500,
                   }}
@@ -230,7 +234,7 @@ export default function WidthDrawCash({ setOpenTag, alreadyChooseWidthDraw }) {
                         fontSize: { sm: "16px", xxs: "14px", xxxs: "12px" },
                         fontWeight: 600,
                         fontFamily: "poppins",
-                        color: "secondary.main",
+                        color: "secondary.dark_gray",
                         width: "100%",
                         mb: "4px",
                       }}
@@ -242,7 +246,7 @@ export default function WidthDrawCash({ setOpenTag, alreadyChooseWidthDraw }) {
                         fontSize: { sm: "14px", xxs: "12px", xxxs: "10px" },
                         fontWeight: 400,
                         fontFamily: "poppins",
-                        color: "secondary.main",
+                        color: "secondary.dark_gray",
                         width: "100%",
                         mb: "4px",
                         width: { sm: "40%", xxxs: "80%" },
@@ -294,7 +298,7 @@ export default function WidthDrawCash({ setOpenTag, alreadyChooseWidthDraw }) {
                   sx={{
                     width: "100%",
                     borderBottom: "1px solid #494949",
-                    color: "secondary.main",
+                    color: "secondary.dark_gray",
                     fontSize: { sm: "16px", xxs: "14px", xxxs: "12px" },
                     fontWeight: 500,
                   }}
@@ -334,7 +338,7 @@ export default function WidthDrawCash({ setOpenTag, alreadyChooseWidthDraw }) {
                         fontSize: { sm: "16px", xxs: "14px", xxxs: "12px" },
                         fontWeight: 600,
                         fontFamily: "poppins",
-                        color: "secondary.main",
+                        color: "secondary.dark_gray",
                         width: "100%",
                         mb: "4px",
                       }}
@@ -346,7 +350,7 @@ export default function WidthDrawCash({ setOpenTag, alreadyChooseWidthDraw }) {
                         fontSize: { sm: "14px", xxs: "12px", xxxs: "10px" },
                         fontWeight: 400,
                         fontFamily: "poppins",
-                        color: "secondary.main",
+                        color: "secondary.dark_gray",
                         width: "100%",
                         mb: "4px",
                         width: { sm: "40%", xxxs: "80%" },
@@ -390,7 +394,7 @@ export default function WidthDrawCash({ setOpenTag, alreadyChooseWidthDraw }) {
               fontSize: { sm: "16px", xxs: "14px", xxxs: "12px" },
               fontWeight: 500,
               fontFamily: "poppins",
-              color: "white",
+              color: "secondary.dark_gray",
               py: "10px",
               width: "100%",
               borderBottom: "1px solid #494949",
@@ -438,7 +442,7 @@ export default function WidthDrawCash({ setOpenTag, alreadyChooseWidthDraw }) {
           fontSize: { sm: "16px", xxs: "14px", xxxs: "12px" },
           fontWeight: 700,
           fontFamily: "poppins",
-          color: "secondary.main",
+          color: "secondary.dark_gray",
           width: "100%",
           mt: "24px",
         }}
@@ -459,7 +463,7 @@ export default function WidthDrawCash({ setOpenTag, alreadyChooseWidthDraw }) {
         >
           <CheckCircleIcon
             sx={{
-              color: "secondary.main",
+              color: "secondary.dark_gray",
               bgcolor: "primary.main",
               borderRadius: "50%",
             }}
@@ -469,7 +473,7 @@ export default function WidthDrawCash({ setOpenTag, alreadyChooseWidthDraw }) {
               fontSize: { sm: "14px", xxs: "12px", xxxs: "10px" },
               fontWeight: 400,
               fontFamily: "poppins",
-              color: "secondary.main",
+              color: "secondary.dark_gray",
               ml: "11px",
             }}
           >
@@ -496,7 +500,7 @@ export default function WidthDrawCash({ setOpenTag, alreadyChooseWidthDraw }) {
           <Box
             sx={{
               width: { sm: "673px", xs: "90%" },
-              background: "#2A2A2A",
+              bgcolor: "primary.dark",
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
@@ -518,14 +522,14 @@ export default function WidthDrawCash({ setOpenTag, alreadyChooseWidthDraw }) {
                   fontSize: { sm: "16px", xxs: "14px", xxxs: "12px" },
                   fontFamily: "poppins",
                   fontWeight: 700,
-                  color: "secondary.main",
+                  color: "secondary.dark_gray",
                 }}
               >
                 Please Confirm
               </Typography>
               <ClearIcon
                 onClick={() => setConfirm(false)}
-                sx={{ cursor: "pointer" }}
+                sx={{ cursor: "pointer", color: "secondary.dark_gray" }}
               />
             </Box>
             {confirmData.map((e) => (
@@ -544,7 +548,7 @@ export default function WidthDrawCash({ setOpenTag, alreadyChooseWidthDraw }) {
                     fontSize: { sm: "14px", xxs: "12px", xxxs: "10px" },
                     fontWeight: 500,
                     fontFamily: "poppins",
-                    color: "secondary.main",
+                    color: "secondary.dark_gray",
                   }}
                 >
                   {e.name}{" "}
@@ -554,7 +558,7 @@ export default function WidthDrawCash({ setOpenTag, alreadyChooseWidthDraw }) {
                     fontSize: { sm: "14px", xxs: "12px", xxxs: "10px" },
                     fontWeight: 700,
                     fontFamily: "poppins",
-                    color: "secondary.main",
+                    color: "secondary.dark_gray",
                     ml: "4px",
                   }}
                 >
@@ -599,7 +603,7 @@ export default function WidthDrawCash({ setOpenTag, alreadyChooseWidthDraw }) {
                 fontSize: { sm: "12px", xxs: "10px", xxxs: "8px" },
                 fontWeight: 400,
                 fontFamily: "poppins",
-                color: "secondary.main",
+                color: "secondary.dark_gray",
                 mt: "16px",
               }}
             >
@@ -620,8 +624,12 @@ export default function WidthDrawCash({ setOpenTag, alreadyChooseWidthDraw }) {
           </Box>
         </Box>
       )}
-      {success && <Success setSuccess={setSuccess} setWrong={setWrong} />}
-      {wrong && <Wrong setWrong={setWrong} setOpenTag={setOpenTag} />}
+      {success && (
+        <Success setSuccess={setSuccess} setWrong={setWrong} mode={mode} />
+      )}
+      {wrong && (
+        <Wrong setWrong={setWrong} setOpenTag={setOpenTag} mode={mode} />
+      )}
     </Box>
   );
 }

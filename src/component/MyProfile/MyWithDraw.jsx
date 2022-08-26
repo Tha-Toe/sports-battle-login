@@ -16,7 +16,7 @@ import { Input, Grid, Card } from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
-export default function MyWithDraw() {
+export default function MyWithDraw({ mode }) {
   const [detail, setDetail] = useState([
     {
       name: "Standard eCheck",
@@ -88,7 +88,7 @@ export default function MyWithDraw() {
           fontSize: { xs: "16px", xxs: "14px", xxxs: "12px" },
           fontWeight: 700,
           fontFamily: "poppins",
-          color: "secondary.main",
+          color: "secondary.dark_gray",
           mt: "23px",
         }}
       >
@@ -98,7 +98,7 @@ export default function MyWithDraw() {
         sx={{
           width: { xs: "232px", xxxs: "150px" },
           height: "2px",
-          bgcolor: "secondary.main",
+          bgcolor: "secondary.dark_gray",
           mt: "9px",
           mb: "21px",
         }}
@@ -114,7 +114,7 @@ export default function MyWithDraw() {
                 justifyContent: "space-between",
                 width: "95%",
                 borderRadius: "4px",
-                border: "1px solid #494949",
+                border: `${mode === "dark" ? "1px solid #494949" : "none"}`,
                 bgcolor: "primary.main",
               }}
             >
@@ -131,7 +131,7 @@ export default function MyWithDraw() {
                     fontSize: { xs: "14px", xxs: "12px", xxxs: "10px" },
                     fontWeight: 400,
                     fontFamily: "poppins",
-                    color: "secondary.main",
+                    color: "secondary.dark_gray",
                     mt: "9px",
                   }}
                 >
@@ -142,7 +142,7 @@ export default function MyWithDraw() {
                     fontSize: { xs: "12px", xxs: "10px", xxxs: "8px" },
                     fontWeight: 500,
                     fontFamily: "poppins",
-                    color: "secondary.main",
+                    color: "secondary.dark_gray",
                     mt: "6px",
                   }}
                 >
@@ -153,7 +153,7 @@ export default function MyWithDraw() {
                     fontSize: { xs: "12px", xxs: "10px", xxxs: "8px" },
                     fontWeight: 500,
                     fontFamily: "poppins",
-                    color: "secondary.main",
+                    color: "secondary.dark_gray",
                     mt: "6px",
                   }}
                 >
@@ -164,7 +164,7 @@ export default function MyWithDraw() {
                     fontSize: { xs: "12px", xxs: "10px", xxxs: "8px" },
                     fontWeight: 400,
                     fontFamily: "poppins",
-                    color: "secondary.main",
+                    color: "secondary.dark_gray",
                     mt: "6px",
                   }}
                 >
@@ -175,7 +175,7 @@ export default function MyWithDraw() {
                     fontSize: { xs: "12px", xxs: "10px", xxxs: "8px" },
                     fontWeight: 400,
                     fontFamily: "poppins",
-                    color: "secondary.main",
+                    color: "secondary.dark_gray",
                     mt: "6px",
                     mb: "8px",
                   }}
@@ -197,7 +197,7 @@ export default function MyWithDraw() {
                     fontSize: { xs: "20px", xxs: "14px", xxxs: "12px" },
                     fontWeight: 500,
                     fontFamily: "poppins",
-                    color: "#FFCED6",
+                    color: `${mode === "dark" ? "#FFCED6" : "#E4313C"}`,
                   }}
                 >
                   {e.amount}
