@@ -12,7 +12,7 @@ import {
 import CheckIcon from "@mui/icons-material/Check";
 import ClearIcon from "@mui/icons-material/Clear";
 
-const CreateUserName = () => {
+const CreateUserName = ({ mode, setMode }) => {
   const [name, setName] = useState(null);
 
   let navigate = useNavigate();
@@ -36,6 +36,13 @@ const CreateUserName = () => {
   }, [name]);
 
   const [validCode, setValidCode] = useState(true);
+  const switchMode = () => {
+    if (mode === "dark") {
+      setMode("light");
+    } else {
+      setMode("dark");
+    }
+  };
   return (
     <div className="first-signup-flow-container">
       <Box
@@ -47,6 +54,8 @@ const CreateUserName = () => {
           alignItems: "center",
           width: { sm: "60%", xxxs: "100%" },
           position: "relative",
+          height: "100%",
+          bgcolor: "primary.dark_gray",
         }}
       >
         <Box
@@ -77,6 +86,7 @@ const CreateUserName = () => {
                 fontSize: { xs: "14px", xxxs: "12px" },
                 mb: "11px",
                 fontFamily: "Poppins",
+                color: "secondary.dark_gray",
               }}
             >
               STEP 2 OF 3
@@ -87,6 +97,7 @@ const CreateUserName = () => {
                 fontWeight: "700",
                 mb: "4px",
                 fontFamily: "Poppins",
+                color: "secondary.dark_gray",
               }}
             >
               Create your username
@@ -96,11 +107,16 @@ const CreateUserName = () => {
                 fontSize: { xs: "14px", xxs: "12px", xxxs: "10px" },
                 mb: "25px",
                 fontFamily: "Poppins",
+                color: "secondary.dark_gray",
               }}
             >
               Enter your unique user name
             </Typography>
-            <InputComponent placeholder={"User Name"} setName={setName} />
+            <InputComponent
+              placeholder={"User Name"}
+              setName={setName}
+              mode={mode}
+            />
             <Box
               component={"div"}
               sx={{
@@ -179,14 +195,15 @@ const CreateUserName = () => {
               xxs: "15px",
               xxxs: "15px",
             },
-            height: "262px",
-            borderRightColor: "white",
-            borderRight: 2,
+            height: "242px",
+            borderRight: `${
+              mode === "dark" ? "2px solid white" : "2px solid #494949"
+            }`,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "space-between",
-            top: "15%",
+            top: "45%",
           }}
         >
           <Box
@@ -220,7 +237,7 @@ const CreateUserName = () => {
               border: 2,
               borderRadius: "50%",
               borderColor: "#4831D4",
-              background: "black",
+              bgcolor: "primary.main",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
@@ -242,10 +259,11 @@ const CreateUserName = () => {
               height: { md: "30px", xxxs: "20px" },
               position: "relative",
               right: "-50%",
-              border: 2,
+              border: `${
+                mode === "dark" ? "2px solid white" : "2px solid #494949"
+              }`,
               borderRadius: "50%",
-              borderColor: "white",
-              background: "black",
+              bgcolor: "primary.main",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
@@ -257,16 +275,26 @@ const CreateUserName = () => {
                 width: "10px",
                 height: "10px",
                 borderRadius: "50%",
-                background: "white",
+                bgcolor: "secondary.dark_gray",
               }}
             ></Box>
           </Box>
         </Box>
       </Box>
-      <div className="rightImageContainer">
+      <div
+        className={`${"rightImageContainer"} ${
+          mode !== "dark" && "right-container-light-mode"
+        }`}
+      >
+        {" "}
         <img src="RightPhoneFinal.png" className="right-image" />{" "}
         <img src="Vector.png" className="right-vector" />
       </div>
+      <img
+        src="/switchModeLoginPage.png"
+        className="switchMode"
+        onClick={switchMode}
+      />
     </div>
   );
 };

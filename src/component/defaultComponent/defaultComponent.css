@@ -17,6 +17,7 @@
 .inputCompleteLogin:focus {
   background-color: black;
 }
+
 .input-component {
   width: 389px;
   height: 64px;
@@ -34,6 +35,14 @@
 .input-component:focus {
   border: 1px solid #2c2c2c;
   background-color: black;
+}
+.input-light-mode {
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  color: #494949;
+}
+.input-light-mode:focus {
+  background-color: white;
 }
 @media (max-width: 900px) {
   .inputCompleteLogin,

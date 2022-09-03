@@ -11,7 +11,7 @@ import {
 } from "../../defaultComponent/DefaultComponent";
 import ClearIcon from "@mui/icons-material/Clear";
 
-const ForgotPassword = () => {
+const ForgotPassword = ({ mode, setMode }) => {
   const [email, setEmail] = useState(null);
   const [disableButton, setDisableButton] = useState(false);
 
@@ -30,6 +30,13 @@ const ForgotPassword = () => {
   };
 
   const [matchAccount, setMatchAccount] = useState(true);
+  const switchMode = () => {
+    if (mode === "dark") {
+      setMode("light");
+    } else {
+      setMode("dark");
+    }
+  };
   return (
     <div className="login-flow-container">
       <Box
@@ -40,6 +47,8 @@ const ForgotPassword = () => {
           justifyContent: "center",
           alignItems: "center",
           width: { md: "60%", sm: "60%", xxxs: "100%" },
+          height: "100%",
+          bgcolor: "primary.dark_gray",
         }}
       >
         <Box
@@ -92,6 +101,7 @@ const ForgotPassword = () => {
                 fontWeight: "700",
                 mb: "11px",
                 fontFamily: "Poppins",
+                color: "secondary.dark_gray",
               }}
             >
               Forgot Password?
@@ -101,11 +111,16 @@ const ForgotPassword = () => {
                 fontSize: { xs: "14px", xxs: "12px", xxxs: "10px" },
                 mb: "21px",
                 fontFamily: "Poppins",
+                color: "secondary.dark_gray",
               }}
             >
               We’ll send a verification code to your mail id if registered
             </Typography>
-            <InputComponent placeholder={"Email address"} setEmail={setEmail} />
+            <InputComponent
+              placeholder={"Email address"}
+              setEmail={setEmail}
+              mode={mode}
+            />
             {!matchAccount && (
               <Box
                 sx={{
@@ -150,7 +165,7 @@ const ForgotPassword = () => {
             >
               <Typography
                 sx={{
-                  color: "white",
+                  color: "secondary.dark_gray",
                   fontSize: { xs: "18px", xxxs: "14px" },
                   fontFamily: "Poppins",
                 }}
@@ -160,7 +175,7 @@ const ForgotPassword = () => {
               <Link to="/choose">
                 <Typography
                   sx={{
-                    color: "white",
+                    color: "secondary.dark_gray",
                     fontSize: { xs: "18px", xxxs: "14px" },
 
                     fontWeight: 700,
@@ -177,10 +192,18 @@ const ForgotPassword = () => {
           </FormControl>
         </Box>
       </Box>
-
-      <div className="rightImageContainer-rpp">
+      <div
+        className={`${"rightImageContainer-rpp"} ${
+          mode !== "dark" && "right-rpp-light-mode"
+        }`}
+      >
         <img src="Reset-password-pana-1.png" className="right-image-rpp" />
       </div>
+      <img
+        src="/switchModeLoginPage.png"
+        className="switchMode"
+        onClick={switchMode}
+      />
     </div>
   );
 };

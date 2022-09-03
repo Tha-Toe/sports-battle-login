@@ -89,19 +89,48 @@ function App() {
       >
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<LoginFlow />} />
-            <Route path="/choose" element={<Choose />} />
-            <Route path="/enteryourdetail" element={<EnterYourDetail />} />
-            <Route path="/enteryourname" element={<EnterYourName />} />
-            <Route path="/checkmail" element={<CheckMail />} />
+            <Route
+              path="/"
+              element={<LoginFlow mode={mode} setMode={setMode} />}
+            />
+            <Route
+              path="/choose"
+              element={<Choose mode={mode} setMode={setMode} />}
+            />
+            <Route
+              path="/enteryourdetail"
+              element={<EnterYourDetail mode={mode} setMode={setMode} />}
+            />
+            <Route
+              path="/enteryourname"
+              element={<EnterYourName mode={mode} setMode={setMode} />}
+            />
+            <Route
+              path="/checkmail"
+              element={<CheckMail mode={mode} setMode={setMode} />}
+            />
             <Route
               path="/signupverification"
-              element={<EnterVerificationCodeSignup />}
+              element={
+                <EnterVerificationCodeSignup mode={mode} setMode={setMode} />
+              }
             />
-            <Route path="/forgotpassword" element={<ForgotPassword />} />
-            <Route path="/newpassword" element={<NewPassword />} />
-            <Route path="/createpassword" element={<CreatePassword />} />
-            <Route path="/createusername" element={<CreateUserName />} />
+            <Route
+              path="/forgotpassword"
+              element={<ForgotPassword mode={mode} setMode={setMode} />}
+            />
+            <Route
+              path="/newpassword"
+              element={<NewPassword mode={mode} setMode={setMode} />}
+            />
+            <Route
+              path="/createpassword"
+              element={<CreatePassword mode={mode} setMode={setMode} />}
+            />
+            <Route
+              path="/createusername"
+              element={<CreateUserName mode={mode} setMode={setMode} />}
+            />
             <Route
               path="/logged"
               element={<Logged mode={mode} setMode={setMode} />}

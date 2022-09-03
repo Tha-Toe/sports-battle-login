@@ -6,11 +6,18 @@ import { Link, useNavigate } from "react-router-dom";
 import GoogleIcon from "@mui/icons-material/Google";
 import AppleIcon from "@mui/icons-material/Apple";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
-const Choose = () => {
+const Choose = ({ mode, setMode }) => {
   let navigate = useNavigate();
 
   const handleGoSignUp = () => {
     navigate("/enteryourdetail", { replace: true });
+  };
+  const switchMode = () => {
+    if (mode === "dark") {
+      setMode("light");
+    } else {
+      setMode("dark");
+    }
   };
   return (
     <div className="login-flow-container">
@@ -22,6 +29,8 @@ const Choose = () => {
           justifyContent: "center",
           alignItems: "center",
           width: { md: "60%", sm: "60%", xxxs: "100%" },
+          height: "100%",
+          bgcolor: "primary.dark_gray",
         }}
       >
         <Box
@@ -74,6 +83,7 @@ const Choose = () => {
                 fontWeight: "700",
                 mb: "11px",
                 fontFamily: "Poppins",
+                color: "secondary.dark_gray",
               }}
             >
               Choose your method
@@ -96,7 +106,7 @@ const Choose = () => {
               <Button
                 startIcon={<GoogleIcon />}
                 sx={{
-                  color: "white",
+                  color: "secondary.dark_gray",
                   width: {
                     md: "196px",
                     sm: "190px",
@@ -107,13 +117,15 @@ const Choose = () => {
                   height: { xs: "64px", xxxs: "50px" },
                   fontSize: { xs: "14px", xxs: "10px", xxxs: "8px" },
                   border: 2,
-                  borderColor: "#272727",
                   borderRadius: "5px",
+                  borderColor: `${mode === "dark" ? "#272727" : "#e0e0e0"}`,
                   "&.MuiButtonBase-root:hover": {
-                    borderColor: "white",
+                    borderColor: `${mode === "dark" ? "white" : "black"}`,
+                    bgcolor: "primary.main",
                   },
                   textTransform: "none",
                   fontFamily: "Poppins",
+                  bgcolor: "primary.main",
                 }}
               >
                 Signup with Google
@@ -121,7 +133,7 @@ const Choose = () => {
               <Button
                 startIcon={<AppleIcon />}
                 sx={{
-                  color: "white",
+                  color: "secondary.dark_gray",
                   width: {
                     md: "196px",
                     sm: "190px",
@@ -132,13 +144,15 @@ const Choose = () => {
                   height: { xs: "64px", xxxs: "50px" },
                   fontSize: { xs: "14px", xxs: "10px", xxxs: "8px" },
                   border: 2,
-                  borderColor: "#272727",
                   borderRadius: "5px",
+                  borderColor: `${mode === "dark" ? "#272727" : "#e0e0e0"}`,
                   "&.MuiButtonBase-root:hover": {
-                    borderColor: "white",
+                    borderColor: `${mode === "dark" ? "white" : "black"}`,
+                    bgcolor: "primary.main",
                   },
                   textTransform: "none",
                   fontFamily: "Poppins",
+                  bgcolor: "primary.main",
                 }}
               >
                 Signup with Apple
@@ -148,7 +162,7 @@ const Choose = () => {
             <Button
               startIcon={<MailOutlineIcon />}
               sx={{
-                color: "white",
+                color: "secondary.dark_gray",
                 width: {
                   md: "408px",
                   sm: "390px",
@@ -160,14 +174,16 @@ const Choose = () => {
                 fontSize: { xs: "16px", xxxs: "14px" },
                 mb: 3,
                 border: 2,
-                borderColor: "#272727",
                 borderRadius: "5px",
+                borderColor: `${mode === "dark" ? "#272727" : "#e0e0e0"}`,
                 "&.MuiButtonBase-root:hover": {
-                  borderColor: "white",
+                  borderColor: `${mode === "dark" ? "white" : "black"}`,
+                  bgcolor: "primary.main",
                 },
                 textTransform: "none",
                 fontFamily: "Poppins",
                 fontWeight: "500",
+                bgcolor: "primary.main",
               }}
               onClick={handleGoSignUp}
             >
@@ -190,7 +206,7 @@ const Choose = () => {
             >
               <Typography
                 sx={{
-                  color: "white",
+                  color: "secondary.dark_gray",
                   fontSize: { xxs: "16px", xxxs: "14px" },
                   fontFamily: "Poppins",
                 }}
@@ -200,7 +216,7 @@ const Choose = () => {
               <Link to="/">
                 <Typography
                   sx={{
-                    color: "white",
+                    color: "secondary.dark_gray",
                     fontSize: { xxs: "16px", xxxs: "14px" },
                     fontWeight: "700",
                     ml: { xs: "5px", xxxs: "5px" },
@@ -216,10 +232,19 @@ const Choose = () => {
           </FormControl>
         </Box>
       </Box>
-      <div className="rightImageContainer">
+      <div
+        className={`${"rightImageContainer"} ${
+          mode !== "dark" && "right-container-light-mode"
+        }`}
+      >
         <img src="RightPhoneFinal.png" className="right-image" />{" "}
         <img src="Vector.png" className="right-vector" />
       </div>
+      <img
+        src="/switchModeLoginPage.png"
+        className="switchMode"
+        onClick={switchMode}
+      />
     </div>
   );
 };

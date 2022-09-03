@@ -8,7 +8,7 @@ import {
   BackButtonComponent,
   ContinueButtonComponent,
 } from "../../defaultComponent/DefaultComponent";
-const CheckMail = () => {
+const CheckMail = ({ mode, setMode }) => {
   const [verifyCode, setVerifyCode] = useState(null);
   let navigate = useNavigate();
   const handleBack = () => {
@@ -30,6 +30,13 @@ const CheckMail = () => {
   }, [verifyCode]);
 
   const [invalidCode, setInvalidCode] = useState(false);
+  const switchMode = () => {
+    if (mode === "dark") {
+      setMode("light");
+    } else {
+      setMode("dark");
+    }
+  };
   return (
     <div className="second-signup-flow-container">
       <Box
@@ -41,6 +48,8 @@ const CheckMail = () => {
           alignItems: "center",
           width: { sm: "60%", xxxs: "100%" },
           position: "relative",
+          bgcolor: "primary.dark_gray",
+          height: "100%",
         }}
       >
         <Box
@@ -84,6 +93,7 @@ const CheckMail = () => {
                 fontWeight: "700",
                 mb: "4px",
                 fontFamily: "Poppins",
+                color: "secondary.dark_gray",
               }}
             >
               Check Mail
@@ -93,6 +103,7 @@ const CheckMail = () => {
                 fontSize: { xs: "14px", xxs: "12px", xxxs: "10px" },
                 mb: "11px",
                 fontFamily: "Poppins",
+                color: "secondary.dark_gray",
               }}
             >
               We have sent you password reset link to your mail, Check your mail
@@ -125,9 +136,19 @@ const CheckMail = () => {
           </FormControl>
         </Box>
       </Box>
-      <div className="rightImageContainer-msp">
+      <div
+        className={`${"rightImageContainer-rpp"} ${
+          mode !== "dark" && "right-rpp-light-mode"
+        }`}
+      >
+        {" "}
         <img src="Mail-sent-pana-1.png" className="right-image-msp" />
       </div>
+      <img
+        src="/switchModeLoginPage.png"
+        className="switchMode"
+        onClick={switchMode}
+      />
     </div>
   );
 };

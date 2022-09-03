@@ -12,7 +12,7 @@ import {
   InputComponentLogin,
   PasswordInputComponentLogin,
 } from "../../defaultComponent/DefaultComponent";
-const LoginFlow = () => {
+const LoginFlow = ({ mode, setMode }) => {
   const [showPass, setShowPass] = useState(false);
   const [name, setName] = useState(null);
   const [password, setPassword] = useState(null);
@@ -29,6 +29,13 @@ const LoginFlow = () => {
   const handleContinue = () => {
     navigate("/logged", { replace: true });
   };
+  const switchMode = () => {
+    if (mode === "dark") {
+      setMode("light");
+    } else {
+      setMode("dark");
+    }
+  };
   return (
     <div className="login-flow-container">
       <Box
@@ -39,8 +46,9 @@ const LoginFlow = () => {
           justifyContent: "center",
           alignItems: "center",
           width: { md: "60%", sm: "60%", xxxs: "100%" },
+          bgcolor: "primary.dark_gray",
+          height: "100%",
         }}
-        x
       >
         <Box
           component="div"
@@ -92,6 +100,7 @@ const LoginFlow = () => {
                 fontWeight: "700",
                 mb: "11px",
                 fontFamily: "Poppins",
+                color: "secondary.dark_gray",
               }}
             >
               Login to Your Account
@@ -114,7 +123,7 @@ const LoginFlow = () => {
               <Button
                 startIcon={<GoogleIcon />}
                 sx={{
-                  color: "white",
+                  color: "secondary.dark_gray",
                   width: {
                     md: "196px",
                     sm: "190px",
@@ -125,13 +134,15 @@ const LoginFlow = () => {
                   height: { xs: "64px", xxxs: "50px" },
                   fontSize: { xs: "14px", xxs: "10px", xxxs: "8px" },
                   border: 2,
-                  borderColor: "#272727",
                   borderRadius: "5px",
+                  borderColor: `${mode === "dark" ? "#272727" : "#e0e0e0"}`,
                   "&.MuiButtonBase-root:hover": {
-                    borderColor: "white",
+                    borderColor: `${mode === "dark" ? "white" : "black"}`,
+                    bgcolor: "primary.main",
                   },
                   textTransform: "none",
                   fontFamily: "Poppins",
+                  bgcolor: "primary.main",
                 }}
               >
                 Login with Google
@@ -139,7 +150,7 @@ const LoginFlow = () => {
               <Button
                 startIcon={<AppleIcon />}
                 sx={{
-                  color: "white",
+                  color: "secondary.dark_gray",
                   width: {
                     md: "196px",
                     sm: "190px",
@@ -150,25 +161,32 @@ const LoginFlow = () => {
                   height: { xs: "64px", xxxs: "50px" },
                   fontSize: { xs: "14px", xxs: "10px", xxxs: "8px" },
                   border: 2,
-                  borderColor: "#272727",
+                  borderColor: `${mode === "dark" ? "#272727" : "#e0e0e0"}`,
                   borderRadius: "5px",
                   "&.MuiButtonBase-root:hover": {
-                    borderColor: "white",
+                    borderColor: `${mode === "dark" ? "white" : "black"}`,
+                    bgcolor: "primary.main",
                   },
                   textTransform: "none",
                   fontFamily: "Poppins",
+                  bgcolor: "primary.main",
                 }}
               >
                 Login with Apple
               </Button>
             </Box>
-            <InputComponentLogin placeholder={"User Name"} setName={setName} />
+            <InputComponentLogin
+              placeholder={"User Name"}
+              setName={setName}
+              mode={mode}
+            />
 
             <PasswordInputComponentLogin
               placeholder={"Password"}
               showPass={showPass}
               setPassword={setPassword}
               setShowPass={setShowPass}
+              mode={mode}
             />
             <Typography
               sx={{
@@ -189,7 +207,10 @@ const LoginFlow = () => {
             >
               <Link
                 to="/forgotpassword"
-                style={{ textDecoration: "none", color: "white" }}
+                style={{
+                  textDecoration: "none",
+                  color: `${mode === "dark" ? "#ffffff" : "#494949"}`,
+                }}
               >
                 Forgot Password?
               </Link>
@@ -210,7 +231,7 @@ const LoginFlow = () => {
             >
               <Typography
                 sx={{
-                  color: "white",
+                  color: "secondary.dark_gray",
                   fontSize: { xs: "18px", xxxs: "14px" },
                   fontFamily: "Poppins",
                 }}
@@ -220,7 +241,7 @@ const LoginFlow = () => {
               <Link to="/choose">
                 <Typography
                   sx={{
-                    color: "white",
+                    color: "secondary.dark_gray",
                     fontSize: { xs: "18px", xxxs: "14px" },
                     fontWeight: 700,
                     ml: "5px",
@@ -236,10 +257,19 @@ const LoginFlow = () => {
           </FormControl>
         </Box>
       </Box>
-      <div className="rightImageContainer">
+      <div
+        className={`${"rightImageContainer"} ${
+          mode !== "dark" && "right-container-light-mode"
+        }`}
+      >
         <img src="RightPhoneFinal.png" className="right-image" />{" "}
         <img src="Vector.png" className="right-vector" />
       </div>
+      <img
+        src="/switchModeLoginPage.png"
+        className="switchMode"
+        onClick={switchMode}
+      />
     </div>
   );
 };

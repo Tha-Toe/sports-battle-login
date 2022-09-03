@@ -10,7 +10,7 @@ import {
   ContinueButtonComponent,
 } from "../../defaultComponent/DefaultComponent";
 import ClearIcon from "@mui/icons-material/Clear";
-const EnterVerificationCodeSignup = ({}) => {
+const EnterVerificationCodeSignup = ({ mode, setMode }) => {
   const [verifyCode, setVerifyCode] = useState(null);
   let navigate = useNavigate();
   const handleBack = () => {
@@ -32,6 +32,13 @@ const EnterVerificationCodeSignup = ({}) => {
   }, [verifyCode]);
 
   const [invalidCode, setInvalidCode] = useState(false);
+  const switchMode = () => {
+    if (mode === "dark") {
+      setMode("light");
+    } else {
+      setMode("dark");
+    }
+  };
   return (
     <div className="second-signup-flow-container">
       <Box
@@ -43,6 +50,8 @@ const EnterVerificationCodeSignup = ({}) => {
           alignItems: "center",
           width: { sm: "60%", xxxs: "100%" },
           position: "relative",
+          height: "100%",
+          bgcolor: "primary.dark_gray",
         }}
       >
         <Box
@@ -52,7 +61,13 @@ const EnterVerificationCodeSignup = ({}) => {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            width: { md: "50%", xxxs: "80%" },
+            width: {
+              md: "408px",
+              sm: "390px",
+              xs: "408px",
+              xxs: "300px",
+              xxxs: "250px",
+            },
           }}
         >
           <Box component={"div"} sx={{ width: 1, mb: "43px" }}>
@@ -79,6 +94,7 @@ const EnterVerificationCodeSignup = ({}) => {
                 fontSize: { xs: "14px", xxxs: "12px" },
                 mb: "11px",
                 fontFamily: "Poppins",
+                color: "secondary.dark_gray",
               }}
             >
               STEP 1 OF 3
@@ -89,6 +105,7 @@ const EnterVerificationCodeSignup = ({}) => {
                 fontWeight: "700",
                 mb: "4px",
                 fontFamily: "Poppins",
+                color: "secondary.dark_gray",
               }}
             >
               Enter verification code
@@ -98,6 +115,7 @@ const EnterVerificationCodeSignup = ({}) => {
                 fontSize: { xs: "12px", xxs: "10px", xxxs: "8px" },
                 mb: "21px",
                 fontFamily: "Poppins",
+                color: "secondary.dark_gray",
               }}
             >
               You would receive a verificaton code to your mail, Kindly enter
@@ -142,12 +160,12 @@ const EnterVerificationCodeSignup = ({}) => {
                   width: "100%",
                   height: "100%",
                   border: 0,
-                  background: "#272727",
-                  color: "white",
+                  background: `${mode === "dark" ? "#272727" : "white"}`,
+                  color: `${mode === "dark" ? "white" : "#494949"}`,
                   pl: 2,
                   fontSize: "16px",
                   "&.Mui-focused": {
-                    bgcolor: "black",
+                    background: `${mode === "dark" ? "black" : "white"}`,
                     border: "1px solid #2C2C2C",
                     outline: 1,
                   },
@@ -218,13 +236,14 @@ const EnterVerificationCodeSignup = ({}) => {
               xxxs: "15px",
             },
             height: "242px",
-            borderRightColor: "white",
-            borderRight: 2,
+            borderRight: `${
+              mode === "dark" ? "2px solid white" : "2px solid #494949"
+            }`,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "space-between",
-            top: "35%",
+            top: "45%",
           }}
         >
           <Box
@@ -236,7 +255,7 @@ const EnterVerificationCodeSignup = ({}) => {
               border: 2,
               borderRadius: "50%",
               borderColor: "#4831D4",
-              background: "black",
+              bgcolor: "primary.main",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
@@ -258,10 +277,11 @@ const EnterVerificationCodeSignup = ({}) => {
               height: { md: "30px", xxxs: "20px" },
               position: "relative",
               right: "-50%",
-              border: 2,
               borderRadius: "50%",
-              borderColor: "white",
-              background: "black",
+              border: `${
+                mode === "dark" ? "2px solid white" : "2px solid #494949"
+              }`,
+              bgcolor: "primary.main",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
@@ -273,10 +293,11 @@ const EnterVerificationCodeSignup = ({}) => {
               height: { md: "30px", xxxs: "20px" },
               position: "relative",
               right: "-50%",
-              border: 2,
+              border: `${
+                mode === "dark" ? "2px solid white" : "2px solid #494949"
+              }`,
               borderRadius: "50%",
-              borderColor: "white",
-              background: "black",
+              bgcolor: "primary.main",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
@@ -288,16 +309,26 @@ const EnterVerificationCodeSignup = ({}) => {
                 width: "10px",
                 height: "10px",
                 borderRadius: "50%",
-                background: "white",
+                bgcolor: "secondary.main",
               }}
             ></Box>
           </Box>
         </Box>
       </Box>
-      <div className="rightImageContainer">
+      <div
+        className={`${"rightImageContainer"} ${
+          mode !== "dark" && "right-container-light-mode"
+        }`}
+      >
+        {" "}
         <img src="RightPhoneFinal.png" className="right-image" />{" "}
         <img src="Vector.png" className="right-vector" />
       </div>
+      <img
+        src="/switchModeLoginPage.png"
+        className="switchMode"
+        onClick={switchMode}
+      />
     </div>
   );
 };

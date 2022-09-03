@@ -11,7 +11,7 @@ import {
 } from "../../defaultComponent/DefaultComponent";
 import CheckIcon from "@mui/icons-material/Check";
 
-const CreatePassword = () => {
+const CreatePassword = ({ mode, setMode }) => {
   const [enterPassword, setEnterPassword] = useState(null);
   const [reEnterPassword, setReEnterPassword] = useState(null);
   const [showPass, setShowPass] = useState(false);
@@ -40,6 +40,13 @@ const CreatePassword = () => {
       setDisableButton(true);
     }
   }, [enterPassword, reEnterPassword]);
+  const switchMode = () => {
+    if (mode === "dark") {
+      setMode("light");
+    } else {
+      setMode("dark");
+    }
+  };
   return (
     <div className="first-signup-flow-container">
       <Box
@@ -51,6 +58,8 @@ const CreatePassword = () => {
           alignItems: "center",
           width: { sm: "60%", xxxs: "100%" },
           position: "relative",
+          height: "100%",
+          bgcolor: "primary.dark_gray",
         }}
       >
         <Box
@@ -80,6 +89,7 @@ const CreatePassword = () => {
                 fontSize: { xs: "14px", xxxs: "12px" },
                 mb: "11px",
                 fontFamily: "Poppins",
+                color: "secondary.dark_gray",
               }}
             >
               STEP 3 OF 3
@@ -90,6 +100,7 @@ const CreatePassword = () => {
                 fontWeight: "700",
                 mb: "4px",
                 fontFamily: "Poppins",
+                color: "secondary.dark_gray",
               }}
             >
               Create your password
@@ -99,6 +110,7 @@ const CreatePassword = () => {
                 fontSize: { xs: "14px", xxs: "12px", xxxs: "10px" },
                 mb: "25px",
                 fontFamily: "Poppins",
+                color: "secondary.dark_gray",
               }}
             >
               You'll use this log into your account.
@@ -108,12 +120,14 @@ const CreatePassword = () => {
               showPass={showPass}
               setEnterPassword={setEnterPassword}
               setShowPass={setShowPass}
+              mode={mode}
             />
             <PasswordInputComponent
               placeholder={"Re-enter your new password"}
               showPass={showPass2}
               setReEnterPassword={setReEnterPassword}
               setShowPass={setShowPass2}
+              mode={mode}
             />
             <Box
               component="div"
@@ -155,11 +169,14 @@ const CreatePassword = () => {
             height: "242px",
             borderRightColor: "white",
             borderRight: 2,
+            borderRight: `${
+              mode === "dark" ? "2px solid white" : "2px solid #494949"
+            }`,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "space-between",
-            top: "15%",
+            top: "45%",
           }}
         >
           <Box
@@ -215,7 +232,7 @@ const CreatePassword = () => {
               border: 2,
               borderRadius: "50%",
               borderColor: "#4831D4",
-              background: "black",
+              bgcolor: "primary.main",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
@@ -233,10 +250,20 @@ const CreatePassword = () => {
           </Box>
         </Box>
       </Box>
-      <div className="rightImageContainer">
+      <div
+        className={`${"rightImageContainer"} ${
+          mode !== "dark" && "right-container-light-mode"
+        }`}
+      >
+        {" "}
         <img src="RightPhoneFinal.png" className="right-image" />{" "}
         <img src="Vector.png" className="right-vector" />
       </div>
+      <img
+        src="/switchModeLoginPage.png"
+        className="switchMode"
+        onClick={switchMode}
+      />
     </div>
   );
 };

@@ -223,23 +223,21 @@ export function Logged({ mode, setMode }) {
             <Box
               sx={{
                 display: "flex",
-                flexDirection: "row",
+                flexDirection: { lg: "row", sm: "row", xxxs: "row" },
                 alignItems: "center",
                 justifyContent: "center",
                 mt: "5px",
-                width: "151px",
                 background: "black",
                 position: { sm: "absolute", xxxs: "static" },
-                left: { sm: "20px", xxxs: "35px" },
+                left: { lg: "10px", sm: "30px", xxxs: "35px" },
                 mx: { sm: "auto", xxxs: "auto" },
-                pl: "7px",
               }}
             >
               <img src="/sportBattleMyPropsLogo.png" className="logos" />
               <Typography
                 sx={{
                   color: "white",
-                  fontSize: { sm: "16px", xxs: "14px", xxxs: "12px" },
+                  fontSize: { sm: "15px", xxs: "14px", xxxs: "12px" },
                   fontWeight: 700,
                   fontFamily: "poppins",
                   position: "relative",
@@ -580,6 +578,7 @@ export function Logged({ mode, setMode }) {
                 alignItems: "flex-start",
                 height: "22%",
                 width: { lg: "145px", md: "90px", sm: "70px", xxxs: "145px" },
+                mt: "10px",
               }}
             >
               <Typography
@@ -640,6 +639,7 @@ export function Logged({ mode, setMode }) {
                 height: "7%",
                 cursor: "pointer",
                 width: { lg: "145px", md: "90px", sm: "70px", xxxs: "145px" },
+                mt: "10px",
               }}
               onClick={switchMode}
             >
@@ -649,6 +649,8 @@ export function Logged({ mode, setMode }) {
                   fontWeight: 700,
                   fontFamily: "poppins",
                   color: "#2582E3",
+                  textAlign: "center",
+                  mb: { lg: "0px", sm: "5px", xxxs: "0px" },
                 }}
               >
                 Switch Theme
@@ -684,10 +686,11 @@ export function Logged({ mode, setMode }) {
               sx={{
                 display: "flex",
                 flexDirection: "column",
-                justifyContent: "center",
+                justifyContent: "flex-start",
                 alignItems: "center",
                 height: "21%",
                 width: { lg: "145px", md: "90px", sm: "70px", xxxs: "145px" },
+                mt: "10px",
               }}
             >
               <Typography

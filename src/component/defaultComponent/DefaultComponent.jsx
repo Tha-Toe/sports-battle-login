@@ -161,12 +161,15 @@ export function InputComponent({
   setFirstName,
   setSecondName,
   setVerifyCode,
+  mode,
 }) {
   return (
     <input
       placeholder={placeholder}
       type="text"
-      className="input-component"
+      className={`${"input-component"} ${
+        mode !== "dark" && "input-light-mode"
+      }`}
       onChange={(e) => {
         setName && setName(e.target.value);
         setEmail && setEmail(e.target.value);
@@ -185,6 +188,7 @@ export function PasswordInputComponent({
   setPassword,
   setEnterPassword,
   setReEnterPassword,
+  mode,
 }) {
   return (
     <Box
@@ -208,26 +212,9 @@ export function PasswordInputComponent({
         type={showPass ? "text" : "password"}
         variant="outlined"
         disableUnderline
-        className="input-component"
-        sx={{
-          width: 1,
-          height: 1,
-          outline: 0,
-          border: "1px solid #2c2c2c",
-          background: "#222222",
-          borderRadius: "5px",
-          color: "white",
-          boxShadow: 3,
-          "&.Mui-focused": {
-            background: "black",
-            border: "1px solid #2c2c2c",
-            outline: 1,
-          },
-          pl: 2,
-          fontSize: { xs: "16px", xxxs: "14px" },
-          fontFamily: "Poppins",
-          fontWeight: 300,
-        }}
+        className={`${"input-component"} ${
+          mode !== "dark" && "input-light-mode"
+        }`}
         onChange={(e) => {
           setPassword && setPassword(e.target.value);
           setReEnterPassword && setReEnterPassword(e.target.value);
@@ -237,7 +224,7 @@ export function PasswordInputComponent({
       {showPass ? (
         <VisibilityOutlinedIcon
           sx={{
-            color: "white",
+            color: "secondary.dark_gray",
             position: "absolute",
             top: { sm: "25px", xs: "18px", xxxs: "14px" },
             right: "10px",
@@ -250,7 +237,7 @@ export function PasswordInputComponent({
       ) : (
         <VisibilityOffOutlinedIcon
           sx={{
-            color: "white",
+            color: "secondary.dark_gray",
             position: "absolute",
             top: { sm: "25px", xs: "20px", xxxs: "16px" },
             right: "10px",
@@ -272,12 +259,15 @@ export function InputComponentLogin({
   setFirstName,
   setSecondName,
   setVerifyCode,
+  mode,
 }) {
   return (
     <input
       placeholder={placeholder}
       type="text"
-      className="inputCompleteLogin"
+      className={`${"inputCompleteLogin"} ${
+        mode !== "dark" && "input-light-mode"
+      }`}
       onChange={(e) => {
         setName && setName(e.target.value);
         setEmail && setEmail(e.target.value);
@@ -295,6 +285,7 @@ export function PasswordInputComponentLogin({
   setPassword,
   setEnterPassword,
   setReEnterPassword,
+  mode,
 }) {
   return (
     <Box
@@ -318,7 +309,9 @@ export function PasswordInputComponentLogin({
         type={showPass ? "text" : "password"}
         variant="outlined"
         disableUnderline
-        className="input-component"
+        className={`${"input-component"} ${
+          mode !== "dark" && "input-light-mode"
+        }`}
         sx={{
           width: 1,
           height: 1,
@@ -347,7 +340,7 @@ export function PasswordInputComponentLogin({
       {showPass ? (
         <VisibilityOutlinedIcon
           sx={{
-            color: "white",
+            color: "secondary.dark_gray",
             position: "absolute",
             top: { sm: "25px", xs: "18px", xxxs: "14px" },
             right: "10px",
@@ -360,7 +353,7 @@ export function PasswordInputComponentLogin({
       ) : (
         <VisibilityOffOutlinedIcon
           sx={{
-            color: "white",
+            color: "secondary.dark_gray",
             position: "absolute",
             top: { sm: "25px", xs: "20px", xxxs: "16px" },
             right: "10px",
