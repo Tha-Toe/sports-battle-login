@@ -69,8 +69,12 @@ const CheckMail = ({ mode, setMode }) => {
             mr: { xxxs: "20px", sm: 0 },
           }}
         >
-          <Box component={"div"} sx={{ width: 1, mb: "75px" }}>
-            <img src="/sportsbattle.png" className="logo" />
+          <Box component={"div"} sx={{ width: 1, mb: "25px" }}>
+            {mode === "dark" ? (
+              <img src="/sportsbattle.png" className="logo" />
+            ) : (
+              <img src="/sportsbattle-lightmode.png" className="logo-light" />
+            )}
           </Box>
           <FormControl
             sx={{

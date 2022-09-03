@@ -76,8 +76,12 @@ const ForgotPassword = ({ mode, setMode }) => {
               alignItems: "flex-start",
             }}
           >
-            <Box component={"div"} sx={{ width: 1, mb: "74px" }}>
-              <img src="/sportsbattle.png" className="logo" />
+            <Box component={"div"} sx={{ width: 1, mb: "25px" }}>
+              {mode === "dark" ? (
+                <img src="/sportsbattle.png" className="logo" />
+              ) : (
+                <img src="/sportsbattle-lightmode.png" className="logo-light" />
+              )}
             </Box>
           </Box>
           <FormControl

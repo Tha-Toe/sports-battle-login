@@ -38,7 +38,7 @@
 }
 .input-light-mode {
   background-color: white;
-  border: 1px solid #e0e0e0;
+  border: none;
   color: #494949;
 }
 .input-light-mode:focus {
