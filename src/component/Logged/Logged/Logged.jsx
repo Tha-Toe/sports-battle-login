@@ -448,8 +448,8 @@ export function Logged({ mode, setMode }) {
                       sx={{
                         background: "transparent",
                         color: "primary.main",
-                        width: { sm: "180px", xs: "150px", xxxs: "130px" },
-                        py: { sm: "18px", xs: "14px", xxxs: "12px" },
+                        width: { sm: "100px", xs: "80px", xxxs: "80px" },
+                        py: { sm: "14px", xs: "10px", xxxs: "10px" },
                         fontSize: { sm: "14px", xxxs: "12px" },
                         fontWeight: 600,
                         fontFamily: "poppins",
@@ -474,6 +474,7 @@ export function Logged({ mode, setMode }) {
         sx={{
           position: "relative",
           height: { sm: "90%", xxxs: "90%" },
+          minHeight: "704px",
           width: "100%",
         }}
       >
@@ -547,6 +548,7 @@ export function Logged({ mode, setMode }) {
                     cursor: "pointer",
                     width: "100%",
                     ml: { lg: "5px", sm: "0px", xxxs: "5px" },
+                    mb: { lg: "0px", sm: "10px", xxxs: "0px" },
                   }}
                   onClick={e.func}
                 >
@@ -577,8 +579,10 @@ export function Logged({ mode, setMode }) {
                 justifyContent: "space-between",
                 alignItems: "flex-start",
                 height: "22%",
+                height: { lg: "22%", sm: "30%", xxxs: "22%" },
                 width: { lg: "145px", md: "90px", sm: "70px", xxxs: "145px" },
                 mt: "10px",
+                mb: { lg: "0px", sm: "10px", xxxs: "0px" },
               }}
             >
               <Typography
@@ -588,6 +592,7 @@ export function Logged({ mode, setMode }) {
                   fontFamily: "poppins",
                   color: "#2582E3",
                   ml: "10px",
+                  mt: { lg: "0px", sm: "10px", xxxs: "0px" },
                 }}
               >
                 Other
@@ -622,6 +627,7 @@ export function Logged({ mode, setMode }) {
                       fontWeight: `${openTag === e.activeName ? 600 : 400}`,
                       ml: { lg: "8px", sm: "0px", xxxs: "8px" },
                       color: "secondary.dark_gray",
+                      mt: { lg: "0px", sm: "10px", xxxs: "0px" },
                     }}
                   >
                     {e.name}

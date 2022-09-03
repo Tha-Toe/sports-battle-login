@@ -85,6 +85,7 @@ function App() {
           alignItems: "center",
           justifyContent: "center",
           background: `${mode === "dark" ? "black" : "white"}`,
+          overflowX: "hidden",
         }}
       >
         <BrowserRouter>
