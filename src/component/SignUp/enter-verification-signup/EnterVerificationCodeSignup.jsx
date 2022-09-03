@@ -71,11 +71,7 @@ const EnterVerificationCodeSignup = ({ mode, setMode }) => {
           }}
         >
           <Box component={"div"} sx={{ width: 1, mb: "25px" }}>
-            {mode === "dark" ? (
-              <img src="/sportsbattle.png" className="logo" />
-            ) : (
-              <img src="/sportsbattle-lightmode.png" className="logo-light" />
-            )}
+            <img src="/sportsbattle.png" className="logo" />
           </Box>
 
           <FormControl
