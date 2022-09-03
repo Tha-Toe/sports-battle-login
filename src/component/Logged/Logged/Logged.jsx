@@ -617,6 +617,7 @@ export function Logged({ mode, setMode }) {
                 >
                   <img
                     src={openTag === e.activeName ? e.activeSrc : e.unactiveSrc}
+                    className="other-logo"
                   />
                   <Typography
                     sx={{
