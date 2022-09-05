@@ -259,6 +259,8 @@ export function Logged({ mode, setMode }) {
                   xxs: "100%",
                   xxxs: "100%",
                 },
+                width: { xl: "1450px", lg: "91%", sm: "90%", xxxs: "100%" },
+
                 margin: "0 auto",
                 display: "flex",
                 justifyContent: { sm: "flex-end", xxxs: "space-between" },
@@ -474,7 +476,6 @@ export function Logged({ mode, setMode }) {
         sx={{
           position: "relative",
           height: { sm: "90%", xxxs: "90%" },
-          minHeight: "704px",
           width: "100%",
           display: "flex",
           flexDirection: "row",
@@ -530,7 +531,6 @@ export function Logged({ mode, setMode }) {
                 flexDirection: "column",
                 justifyContent: "space-between",
                 alignItems: "flex-start",
-                height: "39%",
                 width: { lg: "145px", md: "90px", sm: "90px", xxxs: "145px" },
                 mt: "20px",
               }}
@@ -546,25 +546,29 @@ export function Logged({ mode, setMode }) {
                       sm: "center",
                       xxxs: "flex-start",
                     },
-                    height: "20%",
                     cursor: "pointer",
                     width: "100%",
-                    ml: { lg: "5px", sm: "0px", xxxs: "5px" },
-                    mb: { lg: "0px", sm: "10px", xxxs: "0px" },
+                    ml: { lg: "10px", sm: "0px", xxxs: "5px" },
+                    mb: "20px",
                   }}
                   onClick={e.func}
                 >
-                  <img
-                    src={openTag === e.activeName ? e.activeSrc : e.unactiveSrc}
-                    className="side-bar-icon"
-                  />
+                  <Box sx={{ width: "auto" }}>
+                    <img
+                      src={
+                        openTag === e.activeName ? e.activeSrc : e.unactiveSrc
+                      }
+                      className="side-bar-icon"
+                    />
+                  </Box>
                   <Typography
                     sx={{
                       fontFamily: "poppins",
                       fontSize: { sm: "10px", xxxs: "8px" },
                       textAlign: "center",
                       fontWeight: `${openTag === e.activeName ? 600 : 400}`,
-                      mt: "5px",
+
+                      mt: { lg: "0px", sm: "5px", xxxs: "0px" },
                       ml: { lg: "8px", sm: "0px", xxxs: "8px" },
                       color: "secondary.dark_gray",
                     }}
@@ -580,11 +584,7 @@ export function Logged({ mode, setMode }) {
                 flexDirection: "column",
                 justifyContent: "space-between",
                 alignItems: "flex-start",
-                height: "22%",
-                height: { lg: "22%", sm: "27%", xxxs: "22%" },
                 width: { lg: "145px", md: "90px", sm: "90px", xxxs: "145px" },
-                mt: "10px",
-                mb: { lg: "0px", sm: "10px", xxxs: "0px" },
               }}
             >
               <Typography
@@ -594,7 +594,7 @@ export function Logged({ mode, setMode }) {
                   fontFamily: "poppins",
                   color: "#2582E3",
                   ml: "10px",
-                  mt: { lg: "0px", sm: "10px", xxxs: "0px" },
+                  mb: "10px",
                 }}
               >
                 Other
@@ -610,11 +610,10 @@ export function Logged({ mode, setMode }) {
                       sm: "center",
                       xxxs: "flex-start",
                     },
-                    height: "20%",
                     cursor: "pointer",
                     width: "100%",
                     ml: { lg: "10px", sm: "0px", xxxs: "10px" },
-                    mb: "3px",
+                    mb: "20px",
                   }}
                   onClick={e.func}
                 >
@@ -627,7 +626,6 @@ export function Logged({ mode, setMode }) {
                       fontFamily: "poppins",
                       fontSize: { sm: "10px", xxxs: "8px" },
                       textAlign: "center",
-                      mt: "3px",
                       fontWeight: `${openTag === e.activeName ? 600 : 400}`,
                       ml: { lg: "8px", sm: "0px", xxxs: "8px" },
                       color: "secondary.dark_gray",
@@ -644,12 +642,12 @@ export function Logged({ mode, setMode }) {
               sx={{
                 display: "flex",
                 flexDirection: { lg: "row", sm: "column", xxxs: "row" },
-                justifyContent: "space-around",
+                justifyContent: "space-between",
                 alignItems: "center",
-                height: "7%",
                 cursor: "pointer",
-                width: { lg: "145px", md: "90px", sm: "90px", xxxs: "145px" },
-                mt: "10px",
+                width: { lg: "140px", md: "90px", sm: "90px", xxxs: "140px" },
+                mb: "15px",
+                ml: { lg: "15px", sm: "0px", xxxs: "15px" },
               }}
               onClick={switchMode}
             >
@@ -698,9 +696,7 @@ export function Logged({ mode, setMode }) {
                 flexDirection: "column",
                 justifyContent: "flex-start",
                 alignItems: "center",
-                height: "21%",
                 width: { lg: "145px", md: "90px", sm: "90px", xxxs: "145px" },
-                mt: "10px",
               }}
             >
               <Typography
@@ -711,7 +707,7 @@ export function Logged({ mode, setMode }) {
                   color: "#2582E3",
                   width: "100%",
                   mb: "5px",
-                  ml: "20px",
+                  ml: "18px",
                 }}
               >
                 Our Socials
@@ -727,7 +723,7 @@ export function Logged({ mode, setMode }) {
                     sm: "center",
                     xxxs: "flex-start",
                   },
-                  ml: { lg: "10px", sm: "0px", xxxs: "10px" },
+                  ml: { lg: "13px", sm: "0px", xxxs: "13px" },
                 }}
               >
                 <img
@@ -740,7 +736,7 @@ export function Logged({ mode, setMode }) {
                   sx={{
                     fontFamily: "poppins",
                     fontSize: "10px",
-                    ml: { lg: "10px", sm: "0px", xxxs: "10px" },
+                    ml: { lg: "8px", sm: "0px", xxxs: "8px" },
                     textAlign: "center",
                     color: "secondary.dark_gray",
                   }}
@@ -760,7 +756,7 @@ export function Logged({ mode, setMode }) {
                     xxxs: "flex-start",
                   },
                   mt: "10px",
-                  ml: { lg: "10px", sm: "0px", xxxs: "10px" },
+                  ml: { lg: "13px", sm: "0px", xxxs: "13px" },
                 }}
               >
                 <img
@@ -773,7 +769,7 @@ export function Logged({ mode, setMode }) {
                   sx={{
                     fontFamily: "poppins",
                     fontSize: "10px",
-                    ml: { lg: "10px", sm: "0px", xxxs: "10px" },
+                    ml: { lg: "8px", sm: "0px", xxxs: "8px" },
                     textAlign: "center",
                     color: "secondary.dark_gray",
                   }}

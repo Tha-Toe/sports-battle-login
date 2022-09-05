@@ -38,20 +38,30 @@ const GridItemComponent = ({
       };
       addCardIndex(data);
     } else {
-      let selectCardIdClone = selectCardId.map((each) => {
-        if (each.index === index) {
-          return {
-            index: each.index,
-            type: type,
-            selectSports: each.selectSports,
-            selectColor: each.selectColor,
-            selectSrc: each.selectSrc,
-          };
-        } else {
-          return each;
-        }
+      let filterToCheckType = selectCardId.filter((each) => {
+        return each.index === index;
       });
-      setSelectCardId(selectCardIdClone);
+      if (filterToCheckType && filterToCheckType[0].type !== type) {
+        let selectCardIdClone = selectCardId.map((each) => {
+          if (each.index === index) {
+            return {
+              index: each.index,
+              type: type,
+              selectSports: each.selectSports,
+              selectColor: each.selectColor,
+              selectSrc: each.selectSrc,
+            };
+          } else {
+            return each;
+          }
+        });
+        setSelectCardId(selectCardIdClone);
+      } else {
+        let selectCardIdClone = selectCardId.filter((each) => {
+          return each.index !== index;
+        });
+        setSelectCardId(selectCardIdClone);
+      }
     }
     setAlreadyPicked(true);
   };

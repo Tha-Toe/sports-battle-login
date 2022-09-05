@@ -383,14 +383,6 @@ export default function Props({
     <main className="props-container">
       <Box
         sx={{
-          width: {
-            xl: "1000px",
-            lg: "836px",
-            md: "700px",
-            sm: "500px",
-            xs: "450px",
-            xxxs: "90%",
-          },
           width: { xl: "1300px", lg: "85%", sm: "80%", xxxs: "90%" },
           height: "100vh",
           margin: "auto",
@@ -493,20 +485,20 @@ export default function Props({
               display: "flex",
               flexDirection: "rows",
               alignItems: "center",
-              justifyContent: { xl: "flex-start", xxxs: "space-between" },
-              width: "40%",
+              justifyContent: { xl: "flex-start", xxxs: "flex-start" },
+              width: { xs: "50%", xxxs: "55%" },
             }}
           >
             {propsGuide.map((e) => (
               <Box
                 sx={{
                   display: "flex",
-                  flexDirection: "rows",
+                  flexDirection: { sm: "rows", xxxs: "column" },
                   alignItems: "center",
                   justifyContent: "center",
                   cursor: "pointer",
                   flexWrap: "wrap",
-                  mr: { xl: "10px", xxxs: "0px" },
+                  mr: { xl: "10px", xxxs: "10px" },
                 }}
                 onClick={e.func}
               >
@@ -534,6 +526,7 @@ export default function Props({
                     fontFamily: "poppins",
                     fontWeight: 500,
                     color: "secondary.main",
+                    ml: { sm: "5px", xxxs: "0px" },
                   }}
                 >
                   {e.name}
@@ -563,7 +556,7 @@ export default function Props({
                 sm: "250px",
                 xs: "200px",
                 xxs: "180px",
-                xxxs: "160px",
+                xxxs: "120px",
               },
               color: "secondary.main",
               fontSize: "12px",
