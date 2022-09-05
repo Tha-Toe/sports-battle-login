@@ -9,9 +9,6 @@ export function AndresCard({
   setSelectCardId,
   mode,
 }) {
-  useEffect(() => {
-    console.log(e);
-  }, []);
   const handleChangeOverUnder = (type) => {
     let selectCardIdClone = selectCardId.map((each) => {
       if (each.index === e.index) {
@@ -82,7 +79,8 @@ export function AndresCard({
           sx={{
             display: "flex",
             justifyContent: "center",
-            background: `${e.selectColor}`,
+            // background: `${e.selectColor}`,
+            background: "#4831D4",
             borderRadius: "4px",
             padding: "5px",
             width: "auto",

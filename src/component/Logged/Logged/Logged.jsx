@@ -476,6 +476,8 @@ export function Logged({ mode, setMode }) {
           height: { sm: "90%", xxxs: "90%" },
           minHeight: "704px",
           width: "100%",
+          display: "flex",
+          flexDirection: "row",
         }}
       >
         <AppBar
@@ -483,8 +485,8 @@ export function Logged({ mode, setMode }) {
           sx={{
             boxShadow: "none",
             outline: "none",
-            position: { sm: "absolute", xxxs: "fixed" },
-            width: { lg: "105px", md: "50px", sm: "30px", xxxs: "80px" },
+            position: { sm: "relative", xxxs: "fixed" },
+            width: { lg: "135px", md: "80px", sm: "80px", xxxs: "185px" },
             left: { sm: 0, xxxs: `${openSideNav ? 0 : "-195px"}` },
             height: "100%",
             zIndex: 3,
@@ -498,7 +500,7 @@ export function Logged({ mode, setMode }) {
               flexDirection: "column",
               justifyContent: "flex-start",
               alignItems: "center",
-              width: { lg: "105px", md: "50px", sm: "30px", xxxs: "185px" },
+              width: { lg: "135px", md: "80px", sm: "80px", xxxs: "185px" },
               borderRight: `${mode === "dark" ? "1px solid gray" : "none"}`,
               height: "100%",
               position: "relative",
@@ -529,7 +531,7 @@ export function Logged({ mode, setMode }) {
                 justifyContent: "space-between",
                 alignItems: "flex-start",
                 height: "39%",
-                width: { lg: "145px", md: "90px", sm: "70px", xxxs: "145px" },
+                width: { lg: "145px", md: "90px", sm: "90px", xxxs: "145px" },
                 mt: "20px",
               }}
             >
@@ -559,10 +561,10 @@ export function Logged({ mode, setMode }) {
                   <Typography
                     sx={{
                       fontFamily: "poppins",
-                      fontSize: { md: "10px", xxxs: "8px" },
+                      fontSize: { sm: "10px", xxxs: "8px" },
                       textAlign: "center",
                       fontWeight: `${openTag === e.activeName ? 600 : 400}`,
-                      mt: "3px",
+                      mt: "5px",
                       ml: { lg: "8px", sm: "0px", xxxs: "8px" },
                       color: "secondary.dark_gray",
                     }}
@@ -579,8 +581,8 @@ export function Logged({ mode, setMode }) {
                 justifyContent: "space-between",
                 alignItems: "flex-start",
                 height: "22%",
-                height: { lg: "22%", sm: "30%", xxxs: "22%" },
-                width: { lg: "145px", md: "90px", sm: "70px", xxxs: "145px" },
+                height: { lg: "22%", sm: "27%", xxxs: "22%" },
+                width: { lg: "145px", md: "90px", sm: "90px", xxxs: "145px" },
                 mt: "10px",
                 mb: { lg: "0px", sm: "10px", xxxs: "0px" },
               }}
@@ -612,6 +614,7 @@ export function Logged({ mode, setMode }) {
                     cursor: "pointer",
                     width: "100%",
                     ml: { lg: "10px", sm: "0px", xxxs: "10px" },
+                    mb: "3px",
                   }}
                   onClick={e.func}
                 >
@@ -622,13 +625,13 @@ export function Logged({ mode, setMode }) {
                   <Typography
                     sx={{
                       fontFamily: "poppins",
-                      fontSize: { md: "10px", xxxs: "8px" },
+                      fontSize: { sm: "10px", xxxs: "8px" },
                       textAlign: "center",
                       mt: "3px",
                       fontWeight: `${openTag === e.activeName ? 600 : 400}`,
                       ml: { lg: "8px", sm: "0px", xxxs: "8px" },
                       color: "secondary.dark_gray",
-                      mt: { lg: "0px", sm: "10px", xxxs: "0px" },
+                      mt: { lg: "0px", sm: "5px", xxxs: "0px" },
                     }}
                   >
                     {e.name}
@@ -645,7 +648,7 @@ export function Logged({ mode, setMode }) {
                 alignItems: "center",
                 height: "7%",
                 cursor: "pointer",
-                width: { lg: "145px", md: "90px", sm: "70px", xxxs: "145px" },
+                width: { lg: "145px", md: "90px", sm: "90px", xxxs: "145px" },
                 mt: "10px",
               }}
               onClick={switchMode}
@@ -696,7 +699,7 @@ export function Logged({ mode, setMode }) {
                 justifyContent: "flex-start",
                 alignItems: "center",
                 height: "21%",
-                width: { lg: "145px", md: "90px", sm: "70px", xxxs: "145px" },
+                width: { lg: "145px", md: "90px", sm: "90px", xxxs: "145px" },
                 mt: "10px",
               }}
             >

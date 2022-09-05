@@ -391,6 +391,7 @@ export default function Props({
             xs: "450px",
             xxxs: "90%",
           },
+          width: { xl: "1300px", lg: "85%", sm: "80%", xxxs: "90%" },
           height: "100vh",
           margin: "auto",
         }}
@@ -777,7 +778,7 @@ export default function Props({
         >
           <Box
             sx={{
-              width: { md: "70%", sm: "50%", xxxs: "100%" },
+              width: { lg: "70%", sm: "50%", xxxs: "100%" },
               height: "auto",
               ml: { xs: 0, xxxs: "10px" },
             }}

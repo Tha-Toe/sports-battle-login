@@ -20,11 +20,7 @@ export default function ({ setSelectAmount, selectAmount }) {
           display: "flex",
           flexDirection: "row",
           alignItems: "center",
-          justifyContent: {
-            xl: "flex-start",
-            sm: "space-between",
-            xxxs: "flex-start",
-          },
+          justifyContent: "flex-start",
           mb: "4px",
         }}
       >
@@ -37,7 +33,7 @@ export default function ({ setSelectAmount, selectAmount }) {
             fontFamily: "poppins",
             fontWeight: 500,
             fontSize: "10px",
-            mr: { xl: "7px", sm: 0, xxxs: "7px" },
+            mr: { xl: "7px", xxxs: "7px" },
             color: `${selectAmount === 5 ? "white" : "secondary.dark_gray"}`,
           }}
           onClick={() => setSelectAmount(5)}
@@ -53,7 +49,7 @@ export default function ({ setSelectAmount, selectAmount }) {
             fontFamily: "poppins",
             fontWeight: 500,
             fontSize: "10px",
-            mr: { xl: "7px", sm: 0, xxxs: "7px" },
+            mr: { xl: "7px", xxxs: "7px" },
             color: `${selectAmount === 10 ? "white" : "secondary.dark_gray"}`,
           }}
           onClick={() => setSelectAmount(10)}
@@ -69,7 +65,7 @@ export default function ({ setSelectAmount, selectAmount }) {
             fontFamily: "poppins",
             fontWeight: 500,
             fontSize: "10px",
-            mr: { xl: "7px", sm: 0, xxxs: "7px" },
+            mr: { xl: "7px", xxxs: "7px" },
             color: `${selectAmount === 25 ? "white" : "secondary.dark_gray"}`,
           }}
           onClick={() => setSelectAmount(25)}
@@ -85,7 +81,7 @@ export default function ({ setSelectAmount, selectAmount }) {
             fontFamily: "poppins",
             fontWeight: 500,
             fontSize: "10px",
-            mr: { xl: "7px", sm: 0, xxxs: "7px" },
+            mr: { xl: "7px", xxxs: "7px" },
             color: `${selectAmount === 50 ? "white" : "secondary.dark_gray"}`,
           }}
           onClick={() => setSelectAmount(50)}
