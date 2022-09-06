@@ -69,6 +69,21 @@
 .other-logo {
   width: 26px;
 }
+@media (min-width: 1600px) {
+  .side-bar-icon {
+    height: 28px;
+    width: 28px;
+  }
+  .other-logo {
+    width: 28px;
+  }
+  .discord-logo {
+    width: 28px;
+  }
+  .twitter-logo {
+    width: 28px;
+  }
+}
 @media (max-width: 1100px) {
   .side-bar-icon {
     margin-left: 0px;

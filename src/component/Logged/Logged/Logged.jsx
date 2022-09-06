@@ -501,7 +501,13 @@ export function Logged({ mode, setMode }) {
               flexDirection: "column",
               justifyContent: "flex-start",
               alignItems: "center",
-              width: { lg: "135px", md: "80px", sm: "80px", xxxs: "185px" },
+              width: {
+                xl: "165px",
+                lg: "135px",
+                md: "80px",
+                sm: "80px",
+                xxxs: "185px",
+              },
               borderRight: `${mode === "dark" ? "1px solid gray" : "none"}`,
               height: "100%",
               position: "relative",
@@ -531,7 +537,13 @@ export function Logged({ mode, setMode }) {
                 flexDirection: "column",
                 justifyContent: "space-between",
                 alignItems: "flex-start",
-                width: { lg: "145px", md: "90px", sm: "90px", xxxs: "145px" },
+                width: {
+                  xl: "190px",
+                  lg: "165px",
+                  md: "90px",
+                  sm: "90px",
+                  xxxs: "165px",
+                },
                 mt: "20px",
               }}
             >
@@ -548,7 +560,6 @@ export function Logged({ mode, setMode }) {
                     },
                     cursor: "pointer",
                     width: "100%",
-                    ml: { lg: "10px", sm: "0px", xxxs: "5px" },
                     mb: "20px",
                   }}
                   onClick={e.func}
@@ -564,10 +575,9 @@ export function Logged({ mode, setMode }) {
                   <Typography
                     sx={{
                       fontFamily: "poppins",
-                      fontSize: { sm: "10px", xxxs: "8px" },
+                      fontSize: { xl: "15px", sm: "12px", xxxs: "10px" },
                       textAlign: "center",
                       fontWeight: `${openTag === e.activeName ? 600 : 400}`,
-
                       mt: { lg: "0px", sm: "5px", xxxs: "0px" },
                       ml: { lg: "8px", sm: "0px", xxxs: "8px" },
                       color: "secondary.dark_gray",
@@ -584,7 +594,13 @@ export function Logged({ mode, setMode }) {
                 flexDirection: "column",
                 justifyContent: "space-between",
                 alignItems: "flex-start",
-                width: { lg: "145px", md: "90px", sm: "90px", xxxs: "145px" },
+                width: {
+                  xl: "190px",
+                  lg: "165px",
+                  md: "90px",
+                  sm: "90px",
+                  xxxs: "165px",
+                },
               }}
             >
               <Typography
@@ -593,7 +609,6 @@ export function Logged({ mode, setMode }) {
                   fontWeight: 700,
                   fontFamily: "poppins",
                   color: "#2582E3",
-                  ml: "10px",
                   mb: "10px",
                 }}
               >
@@ -612,7 +627,6 @@ export function Logged({ mode, setMode }) {
                     },
                     cursor: "pointer",
                     width: "100%",
-                    ml: { lg: "10px", sm: "0px", xxxs: "10px" },
                     mb: "20px",
                   }}
                   onClick={e.func}
@@ -624,7 +638,7 @@ export function Logged({ mode, setMode }) {
                   <Typography
                     sx={{
                       fontFamily: "poppins",
-                      fontSize: { sm: "10px", xxxs: "8px" },
+                      fontSize: { xl: "15px", sm: "12px", xxxs: "10px" },
                       textAlign: "center",
                       fontWeight: `${openTag === e.activeName ? 600 : 400}`,
                       ml: { lg: "8px", sm: "0px", xxxs: "8px" },
@@ -645,15 +659,20 @@ export function Logged({ mode, setMode }) {
                 justifyContent: "space-between",
                 alignItems: "center",
                 cursor: "pointer",
-                width: { lg: "140px", md: "90px", sm: "90px", xxxs: "140px" },
+                width: {
+                  xl: "190px",
+                  lg: "165px",
+                  md: "90px",
+                  sm: "90px",
+                  xxxs: "165px",
+                },
                 mb: "15px",
-                ml: { lg: "15px", sm: "0px", xxxs: "15px" },
               }}
               onClick={switchMode}
             >
               <Typography
                 sx={{
-                  fontSize: "10px",
+                  fontSize: { xl: "15px", xxxs: "10px" },
                   fontWeight: 700,
                   fontFamily: "poppins",
                   color: "#2582E3",
@@ -696,18 +715,23 @@ export function Logged({ mode, setMode }) {
                 flexDirection: "column",
                 justifyContent: "flex-start",
                 alignItems: "center",
-                width: { lg: "145px", md: "90px", sm: "90px", xxxs: "145px" },
+                width: {
+                  xl: "190px",
+                  lg: "165px",
+                  md: "90px",
+                  sm: "90px",
+                  xxxs: "165px",
+                },
               }}
             >
               <Typography
                 sx={{
-                  fontSize: "10px",
+                  fontSize: { xl: "15px", xxxs: "10px" },
                   fontWeight: 700,
                   fontFamily: "poppins",
                   color: "#2582E3",
                   width: "100%",
                   mb: "5px",
-                  ml: "18px",
                 }}
               >
                 Our Socials
@@ -723,7 +747,6 @@ export function Logged({ mode, setMode }) {
                     sm: "center",
                     xxxs: "flex-start",
                   },
-                  ml: { lg: "13px", sm: "0px", xxxs: "13px" },
                 }}
               >
                 <img
@@ -735,7 +758,7 @@ export function Logged({ mode, setMode }) {
                 <Typography
                   sx={{
                     fontFamily: "poppins",
-                    fontSize: "10px",
+                    fontSize: { xl: "15px", xxxs: "12px" },
                     ml: { lg: "8px", sm: "0px", xxxs: "8px" },
                     textAlign: "center",
                     color: "secondary.dark_gray",
@@ -756,7 +779,6 @@ export function Logged({ mode, setMode }) {
                     xxxs: "flex-start",
                   },
                   mt: "10px",
-                  ml: { lg: "13px", sm: "0px", xxxs: "13px" },
                 }}
               >
                 <img
@@ -768,7 +790,7 @@ export function Logged({ mode, setMode }) {
                 <Typography
                   sx={{
                     fontFamily: "poppins",
-                    fontSize: "10px",
+                    fontSize: { xl: "15px", xxxs: "12px" },
                     ml: { lg: "8px", sm: "0px", xxxs: "8px" },
                     textAlign: "center",
                     color: "secondary.dark_gray",

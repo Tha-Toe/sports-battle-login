@@ -471,7 +471,7 @@ export default function Props({
                   flexDirection: "column",
                   alignItems: "center",
                   justifyContent: "center",
-                  mr: { xxxs: "20px" },
+                  mr: { xxxs: "15px" },
                 }}
               >
                 <Box
@@ -556,7 +556,7 @@ export default function Props({
               <Box
                 sx={{
                   display: "flex",
-                  flexDirection: { sm: "rows", xxxs: "column" },
+                  flexDirection: { sm: "row", xxxs: "column" },
                   alignItems: "center",
                   justifyContent: "center",
                   cursor: "pointer",
