@@ -6,6 +6,17 @@
   display: block;
   height: 20px;
 }
+.overUnderNavContainer {
+  overflow: scroll;
+  margin: auto;
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  width: "100%";
+}
+.overUnderNavContainer::-webkit-scrollbar {
+  display: "none";
+}
 @media (max-width: 500px) {
   .know-icon {
     display: none;

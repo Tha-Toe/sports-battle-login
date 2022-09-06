@@ -132,6 +132,66 @@ export default function Props({
       light_src: "/nba_light.png",
       color: "#F5A922",
     },
+    {
+      name: "CoD",
+      src: "/val.png",
+      light_src: "/val_light.png",
+      color: "blue",
+    },
+    {
+      name: "Nascor",
+      src: "/f1.png",
+      light_src: "/f1_light.png",
+      color: "red",
+    },
+    {
+      name: "WTA",
+      src: "/wta-light.png",
+      light_src: "/wta.png",
+      color: "#F5A922",
+    },
+    {
+      name: "Can-FL",
+      src: "/cfl.png",
+      light_src: "/cfl_light.svg",
+      color: "#F5A922",
+    },
+    {
+      name: "HR-Dby",
+      src: "/mlb.png",
+      light_src: "/mlb_light.png",
+      color: "blue",
+    },
+    {
+      name: "NHL",
+      src: "/nhl.png",
+      light_src: "/nhl-light.png",
+      color: "#F5A922",
+    },
+    {
+      name: "CBB",
+      src: "/wnba.png",
+      light_src: "/wnba_light.png",
+      color: "#F5A922",
+    },
+    {
+      name: "LoL",
+      src: "/val.png",
+      light_src: "/val_light.png",
+      color: "blue",
+    },
+    {
+      name: "ATP",
+      src: "/wta-light.png",
+      light_src: "/wta.png",
+      color: "#F5A922",
+    },
+    {
+      name: "CFB",
+      src: "/cfl.png",
+      light_src: "/cfl_light.svg",
+      color: "#F5A922",
+    },
   ]);
 
   const [propsGuide, setPropsGuide] = useState([
@@ -233,17 +293,25 @@ export default function Props({
   ]);
   const [width, setWidth] = useState();
   const [matchesWidth, setMatchesWidth] = useState();
+  const [propsWidth, setPropsWidth] = useState();
   const parentRef = useRef();
   const statsRef = useRef();
   const matchesRef = useRef();
+  const propsContainerRef = useRef();
+  const propsChildRef = useRef();
   const [statsLeftValue, setStatsLeftValue] = useState(0);
   useEffect(() => {
     const total =
       parentRef.current.scrollWidth - parentRef.current.offsetWidth + 50;
     const matchesTotal =
       matchesRef.current.scrollWidth - matchesRef.current.offsetWidth + 50;
+    const propsTotal =
+      propsContainerRef.current.scrollWidth -
+      propsContainerRef.current.offsetWidth +
+      50;
     setWidth(total);
     setMatchesWidth(matchesTotal);
+    setPropsWidth(propsTotal);
   }, []);
   const goForwardStats = () => {
     parentRef.current.scrollLeft = parentRef.current.scrollLeft + 100;
@@ -389,84 +457,79 @@ export default function Props({
         }}
         component="div"
       >
-        <Box
-          component="div"
-          sx={{
-            width: "100%",
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: { xl: "space-between", xxxs: "space-between" },
-            overflow: "scroll",
-            "&::-webkit-scrollbar": {
-              display: "none",
-            },
-            mt: { sm: 0, xxxs: "20px" },
-          }}
-        >
-          {propsNav.map((e) => (
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
-                mr: { xxxs: "15px", md: "" },
-              }}
-            >
+        <motion.div className="propsContainer" ref={propsContainerRef}>
+          <motion.div
+            className="statsChild"
+            ref={propsChildRef}
+            drag="x"
+            dragConstraints={{ right: 0, left: -propsWidth }}
+          >
+            {propsNav.map((e) => (
               <Box
                 sx={{
-                  height: { xs: "34px", xxxs: "30px" },
-                  width: { xs: "34px", xxxs: "30px" },
-                  border: `${
-                    mode === "dark" ? "2px solid white" : "1px solid #494949"
-                  }`,
-                  borderRadius: "50%",
-                  mt: "13px",
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
                   justifyContent: "center",
-                  bgcolor: `${
-                    e.name === selectSports ? e.color : "primary.main"
-                  }`,
-                  cursor: "pointer",
-                }}
-                onClick={() => {
-                  setSelectSports(e.name);
-                  setSelectColor(e.color);
-                  setSelectSrc(e.src);
+                  mr: { xxxs: "20px" },
                 }}
               >
-                {mode === "dark" ? (
-                  <img className="propsNavImg" src={e.src} />
-                ) : (
-                  <>
-                    {e.name === selectSports ? (
-                      <img className="propsNavImg" src={e.src} />
-                    ) : (
-                      <img className="propsNavImg" src={e.light_src} />
-                    )}
-                  </>
-                )}
+                <Box
+                  sx={{
+                    height: { xs: "34px", xxxs: "30px" },
+                    width: { xs: "34px", xxxs: "30px" },
+                    border: `${
+                      mode === "dark" ? "2px solid white" : "1px solid #494949"
+                    }`,
+                    borderRadius: "50%",
+                    mt: "13px",
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    bgcolor: `${
+                      e.name === selectSports ? e.color : "primary.main"
+                    }`,
+                    cursor: "pointer",
+                  }}
+                  onClick={() => {
+                    setSelectSports(e.name);
+                    setSelectColor(e.color);
+                    setSelectSrc(e.src);
+                  }}
+                >
+                  {mode === "dark" ? (
+                    <img className="propsNavImg" src={e.src} />
+                  ) : (
+                    <>
+                      {e.name === selectSports ? (
+                        <img className="propsNavImg" src={e.src} />
+                      ) : (
+                        <img className="propsNavImg" src={e.light_src} />
+                      )}
+                    </>
+                  )}
+                </Box>
+                <Typography
+                  sx={{
+                    fontSize: "12px",
+                    fontWeight: 400,
+                    fontFamily: "poppins",
+                    mt: "5px",
+                    color: `${
+                      e.name === selectSports ? e.color : "secondary.main"
+                    }`,
+                    width: "50px",
+                    textAlign: "center",
+                  }}
+                >
+                  {" "}
+                  {e.name}
+                </Typography>
               </Box>
-              <Typography
-                sx={{
-                  fontSize: "12px",
-                  fontWeight: 400,
-                  fontFamily: "poppins",
-                  mt: "5px",
-                  color: `${
-                    e.name === selectSports ? e.color : "secondary.main"
-                  }`,
-                }}
-              >
-                {" "}
-                {e.name}
-              </Typography>
-            </Box>
-          ))}
-        </Box>
+            ))}
+          </motion.div>
+        </motion.div>
         <Box
           sx={{
             display: "flex",

@@ -7,7 +7,8 @@ a {
   margin-top: 20px;
 }
 .statsContainer,
-.matchesContainer {
+.matchesContainer,
+.propsContainer {
   overflow: scroll;
   margin: auto;
   position: relative;
@@ -18,7 +19,9 @@ a {
 .matchesContainer::-webkit-scrollbar {
   display: none;
 }
-
+.propsContainer::-webkit-scrollbar {
+  display: "none";
+}
 .statsContainer {
   max-width: 90%;
   height: 30px;
@@ -34,7 +37,10 @@ a {
   flex-direction: row;
   justify-content: space-between;
 }
-
+.propsContainer {
+  margin-top: 20px;
+  width: 100%;
+}
 .statsButton,
 .matchesButton {
   font-size: 12px;
