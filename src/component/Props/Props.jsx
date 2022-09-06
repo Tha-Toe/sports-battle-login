@@ -541,6 +541,7 @@ export default function Props({
             borderBottom: "2px solid #494949",
             pb: "10px",
             mb: "12px",
+            bgcolor: "red",
           }}
         >
           <Box

@@ -12,6 +12,7 @@ a {
   overflow: scroll;
   margin: auto;
   position: relative;
+  background-color: green;
 }
 .statsContainer::-webkit-scrollbar {
   display: none;
@@ -36,6 +37,7 @@ a {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  background-color: blue;
 }
 .propsContainer {
   margin-top: 20px;
