@@ -235,7 +235,7 @@ export default function KnowMore({ mode }) {
                   flexDirection: "column",
                   alignItems: "center",
                   justifyContent: "center",
-                  mr: { xxxs: "15px", md: "" },
+                  mr: { xxxs: "5px" },
                 }}
               >
                 <Box

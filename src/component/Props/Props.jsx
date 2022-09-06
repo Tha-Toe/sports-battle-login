@@ -471,7 +471,7 @@ export default function Props({
                   flexDirection: "column",
                   alignItems: "center",
                   justifyContent: "center",
-                  mr: { xxxs: "15px" },
+                  mr: { xxxs: "5px" },
                 }}
               >
                 <Box
