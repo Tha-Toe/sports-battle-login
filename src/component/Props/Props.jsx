@@ -457,7 +457,12 @@ export default function Props({
         }}
         component="div"
       >
-        <motion.div className="propsContainer" ref={propsContainerRef}>
+        <motion.div
+          className={`${"propsContainer"} ${
+            mode === "dark" ? "" : "props-light"
+          }`}
+          ref={propsContainerRef}
+        >
           <motion.div
             className="statsChild"
             ref={propsChildRef}
@@ -541,7 +546,6 @@ export default function Props({
             borderBottom: "2px solid #494949",
             pb: "10px",
             mb: "12px",
-            bgcolor: "red",
           }}
         >
           <Box
