@@ -87,6 +87,7 @@ function App() {
           background: `${mode === "dark" ? "black" : "white"}`,
           overflowX: "hidden",
         }}
+        className="app-container"
       >
         <BrowserRouter>
           <Routes>
