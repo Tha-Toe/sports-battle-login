@@ -191,7 +191,7 @@ export function Logged({ mode, setMode }) {
   };
 
   return (
-    <main className="logged-container">
+    <div className="logged-container">
       <Box
         component="div"
         sx={{
@@ -884,6 +884,6 @@ export function Logged({ mode, setMode }) {
       {openInviteFriend && (
         <BonusOffer setOpenInviteFriend={setOpenInviteFriend} />
       )}
-    </main>
+    </div>
   );
 }
