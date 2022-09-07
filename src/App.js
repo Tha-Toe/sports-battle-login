@@ -78,6 +78,7 @@ function App() {
       <div
         style={{
           width: "100vw",
+          maxWidth: "100vw",
           minHeight: "100vh",
           color: "white",
           display: "flex",
