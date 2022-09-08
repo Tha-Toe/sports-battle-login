@@ -10,6 +10,8 @@ export default function ({ setSelectAmount, selectAmount }) {
           fontSize: { xl: "12px", md: "10px", xxxs: "8px" },
           fontWeight: 400,
           color: "secondary.dark_gray",
+          width: "90%",
+          margin: "0 auto",
           mb: "7px",
         }}
       >
@@ -21,6 +23,8 @@ export default function ({ setSelectAmount, selectAmount }) {
           flexDirection: "row",
           alignItems: "center",
           justifyContent: "flex-start",
+          width: "90%",
+          margin: "0 auto",
           mb: "4px",
         }}
       >

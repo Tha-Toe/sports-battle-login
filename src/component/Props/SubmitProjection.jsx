@@ -76,7 +76,7 @@ const SubmitProjection = ({
           <Box
             id="top-submit"
             sx={{
-              width: "90%",
+              width: "100%",
               display: "flex",
               flexDirection: "column",
               margin: "0 auto",
@@ -93,7 +93,8 @@ const SubmitProjection = ({
                   sx={{
                     display: "flex",
                     flexDirection: "column",
-                    width: "100%",
+                    width: "90%",
+                    margin: "0 auto",
                     alignItems: "center",
                     justifyContent: "center",
                     mt: "4px",
@@ -104,7 +105,7 @@ const SubmitProjection = ({
                     sx={{
                       color: "secondary.dark_gray",
                       width: "100%",
-                      fontSize: "8px",
+                      fontSize: { xl: "12px", md: "10px", xxxs: "8px" },
                       fontWeight: "500",
                       fontFamily: "poppins",
                     }}
@@ -115,7 +116,7 @@ const SubmitProjection = ({
                     placeholder="Enter dollar amount"
                     sx={{
                       width: "100%",
-                      fontSize: "8px",
+                      fontSize: { xl: "12px", md: "10px", xxxs: "8px" },
                       fontWeight: 400,
                       fontFamily: "poppins",
                       color: "secondary.dark_gray",
@@ -128,7 +129,7 @@ const SubmitProjection = ({
                           <Typography
                             sx={{
                               color: "#E4313C",
-                              fontSize: "8px",
+                              fontSize: { xl: "12px", md: "10px", xxxs: "8px" },
                               fontWeight: "500",
                               fontFamily: "poppins",
                             }}
@@ -143,7 +144,7 @@ const SubmitProjection = ({
                 </Box>
               )}
               {selectAmount && (
-                <Box sx={{ width: "100%", margin: "0 auto" }}>
+                <Box sx={{ width: "90%", margin: "0 auto" }}>
                   <ChooseType
                     setPickPlayType={setPickPlayType}
                     pickPlayType={pickPlayType}

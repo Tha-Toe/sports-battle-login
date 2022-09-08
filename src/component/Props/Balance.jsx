@@ -15,7 +15,7 @@ export default function () {
       >
         <Typography
           sx={{
-            fontSize: "10px",
+            fontSize: { xl: "14px", md: "12px", xxxs: "10px" },
             fontWeight: 600,
             fontFamily: "poppins",
             color: "secondary.dark_gray",
@@ -25,7 +25,7 @@ export default function () {
         </Typography>
         <Typography
           sx={{
-            fontSize: "14px",
+            fontSize: { xl: "18px", md: "16px", xxxs: "14px" },
             fontWeight: 600,
             fontFamily: "poppins",
             color: "#52C03C",
@@ -36,7 +36,7 @@ export default function () {
       </Box>
       <Typography
         sx={{
-          fontSize: "8px",
+          fontSize: { xl: "12px", md: "10px", xxxs: "8px" },
           fontWeight: 500,
           fontFamily: "poppins",
           color: "secondary.dark_gray",
@@ -55,7 +55,7 @@ export default function () {
       >
         <Typography
           sx={{
-            fontSize: "8px",
+            fontSize: { xl: "12px", md: "10px", xxxs: "8px" },
             fontWeight: 400,
             fontFamily: "poppins",
             color: "secondary.dark_gray",
@@ -65,7 +65,7 @@ export default function () {
         </Typography>
         <Typography
           sx={{
-            fontSize: "8px",
+            fontSize: { xl: "12px", md: "10px", xxxs: "8px" },
             fontWeight: 600,
             fontFamily: "poppins",
             color: "secondary.dark_gray",
@@ -85,7 +85,7 @@ export default function () {
       >
         <Typography
           sx={{
-            fontSize: "8px",
+            fontSize: { xl: "12px", md: "10px", xxxs: "8px" },
             fontWeight: 400,
             fontFamily: "poppins",
             color: "secondary.dark_gray",
@@ -95,7 +95,7 @@ export default function () {
         </Typography>
         <Typography
           sx={{
-            fontSize: "8px",
+            fontSize: { xl: "12px", md: "10px", xxxs: "8px" },
             fontWeight: 600,
             fontFamily: "poppins",
             color: "secondary.dark_gray",
@@ -110,12 +110,12 @@ export default function () {
           justifyContent: "space-between",
           alignItems: "center",
           width: "100%",
-          mb: "2px",
+          mb: "8px",
         }}
       >
         <Typography
           sx={{
-            fontSize: "8px",
+            fontSize: { xl: "12px", md: "10px", xxxs: "8px" },
             fontWeight: 400,
             fontFamily: "poppins",
             color: "secondary.dark_gray",
@@ -125,7 +125,7 @@ export default function () {
         </Typography>
         <Typography
           sx={{
-            fontSize: "8px",
+            fontSize: { xl: "12px", md: "10px", xxxs: "8px" },
             fontWeight: 600,
             fontFamily: "poppins",
             color: "secondary.dark_gray",

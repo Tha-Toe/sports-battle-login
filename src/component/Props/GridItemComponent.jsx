@@ -246,7 +246,7 @@ const GridItemComponent = ({
             <Button
               sx={{
                 width: { sm: "48px", xxxs: "24px" },
-                height: "20px",
+                py: "4px",
                 color: "secondary.dark_gray",
                 fontSize: { sm: "9px", xs: "7px", xxxs: "9px" },
                 fontWeight: 400,
@@ -273,7 +273,7 @@ const GridItemComponent = ({
               sx={{
                 width: { sm: "48px", xxxs: "24px" },
                 color: "secondary.dark_gray",
-                height: "20px",
+                py: "4px",
                 fontSize: { sm: "9px", xs: "7px", xxxs: "9px" },
                 fontWeight: 400,
                 fontFamily: "poppins",

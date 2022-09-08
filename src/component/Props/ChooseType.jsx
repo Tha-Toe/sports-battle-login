@@ -8,7 +8,7 @@ export default function ({ setPickPlayType, pickPlayType }) {
     <>
       <Typography
         sx={{
-          fontSize: "8px",
+          fontSize: { xl: "12px", md: "10px", xxxs: "8px" },
           fontFamily: "poppins",
           fontWeight: 600,
           color: "secondary.dark_gray",
@@ -19,7 +19,7 @@ export default function ({ setPickPlayType, pickPlayType }) {
       </Typography>
       <Typography
         sx={{
-          fontSize: "6px",
+          fontSize: { xl: "10px", md: "8px", xxxs: "6px" },
           fontFamily: "poppins",
           fontWeight: 400,
           color: "#EA1E63",
