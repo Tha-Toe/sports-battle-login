@@ -1,8 +1,8 @@
 html {
-  /* height: -webkit-filll-aviliable; */
+  height: -webkit-filll-aviliable;
 }
 body {
-  /* height: -webkit-fill-aviliable; */
+  height: -webkit-fill-aviliable;
   max-width: 100vw;
   overflow-x: hidden;
 }

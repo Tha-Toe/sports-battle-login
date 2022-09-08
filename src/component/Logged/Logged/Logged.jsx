@@ -197,7 +197,6 @@ export function Logged({ mode, setMode }) {
         sx={{
           position: "relative",
           width: "100%",
-          height: "10%",
         }}
       >
         <AppBar
