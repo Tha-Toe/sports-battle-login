@@ -54,7 +54,7 @@ export function AndresCard({
         >
           <Typography
             sx={{
-              fontSize: "10px",
+              fontSize: { xl: "14px", sm: "12px", xxxs: "10px" },
               fontWeight: 600,
               fontFamily: "poppins",
               ml: "10px",
@@ -88,15 +88,16 @@ export function AndresCard({
             ml: "6px",
             width: "50%",
             mb: "7px",
+            alignItems: "center",
           }}
         >
           <img
             src={e.selectSrc}
-            style={{ width: "9px", height: "9px", marginRight: "2px" }}
+            style={{ width: "12px", height: "12px", marginRight: "2px" }}
           />
           <Typography
             sx={{
-              fontSize: "8px",
+              fontSize: { xl: "12px", md: "10px", xxxs: "8px" },
               fontWeight: 400,
               fontFamily: "poppins",
               color: "white",
@@ -126,7 +127,7 @@ export function AndresCard({
             >
               <Typography
                 sx={{
-                  fontSize: "6px",
+                  fontSize: { xl: "12px", md: "10px", xxxs: "8px" },
                   fontWeight: 400,
                   fontFamily: "poppins",
                   color: "secondary.dark_gray",
@@ -136,7 +137,7 @@ export function AndresCard({
               </Typography>
               <Typography
                 sx={{
-                  fontSize: "6px",
+                  fontSize: { xl: "12px", md: "10px", xxxs: "8px" },
                   fontWeight: 400,
                   fontFamily: "poppins",
                   color: " #459F48",
@@ -151,7 +152,7 @@ export function AndresCard({
             >
               <Typography
                 sx={{
-                  fontSize: "8px",
+                  fontSize: { xl: "12px", md: "10px", xxxs: "8px" },
                   fontWeight: 400,
                   fontFamily: "poppins",
                   color: "secondary.dark_gray",
@@ -161,7 +162,7 @@ export function AndresCard({
               </Typography>
               <Typography
                 sx={{
-                  fontSize: "8px",
+                  fontSize: { xl: "12px", md: "10px", xxxs: "8px" },
                   fontWeight: 400,
                   fontFamily: "poppins",
                   color: " #459F48",
@@ -175,7 +176,7 @@ export function AndresCard({
               <img src="/clock.png" style={{ width: "10px", height: "10px" }} />
               <Typography
                 sx={{
-                  fontSize: "9px",
+                  fontSize: { xl: "13px", md: "11px", xxxs: "9px" },
                   fontWeight: 600,
                   fontFamily: "poppins",
                   color: "secondary.dark_gray",
@@ -199,7 +200,7 @@ export function AndresCard({
             <Typography
               sx={{
                 fontFamily: "poppins",
-                fontSize: "8px",
+                fontSize: { xl: "12px", md: "10px", xxxs: "8px" },
                 fontWeight: 400,
                 color: "secondary.dark_gray",
               }}
@@ -233,7 +234,7 @@ export function AndresCard({
               width: "50%",
               py: "6px",
               color: `${e.type === "over" ? "white" : "secondary.dark_gray"}`,
-              fontSize: "9px",
+              fontSize: { xl: "13px", md: "11px", xxxs: "9px" },
               fontFamily: "poppins",
               fontWeigh: 600,
               border: `${
@@ -254,7 +255,7 @@ export function AndresCard({
               width: "50%",
               py: "6px",
               color: `${e.type === "under" ? "white" : "secondary.dark_gray"}`,
-              fontSize: "9px",
+              fontSize: { xl: "13px", md: "11px", xxxs: "9px" },
               fontFamily: "poppins",
               fontWeigh: 600,
               border: `${

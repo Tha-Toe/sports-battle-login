@@ -566,7 +566,7 @@ export default function Props({
                   justifyContent: "center",
                   cursor: "pointer",
                   flexWrap: "wrap",
-                  mr: { xl: "10px", xxxs: "10px" },
+                  mr: { md: "20px", xxxs: "10px" },
                 }}
                 onClick={e.func}
               >
@@ -839,7 +839,7 @@ export default function Props({
         >
           <Box
             sx={{
-              width: { lg: "70%", sm: "50%", xxxs: "100%" },
+              width: { lg: "75%", md: "60%", sm: "50%", xxxs: "100%" },
               height: "auto",
               ml: { xs: 0, xxxs: "10px" },
             }}
