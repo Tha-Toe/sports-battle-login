@@ -61,7 +61,7 @@ export default function Detail({
           mt: "5px",
           borderBottom: "1px solid #494949",
           pb: "5px",
-          width: "151px",
+          width: "90%",
           background: "black",
         }}
       >
@@ -95,7 +95,7 @@ export default function Detail({
               width: "91px",
               height: "3px",
               mt: "6px",
-              color: "secondary.dark_gray",
+              bgcolor: "secondary.dark_gray",
             }}
           ></Box>
           {detailData.map((e) => (

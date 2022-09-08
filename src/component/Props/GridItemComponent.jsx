@@ -12,6 +12,7 @@ const GridItemComponent = ({
   selectColor,
   selectSrc,
   mode,
+  scrollDownFunc,
 }) => {
   useEffect(() => {
     let conditionArray = selectCardId.filter((each) => {
@@ -242,57 +243,55 @@ const GridItemComponent = ({
             mr: "8px",
           }}
         >
-          <a href="#submitProjection">
-            <Button
-              sx={{
-                width: { sm: "48px", xxxs: "24px" },
-                py: "4px",
-                color: "secondary.dark_gray",
-                fontSize: { sm: "9px", xs: "7px", xxxs: "9px" },
-                fontWeight: 400,
-                fontFamily: "poppins",
-                border: `${type === "over" ? "none" : "1px solid white"}`,
-                borderColor: `${mode === "dark" ? "white" : "#494949"}`,
-                borderRadius: "3px",
-                mb: "8px",
+          <Button
+            sx={{
+              width: { sm: "48px", xxxs: "24px" },
+              py: "4px",
+              color: "secondary.dark_gray",
+              fontSize: { sm: "9px", xs: "7px", xxxs: "9px" },
+              fontWeight: 400,
+              fontFamily: "poppins",
+              border: `${type === "over" ? "none" : "1px solid white"}`,
+              borderColor: `${mode === "dark" ? "white" : "#494949"}`,
+              borderRadius: "3px",
+              mb: "8px",
+              background: `${type === "over" ? "#4831D4" : "transparent"}`,
+              "&.MuiButtonBase-root:hover": {
                 background: `${type === "over" ? "#4831D4" : "transparent"}`,
-                "&.MuiButtonBase-root:hover": {
-                  background: `${type === "over" ? "#4831D4" : "transparent"}`,
-                },
-              }}
-              onClick={() => {
-                setType("over");
-                addCard("over");
-              }}
-            >
-              Over
-            </Button>
-          </a>
-          <a href="#submitProjection">
-            <Button
-              sx={{
-                width: { sm: "48px", xxxs: "24px" },
-                color: "secondary.dark_gray",
-                py: "4px",
-                fontSize: { sm: "9px", xs: "7px", xxxs: "9px" },
-                fontWeight: 400,
-                fontFamily: "poppins",
-                border: `${type === "under" ? "none" : "1px solid white"}`,
-                borderColor: `${mode === "dark" ? "white" : "#494949"}`,
-                borderRadius: "3px",
+              },
+            }}
+            onClick={() => {
+              setType("over");
+              addCard("over");
+              scrollDownFunc();
+            }}
+          >
+            Over
+          </Button>
+          <Button
+            sx={{
+              width: { sm: "48px", xxxs: "24px" },
+              color: "secondary.dark_gray",
+              py: "4px",
+              fontSize: { sm: "9px", xs: "7px", xxxs: "9px" },
+              fontWeight: 400,
+              fontFamily: "poppins",
+              border: `${type === "under" ? "none" : "1px solid white"}`,
+              borderColor: `${mode === "dark" ? "white" : "#494949"}`,
+              borderRadius: "3px",
+              background: `${type === "under" ? "#4831D4" : "transparent"}`,
+              "&.MuiButtonBase-root:hover": {
                 background: `${type === "under" ? "#4831D4" : "transparent"}`,
-                "&.MuiButtonBase-root:hover": {
-                  background: `${type === "under" ? "#4831D4" : "transparent"}`,
-                },
-              }}
-              onClick={() => {
-                setType("under");
-                addCard("under");
-              }}
-            >
-              Under
-            </Button>
-          </a>
+              },
+            }}
+            onClick={() => {
+              setType("under");
+              addCard("under");
+              scrollDownFunc();
+            }}
+          >
+            Under
+          </Button>
         </Box>
       </Card>
     </Grid>

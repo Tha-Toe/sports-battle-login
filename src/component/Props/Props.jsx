@@ -446,7 +446,10 @@ export default function Props({
   const [successSubmit, setSuccessSubmit] = useState(false);
   const [errorSubmit, setErrorSubmit] = useState(false);
   const [notEnoughBalance, setNotEnoughBalance] = useState(false);
-
+  const messagesEndRef = useRef(null);
+  const scrollDownFunc = () => {
+    messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+  };
   return (
     <main className="props-container">
       <Box
@@ -864,6 +867,7 @@ export default function Props({
                   setSelectSports={setSelectSports}
                   selectColor={selectColor}
                   selectSrc={selectSrc}
+                  scrollDownFunc={scrollDownFunc}
                 />
               ))}
             </Grid>
@@ -876,6 +880,7 @@ export default function Props({
             setSuccessSubmit={setSuccessSubmit}
             setErrorSubmit={setErrorSubmit}
           />
+          <div ref={messagesEndRef} />
         </Box>
       </Box>
       {openHowTo && <HowTo setOpenHowTo={setOpenHowTo} />}

@@ -528,7 +528,7 @@ export default function MyProfile({
         {info.map((e) => (
           <Box
             sx={{
-              width: "95%",
+              width: "100%",
               display: "flex",
               flexDirection: "row",
               alignItems: "center",
@@ -536,6 +536,7 @@ export default function MyProfile({
               margin: "0 auto",
               borderBottom: "1px solid #494949",
               cursor: "pointer",
+              py: "4px",
             }}
             onClick={e.func}
           >
