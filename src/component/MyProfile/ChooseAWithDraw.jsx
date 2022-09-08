@@ -103,10 +103,11 @@ export default function ChooseAWithDraw({ setOpenTag }) {
             display: "flex",
             flexDirection: "row",
             alignItems: "center",
-            justifyContent: "flex-between",
+            justifyContent: "space-between",
             borderBottom: "1px solid #494949",
             mb: "11px",
             cursor: "pointer",
+            pb: "13px",
           }}
           onClick={e.func}
         >

@@ -95,7 +95,7 @@ export default function StandardECheck({
           display: "flex",
           flexDirection: "row",
           alignItems: "center",
-          justifyContent: "flex-between",
+          justifyContent: "space-between",
           borderBottom: "1px solid #494949",
           mb: "11px",
           cursor: "pointer",
@@ -168,7 +168,7 @@ export default function StandardECheck({
           fontSize: { sm: "16px", xxs: "14px", xxxs: "12px" },
           fontWeight: 600,
           mt: "16px",
-          width: "90%",
+          width: "100%",
         }}
       >
         Destination
@@ -178,7 +178,7 @@ export default function StandardECheck({
           display: "flex",
           flexDirection: "row",
           alignItems: "center",
-          width: "90%",
+          width: "100%",
           justifyContent: "flex-start",
           mt: "16px",
         }}
@@ -210,7 +210,7 @@ export default function StandardECheck({
           display: "flex",
           flexDirection: "row",
           alignItems: "center",
-          width: "90%",
+          width: "100%",
           justifyContent: "flex-start",
           mt: "12px",
         }}

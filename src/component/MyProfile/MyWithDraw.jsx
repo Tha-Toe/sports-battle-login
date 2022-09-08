@@ -168,7 +168,7 @@ export default function MyWithDraw({ mode }) {
                     mt: "6px",
                   }}
                 >
-                  {e.time}
+                  {e.date}
                 </Typography>
                 <Typography
                   sx={{
@@ -198,6 +198,7 @@ export default function MyWithDraw({ mode }) {
                     fontWeight: 500,
                     fontFamily: "poppins",
                     color: `${mode === "dark" ? "#FFCED6" : "#E4313C"}`,
+                    color: `${mode === "dark" ? "#ffffff" : "#494949"}`,
                   }}
                 >
                   {e.amount}
