@@ -13,6 +13,7 @@ a {
   position: relative;
   overflow: scroll;
   -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 .statsContainer::-webkit-scrollbar {
   display: none;
