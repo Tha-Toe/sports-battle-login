@@ -7,7 +7,7 @@ export default function ({ setSelectAmount, selectAmount }) {
       <Typography
         sx={{
           fontFamily: "poppins",
-          fontSize: "8px",
+          fontSize: { xl: "12px", md: "10px", xxxs: "8px" },
           fontWeight: 400,
           color: "secondary.dark_gray",
           mb: "7px",

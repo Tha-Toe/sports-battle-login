@@ -165,7 +165,7 @@ const SubmitProjection = ({
             >
               <Typography
                 sx={{
-                  fontSize: "8px",
+                  fontSize: { xl: "12px", md: "10px", xxxs: "8px" },
                   fontWeight: 400,
                   fontFamily: "poppins",
                   mr: "3px",
