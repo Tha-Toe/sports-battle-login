@@ -7,7 +7,7 @@
   height: 20px;
 }
 .overUnderNavContainer {
-  overflow: scroll;
+  overflow: hidden;
   margin: auto;
   position: relative;
   margin-top: 20px;

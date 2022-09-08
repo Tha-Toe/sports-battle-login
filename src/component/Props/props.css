@@ -9,7 +9,7 @@ a {
 .statsContainer,
 .matchesContainer,
 .propsContainer {
-  overflow: scroll;
+  overflow: hidden;
   margin: auto;
   position: relative;
 }
