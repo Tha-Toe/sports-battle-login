@@ -11,7 +11,8 @@ a {
 .propsContainer {
   margin: auto;
   position: relative;
-  overflow: hidden;
+  overflow: scroll;
+  -ms-overflow-style: none;
 }
 .statsContainer::-webkit-scrollbar {
   display: none;
