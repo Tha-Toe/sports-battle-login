@@ -600,6 +600,7 @@ export function Logged({ mode, setMode }) {
                 flexDirection: "column",
                 justifyContent: "space-between",
                 alignItems: "flex-start",
+
                 width: {
                   xl: "190px",
                   lg: "165px",

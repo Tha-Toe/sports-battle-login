@@ -182,7 +182,6 @@ export default function MyProps({ mode }) {
           lg: "836px",
           md: "700px",
           sm: "500px",
-          xs: "450px",
           xxxs: "90%",
         },
         height: "100vh",

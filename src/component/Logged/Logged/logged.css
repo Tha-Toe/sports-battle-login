@@ -92,9 +92,6 @@
   }
 }
 @media (max-width: 700px) {
-  .side-bar-icon {
-    margin-left: 5px;
-  }
   .logoLogged {
     left: 35px;
   }
