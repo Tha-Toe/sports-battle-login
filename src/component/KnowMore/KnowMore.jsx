@@ -212,7 +212,7 @@ export default function KnowMore({ mode }) {
               xxxs: "95%",
             },
             margin: "0 auto",
-            overflow: "scroll",
+            overflow: "hidden",
             "&::-webkit-scrollbar": {
               display: "none",
             },
