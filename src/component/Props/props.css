@@ -9,9 +9,11 @@ a {
 .statsContainer,
 .matchesContainer,
 .propsContainer {
-  overflow: hidden;
+  overflow: auto;
   margin: auto;
   position: relative;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
 }
 .statsContainer::-webkit-scrollbar {
   display: none;
@@ -36,6 +38,7 @@ a {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  width: auto;
 }
 .propsContainer {
   margin-top: 20px;

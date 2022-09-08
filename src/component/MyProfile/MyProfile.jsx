@@ -196,7 +196,6 @@ export default function MyProfile({
           },
           minHeight: "100vh",
           margin: "auto",
-          mt: "30px",
           mb: "30px",
         }}
         component="div"

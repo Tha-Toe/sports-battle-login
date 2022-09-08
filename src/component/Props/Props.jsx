@@ -29,6 +29,25 @@ import SuccessSubmit from "./SuccessSubmit";
 import ErrorSubmit from "./ErrorSubmit";
 import NotEnoughBalance from "./NotEnoughBalance";
 
+const useHorizontalScroll = () => {
+  const elRef = useRef();
+  useEffect(() => {
+    const el = elRef.current;
+    if (el) {
+      const onWheel = (e) => {
+        if (e.deltaY == 0) return;
+        e.preventDefault();
+        el.scrollTo({
+          left: el.scrollLeft + e.deltaY,
+          behavior: "smooth",
+        });
+      };
+      el.addEventListener("wheel", onWheel);
+      return () => el.removeEventListener("wheel", onWheel);
+    }
+  }, []);
+  return elRef;
+};
 export default function Props({
   mode,
   selectSports,
@@ -290,34 +309,42 @@ export default function Props({
     { name: "PHI vs WSH", time: "13h 48m" },
     { name: "PHI vs WSH", time: "13h 48m" },
     { name: "PHI vs WSH", time: "13h 48m" },
+    { name: "PHI vs WSH", time: "13h 48m" },
+    { name: "PHI vs WSH", time: "13h 48m" },
+    { name: "PHI vs WSH", time: "13h 48m" },
+    { name: "PHI vs WSH", time: "13h 48m" },
+    { name: "PHI vs WSH", time: "13h 48m" },
+    { name: "PHI vs WSH", time: "13h 48m" },
+    { name: "PHI vs WSH", time: "13h 48m" },
+    { name: "PHI vs WSH", time: "13h 48m" },
   ]);
   const [width, setWidth] = useState();
   const [matchesWidth, setMatchesWidth] = useState();
   const [propsWidth, setPropsWidth] = useState();
   const parentRef = useRef();
-  const statsRef = useRef();
+  // const statsRef = useRef();
   const matchesRef = useRef();
-  const propsContainerRef = useRef();
+  // const propsContainerRef = useRef();
   const propsChildRef = useRef();
   const [statsLeftValue, setStatsLeftValue] = useState(0);
   useEffect(() => {
-    const total =
-      parentRef.current.scrollWidth - parentRef.current.offsetWidth + 50;
-    const matchesTotal =
-      matchesRef.current.scrollWidth - matchesRef.current.offsetWidth + 50;
-    const propsTotal =
-      propsContainerRef.current.scrollWidth -
-      propsContainerRef.current.offsetWidth +
-      50;
-    setWidth(total);
-    setMatchesWidth(matchesTotal);
-    setPropsWidth(propsTotal);
+    // const total =
+    //   parentRef.current.scrollWidth - parentRef.current.offsetWidth + 50;
+    // const matchesTotal =
+    //   matchesRef.current.scrollWidth - matchesRef.current.offsetWidth + 50;
+    //  const propsTotal =
+    //    propsContainerRef.current.scrollWidth -
+    //   propsContainerRef.current.offsetWidth +
+    //    50;
+    // setWidth(total);
+    // setMatchesWidth(matchesTotal);
+    //  setPropsWidth(propsTotal);
   }, []);
   const goForwardStats = () => {
-    parentRef.current.scrollLeft = parentRef.current.scrollLeft + 100;
+    statsRef.current.scrollLeft = statsRef.current.scrollLeft + 100;
   };
   const goForwardMatches = () => {
-    matchesRef.current.scrollLeft = matchesRef.current.scrollLeft + 100;
+    matchsRef.current.scrollLeft = matchsRef.current.scrollLeft + 100;
   };
 
   //card
@@ -450,6 +477,11 @@ export default function Props({
   const scrollDownFunc = () => {
     messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
   };
+
+  const sportsRef = useHorizontalScroll();
+  const statsRef = useHorizontalScroll();
+  const matchsRef = useHorizontalScroll();
+
   return (
     <main className="props-container">
       <Box
@@ -460,18 +492,13 @@ export default function Props({
         }}
         component="div"
       >
-        <motion.div
+        <div
           className={`${"propsContainer"} ${
             mode === "dark" ? "" : "props-light"
           }`}
-          ref={propsContainerRef}
+          ref={sportsRef}
         >
-          <motion.div
-            className="statsChild"
-            ref={propsChildRef}
-            drag="x"
-            dragConstraints={{ right: 0, left: -propsWidth }}
-          >
+          <div className="statsChild" ref={propsChildRef}>
             {propsNav.map((e) => (
               <Box
                 sx={{
@@ -536,8 +563,8 @@ export default function Props({
                 </Typography>
               </Box>
             ))}
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
         <Box
           sx={{
             display: "flex",
@@ -663,13 +690,8 @@ export default function Props({
           >
             9 Stats
           </Typography>
-          <motion.div className="statsContainer" ref={parentRef}>
-            <motion.div
-              className="statsChild"
-              ref={statsRef}
-              drag="x"
-              dragConstraints={{ right: 0, left: -width }}
-            >
+          <div className="statsContainer" ref={statsRef}>
+            <div className="statsChild">
               {stats.map((e, index) => (
                 <button
                   key={index}
@@ -682,8 +704,8 @@ export default function Props({
                   {e.name}
                 </button>
               ))}
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
           <Box
             sx={{
               display: "flex",
@@ -752,12 +774,8 @@ export default function Props({
           >
             5 Matches
           </Typography>
-          <motion.div className="matchesContainer" ref={matchesRef}>
-            <motion.div
-              className="matchesChild"
-              drag="x"
-              dragConstraints={{ right: 0, left: -matchesWidth }}
-            >
+          <div className="matchesContainer" ref={matchsRef}>
+            <div className="matchesChild">
               {matches.map((e) => (
                 <div
                   className="matchesButton"
@@ -783,8 +801,8 @@ export default function Props({
                   </div>
                 </div>
               ))}
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
           <Box
             sx={{
               display: "flex",

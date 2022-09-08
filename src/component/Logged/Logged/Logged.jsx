@@ -279,7 +279,7 @@ export function Logged({ mode, setMode }) {
                     xxs: "8px",
                     xxxs: "8px",
                   },
-                  fontWeight: 600,
+                  fontWeight: 500,
                   padding: { xs: "8px 12px", xxxs: "6px 6px" },
                   maxWidth: { sm: "auto", xxs: "22%", xxxs: "25%" },
                   minWidth: { sm: "auto", xxs: "22%", xxxs: "25%" },
@@ -362,7 +362,7 @@ export function Logged({ mode, setMode }) {
                     xxs: "8px",
                     xxxs: "8px",
                   },
-                  fontWeight: 600,
+                  fontWeight: 500,
                   padding: { xs: "8px 12px", xxxs: "6px 6px" },
                   maxWidth: { sm: "auto", xxs: "22%", xxxs: "25%" },
                   minWidth: { sm: "auto", xxs: "22%", xxxs: "25%" },
@@ -561,7 +561,10 @@ export function Logged({ mode, setMode }) {
                     width: "100%",
                     mb: "20px",
                   }}
-                  onClick={e.func}
+                  onClick={() => {
+                    setOpenTag(e.activeName);
+                    e.func();
+                  }}
                 >
                   <Box sx={{ width: "auto" }}>
                     <img
@@ -579,7 +582,11 @@ export function Logged({ mode, setMode }) {
                       fontWeight: `${openTag === e.activeName ? 600 : 400}`,
                       mt: { lg: "0px", sm: "5px", xxxs: "0px" },
                       ml: { lg: "8px", sm: "0px", xxxs: "8px" },
-                      color: "secondary.dark_gray",
+                      color: `${
+                        openTag === e.activeName
+                          ? "#4831D4"
+                          : "secondary.dark_gray"
+                      }`,
                     }}
                   >
                     {e.name}
@@ -628,7 +635,10 @@ export function Logged({ mode, setMode }) {
                     width: "100%",
                     mb: "20px",
                   }}
-                  onClick={e.func}
+                  onClick={() => {
+                    setOpenTag(e.activeName);
+                    e.func();
+                  }}
                 >
                   <img
                     src={openTag === e.activeName ? e.activeSrc : e.unactiveSrc}
@@ -641,7 +651,11 @@ export function Logged({ mode, setMode }) {
                       textAlign: "center",
                       fontWeight: `${openTag === e.activeName ? 600 : 400}`,
                       ml: { lg: "8px", sm: "0px", xxxs: "8px" },
-                      color: "secondary.dark_gray",
+                      color: `${
+                        openTag === e.activeName
+                          ? "#4831D4"
+                          : "secondary.dark_gray"
+                      }`,
                       mt: { lg: "0px", sm: "5px", xxxs: "0px" },
                     }}
                   >

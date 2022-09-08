@@ -61,7 +61,6 @@ export default function RefralBonusCashCode({ number, setNumber }) {
         alignItems: "center",
         justifyContent: "center",
         margin: "0 auto",
-        mt: "40px",
       }}
     >
       <Box

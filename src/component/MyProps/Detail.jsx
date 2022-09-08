@@ -61,7 +61,7 @@ export default function Detail({
           mt: "5px",
           borderBottom: "1px solid #494949",
           pb: "5px",
-          width: "90%",
+          width: "100%",
           background: "black",
         }}
       >

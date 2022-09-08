@@ -19,6 +19,25 @@ import FAQ from "./FAQ";
 import OperatingState from "./OperatingState";
 import { motion } from "framer-motion";
 
+const useHorizontalScroll = () => {
+  const elRef = useRef();
+  useEffect(() => {
+    const el = elRef.current;
+    if (el) {
+      const onWheel = (e) => {
+        if (e.deltaY == 0) return;
+        e.preventDefault();
+        el.scrollTo({
+          left: el.scrollLeft + e.deltaY,
+          behavior: "smooth",
+        });
+      };
+      el.addEventListener("wheel", onWheel);
+      return () => el.removeEventListener("wheel", onWheel);
+    }
+  }, []);
+  return elRef;
+};
 export default function KnowMore({ mode }) {
   const [general, setGeneral] = useState([
     {
@@ -188,17 +207,11 @@ export default function KnowMore({ mode }) {
   const [selectSports, setSelectSports] = useState("Cricket");
 
   const [propsWidth, setPropsWidth] = useState();
-  const propsContainerRef = useRef();
   const propsChildRef = useRef();
-  useEffect(() => {
-    const propsTotal =
-      propsContainerRef.current.scrollWidth -
-      propsContainerRef.current.offsetWidth +
-      50;
-    setPropsWidth(propsTotal);
-  }, []);
+
+  const sportsRef = useHorizontalScroll();
   return (
-    <Box sx={{ minHeight: "100vh", width: "100%", mt: "50px" }}>
+    <Box sx={{ minHeight: "100vh", width: "100%" }}>
       {openTag === "Over-Under Points System" && (
         <Box
           component="div"
@@ -219,76 +232,74 @@ export default function KnowMore({ mode }) {
             mb: "30px",
             mt: { sm: 0, xxxs: "20px" },
           }}
-          ref={propsContainerRef}
         >
           {" "}
-          <motion.div
-            className="statsChild"
-            ref={propsChildRef}
-            drag="x"
-            dragConstraints={{ right: 0, left: -propsWidth }}
-          >
-            {overUnderNav.map((e) => (
-              <Box
-                sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  mr: { xxxs: "5px" },
-                }}
-              >
+          <div className="propsContainer" ref={sportsRef}>
+            <div className="statsChild">
+              {overUnderNav.map((e) => (
                 <Box
                   sx={{
-                    height: { xs: "34px", xxxs: "30px" },
-                    width: { xs: "34px", xxxs: "30px" },
-                    border: `${
-                      mode === "dark" ? "2px solid white" : "1px solid #494949"
-                    }`,
-                    borderRadius: "50%",
-                    mt: "13px",
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "center",
                     justifyContent: "center",
-                    bgcolor: `${
-                      e.name === selectSports ? e.color : "primary.main"
-                    }`,
-                    cursor: "pointer",
+                    mr: { xxxs: "5px" },
                   }}
-                  onClick={() => setSelectSports(e.name)}
                 >
-                  {mode === "dark" ? (
-                    <img className="propsNavImg" src={e.src} />
-                  ) : (
-                    <>
-                      {e.name === selectSports ? (
-                        <img className="propsNavImg" src={e.src} />
-                      ) : (
-                        <img className="propsNavImg" src={e.light_src} />
-                      )}
-                    </>
-                  )}
+                  <Box
+                    sx={{
+                      height: { xs: "34px", xxxs: "30px" },
+                      width: { xs: "34px", xxxs: "30px" },
+                      border: `${
+                        mode === "dark"
+                          ? "2px solid white"
+                          : "1px solid #494949"
+                      }`,
+                      borderRadius: "50%",
+                      mt: "13px",
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      bgcolor: `${
+                        e.name === selectSports ? e.color : "primary.main"
+                      }`,
+                      cursor: "pointer",
+                    }}
+                    onClick={() => setSelectSports(e.name)}
+                  >
+                    {mode === "dark" ? (
+                      <img className="propsNavImg" src={e.src} />
+                    ) : (
+                      <>
+                        {e.name === selectSports ? (
+                          <img className="propsNavImg" src={e.src} />
+                        ) : (
+                          <img className="propsNavImg" src={e.light_src} />
+                        )}
+                      </>
+                    )}
+                  </Box>
+                  <Typography
+                    sx={{
+                      fontSize: "12px",
+                      fontWeight: 400,
+                      fontFamily: "poppins",
+                      mt: "5px",
+                      color: `${
+                        e.name === selectSports ? e.color : "secondary.main"
+                      }`,
+                      width: "50px",
+                      textAlign: "center",
+                    }}
+                  >
+                    {" "}
+                    {e.name}
+                  </Typography>
                 </Box>
-                <Typography
-                  sx={{
-                    fontSize: "12px",
-                    fontWeight: 400,
-                    fontFamily: "poppins",
-                    mt: "5px",
-                    color: `${
-                      e.name === selectSports ? e.color : "secondary.main"
-                    }`,
-                    width: "50px",
-                    textAlign: "center",
-                  }}
-                >
-                  {" "}
-                  {e.name}
-                </Typography>
-              </Box>
-            ))}
-          </motion.div>
+              ))}
+            </div>
+          </div>
         </Box>
       )}
       <Box

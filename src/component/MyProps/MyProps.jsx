@@ -190,7 +190,6 @@ export default function MyProps({ mode }) {
         display: "flex",
         flexDirection: "column",
         alignItems: "flex-start",
-        mt: "30px",
       }}
       component="div"
     >

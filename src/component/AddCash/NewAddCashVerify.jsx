@@ -17,7 +17,6 @@ export default function NewAddCashVerify() {
         alignItems: "center",
         justifyContent: "center",
         margin: "0 auto",
-        mt: "30px",
       }}
     >
       <img

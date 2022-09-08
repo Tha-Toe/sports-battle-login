@@ -154,7 +154,6 @@ export default function TransactionHistory({ mode }) {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        mt: { sm: "10px", xxxs: "20px" },
       }}
       component="div"
     >

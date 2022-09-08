@@ -118,7 +118,7 @@ export function AndresCard({
             sx={{
               display: "flex",
               flexDirection: "column",
-              ml: "6px",
+              ml: { lg: "15px", xxxs: "10px" },
               justifyContent: "flex-start",
             }}
           >
@@ -190,6 +190,7 @@ export function AndresCard({
           <Box
             sx={{
               bgcolor: "primary.dark_gray",
+              bgcolor: `${mode === "dark" ? "#161616" : "#f3f4f8"}`,
               display: "flex",
               alignItems: "center",
               width: "40%",

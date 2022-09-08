@@ -42,7 +42,6 @@ export default function NewAddCashFrom({ address, setNewUser }) {
         alignItems: "center",
         justifyContent: "center",
         margin: "0 auto",
-        mt: "30px",
       }}
     >
       <Box
