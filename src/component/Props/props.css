@@ -99,8 +99,22 @@ a {
     padding: 0px 17px;
   }
 }
+@media (max-width: 900px) {
+  .matchesContainer {
+    max-width: 83%;
+  }
+  .statsContainer {
+    max-width: 86%;
+  }
+}
 
 @media (max-width: 500px) {
+  .matchesContainer {
+    max-width: 75%;
+  }
+  .statsContainer {
+    max-width: 78%;
+  }
   .statsButton {
     height: 30px;
     min-width: 95px;

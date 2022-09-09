@@ -684,7 +684,7 @@ export default function Props({
               fontSize: { sm: "16px", xxxs: "12px" },
               fontWeight: "400",
               fontFamily: "poppins",
-              width: { md: "10%", sm: "50%", xxxs: "70%" },
+              width: { md: "10%", xs: "14%", xxxs: "22%" },
               color: "secondary.main",
             }}
           >
@@ -768,7 +768,7 @@ export default function Props({
               fontSize: { sm: "16px", xxxs: "12px" },
               fontWeight: "400",
               fontFamily: "poppins",
-              width: { md: "13%", xs: "50%", xxxs: "70%" },
+              width: { md: "13%", xs: "17%", xxxs: "25%" },
               color: "secondary.main",
             }}
           >
