@@ -30,7 +30,7 @@ export function AndresCard({
       id="Andress-container"
       component="div"
       sx={{
-        width: "95%",
+        width: "90%",
         margin: "0 auto",
         display: "flex",
         flexDirection: "column",
@@ -86,7 +86,7 @@ export function AndresCard({
             width: "auto",
             mt: "7px",
             ml: "6px",
-            width: "50%",
+            width: { sm: "55%", xxxs: "50%" },
             mb: "7px",
             alignItems: "center",
           }}
@@ -97,7 +97,7 @@ export function AndresCard({
           />
           <Typography
             sx={{
-              fontSize: { xl: "12px", md: "10px", xxxs: "8px" },
+              fontSize: { xl: "12px", md: "10px", xxxs: "10px" },
               fontWeight: 400,
               fontFamily: "poppins",
               color: "white",

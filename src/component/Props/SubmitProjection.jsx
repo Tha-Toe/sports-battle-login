@@ -162,7 +162,7 @@ const SubmitProjection = ({
             <Box
               sx={{
                 display: "flex",
-                width: "95%",
+                width: "90%",
                 margin: "0 auto",
                 mb: "9px",
               }}
@@ -199,7 +199,7 @@ const SubmitProjection = ({
                 fontWieght: 600,
                 fontFamily: "poppins",
                 background: "#4831D4",
-                width: "95%",
+                width: "90%",
                 margin: "0 auto",
                 mb: "10px",
                 "&.MuiButtonBase-root:hover": {
