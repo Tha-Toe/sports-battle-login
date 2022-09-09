@@ -73,9 +73,15 @@ function App() {
       },
     },
   });
+  const loggedRef = useRef();
+
+  useEffect(() => {
+    loggedRef.current.scrollTop = 0;
+  }, []);
   return (
     <ThemeProvider theme={mode === "dark" ? darkTheme : lightTheme}>
       <div
+        ref={loggedRef}
         style={{
           width: "100vw",
           maxWidth: "100vw",

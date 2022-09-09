@@ -180,18 +180,12 @@ export function Logged({ mode, setMode }) {
   const [selectSrc, setSelectSrc] = useState("/mlb.png");
   const [selectColor, setSelectColor] = useState("blue");
 
-  const loggedRef = useRef();
-
-  useEffect(() => {
-    loggedRef.current.scrollTop = 0;
-  }, []);
-
   const logout = () => {
     navigate("/", { replace: true });
   };
 
   return (
-    <div className="logged-container" ref={loggedRef}>
+    <div className="logged-container">
       <Box
         component="div"
         sx={{
