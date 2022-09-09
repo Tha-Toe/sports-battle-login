@@ -94,7 +94,8 @@ function App() {
           <Routes>
             <Route
               path="/"
-              element={<LoginFlow mode={mode} setMode={setMode} />}
+              // element={<LoginFlow mode={mode} setMode={setMode} />}
+              element={<Logged mode={mode} setMode={setMode} />}
             />
             <Route
               path="/choose"
