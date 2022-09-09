@@ -13,7 +13,7 @@ import EnterYourName from "./component/SignUp/enter-your-name/EnterYourName";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CheckMail from "./component/Forgot/checkMail/CheckMail";
 import { Logged } from "./component/Logged/Logged/Logged";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect, useRef } from "react";
 
 function App() {
   const [mode, setMode] = useState("dark");
