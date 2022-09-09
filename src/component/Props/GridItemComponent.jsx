@@ -66,6 +66,7 @@ const GridItemComponent = ({
     }
     setAlreadyPicked(true);
   };
+  const { innerWidth } = window;
 
   return (
     <Grid
@@ -263,7 +264,9 @@ const GridItemComponent = ({
             onClick={() => {
               setType("over");
               addCard("over");
-              scrollDownFunc();
+              if (innerWidth < 700) {
+                scrollDownFunc();
+              }
             }}
           >
             Over
@@ -287,7 +290,9 @@ const GridItemComponent = ({
             onClick={() => {
               setType("under");
               addCard("under");
-              scrollDownFunc();
+              if (innerWidth < 700) {
+                scrollDownFunc();
+              }
             }}
           >
             Under
