@@ -58,7 +58,6 @@ export default function VerifycationCode({
           flexDirection: "row",
           justifyContent: "space-between",
           alignItems: "center",
-          mt: "15px",
           cursor: "pointer",
         }}
       >
