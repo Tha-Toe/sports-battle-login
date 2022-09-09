@@ -490,7 +490,7 @@ export function Logged({ mode, setMode }) {
             left: { sm: 0, xxxs: `${openSideNav ? 0 : "-195px"}` },
             height: "100%",
             zIndex: 3,
-            transition: "all .5s ease-in",
+            transition: "all .3s ease-in",
             padding: 0,
           }}
         >
@@ -526,7 +526,7 @@ export function Logged({ mode, setMode }) {
                 display: { sm: "none", xxxs: "block" },
                 borderRadius: "0 4px 4px 0",
                 zIndex: 4,
-                transition: "all .5s ease-in",
+                transition: "all .3s ease-in",
               }}
               onClick={() => setOpenSideNav(!openSideNav)}
             />

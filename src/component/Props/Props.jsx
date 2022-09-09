@@ -862,7 +862,9 @@ export default function Props({
             sx={{
               width: { lg: "75%", md: "60%", sm: "50%", xxxs: "100%" },
               height: "auto",
-              ml: { xs: 0, xxxs: "10px" },
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
             }}
           >
             <Grid
