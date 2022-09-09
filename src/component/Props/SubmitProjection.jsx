@@ -43,9 +43,11 @@ const SubmitProjection = ({
         border: `${mode === "dark" ? "1px solid #2c2c2c" : "none"}`,
         display: "flex",
         flexDirection: "column",
+        ml: { sm: "5px", xxxs: "0px" },
         borderRadius: "4px",
         mb: "30px",
         bgcolor: "primary.main",
+        mt: { sm: "0px", xxxs: "10px" },
       }}
     >
       <Typography
