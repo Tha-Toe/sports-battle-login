@@ -79,23 +79,23 @@ function App() {
     loggedRef.current.scrollTop = 0;
   }, []);
   return (
-    <ThemeProvider theme={mode === "dark" ? darkTheme : lightTheme}>
-      <div
-        ref={loggedRef}
-        style={{
-          width: "100vw",
-          maxWidth: "100vw",
-          minHeight: "100vh",
-          color: "white",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          background: `${mode === "dark" ? "black" : "white"}`,
-          overflowX: "hidden",
-        }}
-        className="app-container"
-      >
+    <div
+      ref={loggedRef}
+      style={{
+        width: "100vw",
+        maxWidth: "100vw",
+        minHeight: "100vh",
+        color: "white",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        background: `${mode === "dark" ? "black" : "white"}`,
+        overflowX: "hidden",
+      }}
+      className="app-container"
+    >
+      <ThemeProvider theme={mode === "dark" ? darkTheme : lightTheme}>
         <BrowserRouter>
           <Routes>
             <Route
@@ -146,8 +146,8 @@ function App() {
             />
           </Routes>
         </BrowserRouter>
-      </div>
-    </ThemeProvider>
+      </ThemeProvider>
+    </div>
   );
 }
 
