@@ -229,8 +229,6 @@ export default function KnowMore({ mode }) {
             "&::-webkit-scrollbar": {
               display: "none",
             },
-            mb: "30px",
-            mt: { sm: 0, xxxs: "20px" },
           }}
         >
           {" "}
@@ -314,6 +312,7 @@ export default function KnowMore({ mode }) {
           },
           height: "100vh",
           margin: "auto",
+          mt: "30px",
           display: "flex",
           flexDirection: "row",
         }}
