@@ -4,7 +4,7 @@ a {
 .props-container {
   max-width: 100%;
   min-height: 100vh;
-  margin-top: 20px;
+  margin-top: 0px;
 }
 .statsContainer,
 .matchesContainer,
@@ -41,7 +41,6 @@ a {
   width: auto;
 }
 .propsContainer {
-  margin-top: 20px;
   width: 100%;
   background-color: #000000;
 }

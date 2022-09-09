@@ -228,7 +228,7 @@ export function Logged({ mode, setMode }) {
                 mt: "5px",
                 background: "black",
                 position: { sm: "absolute", xxxs: "static" },
-                left: { lg: "10px", sm: "30px", xxxs: "35px" },
+                left: { lg: "20px", sm: "30px", xxxs: "35px" },
                 mx: { sm: "auto", xxxs: "auto" },
               }}
             >

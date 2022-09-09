@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect } from "react";
 import "./props.css";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
-export default function ({ setPickPlayType, pickPlayType }) {
+export default function ({ setPickPlayType, pickPlayType, mode }) {
   return (
     <>
       <Typography
@@ -22,7 +22,7 @@ export default function ({ setPickPlayType, pickPlayType }) {
           fontSize: { xl: "10px", md: "8px", xxxs: "6px" },
           fontFamily: "poppins",
           fontWeight: 400,
-          color: "#EA1E63",
+          color: `${mode === "dark" ? "#FFCED6" : "#EA1E63"}`,
         }}
       >
         This entry can only be attack
@@ -45,9 +45,12 @@ export default function ({ setPickPlayType, pickPlayType }) {
               bgcolor: "primary.gray",
               alignItems: "center",
               mt: "5px",
-              p: "8px 4px",
+              p: "10px 4px",
+              pl: "8px",
               border: `${
-                pickPlayType === "defence" ? "1px solid #4831D4" : "none"
+                pickPlayType === "defence"
+                  ? "1px solid #4831D4"
+                  : "1px solid transparent"
               }`,
               borderRadius: "3px",
               cursor: "pointer",
@@ -91,10 +94,13 @@ export default function ({ setPickPlayType, pickPlayType }) {
               bgcolor: "primary.gray",
               alignItems: "center",
               mt: "5px",
-              p: "8px 4px",
+              p: "10px 4px",
+              pl: "8px",
               borderRadius: "3px",
               border: `${
-                pickPlayType === "attack" ? "1px solid #4831D4" : "none"
+                pickPlayType === "attack"
+                  ? "1px solid #4831D4"
+                  : "1px solid transparent"
               }`,
               cursor: "pointer",
             }}

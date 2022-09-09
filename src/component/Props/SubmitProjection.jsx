@@ -114,6 +114,7 @@ const SubmitProjection = ({
                   </Typography>
                   <Input
                     placeholder="Enter dollar amount"
+                    type="number"
                     sx={{
                       width: "100%",
                       fontSize: { xl: "12px", md: "10px", xxxs: "8px" },
@@ -148,6 +149,7 @@ const SubmitProjection = ({
                   <ChooseType
                     setPickPlayType={setPickPlayType}
                     pickPlayType={pickPlayType}
+                    mode={mode}
                   />
                   {pickPlayType && <Balance />}
                 </Box>
@@ -196,7 +198,7 @@ const SubmitProjection = ({
                 fontWieght: 600,
                 fontFamily: "poppins",
                 background: "#4831D4",
-                width: "90%",
+                width: "95%",
                 margin: "0 auto",
                 mb: "10px",
                 "&.MuiButtonBase-root:hover": {
