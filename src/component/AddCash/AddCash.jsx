@@ -47,7 +47,7 @@ export default function AddCash() {
         flexDirection: { lg: "row", xxxs: "column" },
         alignItem: "center",
         justifyContent: "center",
-        mt: { lg: 0, xxxs: "50px" },
+        mt: { lg: 0, xxxs: "0px" },
       }}
     >
       <Box
@@ -59,7 +59,7 @@ export default function AddCash() {
           flexDirection: "column",
           alignItem: "center",
           justifyContent: "flex-start",
-          mb: { xxxs: "50px", lg: 0 },
+          mb: { xxxs: "30px", lg: 0 },
         }}
       >
         <Typography
@@ -247,6 +247,7 @@ export default function AddCash() {
           borderLeft: { lg: "1px solid #494949", xxxs: 0 },
           px: { lg: "20px", xxxs: 0 },
           ml: { lg: "18px", xxxs: 0 },
+          mb: { xxxs: "30px", lg: 0 },
         }}
       >
         <Typography
