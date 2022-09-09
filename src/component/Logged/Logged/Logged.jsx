@@ -184,14 +184,14 @@ export function Logged({ mode, setMode }) {
 
   useEffect(() => {
     loggedRef.current.scrollTop = 0;
-  }, [location]);
+  }, []);
 
   const logout = () => {
     navigate("/", { replace: true });
   };
 
   return (
-    <div className="logged-container">
+    <div className="logged-container" ref={loggedRef}>
       <Box
         component="div"
         sx={{
