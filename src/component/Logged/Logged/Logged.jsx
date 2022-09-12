@@ -195,7 +195,6 @@ export function Logged({ mode, setMode }) {
         sx={{
           position: "relative",
           width: "100%",
-          height: "10%",
         }}
       >
         <AppBar
@@ -473,8 +472,6 @@ export function Logged({ mode, setMode }) {
         component="div"
         sx={{
           position: "relative",
-          height: "auto",
-          height: "90%",
           width: "100%",
           display: "flex",
           flexDirection: "row",
