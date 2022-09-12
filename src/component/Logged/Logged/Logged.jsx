@@ -849,6 +849,7 @@ export function Logged({ mode, setMode }) {
               goDepositNewUser={goDepositNewUser}
               goAddCashBonus={goAddCashBonus}
               newUser={newUser}
+              setOpenTag={setOpenTag}
             />
           )}
           {!location.search && openTag === "transaction-history" && (
@@ -894,7 +895,7 @@ export function Logged({ mode, setMode }) {
         </Box>
       </Box>
       {openInviteFriend && (
-        <BonusOffer setOpenInviteFriend={setOpenInviteFriend} mode={mode}/>
+        <BonusOffer setOpenInviteFriend={setOpenInviteFriend} mode={mode} />
       )}
     </div>
   );

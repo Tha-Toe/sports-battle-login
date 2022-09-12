@@ -286,6 +286,7 @@ export default function MyProfile({
               },
               textTransform: "none",
             }}
+            onClick={goDepositNewUser}
           >
             Add Cash
           </Button>
