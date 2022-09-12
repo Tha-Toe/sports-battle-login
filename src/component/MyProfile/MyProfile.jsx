@@ -187,14 +187,13 @@ export default function MyProfile({
         sx={{
           width: {
             xl: "1000px",
-
             lg: "836px",
             md: "700px",
             sm: "560px",
             xs: "450px",
             xxxs: "90%",
           },
-          minHeight: "100vh",
+          height: "100vh",
           margin: "auto",
           mb: "30px",
         }}

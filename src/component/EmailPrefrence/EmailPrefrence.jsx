@@ -50,7 +50,7 @@ export default function EmailPrefrence({ setOpenTag }) {
           xs: "450px",
           xxxs: "90%",
         },
-        minHeight: "100vh",
+        height: "100vh",
         margin: "auto",
         display: "flex",
         flexDirection: "column",

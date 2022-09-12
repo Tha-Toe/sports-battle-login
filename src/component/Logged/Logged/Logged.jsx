@@ -485,7 +485,6 @@ export function Logged({ mode, setMode }) {
             position: { sm: "relative", xxxs: "fixed" },
             width: { lg: "135px", md: "80px", sm: "80px", xxxs: "185px" },
             left: { sm: 0, xxxs: `${openSideNav ? 0 : "-195px"}` },
-            height: "100%",
             zIndex: 3,
             transition: "all .3s ease-in",
             padding: 0,
