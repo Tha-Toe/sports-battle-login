@@ -193,10 +193,11 @@ export function Logged({ mode, setMode }) {
       <Box
         component="div"
         sx={{
-          position: { sm: "relative", xxxs: "sticky" },
+          position: { sm: "relative", xxxs: "relative" },
           top: "0",
           width: "100%",
           zIndex: "6",
+          height: { sm: "10%", xxxs: "10%" },
         }}
       >
         <AppBar
@@ -206,8 +207,8 @@ export function Logged({ mode, setMode }) {
             position: "relative",
             boxShadow: "none",
             zIndex: { sm: 4, xxxs: 3 },
-            pt: "10px",
             pb: { sm: 0, xxxs: "5px" },
+            height: "100%",
           }}
         >
           <Toolbar
@@ -216,6 +217,7 @@ export function Logged({ mode, setMode }) {
               flexDirection: "column",
               alignItems: "flex-end",
               justifyContent: "center",
+              height: "100%",
             }}
             bgcolor="primary.main"
           >
@@ -387,7 +389,7 @@ export function Logged({ mode, setMode }) {
                   justifyContent: "center",
                   alignItems: "center",
                   position: { sm: "relative", xxxs: "absolute" },
-                  top: 0,
+                  top: { sm: "0px", xxxs: "10px" },
                   left: { sm: "1px", xxxs: "auto" },
                   right: "10px",
                 }}
@@ -477,6 +479,7 @@ export function Logged({ mode, setMode }) {
           width: "100%",
           display: "flex",
           flexDirection: "row",
+          height: { sm: "90%", xxxs: "90%" },
         }}
       >
         <AppBar
@@ -823,6 +826,7 @@ export function Logged({ mode, setMode }) {
               display: "none",
             },
             bgcolor: "primary.dark_gray",
+            height: "100%",
           }}
           ref={loggedRef}
         >
