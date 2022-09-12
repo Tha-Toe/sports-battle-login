@@ -197,7 +197,7 @@ export function Logged({ mode, setMode }) {
           top: "0",
           width: "100%",
           zIndex: "6",
-          height: { sm: "10%", xxxs: "10%" },
+          height: { sm: "10%", xxxs: "12%" },
         }}
       >
         <AppBar
@@ -479,7 +479,7 @@ export function Logged({ mode, setMode }) {
           width: "100%",
           display: "flex",
           flexDirection: "row",
-          height: { sm: "90%", xxxs: "90%" },
+          height: { sm: "90%", xxxs: "88%" },
         }}
       >
         <AppBar
