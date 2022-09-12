@@ -90,7 +90,7 @@ function App() {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        background: `${mode === "dark" ? "black" : "white"}`,
+        background: `${mode === "dark" ? "black" : "#f3f4f8"}`,
         overflowX: "hidden",
       }}
       className="app-container"

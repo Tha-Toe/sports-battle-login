@@ -894,7 +894,7 @@ export function Logged({ mode, setMode }) {
         </Box>
       </Box>
       {openInviteFriend && (
-        <BonusOffer setOpenInviteFriend={setOpenInviteFriend} />
+        <BonusOffer setOpenInviteFriend={setOpenInviteFriend} mode={mode}/>
       )}
     </div>
   );

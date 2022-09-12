@@ -8,7 +8,7 @@ import ClearIcon from "@mui/icons-material/Clear";
 
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
-export default function BonusOffer({ setOpenInviteFriend }) {
+export default function BonusOffer({ setOpenInviteFriend, mode }) {
   const [referNote, setReferNote] = useState([
     { note: "Refer a friend and give them your referral code" },
     {
@@ -24,7 +24,7 @@ export default function BonusOffer({ setOpenInviteFriend }) {
         sx={{
           width: { sm: "566px", xs: "400px", xxs: "100%", xxxs: "100%" },
           height: "608px",
-          background: "#2A2A2A",
+          bgcolor: "primary.main",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
@@ -33,7 +33,6 @@ export default function BonusOffer({ setOpenInviteFriend }) {
       >
         <Box
           sx={{
-            color: "white",
             width: "100%",
             display: "flex",
             justifyContent: "flex-end",
@@ -42,7 +41,7 @@ export default function BonusOffer({ setOpenInviteFriend }) {
           <ClearIcon
             sx={{
               fontSize: "25px",
-              color: "white",
+              color: `${mode === "dark" ? "white" : "#494949"}`,
               mr: "14px",
               mt: "14px",
               cursor: "pointer",
@@ -68,7 +67,7 @@ export default function BonusOffer({ setOpenInviteFriend }) {
             fontWeight: 600,
             fontFamily: "poppins",
             mt: "8px",
-            color: "white",
+            color: "secondary.dark_gray",
           }}
         >
           Invite a friend, earn $25{" "}
@@ -97,7 +96,7 @@ export default function BonusOffer({ setOpenInviteFriend }) {
               fontWeight: 600,
               fontFamily: "poppins",
               mt: "24px",
-              color: "secondary.main",
+              color: "secondary.dark_gray",
             }}
           >
             SHARE YOUR REFERRAL CODE{" "}
@@ -109,7 +108,7 @@ export default function BonusOffer({ setOpenInviteFriend }) {
               fontFamily: "poppins",
               mt: "12px",
               mb: "12px",
-              color: "secondary.main",
+              color: "secondary.dark_gray",
             }}
           >
             IUUASV18
@@ -171,7 +170,7 @@ export default function BonusOffer({ setOpenInviteFriend }) {
               />
               <Typography
                 sx={{
-                  color: "white",
+                  color: "secondary.dark_gray",
                   fontSize: { sm: "12px", xxxs: "10px" },
                   fontFamily: "poppins",
                 }}

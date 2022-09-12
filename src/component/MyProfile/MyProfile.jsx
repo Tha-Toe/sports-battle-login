@@ -909,7 +909,10 @@ export default function MyProfile({
           />
         </Box>
         {openReferalHistory && (
-          <ReferalHistory setOpenReferalHistory={setOpenReferalHistory} />
+          <ReferalHistory
+            setOpenReferalHistory={setOpenReferalHistory}
+            mode={mode}
+          />
         )}
       </Box>
     );

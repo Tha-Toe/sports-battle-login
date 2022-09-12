@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 import ClearIcon from "@mui/icons-material/Clear";
 import "./profile.css";
 
-export default function ReferalHistory({ setOpenReferalHistory }) {
+export default function ReferalHistory({ setOpenReferalHistory, mode }) {
   const [data, setData] = useState([
     {
       name: "SOFTWARE EURO",
@@ -31,7 +31,9 @@ export default function ReferalHistory({ setOpenReferalHistory }) {
         position: "fixed",
         top: 0,
         left: 0,
-        background: "rgba(0,0,0,0.9)",
+        background: `${
+          mode === "dark" ? "rgba(0,0,0,0.9)" : "rgba(0,0,0,0.4)"
+        }`,
         zIndex: "20",
         display: "flex",
         flexDirection: "column",
@@ -42,7 +44,7 @@ export default function ReferalHistory({ setOpenReferalHistory }) {
       <Box
         sx={{
           width: { sm: "691px", xxxs: "90%" },
-          background: "#494949",
+          background: `${mode === "dark" ? "#494949" : "white"}`,
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
@@ -105,7 +107,7 @@ export default function ReferalHistory({ setOpenReferalHistory }) {
             fontSize: { sm: "14px", xxs: "12px", xxxs: "10px" },
             fontWeigh: 500,
             fontFamily: "poppins",
-            color: "secondary.main",
+            color: "white",
             background: "#439F48",
             mt: "24px",
             borderRadius: "8px",
@@ -213,11 +215,11 @@ export default function ReferalHistory({ setOpenReferalHistory }) {
           >
             <Box
               sx={{
-                width: "75%",
-                height: "24px",
+                width: "100%",
+                height: "50%",
                 borderRadius: "16px",
                 background: "#7a7a7a",
-                mt: "12px",
+                mt: "4px",
               }}
             ></Box>
           </Box>

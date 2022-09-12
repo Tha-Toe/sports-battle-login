@@ -47,7 +47,6 @@ const LoginFlow = ({ mode, setMode }) => {
           alignItems: "center",
           width: { md: "60%", sm: "60%", xxxs: "100%" },
           bgcolor: "primary.dark_gray",
-          height: "100%",
         }}
       >
         <Box
