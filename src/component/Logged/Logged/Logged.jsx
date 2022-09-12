@@ -193,8 +193,10 @@ export function Logged({ mode, setMode }) {
       <Box
         component="div"
         sx={{
-          position: "relative",
+          position: { sm: "relative", xxxs: "sticky" },
+          top: "0",
           width: "100%",
+          zIndex: "6",
         }}
       >
         <AppBar
@@ -204,7 +206,7 @@ export function Logged({ mode, setMode }) {
             position: "relative",
             boxShadow: "none",
             zIndex: { sm: 4, xxxs: 3 },
-            mt: "10px",
+            pt: "10px",
             pb: { sm: 0, xxxs: "5px" },
           }}
         >
@@ -485,7 +487,6 @@ export function Logged({ mode, setMode }) {
             position: { sm: "relative", xxxs: "fixed" },
             width: { lg: "135px", md: "80px", sm: "80px", xxxs: "185px" },
             left: { sm: 0, xxxs: `${openSideNav ? 0 : "-195px"}` },
-            zIndex: 3,
             transition: "all .3s ease-in",
             padding: 0,
             height: "100%",
@@ -522,7 +523,7 @@ export function Logged({ mode, setMode }) {
                 top: "10px",
                 display: { sm: "none", xxxs: "block" },
                 borderRadius: "0 4px 4px 0",
-                zIndex: 4,
+                zIndex: "11",
                 transition: "all .3s ease-in",
               }}
               onClick={() => setOpenSideNav(!openSideNav)}
