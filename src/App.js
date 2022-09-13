@@ -1,5 +1,11 @@
 import { Box, Button, Container } from "@mui/material";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Link,
+  useLocation,
+} from "react-router-dom";
 import "./App.css";
 import Choose from "./component/SignUp/choose/Choose";
 import EnterYourDetail from "./component/SignUp/enter-your-detail/EnterYourDetail";
