@@ -14,6 +14,7 @@ import "./props.css";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 export default function NotEnoughBalance({ setNotEnoughBalance }) {
+  let navigate = useNavigate();
   return (
     <Box
       sx={{
@@ -97,6 +98,7 @@ export default function NotEnoughBalance({ setNotEnoughBalance }) {
             }}
             onClick={() => {
               setNotEnoughBalance(false);
+              navigate("/logged?deposit=old-user", { replace: true });
             }}
           >
             Add Cash{" "}
