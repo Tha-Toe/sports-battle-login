@@ -242,7 +242,7 @@ export default function MyPropsCardContainer({ mode, mainDetail, openTag }) {
                     alignItems: "flex-start",
                   }}
                 >
-                  <img src={e.src} />
+                  <img src={e.src} style={{ width: "116px" }} />
                   <Typography
                     sx={{
                       fontSize: { xs: "12px", xxxs: "10px" },

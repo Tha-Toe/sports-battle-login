@@ -368,7 +368,7 @@ export default function Detail({
               mb: "8px",
             }}
           >
-            <img src={mainDetail[clicked].src} />
+            <img src={mainDetail[clicked].src} style={{ width: "116px" }} />
           </Box>
           {mainDetail[clicked].won && (
             <Box

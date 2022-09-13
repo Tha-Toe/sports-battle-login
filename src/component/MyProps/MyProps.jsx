@@ -14,9 +14,9 @@ import ClearIcon from "@mui/icons-material/Clear";
 import MyPropsCardContainer from "./MyPropsCardContainer";
 
 export default function MyProps({ mode }) {
-  const [openTag, setOpenTag] = useState("Upcomming");
+  const [openTag, setOpenTag] = useState("Upcoming");
   const openUpComming = () => {
-    setOpenTag("Upcomming");
+    setOpenTag("Upcoming");
   };
   const openLive = () => {
     setOpenTag("Live");
@@ -25,7 +25,7 @@ export default function MyProps({ mode }) {
     setOpenTag("Completed");
   };
   const [myPropsAppBar, setMyPropsAppBar] = useState([
-    { name: "Upcomming", func: openUpComming },
+    { name: "Upcoming", func: openUpComming },
     { name: "Live", func: openLive },
     { name: "Completed", func: openCompleted },
   ]);
@@ -237,6 +237,7 @@ export default function MyProps({ mode }) {
               "&.MuiButtonBase-root:hover": {
                 bgcolor: `${e.name === openTag ? "#439F48" : "#4831D4"}`,
               },
+              textTransform: "none",
               cursor: "pointer",
               mr: "8px",
             }}
@@ -246,7 +247,7 @@ export default function MyProps({ mode }) {
           </Button>
         ))}
       </Box>
-      {openTag === "Upcomming" && (
+      {openTag === "Upcoming" && (
         <MyPropsCardContainer
           mode={mode}
           mainDetail={upCommingDetail}
