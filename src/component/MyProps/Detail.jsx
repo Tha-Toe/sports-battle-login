@@ -46,8 +46,11 @@ export default function Detail({
         flexDirection: "column",
         alignItems: "center",
         ml: { md: "10px", xxxs: "0px" },
-        border: `${mode === "dark" ? "1px solid #494949" : "none"}`,
+        border: `${
+          mode === "dark" ? "1px solid #494949" : "1px solid #494949"
+        }`,
         bgcolor: "primary.main",
+        bgcolor: "transparent",
         mt: "0px",
       }}
       component="div"
@@ -58,7 +61,6 @@ export default function Detail({
           flexDirection: "row",
           alignItems: "center",
           justifyContent: "center",
-          mt: "5px",
           borderBottom: "1px solid #494949",
           pb: "5px",
           width: "100%",

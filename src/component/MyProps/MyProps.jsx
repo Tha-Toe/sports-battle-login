@@ -230,7 +230,7 @@ export default function MyProps({ mode }) {
               fontSize: { xs: "12px", xxs: "10px", xxxs: "10px" },
               fontWeight: 600,
               fontFamily: "poppins",
-              color: `${e.name === openTag ? "black" : "white"}`,
+              color: `${e.name === openTag ? "white" : "white"}`,
               bgcolor: `${e.name === openTag ? "#439F48" : "#4831D4"}`,
               textAlign: "center",
               padding: "6px 17px",

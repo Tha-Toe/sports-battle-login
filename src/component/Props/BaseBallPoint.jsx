@@ -47,7 +47,7 @@ export default function BaseBallPoint({ setOpenBaseBallPoint }) {
         position: "fixed",
         top: 0,
         left: 0,
-        zIndex: 5,
+        zIndex: 15,
         display: "flex",
         justifyContent: "center",
         alignItems: "center",

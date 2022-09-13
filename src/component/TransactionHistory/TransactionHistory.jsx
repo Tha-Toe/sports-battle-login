@@ -201,9 +201,11 @@ export default function TransactionHistory({ mode }) {
                       ? "1px solid #4831D4"
                       : mode === "dark"
                       ? "1px solid #494949"
-                      : "none"
+                      : "1px solid #494949"
                   }`,
                   bgcolor: "primary.main",
+                  bgcolor: "transparent",
+                  boxShadow: "none",
                 }}
                 onClick={() => {
                   setClicked(index);

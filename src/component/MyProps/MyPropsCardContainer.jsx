@@ -17,8 +17,8 @@ import Detail from "./Detail";
 export default function MyPropsCardContainer({ mode, mainDetail, openTag }) {
   const handelOpenDetail = (index) => {
     setClicked(index);
-    if (openTag === "Upcomming") {
-      setOpenDetail("Upcomming");
+    if (openTag === "Upcoming") {
+      setOpenDetail("Upcoming");
     } else if (openTag === "Live") {
       setOpenDetail("Live");
     } else {
@@ -175,7 +175,7 @@ export default function MyPropsCardContainer({ mode, mainDetail, openTag }) {
                     ? "1px solid #4831D4"
                     : mode === "dark"
                     ? "1px solid #494949"
-                    : "none"
+                    : "1px solid #494949"
                 }`,
 
                 cursor: "pointer",
@@ -321,7 +321,7 @@ export default function MyPropsCardContainer({ mode, mainDetail, openTag }) {
           mode={mode}
         />
       )}
-      {openDetail === "Upcomming" && (
+      {openDetail === "Upcoming" && (
         <Detail
           setOpenDetail={setOpenDetail}
           detailData={upCommingDetailData}

@@ -114,8 +114,12 @@ export default function MyWithDraw({ mode }) {
                 justifyContent: "space-between",
                 width: "95%",
                 borderRadius: "4px",
-                border: `${mode === "dark" ? "1px solid #494949" : "none"}`,
+                border: `${
+                  mode === "dark" ? "1px solid #494949" : "1px solid #494949"
+                }`,
                 bgcolor: "primary.main",
+                bgcolor: "transparent",
+                boxShadow: "none",
               }}
             >
               <Box

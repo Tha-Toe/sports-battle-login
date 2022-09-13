@@ -2,9 +2,20 @@ import { Box, Typography } from "@mui/material";
 import React, { useState, useRef, useEffect } from "react";
 import "./props.css";
 
-export default function Times({ selectCardId }) {
+export default function Times({ selectCardId, mode }) {
+  useEffect(() => {
+    console.log(mode);
+  }, [mode]);
   return (
-    <Box sx={{ borderBottom: "1px solid #2c2c2c", mb: "16px" }}>
+    <Box
+      sx={{
+        borderBottom: `${
+          mode === "dark" ? "1px solid #2c2c2c" : "1px solid #DBDBDB"
+        }`,
+        mb: "16px",
+        pb: "10px",
+      }}
+    >
       <Typography
         sx={{
           fontFamily: "poppins",

@@ -83,8 +83,16 @@ const SubmitProjection = ({
               margin: "0 auto",
             }}
           >
-            {moreThanOneCard && <Times selectCardId={selectCardId} />}
-            <Box sx={{ borderBottom: "1px solid #2c2c2c" }}>
+            {moreThanOneCard && (
+              <Times selectCardId={selectCardId} mode={mode} />
+            )}
+            <Box
+              sx={{
+                borderBottom: `${
+                  mode === "dark" ? "1px solid #2c2c2c" : "1px solid #DBDBDB"
+                }`,
+              }}
+            >
               <Amount
                 setSelectAmount={setSelectAmount}
                 selectAmount={selectAmount}

@@ -208,9 +208,7 @@ export default function MyProfile({
             alignItems: "center",
             justifyContent: "space-between",
             background: `${
-              mode === "dark"
-                ? "rgba(217, 217, 217,0.2)"
-                : "rgba(217, 217, 217,0.9)"
+              mode === "dark" ? "rgba(217, 217, 217,0.2)" : "white"
             }`,
             py: "11px",
             mt: "21px",
@@ -759,7 +757,7 @@ export default function MyProfile({
         </Box>
         <Box
           sx={{
-            width: "95%",
+            width: "100%",
             display: "flex",
             flexDirection: "row",
             alignItems: "center",
@@ -823,7 +821,7 @@ export default function MyProfile({
         </Box>
         <Box
           sx={{
-            width: "95%",
+            width: "100%",
             display: "flex",
             flexDirection: "row",
             alignItems: "center",
@@ -867,7 +865,7 @@ export default function MyProfile({
         </Box>
         <Box
           sx={{
-            width: "95%",
+            width: "100%",
             display: "flex",
             flexDirection: "row",
             alignItems: "center",
@@ -908,6 +906,7 @@ export default function MyProfile({
             }}
           />
         </Box>
+        <Box sx={{ mt: "50px", width: "100%", height: "1px" }}></Box>
         {openReferalHistory && (
           <ReferalHistory
             setOpenReferalHistory={setOpenReferalHistory}
