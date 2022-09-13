@@ -195,7 +195,7 @@ export function Logged({ mode, setMode }) {
       <Box
         component="div"
         sx={{
-          position: { sm: "relative", xxxs: "sticky" },
+          position: { sm: "relative", xxxs: "relative" },
           top: "0",
           width: "100%",
           zIndex: "6",
