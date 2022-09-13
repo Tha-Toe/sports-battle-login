@@ -493,6 +493,7 @@ export function Logged({ mode, setMode }) {
             transition: "all .3s ease-in",
             padding: 0,
             height: "100%",
+            zIndex: "7",
           }}
         >
           <Toolbar
