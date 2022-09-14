@@ -17,6 +17,7 @@ export default function ErrorSubmit({
   setSuccessSubmit,
   setErrorSubmit,
   setNotEnoughBalance,
+  mode,
 }) {
   return (
     <Box
@@ -26,7 +27,9 @@ export default function ErrorSubmit({
         position: "fixed",
         top: 0,
         left: 0,
-        background: "rgba(0,0,0,0.9)",
+        background: `${
+          mode === "dark" ? "rgba(0,0,0,0.9)" : "rgba(115, 115, 115, 0.7)"
+        }`,
         zIndex: "20",
         display: "flex",
         flexDirection: "column",

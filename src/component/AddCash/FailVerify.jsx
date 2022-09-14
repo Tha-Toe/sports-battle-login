@@ -9,7 +9,7 @@ import "./newAddCashForm.css";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import Clear from "@mui/icons-material/Clear";
 
-export default function FailVerify({}) {
+export default function FailVerify({ mode }) {
   return (
     <Box
       sx={{
@@ -18,7 +18,9 @@ export default function FailVerify({}) {
         position: "fixed",
         top: 0,
         left: 0,
-        background: "rgba(0,0,0,0.9)",
+        background: `${
+          mode === "dark" ? "rgba(0,0,0,0.9)" : "rgba(115, 115, 115, 0.7)"
+        }`,
         zIndex: "20",
         display: "flex",
         flexDirection: "column",

@@ -6,6 +6,7 @@ import {
   CardMedia,
   Grid,
   Input,
+  modalClasses,
   Typography,
 } from "@mui/material";
 import React, { useState, useRef, useEffect } from "react";
@@ -523,7 +524,7 @@ export default function Props({
                     alignItems: "center",
                     justifyContent: "center",
                     bgcolor: `${
-                      e.name === selectSports ? e.color : "primary.main"
+                      e.name === selectSports ? e.color : "transparent"
                     }`,
                     cursor: "pointer",
                   }}
@@ -903,25 +904,33 @@ export default function Props({
           <div ref={messagesEndRef} />
         </Box>
       </Box>
-      {openHowTo && <HowTo setOpenHowTo={setOpenHowTo} />}
-      {openRule && <Rule setOpenRule={setOpenRule} />}
+      {openHowTo && <HowTo setOpenHowTo={setOpenHowTo} mode={mode} />}
+      {openRule && <Rule setOpenRule={setOpenRule} mode={mode} />}
       {openBaseBallPoint && (
-        <BaseBallPoint setOpenBaseBallPoint={setOpenBaseBallPoint} />
+        <BaseBallPoint
+          setOpenBaseBallPoint={setOpenBaseBallPoint}
+          mode={mode}
+        />
       )}
       {successSubmit && (
         <SuccessSubmit
           setSuccessSubmit={setSuccessSubmit}
           setErrorSubmit={setErrorSubmit}
+          mode={mode}
         />
       )}
       {errorSubmit && (
         <ErrorSubmit
           setErrorSubmit={setErrorSubmit}
           setNotEnoughBalance={setNotEnoughBalance}
+          mode={mode}
         />
       )}
       {notEnoughBalance && (
-        <NotEnoughBalance setNotEnoughBalance={setNotEnoughBalance} />
+        <NotEnoughBalance
+          setNotEnoughBalance={setNotEnoughBalance}
+          mode={mode}
+        />
       )}
     </main>
   );

@@ -24,7 +24,7 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import AddIcon from "@mui/icons-material/Add";
 import SelectState from "./SelectState";
 
-export default function AddAddress({ setAddress }) {
+export default function AddAddress({ setAddress, mode }) {
   let navigate = useNavigate();
   const goAddress = () => {
     navigate("/logged?deposit=new&page=address", { replace: true });
@@ -305,7 +305,7 @@ export default function AddAddress({ setAddress }) {
         </Typography>
       </Box>
       {openStatePicker && (
-        <SelectState setOpenStatePicker={setOpenStatePicker} />
+        <SelectState setOpenStatePicker={setOpenStatePicker} mode={mode} />
       )}
     </Box>
   );

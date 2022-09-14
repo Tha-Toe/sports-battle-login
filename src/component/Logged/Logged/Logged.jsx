@@ -881,10 +881,10 @@ export function Logged({ mode, setMode }) {
             />
           )}
           {location.search === "?deposit=new&page=address" && (
-            <Address setAddress={setAddress} />
+            <Address setAddress={setAddress} mode={mode} />
           )}
           {location.search === "?deposit=new&page=add-address" && (
-            <AddAddress setAddress={setAddress} />
+            <AddAddress setAddress={setAddress} mode={mode} />
           )}
           {location.search === "?deposit=go-refral-bonus-cash-randoom" && (
             <RefralBonusCashRandoom

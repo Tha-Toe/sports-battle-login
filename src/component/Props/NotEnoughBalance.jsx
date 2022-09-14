@@ -13,7 +13,7 @@ import ClearIcon from "@mui/icons-material/Clear";
 import "./props.css";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-export default function NotEnoughBalance({ setNotEnoughBalance }) {
+export default function NotEnoughBalance({ setNotEnoughBalance, mode }) {
   let navigate = useNavigate();
   return (
     <Box
@@ -23,7 +23,9 @@ export default function NotEnoughBalance({ setNotEnoughBalance }) {
         position: "fixed",
         top: 0,
         left: 0,
-        background: "rgba(0,0,0,0.9)",
+        background: `${
+          mode === "dark" ? "rgba(0,0,0,0.9)" : "rgba(115, 115, 115, 0.7)"
+        }`,
         zIndex: "20",
         display: "flex",
         flexDirection: "column",

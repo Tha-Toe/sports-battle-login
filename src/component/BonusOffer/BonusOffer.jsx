@@ -19,7 +19,14 @@ export default function BonusOffer({ setOpenInviteFriend, mode }) {
     },
   ]);
   return (
-    <div className="bonus-offer-container">
+    <div
+      className="bonus-offer-container"
+      style={{
+        background: `${
+          mode === "dark" ? "rgba(0,0,0,0.9)" : "rgba(115, 115, 115, 0.7)"
+        }`,
+      }}
+    >
       <Box
         sx={{
           width: { sm: "566px", xs: "400px", xxs: "100%", xxxs: "100%" },

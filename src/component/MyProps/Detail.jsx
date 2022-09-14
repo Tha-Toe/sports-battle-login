@@ -434,7 +434,10 @@ export default function Detail({
         </Typography>
       )}
       {openPayoutScenarious && (
-        <PayoutScenarious setOpenPayoutScenarious={setOpenPayoutScenarious} />
+        <PayoutScenarious
+          setOpenPayoutScenarious={setOpenPayoutScenarious}
+          mode={mode}
+        />
       )}
     </Box>
   );

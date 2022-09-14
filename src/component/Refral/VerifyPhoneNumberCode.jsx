@@ -170,17 +170,19 @@ export default function VerifyPhoneNumberCode({ number, mode }) {
       >
         <Button
           sx={{
-            background: "black",
+            background: "transparent",
             fontSize: { md: "14px", sm: "12px", xxxs: "10px" },
             width: { xs: "45%", xxxs: "48%" },
             fontWeight: 400,
             py: { xs: "14px", xxxs: "10px" },
             fontFamily: "poppins",
-            color: "white",
+            color: "secondary.dark_gray",
             "&.MuiButtonBase-root:hover": {
-              background: "black",
+              background: "transparent",
             },
-            border: "1px solid white",
+            border: `${
+              mode === "dark" ? "1px solid white" : "1px solid #494949"
+            }`,
             textTransform: "none",
           }}
         >

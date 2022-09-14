@@ -32,7 +32,7 @@ export default function ReferalHistory({ setOpenReferalHistory, mode }) {
         top: 0,
         left: 0,
         background: `${
-          mode === "dark" ? "rgba(0,0,0,0.9)" : "rgba(0,0,0,0.4)"
+          mode === "dark" ? "rgba(0,0,0,0.9)" : "rgba(115, 115, 115, 0.7)"
         }`,
         zIndex: "20",
         display: "flex",

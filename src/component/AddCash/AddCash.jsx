@@ -18,7 +18,7 @@ import { motion } from "framer-motion";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import SelectDepositOption from "./SelectDepositOption";
 
-export default function AddCash() {
+export default function AddCash({ mode }) {
   const [amountList, setAmountList] = useState([
     { amount: "$30", bonus: 30 },
     { amount: "$50", bonus: 50 },
@@ -48,6 +48,7 @@ export default function AddCash() {
         alignItem: "center",
         justifyContent: "center",
         mt: { lg: 0, xxxs: "0px" },
+        pb: "20px",
       }}
     >
       <Box
@@ -388,6 +389,7 @@ export default function AddCash() {
       {openSelectDepositOption && (
         <SelectDepositOption
           setOpenSelectDepositOption={setOpenSelectDepositOption}
+          mode={mode}
         />
       )}
     </Box>

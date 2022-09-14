@@ -33,7 +33,7 @@ export default function NewAddCashVerify() {
           fontSize: { sm: "20px", xs: "18px", xxs: "14px", xxxs: "12px" },
           fontWeight: 600,
           fontFamily: "poppins",
-          color: "secondary.main",
+          color: "secondary.dark_gray",
           mb: "2px",
         }}
       >
@@ -44,7 +44,7 @@ export default function NewAddCashVerify() {
           fontSize: { sm: "20px", xs: "18px", xxs: "14px", xxxs: "12px" },
           fontWeight: 600,
           fontFamily: "poppins",
-          color: "secondary.main",
+          color: "secondary.dark_gray",
           mb: "2px",
         }}
       >
@@ -55,7 +55,7 @@ export default function NewAddCashVerify() {
           fontSize: { sm: "20px", xs: "18px", xxs: "14px", xxxs: "12px" },
           fontWeight: 600,
           fontFamily: "poppins",
-          color: "secondary.main",
+          color: "secondary.dark_gray",
           mb: "2px",
         }}
       >
@@ -66,7 +66,7 @@ export default function NewAddCashVerify() {
           fontSize: { sm: "16px", xs: "14px", xxs: "10px", xxxs: "8px" },
           fontWeight: 400,
           fontFamily: "poppins",
-          color: "secondary.main",
+          color: "secondary.dark_gray",
           mt: "12px",
           mb: "24px",
         }}

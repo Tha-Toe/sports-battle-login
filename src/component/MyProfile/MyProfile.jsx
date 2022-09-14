@@ -385,9 +385,7 @@ export default function MyProfile({
           sx={{
             width: "100%",
             background: `${
-              mode === "dark"
-                ? "rgba(217, 217, 217,0.2)"
-                : "rgba(217, 217, 217,0.9)"
+              mode === "dark" ? "rgba(217, 217, 217,0.2)" : "#d9d9d9"
             }`,
             display: "flex",
             flexDirection: "column",
@@ -697,7 +695,11 @@ export default function MyProfile({
                     flexDirection: "column",
                     alignItems: "center",
                     justifyContent: "center",
-                    borderLeft: "1px solid #494949",
+                    borderLeft: `${
+                      mode === "dark"
+                        ? "1px solid #494949"
+                        : "1px solid #dbdbdb"
+                    }`,
                   }}
                 >
                   <Typography

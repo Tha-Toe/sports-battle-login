@@ -16,7 +16,7 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { motion } from "framer-motion";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
-export default function OverUnderPointSystem({ selectSports }) {
+export default function OverUnderPointSystem({ selectSports, mode }) {
   const [header, setHeader] = useState([
     { name: "T20/T10" },
     { name: "ODI" },
@@ -279,7 +279,7 @@ export default function OverUnderPointSystem({ selectSports }) {
         <Box
           sx={{
             width: "100%",
-            background: "#494949",
+            background: `${mode === "dark" ? "#494949" : "#dbdbdb"}`,
             display: "flex",
             flexDirection: "row",
             justifyContent: "center",
@@ -300,7 +300,7 @@ export default function OverUnderPointSystem({ selectSports }) {
                 fontSize: { lg: "14px", xs: "12px", xxxs: "10px" },
                 fontWeight: 600,
                 fontFamily: "poppins",
-                color: "white",
+                color: "secondary.dark_gray",
                 py: "9px",
               }}
             >
@@ -311,7 +311,7 @@ export default function OverUnderPointSystem({ selectSports }) {
                 fontSize: { lg: "14px", xs: "12px", xxxs: "10px" },
                 fontWeight: 600,
                 fontFamily: "poppins",
-                color: "white",
+                color: "secondary.dark_gray",
                 py: "9px",
               }}
             >
@@ -386,7 +386,7 @@ export default function OverUnderPointSystem({ selectSports }) {
         <Box
           sx={{
             width: "100%",
-            background: "#494949",
+            background: `${mode === "dark" ? "#494949" : "#dbdbdb"}`,
             display: "flex",
             flexDirection: "row",
             justifyContent: "center",
@@ -407,7 +407,7 @@ export default function OverUnderPointSystem({ selectSports }) {
                 fontSize: { lg: "14px", xs: "12px", xxxs: "10px" },
                 fontWeight: 600,
                 fontFamily: "poppins",
-                color: "white",
+                color: "secondary.dark_gray",
                 py: "9px",
               }}
             >
@@ -418,7 +418,7 @@ export default function OverUnderPointSystem({ selectSports }) {
                 fontSize: { lg: "14px", xs: "12px", xxxs: "10px" },
                 fontWeight: 600,
                 fontFamily: "poppins",
-                color: "white",
+                color: "secondary.dark_gray",
                 py: "9px",
               }}
             >
@@ -493,7 +493,7 @@ export default function OverUnderPointSystem({ selectSports }) {
         <Box
           sx={{
             width: "100%",
-            background: "#494949",
+            background: `${mode === "dark" ? "#494949" : "#dbdbdb"}`,
             display: "flex",
             flexDirection: "row",
             justifyContent: "center",
@@ -514,7 +514,7 @@ export default function OverUnderPointSystem({ selectSports }) {
                 fontSize: { lg: "14px", xs: "12px", xxxs: "10px" },
                 fontWeight: 600,
                 fontFamily: "poppins",
-                color: "white",
+                color: "secondary.dark_gray",
                 py: "9px",
               }}
             >
@@ -525,7 +525,7 @@ export default function OverUnderPointSystem({ selectSports }) {
                 fontSize: { lg: "14px", xs: "12px", xxxs: "10px" },
                 fontWeight: 600,
                 fontFamily: "poppins",
-                color: "white",
+                color: "secondary.dark_gray",
                 py: "9px",
               }}
             >

@@ -24,7 +24,7 @@ import SubmitProjection from "./SubmitProjection";
 import GridItemComponent from "./GridItemComponent";
 import ClearIcon from "@mui/icons-material/Clear";
 
-export default function BaseBallPoint({ setOpenBaseBallPoint }) {
+export default function BaseBallPoint({ setOpenBaseBallPoint, mode }) {
   const [point, setPoint] = useState([
     { name: "Single Batter", point: "+3" },
     { name: "Single Batter", point: "+3" },
@@ -43,7 +43,9 @@ export default function BaseBallPoint({ setOpenBaseBallPoint }) {
       sx={{
         height: "100vh",
         width: "100vw",
-        background: "rgba(0,0,0,0.9)",
+        background: `${
+          mode === "dark" ? "rgba(0,0,0,0.9)" : "rgba(115, 115, 115, 0.7)"
+        }`,
         position: "fixed",
         top: 0,
         left: 0,

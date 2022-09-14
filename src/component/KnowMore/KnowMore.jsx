@@ -232,7 +232,11 @@ export default function KnowMore({ mode }) {
           }}
         >
           {" "}
-          <div className="propsContainer" ref={sportsRef}>
+          <div
+            className="propsContainer"
+            style={{ background: "transparent" }}
+            ref={sportsRef}
+          >
             <div className="statsChild">
               {overUnderNav.map((e) => (
                 <Box
@@ -260,7 +264,7 @@ export default function KnowMore({ mode }) {
                       alignItems: "center",
                       justifyContent: "center",
                       bgcolor: `${
-                        e.name === selectSports ? e.color : "primary.main"
+                        e.name === selectSports ? e.color : "transparent"
                       }`,
                       cursor: "pointer",
                     }}
@@ -464,7 +468,7 @@ export default function KnowMore({ mode }) {
         </Box>
         <Box sx={{ width: { xs: "65%", xxxs: "75%" } }}>
           {openTag === "Over-Under Points System" && (
-            <OverUnderPointSystem selectSports={selectSports} />
+            <OverUnderPointSystem selectSports={selectSports} mode={mode} />
           )}
           {openTag === "Frequently Asked Questions" && <FAQ />}
           {openTag === "Sports Battle Operating States" && <OperatingState />}

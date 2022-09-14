@@ -200,7 +200,11 @@ const ForgotPassword = ({ mode, setMode }) => {
         <img src="Reset-password-pana-1.png" className="right-image-rpp" />
       </div>
       <img
-        src="/switchModeLoginPage.png"
+        src={
+          mode === "dark"
+            ? "/switchModeLoginPage.png"
+            : "/switchModeLightLoginPage.png"
+        }
         className="switchMode"
         onClick={switchMode}
       />

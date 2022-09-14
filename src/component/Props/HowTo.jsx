@@ -23,13 +23,15 @@ import Balance from "./Balance";
 import SubmitProjection from "./SubmitProjection";
 import GridItemComponent from "./GridItemComponent";
 
-export default function HowTo({ setOpenHowTo }) {
+export default function HowTo({ setOpenHowTo, mode }) {
   return (
     <Box
       sx={{
         height: "100vh",
         width: "100vw",
-        background: "rgba(0,0,0,0.9)",
+        background: `${
+          mode === "dark" ? "rgba(0,0,0,0.9)" : "rgba(115, 115, 115, 0.7)"
+        }`,
         position: "fixed",
         top: 0,
         left: 0,

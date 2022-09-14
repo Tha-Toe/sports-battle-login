@@ -15,7 +15,7 @@ import { Grid, Card } from "@mui/material";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 
-export default function PayoutScenarious({ setOpenPayoutScenarious }) {
+export default function PayoutScenarious({ setOpenPayoutScenarious, mode }) {
   const [pays, setPays] = useState([
     "3 considered & 3/3 correct - pays 2.25x",
     "3 considered & 2/3 correct - pays 1.25x",
@@ -34,7 +34,9 @@ export default function PayoutScenarious({ setOpenPayoutScenarious }) {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        background: "rgba(0,0,0,0.9)",
+        background: `${
+          mode === "dark" ? "rgba(0,0,0,0.9)" : "rgba(115, 115, 115, 0.7)"
+        }`,
         zIndex: 20,
       }}
     >

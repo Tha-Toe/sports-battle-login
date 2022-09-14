@@ -241,7 +241,11 @@ const Choose = ({ mode, setMode }) => {
         <img src="Vector.png" className="right-vector" />
       </div>
       <img
-        src="/switchModeLoginPage.png"
+        src={
+          mode === "dark"
+            ? "/switchModeLoginPage.png"
+            : "/switchModeLightLoginPage.png"
+        }
         className="switchMode"
         onClick={switchMode}
       />

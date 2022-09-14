@@ -9,7 +9,7 @@ import "./newAddCashForm.css";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import FailVerify from "./FailVerify";
 
-export default function NewAddCashFrom({ address, setNewUser }) {
+export default function NewAddCashFrom({ address, setNewUser, mode }) {
   let navigate = useNavigate();
   const goDepositVerify = () => {
     navigate("/logged?deposit=new&page=verify", { replace: true });
@@ -187,7 +187,7 @@ export default function NewAddCashFrom({ address, setNewUser }) {
           flexDirection: "row",
           alignItems: "center",
           justifyContent: "space-between",
-          bgcolor: "primary.light",
+          bgcolor: `${mode === "dark" ? "primary.light" : "#dbdbdb"}`,
           width: "100%",
           mb: "20px",
           cursor: "pointer",
@@ -211,7 +211,7 @@ export default function NewAddCashFrom({ address, setNewUser }) {
                 fontSize: { sm: "14px", xxxs: "12px" },
                 fontWeight: 600,
                 fontFamily: "poppins",
-                color: "white",
+                color: "secondary.dark_gray",
               }}
             >
               Address
@@ -222,7 +222,7 @@ export default function NewAddCashFrom({ address, setNewUser }) {
               fontSize: { sm: "12px", xxxs: "10px" },
               fontWeight: 300,
               fontFamily: "poppins",
-              color: "white",
+              color: "secondary.dark_gray",
               mb: "12px",
               width: { md: "25%", xs: "40%", xxxs: "60%" },
             }}
@@ -230,7 +230,9 @@ export default function NewAddCashFrom({ address, setNewUser }) {
             {address ? address : "Select your address"}
           </Typography>
         </Box>
-        <ArrowForwardIosIcon sx={{ width: "10%", color: "white" }} />
+        <ArrowForwardIosIcon
+          sx={{ width: "10%", color: "secondary.dark_gray" }}
+        />
       </Box>
       <Typography
         sx={{
@@ -297,7 +299,9 @@ export default function NewAddCashFrom({ address, setNewUser }) {
             position: "fixed",
             top: 0,
             left: 0,
-            background: "rgba(0,0,0,0.9)",
+            background: `${
+              mode === "dark" ? "rgba(0,0,0,0.9)" : "rgba(115, 115, 115, 0.7)"
+            }`,
             zIndex: "30",
             display: "flex",
             flexDirection: "column",
@@ -356,7 +360,7 @@ export default function NewAddCashFrom({ address, setNewUser }) {
           </Box>
         </Box>
       )}
-      {failOpen && <FailVerify />}
+      {failOpen && <FailVerify mode={mode} />}
     </Box>
   );
 }

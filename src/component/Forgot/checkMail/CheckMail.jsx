@@ -145,7 +145,11 @@ const CheckMail = ({ mode, setMode }) => {
         <img src="Mail-sent-pana-1.png" className="right-image-msp" />
       </div>
       <img
-        src="/switchModeLoginPage.png"
+        src={
+          mode === "dark"
+            ? "/switchModeLoginPage.png"
+            : "/switchModeLightLoginPage.png"
+        }
         className="switchMode"
         onClick={switchMode}
       />

@@ -24,7 +24,7 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import AddIcon from "@mui/icons-material/Add";
 import Clear from "@mui/icons-material/Clear";
 import CheckIcon from "@mui/icons-material/Check";
-export default function SelectState({ setOpenStatePicker }) {
+export default function SelectState({ setOpenStatePicker, mode }) {
   const [stateList, setStateList] = useState([
     { name: "Alabama", select: false },
     { name: "Alaska", select: false },
@@ -47,7 +47,9 @@ export default function SelectState({ setOpenStatePicker }) {
         position: "fixed",
         top: 0,
         left: 0,
-        background: "rgba(0,0,0,0.9)",
+        background: `${
+          mode === "dark" ? "rgba(0,0,0,0.9)" : "rgba(115, 115, 115, 0.7)"
+        }`,
         zIndex: "20",
         display: "flex",
         flexDirection: "column",
@@ -62,7 +64,7 @@ export default function SelectState({ setOpenStatePicker }) {
           display: "flex",
           flexDirection: "column",
           alignItems: "flex-start",
-          border: "1px solid #2C2C2C",
+          border: `${mode === "dark" ? "1px solid #2C2C2C" : "none"}`,
           borderRadius: "4px",
         }}
       >
