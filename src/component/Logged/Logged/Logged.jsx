@@ -30,6 +30,8 @@ import MyProps from "../../MyProps/MyProps";
 import TransactionHistory from "../../TransactionHistory/TransactionHistory";
 import Clear from "@mui/icons-material/Clear";
 import AddAddress from "../../AddCash/AddAddress";
+import { UserAuth } from "../../../context/AuthContext";
+
 export function Logged({ mode, setMode }) {
   let navigate = useNavigate();
   let location = useLocation();
@@ -179,9 +181,20 @@ export function Logged({ mode, setMode }) {
   const [selectSports, setSelectSports] = useState("MLB");
   const [selectSrc, setSelectSrc] = useState("/mlb.png");
   const [selectColor, setSelectColor] = useState("blue");
-
+  const {
+    logOut,
+    user,
+    setUser,
+    appleSignIns,
+    idToken,
+    setIdToken,
+    loginByGoogle,
+    accessToken,
+    setAccessToken,
+    setLoginByGoogle,
+  } = UserAuth();
   const logout = () => {
-    navigate("/", { replace: true });
+    logOut();
   };
   const loggedRef = useRef();
   const loggedContainerRef = useRef();

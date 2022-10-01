@@ -12,6 +12,12 @@ import {
   InputComponentLogin,
   PasswordInputComponentLogin,
 } from "../../defaultComponent/DefaultComponent";
+import { GoogleLogin } from "@leecheuk/react-google-login";
+import { UserAuth } from "../../../context/AuthContext";
+
+const clientId =
+  "555618407648-lkittruvsnt5jr327s088990pgv3bi9t.apps.googleusercontent.com";
+
 const LoginFlow = ({ mode, setMode }) => {
   const [showPass, setShowPass] = useState(false);
   const [name, setName] = useState(null);
@@ -29,11 +35,45 @@ const LoginFlow = ({ mode, setMode }) => {
   const handleContinue = () => {
     navigate("/logged", { replace: true });
   };
+
+  //theme
   const switchMode = () => {
     if (mode === "dark") {
       setMode("light");
     } else {
       setMode("dark");
+    }
+  };
+
+  //google login
+  const {
+    logOut,
+    user,
+    setUser,
+    appleSignIns,
+    idToken,
+    setIdToken,
+    loginByGoogle,
+    accessToken,
+    setAccessToken,
+    setLoginByGoogle,
+  } = UserAuth();
+  const onSuccess = (res) => {
+    console.log("success:", res);
+    setUser(res.profileObj);
+    setAccessToken(res.accessToken);
+    setIdToken(res.tokenId);
+  };
+  const onFailure = (err) => {
+    console.log("failed:", err);
+  };
+
+  //apple login
+  const handleAppleLogin = async () => {
+    try {
+      await appleSignIns();
+    } catch (error) {
+      console.log(error);
     }
   };
   return (
@@ -119,10 +159,16 @@ const LoginFlow = ({ mode, setMode }) => {
                 mb: "7px",
               }}
             >
-              <Button
-                startIcon={<GoogleIcon />}
+              <Box
                 sx={{
-                  color: "secondary.dark_gray",
+                  border: 2,
+                  borderRadius: "5px",
+                  borderColor: `${mode === "dark" ? "#272727" : "#e0e0e0"}`,
+                  "&:hover": {
+                    borderColor: `${mode === "dark" ? "white" : "black"}`,
+                    background: "rgb(7, 177, 77, 0.42)",
+                  },
+                  position: "relative",
                   width: {
                     md: "196px",
                     sm: "190px",
@@ -131,21 +177,48 @@ const LoginFlow = ({ mode, setMode }) => {
                     xxxs: "120px",
                   },
                   height: { xs: "64px", xxxs: "50px" },
-                  fontSize: { xs: "14px", xxs: "10px", xxxs: "8px" },
-                  border: 2,
-                  borderRadius: "5px",
-                  borderColor: `${mode === "dark" ? "#272727" : "#e0e0e0"}`,
-                  "&.MuiButtonBase-root:hover": {
-                    borderColor: `${mode === "dark" ? "white" : "black"}`,
-                    bgcolor: "primary.main",
-                  },
-                  textTransform: "none",
-                  fontFamily: "Poppins",
-                  bgcolor: "primary.main",
                 }}
               >
-                Login with Google
-              </Button>
+                <Button
+                  startIcon={<GoogleIcon />}
+                  sx={{
+                    color: "secondary.dark_gray",
+                    width: "100%",
+                    height: "100%",
+                    fontSize: { xs: "14px", xxs: "10px", xxxs: "8px" },
+                    "&.MuiButtonBase-root:hover": {
+                      bgcolor: "primary.main",
+                    },
+                    textTransform: "none",
+                    fontFamily: "Poppins",
+                    bgcolor: "primary.main",
+                    zIndex: "100",
+                  }}
+                >
+                  Login with Google
+                </Button>
+                <div
+                  style={{
+                    opacity: "0",
+                    cursor: "pointer",
+                    position: "absolute",
+                    top: "0",
+                    left: "0",
+                    zIndex: "300",
+                    background: "blue",
+                  }}
+                >
+                  <GoogleLogin
+                    clientId={clientId}
+                    buttonText="Sign in with Google"
+                    onSuccess={onSuccess}
+                    onFailure={onFailure}
+                    cookiePolicy={"single_host_origin"}
+                    isSignedIn={false}
+                  />
+                </div>
+              </Box>
+
               <Button
                 startIcon={<AppleIcon />}
                 sx={{
@@ -170,6 +243,7 @@ const LoginFlow = ({ mode, setMode }) => {
                   fontFamily: "Poppins",
                   bgcolor: "primary.main",
                 }}
+                onClick={handleAppleLogin}
               >
                 Login with Apple
               </Button>
