@@ -31,12 +31,12 @@ const clientId =
 function App() {
   useEffect(() => {
     const initClient = () => {
-      gapi.client.init({
+      gapi.auth2.init({
         clientId: clientId,
         scope: "",
       });
     };
-    gapi.load("client:auth2", initClient);
+    gapi.load("auth2", initClient);
   });
   const [mode, setMode] = useState("dark");
   const darkTheme = createTheme({

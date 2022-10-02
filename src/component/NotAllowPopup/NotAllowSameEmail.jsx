@@ -3,49 +3,79 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 
-import ClearIcon from "@mui/icons-material/Clear";
+import Clear from "@mui/icons-material/Clear";
 
-import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-const NotAllowSameEmail = ({ mode }) => {
+const NotAllowSameEmail = ({ mode, setNotAllowSameEmail }) => {
   return (
-    <div
-      className="bonus-offer-container"
-      style={{
+    <Box
+      sx={{
+        width: "100vw",
+        height: "100vh",
+        position: "fixed",
+        top: 0,
+        left: 0,
         background: `${
           mode === "dark" ? "rgba(0,0,0,0.9)" : "rgba(115, 115, 115, 0.7)"
         }`,
+        zIndex: "30",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
       }}
     >
       <Box
         sx={{
-          width: { sm: "566px", xs: "400px", xxs: "100%", xxxs: "100%" },
-          height: "608px",
-          bgcolor: "primary.main",
+          width: { sm: "444px", xxxs: "90%" },
+          bgcolor: "primary.dark",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          m: "0 auto",
         }}
       >
-        <Box
+        <Clear
           sx={{
-            width: "100%",
-            display: "flex",
-            justifyContent: "flex-end",
+            bgcolor: "#E4313C",
+            color: "black",
+            borderRadius: "50%",
+            fontSize: { xs: "40px", xxxs: "30px" },
+            mt: "32px",
+          }}
+        />
+        <Typography
+          sx={{
+            color: "secondary.dark_gray",
+            fontSize: { sm: "14px", xxs: "12px", xxxs: "10px" },
+            fontWeight: 700,
+            fontFamily: "poppins",
+            mt: "16px",
           }}
         >
-          <ClearIcon
-            sx={{
-              fontSize: "25px",
-              color: `${mode === "dark" ? "white" : "#494949"}`,
-              mr: "14px",
-              mt: "14px",
-              cursor: "pointer",
-            }}
-          />
-        </Box>
+          We are not allow.
+        </Typography>
+        <Button
+          sx={{
+            background: "#4831D4",
+            fontSize: { sm: "14px", xxs: "12px", xxxs: "10px" },
+            fontWeight: 500,
+            fontFamily: "poppins",
+            padding: { xs: "12px 89px", xxxs: "10px 70px" },
+            color: "white",
+            "&.MuiButtonBase-root:hover": {
+              background: "#4831D4",
+            },
+            mt: "24px",
+            mb: "32px",
+            textTransform: "none",
+          }}
+          onClick={() => {
+            setNotAllowSameEmail(false);
+          }}
+        >
+          Go Back
+        </Button>
       </Box>
-    </div>
+    </Box>
   );
 };
 export default NotAllowSameEmail;

@@ -205,7 +205,7 @@ export function Logged({ mode, setMode }) {
     loggedContainerRef.current.scrollTop = 0;
   }, [location]);
 
-  const [notAllowSameEmail, setNotAllowSameEmail] = useState(false);
+  const [notAllowSameEmail, setNotAllowSameEmail] = useState(true);
 
   return (
     <div className="logged-container" ref={loggedContainerRef}>
@@ -921,7 +921,12 @@ export function Logged({ mode, setMode }) {
       {openInviteFriend && (
         <BonusOffer setOpenInviteFriend={setOpenInviteFriend} mode={mode} />
       )}
-      {notAllowSameEmail && <NotAllowSameEmail mode={mode} />}
+      {notAllowSameEmail && (
+        <NotAllowSameEmail
+          mode={mode}
+          setNotAllowSameEmail={setNotAllowSameEmail}
+        />
+      )}
     </div>
   );
 }
