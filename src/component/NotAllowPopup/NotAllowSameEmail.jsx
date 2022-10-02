@@ -17,7 +17,7 @@ const NotAllowSameEmail = ({ mode, setNotAllowSameEmail }) => {
         background: `${
           mode === "dark" ? "rgba(0,0,0,0.9)" : "rgba(115, 115, 115, 0.7)"
         }`,
-        zIndex: "30",
+        zIndex: "100",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",

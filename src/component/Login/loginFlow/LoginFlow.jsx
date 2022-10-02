@@ -15,7 +15,7 @@ import {
 import { GoogleLogin } from "@leecheuk/react-google-login";
 import { UserAuth } from "../../../context/AuthContext";
 import LoadingSpinner from "../../loadingSpinner/LoadingSpinner";
-
+import NotAllowSameEmail from "../../NotAllowPopup/NotAllowSameEmail";
 const clientId =
   "555618407648-lkittruvsnt5jr327s088990pgv3bi9t.apps.googleusercontent.com";
 
@@ -81,6 +81,9 @@ const LoginFlow = ({ mode, setMode }) => {
       setLoading(false);
     }
   };
+
+  const [notAllowSameEmail, setNotAllowSameEmail] = useState(false);
+
   return (
     <div className="login-flow-container">
       <Box
@@ -367,6 +370,12 @@ const LoginFlow = ({ mode, setMode }) => {
         onClick={switchMode}
       />
       {loading && <LoadingSpinner />}{" "}
+      {notAllowSameEmail && (
+        <NotAllowSameEmail
+          mode={mode}
+          setNotAllowSameEmail={setNotAllowSameEmail}
+        />
+      )}
     </div>
   );
 };
