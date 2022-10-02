@@ -205,7 +205,6 @@ export function Logged({ mode, setMode }) {
     loggedContainerRef.current.scrollTop = 0;
   }, [location]);
 
-
   return (
     <div className="logged-container" ref={loggedContainerRef}>
       <Box
@@ -566,8 +565,9 @@ export function Logged({ mode, setMode }) {
                 mt: "20px",
               }}
             >
-              {sideBar.map((e) => (
+              {sideBar.map((e, index) => (
                 <Box
+                  key={index}
                   sx={{
                     display: "flex",
                     flexDirection: { lg: "row", sm: "column", xxxs: "row" },
@@ -641,8 +641,9 @@ export function Logged({ mode, setMode }) {
               >
                 Other
               </Typography>
-              {sideBarOther.map((e) => (
+              {sideBarOther.map((e, index) => (
                 <Box
+                  key={index}
                   sx={{
                     display: "flex",
                     flexDirection: { lg: "row", sm: "column", xxxs: "row" },
@@ -920,7 +921,6 @@ export function Logged({ mode, setMode }) {
       {openInviteFriend && (
         <BonusOffer setOpenInviteFriend={setOpenInviteFriend} mode={mode} />
       )}
-
     </div>
   );
 }

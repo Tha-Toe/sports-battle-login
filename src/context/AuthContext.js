@@ -25,18 +25,26 @@ export const AuthContextProvider = ({ children }) => {
   const [loginByGoogle, setLoginByGoogle] = useState(false);
   const [accessToken, setAccessToken] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [toLogout, setToLogout] = useState(false);
+  const [toLogout, setToLogout] = useState(true);
 
-  onAuthStateChanged(auth, async (user) => {
-    if (user && !toLogout) {
-      setUser(user);
-      console.log(user);
-      setLoading(false);
-      const token = await getIdToken(user);
-      setIdToken(token);
-      setAccessToken(user.accessToken);
-    }
-  });
+  useEffect(() => {
+    const getUserFromFirebase = onAuthStateChanged(
+      auth,
+      async (currentUser) => {
+        if (currentUser) {
+          setUser(currentUser);
+          setLoading(false);
+          console.log(currentUser);
+          const token = await getIdToken(currentUser);
+          setIdToken(token);
+          setAccessToken(currentUser.accessToken);
+        }
+      }
+    );
+    return () => {
+      getUserFromFirebase();
+    };
+  }, []);
 
   const appleSignIns = async () => {
     setToLogout(false);
@@ -51,25 +59,11 @@ export const AuthContextProvider = ({ children }) => {
     if (auth) {
       signOut(auth);
     }
-
     setIdToken(null);
     setAccessToken(null);
     setLoginByGoogle(false);
     setUser(null);
   };
-
-  // useEffect(() => {
-  //   const addUser = onAuthStateChanged(auth, async (currentUser) => {
-  //     setUser(currentUser);
-  //     setLoading(false);
-  //     const token = await getIdToken(currentUser);
-  //     setIdToken(token);
-  //     setAccessToken(currentUser.accessToken);
-  //   });
-  //   return () => {
-  //     addUser();
-  //   };
-  // }, []);
 
   return (
     <AuthContext.Provider
