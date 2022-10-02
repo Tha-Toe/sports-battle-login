@@ -174,8 +174,9 @@ export default function BaseBallPoint({ setOpenBaseBallPoint, mode }) {
             height: "90%",
           }}
         >
-          {point.map((e) => (
+          {point.map((e, index) => (
             <Box
+              key={index}
               sx={{
                 display: "flex",
                 width: "100%",

@@ -86,7 +86,7 @@ export default function AddCash({ mode }) {
           How much would you like to deposit?{" "}
         </Typography>
         <Box sx={{ mt: "13px" }}>
-          {amountList.map((e) => (
+          {amountList.map((e, index) => (
             <Button
               sx={{
                 minWidth: { xs: "64px", xxxs: "50px" },

@@ -92,8 +92,9 @@ export default function PayoutScenarious({ setOpenPayoutScenarious, mode }) {
           In • n event player(s) is not lc • nsideredir th entry is downgraded
           and payouts are adjusted accordingly as per below{" "}
         </Typography>
-        {pays.map((e) => (
+        {pays.map((e, index) => (
           <Typography
+            key={index}
             sx={{
               width: "95%",
               fontSize: { sm: "14px", xxs: "12px", xxxs: "10px" },

@@ -449,8 +449,9 @@ export default function WidthDrawCash({
       >
         PLEASE NOTE!{" "}
       </Typography>
-      {note.map((e) => (
+      {note.map((e, index) => (
         <Box
+          key={index}
           sx={{
             width: "100%",
             display: "flex",
@@ -532,8 +533,9 @@ export default function WidthDrawCash({
                 sx={{ cursor: "pointer", color: "secondary.dark_gray" }}
               />
             </Box>
-            {confirmData.map((e) => (
+            {confirmData.map((e, index) => (
               <Box
+                key={index}
                 sx={{
                   width: "90%",
                   display: "flex",
