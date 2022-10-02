@@ -28,6 +28,9 @@ export const AuthContextProvider = ({ children }) => {
 
   onAuthStateChanged(auth, async (user) => {
     if (user) {
+      setUser(user);
+      console.log(user);
+      setLoading(false);
       const token = await getIdToken(user);
       setIdToken(token);
       setAccessToken(user.accessToken);
@@ -50,15 +53,16 @@ export const AuthContextProvider = ({ children }) => {
     setUser(null);
   };
 
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser);
-      setLoading(false);
-    });
-    return () => {
-      unsubscribe();
-    };
-  }, []);
+  // useEffect(() => {
+  //   const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+  //     setUser(currentUser);
+  //     console.log(currentUser);
+  //     setLoading(false);
+  //   });
+  //   return () => {
+  //     unsubscribe();
+  //   };
+  // }, []);
 
   return (
     <AuthContext.Provider

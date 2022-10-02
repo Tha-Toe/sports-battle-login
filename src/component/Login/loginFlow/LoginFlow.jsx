@@ -62,7 +62,7 @@ const LoginFlow = ({ mode, setMode }) => {
     setLoading,
   } = UserAuth();
   const onSuccess = (res) => {
-    // console.log("success:", res);
+    console.log("success:", res);
     setUser(res.profileObj);
     setAccessToken(res.accessToken);
     setIdToken(res.tokenId);

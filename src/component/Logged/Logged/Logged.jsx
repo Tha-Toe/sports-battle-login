@@ -31,6 +31,7 @@ import TransactionHistory from "../../TransactionHistory/TransactionHistory";
 import Clear from "@mui/icons-material/Clear";
 import AddAddress from "../../AddCash/AddAddress";
 import { UserAuth } from "../../../context/AuthContext";
+import NotAllowSameEmail from "../../NotAllowPopup/NotAllowSameEmail";
 
 export function Logged({ mode, setMode }) {
   let navigate = useNavigate();
@@ -203,6 +204,9 @@ export function Logged({ mode, setMode }) {
     loggedRef.current.scrollTop = 0;
     loggedContainerRef.current.scrollTop = 0;
   }, [location]);
+
+  const [notAllowSameEmail, setNotAllowSameEmail] = useState(false);
+
   return (
     <div className="logged-container" ref={loggedContainerRef}>
       <Box
@@ -917,6 +921,7 @@ export function Logged({ mode, setMode }) {
       {openInviteFriend && (
         <BonusOffer setOpenInviteFriend={setOpenInviteFriend} mode={mode} />
       )}
+      {notAllowSameEmail && <NotAllowSameEmail mode={mode} />}
     </div>
   );
 }
