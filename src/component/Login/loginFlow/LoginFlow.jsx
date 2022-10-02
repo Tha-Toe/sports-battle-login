@@ -62,7 +62,7 @@ const LoginFlow = ({ mode, setMode }) => {
     setLoading,
   } = UserAuth();
   const onSuccess = (res) => {
-    console.log("success:", res);
+    // console.log("success:", res);
     setUser(res.profileObj);
     setAccessToken(res.accessToken);
     setIdToken(res.tokenId);
@@ -70,7 +70,7 @@ const LoginFlow = ({ mode, setMode }) => {
   };
   const onFailure = (err) => {
     setLoading(false);
-    console.log("failed:", err);
+    // console.log("failed:", err);
   };
 
   //apple login
@@ -78,7 +78,6 @@ const LoginFlow = ({ mode, setMode }) => {
     try {
       await appleSignIns();
     } catch (error) {
-      console.log(error);
       setLoading(false);
     }
   };
@@ -198,7 +197,7 @@ const LoginFlow = ({ mode, setMode }) => {
                     textTransform: "none",
                     fontFamily: "Poppins",
                     bgcolor: "primary.main",
-                    zIndex: "100",
+                    zIndex: "40",
                   }}
                 >
                   Login with Google
@@ -210,8 +209,10 @@ const LoginFlow = ({ mode, setMode }) => {
                     position: "absolute",
                     top: "0",
                     left: "0",
-                    zIndex: "300",
+                    zIndex: "50",
                     background: "blue",
+                    width: "100%",
+                    height: "100%",
                   }}
                   onClick={() => {
                     setLoading(true);
@@ -219,6 +220,15 @@ const LoginFlow = ({ mode, setMode }) => {
                 >
                   <GoogleLogin
                     clientId={clientId}
+                    render={(renderProps) => (
+                      <button
+                        onClick={renderProps.onClick}
+                        disabled={renderProps.disabled}
+                        style={{ width: "100%", height: "100%" }}
+                      >
+                        This is my custom Google button
+                      </button>
+                    )}
                     buttonText="Sign in with Google"
                     onSuccess={onSuccess}
                     onFailure={onFailure}
