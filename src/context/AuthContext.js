@@ -25,7 +25,6 @@ export const AuthContextProvider = ({ children }) => {
   const [loginByGoogle, setLoginByGoogle] = useState(false);
   const [accessToken, setAccessToken] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [toLogout, setToLogout] = useState(true);
 
   useEffect(() => {
     const getUserFromFirebase = onAuthStateChanged(
@@ -47,7 +46,6 @@ export const AuthContextProvider = ({ children }) => {
   }, []);
 
   const appleSignIns = async () => {
-    setToLogout(false);
     setLoginByGoogle(false);
     setLoading(true);
     const appleProvider = new OAuthProvider("apple.com");
@@ -55,7 +53,6 @@ export const AuthContextProvider = ({ children }) => {
   };
 
   const logOut = () => {
-    setToLogout(true);
     if (auth) {
       signOut(auth);
     }

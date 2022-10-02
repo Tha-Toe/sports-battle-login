@@ -19,7 +19,7 @@ import CreateUserName from "./component/SignUp/createUserName/CreateUserName";
 import EnterYourName from "./component/SignUp/enter-your-name/EnterYourName";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CheckMail from "./component/Forgot/checkMail/CheckMail";
-import { Logged } from "./component/Logged/Logged/Logged";
+import { Dashboard } from "./component/Dashboard/dashboard/Dashboard";
 import { useContext, useState, useEffect, useRef } from "react";
 import Protected from "./protected/Protected";
 import { AuthContextProvider, UserAuth } from "./context/AuthContext";
@@ -170,7 +170,7 @@ function App() {
               path="/logged"
               element={
                 <Protected>
-                  <Logged mode={mode} setMode={setMode} />
+                  <Dashboard mode={mode} setMode={setMode} />
                 </Protected>
               }
             />

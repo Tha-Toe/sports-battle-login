@@ -5,7 +5,7 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import "./logged.css";
+import "./dashboard.css";
 import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Props from "../../Props/Props";
@@ -33,7 +33,7 @@ import AddAddress from "../../AddCash/AddAddress";
 import { UserAuth } from "../../../context/AuthContext";
 import NotAllowSameEmail from "../../NotAllowPopup/NotAllowSameEmail";
 
-export function Logged({ mode, setMode }) {
+export function Dashboard({ mode, setMode }) {
   let navigate = useNavigate();
   let location = useLocation();
 
