@@ -24,6 +24,8 @@ export const AuthContextProvider = ({ children }) => {
   const [idToken, setIdToken] = useState(null);
   const [loginByGoogle, setLoginByGoogle] = useState(false);
   const [accessToken, setAccessToken] = useState(null);
+  const [loading, setLoading] = useState(false);
+
   onAuthStateChanged(auth, async (user) => {
     if (user) {
       const token = await getIdToken(user);
@@ -33,6 +35,7 @@ export const AuthContextProvider = ({ children }) => {
   });
   const appleSignIns = async () => {
     setLoginByGoogle(false);
+    setLoading(true);
     const appleProvider = new OAuthProvider("apple.com");
     await signInWithPopup(auth, appleProvider);
   };
@@ -51,6 +54,7 @@ export const AuthContextProvider = ({ children }) => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
       console.log(currentUser);
+      setLoading(false);
     });
     return () => {
       unsubscribe();
@@ -70,6 +74,8 @@ export const AuthContextProvider = ({ children }) => {
         accessToken,
         setAccessToken,
         setLoginByGoogle,
+        loading,
+        setLoading,
       }}
     >
       {children}

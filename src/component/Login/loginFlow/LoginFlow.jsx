@@ -14,6 +14,7 @@ import {
 } from "../../defaultComponent/DefaultComponent";
 import { GoogleLogin } from "@leecheuk/react-google-login";
 import { UserAuth } from "../../../context/AuthContext";
+import LoadingSpinner from "../../loadingSpinner/LoadingSpinner";
 
 const clientId =
   "555618407648-lkittruvsnt5jr327s088990pgv3bi9t.apps.googleusercontent.com";
@@ -57,14 +58,18 @@ const LoginFlow = ({ mode, setMode }) => {
     accessToken,
     setAccessToken,
     setLoginByGoogle,
+    loading,
+    setLoading,
   } = UserAuth();
   const onSuccess = (res) => {
     console.log("success:", res);
     setUser(res.profileObj);
     setAccessToken(res.accessToken);
     setIdToken(res.tokenId);
+    setLoading(false);
   };
   const onFailure = (err) => {
+    setLoading(false);
     console.log("failed:", err);
   };
 
@@ -74,6 +79,7 @@ const LoginFlow = ({ mode, setMode }) => {
       await appleSignIns();
     } catch (error) {
       console.log(error);
+      setLoading(false);
     }
   };
   return (
@@ -206,6 +212,9 @@ const LoginFlow = ({ mode, setMode }) => {
                     left: "0",
                     zIndex: "300",
                     background: "blue",
+                  }}
+                  onClick={() => {
+                    setLoading(true);
                   }}
                 >
                   <GoogleLogin
@@ -347,6 +356,7 @@ const LoginFlow = ({ mode, setMode }) => {
         className="switchMode"
         onClick={switchMode}
       />
+      {loading && <LoadingSpinner />}{" "}
     </div>
   );
 };
