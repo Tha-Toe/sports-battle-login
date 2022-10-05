@@ -34,7 +34,7 @@ const LoginFlow = ({ mode, setMode }) => {
   }, [name, password]);
   let navigate = useNavigate();
   const handleContinue = () => {
-    navigate("/logged", { replace: true });
+    navigate("/home", { replace: true });
   };
 
   //theme
@@ -63,7 +63,14 @@ const LoginFlow = ({ mode, setMode }) => {
   } = UserAuth();
   const onSuccess = (res) => {
     console.log("success:", res);
-    setUser(res.profileObj);
+    let userToAdd = res.profileObj;
+
+    let userName = userToAdd.name;
+    userToAdd.userName = userName;
+    //get first name letter
+    let firstNameLetter = userToAdd.givenName.slice(0, 2).toUpperCase();
+    userToAdd.firstNameLetter = firstNameLetter;
+    setUser(userToAdd);
     setAccessToken(res.accessToken);
     setIdToken(res.tokenId);
     setLoading(false);

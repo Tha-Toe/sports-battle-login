@@ -88,6 +88,7 @@ export default function AddCash({ mode }) {
         <Box sx={{ mt: "13px" }}>
           {amountList.map((e, index) => (
             <Button
+              key={index}
               sx={{
                 minWidth: { xs: "64px", xxxs: "50px" },
                 height: "40px",
